@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Col, Row, Tabs, Spin, Statistic, Divider } from 'antd';
 import GameCard from '@/components/GameCard';
+import { PageContainer } from '@ant-design/pro-layout';
+import { Alert, Divider, Spin, Statistic } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'umi';
 import API from '../system/api';
-
-const { TabPane } = Tabs;
-
-const mockGame: Array<number[]> = [[0, 1, 2]];
-const mockPlayer: GameLobbyPlayer[] = [{ id: 0, name: "TriggerHappy", host: true, rank: 0 }]
-const mockLobby: GameLobby = {
-  id: 0,
-  lobbyId: 0,
-  name: "test",
-  players: mockPlayer,
-  maxPlayers: 12,
-  locked: false,
-  currentGame: 0,
-  games: mockGame,
-  comment: "Hello world",
-  location: "US",
-}
 
 export default (): React.ReactNode => {
   const [data, setData] = useState({ loading: true, players: '...', games: [] as GameLobby[] });
@@ -52,7 +36,13 @@ export default (): React.ReactNode => {
   const cards: JSX.Element[] = [];
 
   for (const game of data.games) {
-    cards.push(<div className="col-md-3" key={game.id} style={{ marginBottom: "16px" }}><GameCard game={game} /></div>);
+    cards.push(
+      <div className="col-md-3" key={game.id} style={{ marginBottom: "16px" }}>
+        <NavLink to={`/game/${game.id}`}>
+          <GameCard game={game} />
+        </NavLink>
+      </div>
+    );
   }
 
   let statistics = (
