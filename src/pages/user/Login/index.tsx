@@ -134,9 +134,7 @@ const Login: React.FC = () => {
                 <ProFormCheckbox noStyle name="autoLogin">
                   Remember me
                 </ProFormCheckbox>
-                <a style={{ float: 'right' }}>
-                  Forgot Password ?
-                </a>
+
                 <p className="text-center">
                   <br />
                   <NavLink to="/register">

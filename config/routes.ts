@@ -4,6 +4,7 @@ export default [
   { path: '/game/:id', component: './Game' },
   { path: '/profile/:character', component: './Profile' },
   { path: '/account', component: './Account' },
+  { path: '/guides', component: './Home' },
   { path: '/login', component: './user/Login', layout: false },
   { path: '/register', component: './user/Register', layout: false },
   {

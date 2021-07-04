@@ -66,6 +66,10 @@ export class WebAPI {
     return await this.makeRequest(`/api/v1/login`, "post", { username, password });
   }
 
+  public async getStatus(): Promise<WebAPIResponse<{ status: number }> | false> {
+    return await this.makeRequest(`/api/v1/status`);
+  }
+
   public async getGames(): Promise<WebAPIResponse<{ players: number, lobbies: GameLobby[] }> | false> {
     const result = await this.makeRequest(`/api/v1/games`);
     return result.data;

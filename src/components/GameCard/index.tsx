@@ -28,7 +28,7 @@ export default function GameCard(props: GameCardProps): JSX.Element {
       </div>);
 
     playerList.push(
-      <Popover content={popContent} placement="left">
+      <Popover content={popContent} placement="left" key={player.id}>
         <p key={player.id}><Avatar size="small" icon={<UserOutlined />} /> {player.name}</p>
       </Popover>
     )
