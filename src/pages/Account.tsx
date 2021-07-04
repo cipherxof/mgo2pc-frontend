@@ -33,6 +33,8 @@ const onUpdateAccount = async (e: any) => {
     banned: false,
     bannedReason: '',
     exp: 0,
+    exp_alt: 0,
+    main: 0,
     characters: []
   }
 
@@ -52,7 +54,7 @@ export default (): React.ReactNode => {
           <div className="col-md-9">
             <Form {...layout} name="basic" initialValues={{ remember: true }} onSubmitCapture={onUpdateAccount}>
               <Form.Item label="Display Name" name="display_name">
-                <Input placeholder="TriggerHappy" />
+                <Input placeholder="" />
               </Form.Item>
 
               <Form.Item {...tailLayout}>

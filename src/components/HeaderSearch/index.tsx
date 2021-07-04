@@ -21,6 +21,9 @@ export type HeaderSearchProps = {
 };
 
 const HeaderSearch: React.FC<HeaderSearchProps> = (props) => {
+  // todo: implement search
+  return (<React.Fragment></React.Fragment>);
+
   const {
     className,
     defaultValue,

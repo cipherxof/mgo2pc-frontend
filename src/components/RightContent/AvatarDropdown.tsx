@@ -31,10 +31,12 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-      <Menu.Item key="center">
-        <UserOutlined />
-        Characters
-      </Menu.Item>
+      <NavLink to="/account/characters">
+        <Menu.Item key="center">
+          <UserOutlined />
+          Characters
+        </Menu.Item>
+      </NavLink>
 
       <NavLink to="/account">
         <Menu.Item key="settings">

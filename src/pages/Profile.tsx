@@ -1,3 +1,4 @@
+import CharacterLevelTag from '@/components/CharacterLevelTag';
 import PersonalScores from '@/components/Profile/PersonalScores';
 import StatsTable from '@/components/Profile/StatsTable';
 import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
@@ -56,7 +57,7 @@ export default (): React.ReactNode => {
     if (data.profile.clan) {
       headerTags.push(<Tag color="gold">{data.profile.clan}</Tag>);
     }
-    headerTags.push(<Popover content={`${xp} Experience`}><Tag color="blue">Level {getExpLevel(xp)}</Tag></Popover>);
+    headerTags.push(<CharacterLevelTag xp={xp} />);
 
     content = (
       <React.Fragment>

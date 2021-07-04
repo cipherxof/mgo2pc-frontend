@@ -26,6 +26,8 @@ type UserAccount = {
   banned: boolean;
   bannedReason: string;
   exp: number;
+  exp_alt: number;
+  main: number;
 }
 
 type MgoGame = {
@@ -46,9 +48,6 @@ type MgoCharacter = {
   name: string;
   rank: number;
   comment: string;
-  mgo2_main: number;
-  mgo2_main_exp: number;
-  mgo2_alt_exp: number;
 }
 
 type TitleHistory = {
@@ -115,6 +114,8 @@ type MgoUser = {
   banned_until: number;
   ban_reason: string;
   mgo2_main_exp: number;
+  mgo2_alt_exp: number;
+  mgo2_main: number;
   activate: string;
 }
 
