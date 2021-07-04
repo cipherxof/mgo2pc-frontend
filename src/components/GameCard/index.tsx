@@ -49,9 +49,15 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   const map = MgoMapNames[mapId as MgoMap];
   const mode = MgoModeNames[modeId as MgoMode];
 
+  let modeElement = <React.Fragment></React.Fragment>;
+  if (modeId > 0) {
+    modeElement = <React.Fragment><br /> <img alt={mode} src={require(`../assets/img/modes/${modeId}.png`).default} style={{ maxWidth: "16px" }} /> {mode}</React.Fragment>;
+  }
+
   return (
     <Card hoverable={true} cover={<img alt={"Silo Sunset"} src={getMapPreview(mapId)} />} >
       <Meta title={<div>{cardTitle}<br />{<small> <Text type="warning"><i>{gameMode}</i></Text></small>}</div>} description={props.game.comment} />
+      {modeElement}
       <Divider />
       {playerList}
     </Card>
