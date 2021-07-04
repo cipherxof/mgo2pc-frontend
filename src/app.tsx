@@ -3,7 +3,7 @@ import RightContent from '@/components/RightContent';
 import { PageLoading } from '@ant-design/pro-layout';
 import type { RunTimeLayoutConfig } from 'umi';
 
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 
 export const initialStateConfig = {
   loading: <PageLoading />,

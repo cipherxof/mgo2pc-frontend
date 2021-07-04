@@ -1,5 +1,6 @@
 export default [
   { path: '/welcome', name: 'Home', icon: 'home', component: './Welcome' },
+  { path: '/login', component: './user/Login', layout: false },
   { path: '/games', name: 'Games', icon: 'desktop', component: './Welcome' },
   {
     path: '/admin',

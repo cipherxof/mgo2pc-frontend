@@ -18,19 +18,18 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-      {menu && (
-        <Menu.Item key="center">
-          <UserOutlined />
-          Profile
-        </Menu.Item>
-      )}
-      {menu && (
-        <Menu.Item key="settings">
-          <SettingOutlined />
-          Settings
-        </Menu.Item>
-      )}
-      {menu && <Menu.Divider />}
+      <Menu.Item key="center">
+        <UserOutlined />
+        Profile
+      </Menu.Item>
+
+
+      <Menu.Item key="settings">
+        <SettingOutlined />
+        Settings
+      </Menu.Item>
+
+      <Menu.Divider />
 
       <Menu.Item key="logout">
         <LogoutOutlined />
