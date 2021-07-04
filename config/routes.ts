@@ -1,6 +1,7 @@
 export default [
   { path: '/', component: './Home' },
   { path: '/games', name: 'Games', icon: 'desktop', component: './Games' },
+  { path: '/profile/:character', component: './Profile' },
   {
     name: 'Information',
     icon: 'crown',
