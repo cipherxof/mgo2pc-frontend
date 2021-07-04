@@ -1,8 +1,7 @@
 import Footer from '@/components/Footer';
 import RightContent from '@/components/RightContent';
 import { PageLoading } from '@ant-design/pro-layout';
-import { notification } from 'antd';
-import type { RequestConfig, RunTimeLayoutConfig } from 'umi';
+import type { RunTimeLayoutConfig } from 'umi';
 
 const isDev = process.env.NODE_ENV === 'development';
 

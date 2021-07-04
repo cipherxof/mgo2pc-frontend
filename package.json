@@ -26,7 +26,6 @@
     "lint:prettier": "prettier -c --write \"src/**/*\" --end-of-line auto",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "openapi": "umi openapi",
-    "precommit": "lint-staged",
     "prettier": "prettier -c --write \"src/**/*\"",
     "site": "npm run fetch:blocks && npm run build",
     "start": "cross-env UMI_ENV=dev umi dev",
@@ -139,8 +138,5 @@
       "CNAME",
       "create-umi"
     ]
-  },
-  "gitHooks": {
-    "commit-msg": "fabric verify-commit"
   }
 }
