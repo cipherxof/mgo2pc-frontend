@@ -3,6 +3,7 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Alert, Typography, Popover, Collapse, Divider, Tabs, Menu, Button, Form, Input, notification } from 'antd';
 import styles from './Home.less';
 import API from '../system/api';
+import { getUserToken } from '@/system/utility';
 
 const { Panel } = Collapse;
 const { TabPane } = Tabs;
@@ -18,7 +19,7 @@ const tailLayout = {
 };
 
 const onUpdateAccount = async (e: any) => {
-  const token = sessionStorage.getItem('token');
+  const token = getUserToken();
 
   if (!token) {
     notification.error({ message: `Error`, description: "You are not logged in.", placement: "topRight" });

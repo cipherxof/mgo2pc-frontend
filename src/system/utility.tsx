@@ -1,3 +1,7 @@
+export const getUserToken = () => {
+  return sessionStorage.getItem('token');
+}
+
 export const getMapPreview = (mapId: number) => {
   try {
     return require(`../assets/img/maps/${mapId}.jpg`);

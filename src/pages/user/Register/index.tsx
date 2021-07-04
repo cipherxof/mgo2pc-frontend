@@ -1,62 +1,56 @@
 import Footer from '@/components/Footer';
 import {
-  LockOutlined, UserOutlined
+  LockOutlined, MailOutlined, UserOutlined
 } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { Alert, Card } from 'antd';
+import { Alert, Card, Form, notification } from 'antd';
 import React, { useState } from 'react';
 import { history, Link } from 'umi';
 import API from '../../../system/api';
 import styles from './index.less';
+import ReCAPTCHA from "react-google-recaptcha";
 
-type LoginFormData = {
+type RegisterFormData = {
   username: string;
   password: string;
+  email: string;
+  display_name: string;
 }
 
-const LoginMessage: React.FC<{
-  content: string;
-}> = ({ content }) => (
-  <Alert
-    style={{
-      marginBottom: 24,
-    }}
-    message={content}
-    type="error"
-    showIcon
-  />
-);
+let captcha: string = "";
 
-const goto = () => {
-  if (!history) return;
-  setTimeout(() => {
-    const { query } = history.location;
-    const { redirect } = query as {
-      redirect: string;
-    };
-    history.push(redirect || '/');
-  }, 10);
-};
-
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [userLoginState, setUserLoginState] = useState<any>({});
   const [type, setType] = useState<string>('account');
 
-  document.title = "Login - Metal Gear Online";
+  document.title = "Create Account - Metal Gear Online";
 
-  const onFinish = async (values: LoginFormData) => {
-    const result = await API.login(values.username, values.password);
+  const onFinish = async (values: RegisterFormData) => {
+    const result = await API.createAccount(values.username, values.password, values.email, captcha, values.display_name);
 
     if (!result) {
       return;
     }
+    else if (!result.data.success) {
+      notification.error({
+        message: `Error`,
+        description: result.data.message,
+        placement: "topRight",
+      });
+      return;
+    }
 
-    sessionStorage.setItem('token', result.data.data);
-    history.push("/account");
+    notification.success({
+      message: `Success`,
+      description: "Please check your email to activate your account.",
+      placement: "topRight",
+      duration: 30
+    });
+
+    history.push("/");
   };
 
-  const { status, type: loginType } = userLoginState;
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -79,7 +73,7 @@ const Login: React.FC = () => {
               }}
               submitter={{
                 searchConfig: {
-                  submitText: 'Login',
+                  submitText: 'Create Account',
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
@@ -90,13 +84,10 @@ const Login: React.FC = () => {
                   },
                 },
               }}
-              onFinish={async (values: LoginFormData) => {
+              onFinish={async (values: RegisterFormData) => {
                 onFinish(values);
               }}
             >
-              {status === 'error' && loginType === 'account' && (
-                <LoginMessage content={'Incorrect username/password（admin/ant.design)'} />
-              )}
               <ProFormText
                 name="username"
                 fieldProps={{
@@ -125,22 +116,24 @@ const Login: React.FC = () => {
                   },
                 ]}
               />
-
-              <div
-                style={{
-                  marginBottom: 24,
+              <ProFormText
+                name="email"
+                fieldProps={{
+                  size: 'large',
+                  prefix: <MailOutlined className={styles.prefixIcon} />,
                 }}
-              >
-                <ProFormCheckbox noStyle name="autoLogin">
-                  Remember me
-                </ProFormCheckbox>
-                <a
-                  style={{
-                    float: 'right',
-                  }}
-                >
-                  Forgot Password ?
-                </a>
+                placeholder={'Email'}
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please input your email!',
+                  },
+                ]}
+              />
+              <div style={{ marginBottom: 24 }}>
+                <Form.Item label="Captcha" name="captcha" rules={[{ required: false, message: 'Please fill out the bot check' }]}>
+                  <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" onChange={(value: string) => { captcha = value ? value : "" }} />
+                </Form.Item>
               </div>
             </ProForm>
           </Card>
@@ -151,4 +144,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;

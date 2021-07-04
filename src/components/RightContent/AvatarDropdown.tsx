@@ -1,8 +1,8 @@
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Menu } from 'antd';
+import { Avatar, Menu, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
-import { NavLink } from 'umi';
+import { NavLink, useHistory } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 
@@ -10,9 +10,21 @@ export type GlobalHeaderRightProps = {
   menu?: boolean;
 };
 
+
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
+  const history = useHistory();
+
   const onMenuClick = useCallback(
     (event: MenuInfo) => {
+    },
+    [],
+  );
+
+  const onLogout = useCallback(
+    () => {
+      sessionStorage.removeItem('token');
+      notification.success({ message: `Success`, description: "You have been logged out.", placement: "topRight" });
+      history.push('/');
     },
     [],
   );
@@ -33,7 +45,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
 
       <Menu.Divider />
 
-      <Menu.Item key="logout">
+      <Menu.Item key="logout" onClick={() => onLogout()}>
         <LogoutOutlined />
         Logout
       </Menu.Item>

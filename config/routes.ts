@@ -3,11 +3,12 @@ export default [
   { path: '/games', name: 'Games', icon: 'desktop', component: './Games' },
   { path: '/profile/:character', component: './Profile' },
   { path: '/account', component: './Account' },
+  { path: '/login', component: './user/Login', layout: false },
+  { path: '/register', component: './user/Register', layout: false },
   {
     name: 'Information',
     icon: 'crown',
-    routes: [{ path: '/faq', name: 'FAQ', icon: 'smile', component: './FAQ' }],
+    routes: [{ path: '/faq', name: 'FAQ', icon: 'smile', component: './FAQ' }]
   },
-  { path: '/login', component: './user/Login', layout: false },
   { component: './404' },
 ];
