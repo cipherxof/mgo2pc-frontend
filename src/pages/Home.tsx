@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Alert, Typography, Popover } from 'antd';
-import styles from './Welcome.less';
+import styles from './Home.less';
 
 const CodePreview: React.FC = ({ children }) => (
   <pre className={styles.pre}>

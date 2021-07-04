@@ -1,14 +1,11 @@
 export default [
-  { path: '/welcome', name: 'Home', icon: 'home', component: './Welcome' },
+  { path: '/', component: './Home' },
   { path: '/games', name: 'Games', icon: 'desktop', component: './Games' },
   {
-    path: '/admin',
     name: 'Information',
     icon: 'crown',
-    component: './Admin',
-    routes: [{ path: '/admin/sub-page', name: 'FAQ', icon: 'smile', component: './Welcome' }],
+    routes: [{ path: '/faq', name: 'FAQ', icon: 'smile', component: './FAQ' }],
   },
-  { path: '/', redirect: '/welcome' },
   { path: '/login', component: './user/Login', layout: false },
   { component: './404' },
 ];

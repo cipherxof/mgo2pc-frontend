@@ -50,7 +50,7 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   const mode = MgoModeNames[modeId as MgoMode];
 
   return (
-    <Card hoverable={true} cover={<img alt={"Silo Sunset"} src={getMapPreview(10)} />} >
+    <Card hoverable={true} cover={<img alt={"Silo Sunset"} src={getMapPreview(mapId)} />} >
       <Meta title={<div>{cardTitle}<br />{<small> <Text type="warning"><i>{gameMode}</i></Text></small>}</div>} description={props.game.comment} />
       <Divider />
       {playerList}
