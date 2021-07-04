@@ -2,6 +2,7 @@ import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons
 import { Avatar, Menu } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
+import { NavLink } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 
@@ -23,10 +24,12 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
         Characters
       </Menu.Item>
 
-      <Menu.Item key="settings">
-        <SettingOutlined />
-        Settings
-      </Menu.Item>
+      <NavLink to="/account">
+        <Menu.Item key="settings">
+          <SettingOutlined />
+          Settings
+        </Menu.Item>
+      </NavLink>
 
       <Menu.Divider />
 

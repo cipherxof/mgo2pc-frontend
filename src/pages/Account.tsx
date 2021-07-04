@@ -1,0 +1,68 @@
+import React from 'react';
+import { PageContainer } from '@ant-design/pro-layout';
+import { Card, Alert, Typography, Popover, Collapse, Divider, Tabs, Menu, Button, Form, Input, notification } from 'antd';
+import styles from './Home.less';
+import API from '../system/api';
+
+const { Panel } = Collapse;
+const { TabPane } = Tabs;
+const { SubMenu } = Menu;
+
+const layout = {
+  labelCol: { span: 4 },
+  wrapperCol: { span: 16 },
+};
+
+const tailLayout = {
+  wrapperCol: { offset: 4, span: 16 },
+};
+
+const onUpdateAccount = async (e: any) => {
+  const token = sessionStorage.getItem('token');
+
+  if (!token) {
+    notification.error({ message: `Error`, description: "You are not logged in.", placement: "topRight" });
+    return;
+  }
+
+  const data: UserAccount = {
+    username: '',
+    displayName: e.target[0].value,
+    email: '',
+    banned: false,
+    bannedReason: '',
+    exp: 0,
+    characters: []
+  }
+
+  await API.updateAccount(token, data);
+}
+
+export default (): React.ReactNode => {
+  return (
+    <PageContainer>
+      <Card>
+        <div className="row">
+          <div className="col-md-3">
+            <Menu defaultSelectedKeys={['1']} mode="inline">
+              <Menu.Item key="1">Basic Settings</Menu.Item>
+            </Menu>
+          </div>
+          <div className="col-md-9">
+            <Form {...layout} name="basic" initialValues={{ remember: true }} onSubmitCapture={onUpdateAccount}>
+              <Form.Item label="Display Name" name="display_name">
+                <Input placeholder="TriggerHappy" />
+              </Form.Item>
+
+              <Form.Item {...tailLayout}>
+                <Button type="primary" htmlType="submit">
+                  Update Information
+                </Button>
+              </Form.Item>
+            </Form>
+          </div>
+        </div>
+      </Card>
+    </PageContainer>
+  );
+};
