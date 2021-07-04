@@ -64,7 +64,7 @@ const Login: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.main}>
+        <div className={styles.main} style={{ position: "absolute", left: "50%", top: "40%", transform: "translate(-50%, -50%)" }}>
           <Card>
             <ProForm
               initialValues={{

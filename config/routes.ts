@@ -1,7 +1,6 @@
 export default [
   { path: '/welcome', name: 'Home', icon: 'home', component: './Welcome' },
-  { path: '/login', component: './user/Login', layout: false },
-  { path: '/games', name: 'Games', icon: 'desktop', component: './Welcome' },
+  { path: '/games', name: 'Games', icon: 'desktop', component: './Games' },
   {
     path: '/admin',
     name: 'Information',
@@ -10,5 +9,6 @@ export default [
     routes: [{ path: '/admin/sub-page', name: 'FAQ', icon: 'smile', component: './Welcome' }],
   },
   { path: '/', redirect: '/welcome' },
+  { path: '/login', component: './user/Login', layout: false },
   { component: './404' },
 ];
