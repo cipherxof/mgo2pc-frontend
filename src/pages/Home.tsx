@@ -4,15 +4,9 @@ import { Card, Alert, Typography, Popover, Divider } from 'antd';
 import styles from './Home.less';
 import { NavLink } from 'umi';
 
-const CodePreview: React.FC = ({ children }) => (
-  <pre className={styles.pre}>
-    <code>
-      <Typography.Text copyable>{children}</Typography.Text>
-    </code>
-  </pre>
-);
-
 export default (): React.ReactNode => {
+  document.title = "Home - Metal Gear Online";
+
   return (
     <PageContainer>
       <div className="row">

@@ -5,7 +5,7 @@ import {
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { Alert, Card, Form, notification } from 'antd';
 import React, { useState } from 'react';
-import { history, Link } from 'umi';
+import { history, Link, NavLink } from 'umi';
 import API from '../../../system/api';
 import styles from './index.less';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -135,6 +135,13 @@ const Register: React.FC = () => {
                   <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" onChange={(value: string) => { captcha = value ? value : "" }} />
                 </Form.Item>
               </div>
+
+              <p className="text-center">
+                <br />
+                <NavLink to="/login">
+                  Already have an account?
+                </NavLink>
+              </p>
             </ProForm>
           </Card>
         </div>

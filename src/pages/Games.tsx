@@ -24,6 +24,8 @@ const mockLobby: GameLobby = {
 export default (): React.ReactNode => {
   const [data, setData] = useState({ loading: true, players: '...', games: [] as GameLobby[] });
 
+  document.title = "Games - Metal Gear Online";
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await API.getGames();

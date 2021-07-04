@@ -5,7 +5,7 @@ import {
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { Alert, Card } from 'antd';
 import React, { useState } from 'react';
-import { history, Link } from 'umi';
+import { history, Link, NavLink } from 'umi';
 import API from '../../../system/api';
 import styles from './index.less';
 
@@ -134,13 +134,15 @@ const Login: React.FC = () => {
                 <ProFormCheckbox noStyle name="autoLogin">
                   Remember me
                 </ProFormCheckbox>
-                <a
-                  style={{
-                    float: 'right',
-                  }}
-                >
+                <a style={{ float: 'right' }}>
                   Forgot Password ?
                 </a>
+                <p className="text-center">
+                  <br />
+                  <NavLink to="/register">
+                    Don't have an account?
+                  </NavLink>
+                </p>
               </div>
             </ProForm>
           </Card>

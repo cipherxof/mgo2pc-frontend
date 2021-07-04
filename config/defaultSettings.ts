@@ -12,7 +12,7 @@ const Settings: LayoutSettings & {
   fixedHeader: true,
   fixSiderbar: false,
   colorWeak: false,
-  title: 'MGO2PC',
+  title: 'Metal Gear Online',
   pwa: false,
   logo: '/icons/icon-512x512.png',
   iconfontUrl: '',

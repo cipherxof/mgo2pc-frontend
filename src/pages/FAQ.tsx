@@ -6,6 +6,8 @@ import styles from './Home.less';
 const { Panel } = Collapse;
 
 export default (): React.ReactNode => {
+  document.title = "FAQ - Metal Gear Online";
+
   return (
     <PageContainer>
       <Collapse defaultActiveKey={['1']}>

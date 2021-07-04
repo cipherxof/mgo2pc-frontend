@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Popover, Collapse, Divider, Avatar, PageHeader, Tabs, Tag, Spin } from 'antd';
-import styles from './Home.less';
-import { useParams } from 'umi';
-import API from '../system/api';
+import PersonalScores from '@/components/Profile/PersonalScores';
+import StatsTable from '@/components/Profile/StatsTable';
+import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
 import { getExpLevel } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
-import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
-import StatsTable from '@/components/Profile/StatsTable';
-import PersonalScores from '@/components/Profile/PersonalScores';
+import { PageContainer } from '@ant-design/pro-layout';
+import { Avatar, Card, Collapse, Divider, PageHeader, Popover, Spin, Tabs, Tag } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'umi';
+import API from '../system/api';
 
-const { Panel } = Collapse;
 const { TabPane } = Tabs;
 
 type Profile = {
@@ -44,8 +42,6 @@ export default (): React.ReactNode => {
       }
 
       setData({ loading: false, profile: response.data.profile });
-
-      //const game = response.data.lobbies.find((g) => g.id == parseInt(params.id));
     };
 
     fetchData();
@@ -60,7 +56,7 @@ export default (): React.ReactNode => {
     if (data.profile.clan) {
       headerTags.push(<Tag color="gold">{data.profile.clan}</Tag>);
     }
-    headerTags.push(<Tag color="blue">Level {getExpLevel(xp)}</Tag>);
+    headerTags.push(<Popover content={`${xp} Experience`}><Tag color="blue">Level {getExpLevel(xp)}</Tag></Popover>);
 
     content = (
       <React.Fragment>
