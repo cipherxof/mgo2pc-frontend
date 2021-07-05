@@ -8,10 +8,10 @@ export default [
   { path: '/guides', component: './Home' },
   { path: '/login', component: './user/Login', layout: false },
   { path: '/register', component: './user/Register', layout: false },
+  { component: './404' },
   {
     name: 'More',
     icon: 'more',
     routes: [{ path: '/faq', name: 'FAQ', component: './FAQ' }]
   },
-  { component: './404' },
 ];

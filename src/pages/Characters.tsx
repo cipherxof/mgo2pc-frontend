@@ -39,7 +39,7 @@ export default (): React.ReactNode => {
       const xp = character.id === account.main ? account.exp : account.exp_alt;
 
       characterCards.push(
-        <div className="col-md-3" key={character.id}>
+        <div className="col-md-3" key={character.id} style={{marginBottom: "16px"}}>
           <NavLink to={`/profile/${character.name}`}>
             <Card hoverable={true} actions={[<EditOutlined key="edit" disabled={true} />]}>
               <Meta

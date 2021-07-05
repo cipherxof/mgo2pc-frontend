@@ -128,7 +128,7 @@ const Register: React.FC = () => {
               />
               <div style={{ marginBottom: 24 }}>
                 <Form.Item label="Captcha" name="captcha" rules={[{ required: false, message: 'Please fill out the bot check' }]}>
-                  <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" onChange={(value: string) => { captcha = value }} />
+                  <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" onChange={(value: string | null) => { captcha = value ? value : "" }} />
                 </Form.Item>
               </div>
 

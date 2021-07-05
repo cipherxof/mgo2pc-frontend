@@ -9,7 +9,7 @@ export default () => {
         {
           key: 'github',
           title: <GithubOutlined />,
-          href: 'https://github.com/cipherxof',
+          href: 'https://github.com/cipherxof/mgo2pc-frontend',
           blankTarget: true,
         }
       ]}

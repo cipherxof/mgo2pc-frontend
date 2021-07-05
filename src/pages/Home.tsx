@@ -24,7 +24,7 @@ export default (): React.ReactNode => {
       <Divider />
 
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6" style={{marginBottom: "16px"}}>
           <Card>
             <div className="container-video">
               <iframe className="video" width="10000" height="10000" src="https://www.youtube.com/embed/6W7PWfPVi74" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
