@@ -51,7 +51,7 @@ export default function GameCard(props: GameCardProps): JSX.Element {
 
   let modeElement = <React.Fragment></React.Fragment>;
   if (modeId > 0) {
-    modeElement = <React.Fragment><br /> <img alt={mode} src={require(`../assets/img/modes/${modeId}.png`).default} style={{ maxWidth: "16px" }} /> {mode}</React.Fragment>;
+    modeElement = <React.Fragment><br /> <img alt={mode} src={require(`../../assets/img/modes/${modeId}.png`)} style={{ maxWidth: "16px" }} /> {mode}</React.Fragment>;
   }
 
   return (

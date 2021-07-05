@@ -1,3 +1,4 @@
+import { getUserName, getUserToken } from '@/system/utility';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
@@ -57,7 +58,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     <HeaderDropdown overlay={menuHeaderDropdown}>
       <span className={`${styles.action} ${styles.account}`}>
         <Avatar size="small" className={styles.avatar} alt="avatar" />
-        <span className={`${styles.name} anticon`}>TriggerHappy</span>
+        <span className={`${styles.name} anticon`}>{getUserName()}</span>
       </span>
     </HeaderDropdown>
   );

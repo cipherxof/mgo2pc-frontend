@@ -53,6 +53,8 @@ const Login: React.FC = () => {
     }
 
     sessionStorage.setItem('token', result.data.data);
+    sessionStorage.setItem('username', result.data.username);
+
     history.push("/account");
   };
 
