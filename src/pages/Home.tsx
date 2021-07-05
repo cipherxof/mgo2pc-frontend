@@ -1,9 +1,8 @@
-import React from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Popover, Divider } from 'antd';
-import styles from './Home.less';
-import { NavLink } from 'umi';
 import ServerStatus from '@/components/ServerStatus';
+import { PageContainer } from '@ant-design/pro-layout';
+import { Card, Divider } from 'antd';
+import React from 'react';
+import { NavLink } from 'umi';
 
 export default (): React.ReactNode => {
   document.title = "Home - Metal Gear Online";

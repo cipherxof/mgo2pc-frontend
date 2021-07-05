@@ -1,13 +1,8 @@
-import React from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Popover, Collapse, Divider, Tabs, Menu, Button, Form, Input, notification } from 'antd';
-import styles from './Home.less';
-import API from '../system/api';
 import { getUserToken } from '@/system/utility';
-
-const { Panel } = Collapse;
-const { TabPane } = Tabs;
-const { SubMenu } = Menu;
+import { PageContainer } from '@ant-design/pro-layout';
+import { Button, Card, Form, Input, Menu, notification } from 'antd';
+import React from 'react';
+import API from '../system/api';
 
 const layout = {
   labelCol: { span: 4 },

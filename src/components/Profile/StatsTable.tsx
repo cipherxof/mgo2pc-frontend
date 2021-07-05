@@ -3,8 +3,6 @@ import { Select, Statistic, Table } from "antd";
 import React, { useState } from "react";
 import { formatTime } from "../../system/utility";
 
-let gameMode = "all";
-
 const { Option } = Select;
 
 const columns = [

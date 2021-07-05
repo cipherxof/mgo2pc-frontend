@@ -1,6 +1,5 @@
 import { getUserToken } from '@/system/utility';
-import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons';
-import { Menu, Space, Tooltip } from 'antd';
+import { Space } from 'antd';
 import React from 'react';
 import { NavLink } from 'umi';
 import HeaderSearch from '../HeaderSearch';

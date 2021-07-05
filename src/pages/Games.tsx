@@ -45,13 +45,14 @@ export default (): React.ReactNode => {
     );
   }
 
-  let statistics = (
+  const statistics = (
     <div className="row">
       <div className="col-md-12 text-center">
         <Statistic title="Online Players" value={data.players} />
       </div>
       <Divider />
-    </div>);
+    </div>
+  );
 
   if (data.games.length <= 0) {
     cards.push(

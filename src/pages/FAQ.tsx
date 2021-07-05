@@ -1,7 +1,6 @@
-import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Popover, Collapse, Divider } from 'antd';
-import styles from './Home.less';
+import { Collapse, Divider } from 'antd';
+import React from 'react';
 
 const { Panel } = Collapse;
 

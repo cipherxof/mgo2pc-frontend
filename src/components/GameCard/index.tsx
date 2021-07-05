@@ -1,4 +1,4 @@
-import { MgoGameMode, MgoGameModeNames, MgoMap, MgoMapNames, MgoMode, MgoModeNames } from '@/system/constants';
+import { MgoGameMode, MgoGameModeNames, MgoMode, MgoModeNames } from '@/system/constants';
 import { getMapPreview, getRegionFlag } from '@/system/utility';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Button, Card, Divider, Popover, Typography } from 'antd';
@@ -6,7 +6,7 @@ import React from 'react';
 import { NavLink } from 'umi';
 
 const { Meta } = Card;
-const { Text, Link } = Typography;
+const { Text } = Typography;
 
 type GameCardProps = {
   game: GameLobby;
@@ -17,9 +17,6 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   const playerList: JSX.Element[] = [];
 
   for (const player of props.game.players) {
-    //const icon = <img src={require(`../assets/img/codenames/${player.rank}.png`).default} />;
-    //const avatar = player.host ? <Badge dot><Avatar src={icon} /></Badge> : <Avatar size="small" icon={<UserOutlined />} />;
-
     const popContent = (
       <div className="text-center">
         <NavLink to={`/profile/${player.name}`}>
@@ -46,7 +43,7 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   const modeId = currentGame[2];
 
   const gameMode = props.game.lobbyId === 7 ? "Combat Training" : MgoGameModeNames[gameModeId as MgoGameMode];
-  const map = MgoMapNames[mapId as MgoMap];
+  // const map = MgoMapNames[mapId as MgoMap];
   const mode = MgoModeNames[modeId as MgoMode];
 
   let modeElement = <React.Fragment></React.Fragment>;

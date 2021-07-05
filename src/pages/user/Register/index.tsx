@@ -2,13 +2,13 @@ import Footer from '@/components/Footer';
 import {
   LockOutlined, MailOutlined, UserOutlined
 } from '@ant-design/icons';
-import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { Alert, Card, Form, notification } from 'antd';
-import React, { useState } from 'react';
+import ProForm, { ProFormText } from '@ant-design/pro-form';
+import { Card, Form, notification } from 'antd';
+import React from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 import { history, Link, NavLink } from 'umi';
 import API from '../../../system/api';
 import styles from './index.less';
-import ReCAPTCHA from "react-google-recaptcha";
 
 type RegisterFormData = {
   username: string;
@@ -20,10 +20,6 @@ type RegisterFormData = {
 let captcha: string = "";
 
 const Register: React.FC = () => {
-  const [submitting, setSubmitting] = useState(false);
-  const [userLoginState, setUserLoginState] = useState<any>({});
-  const [type, setType] = useState<string>('account');
-
   document.title = "Create Account - Metal Gear Online";
 
   const onFinish = async (values: RegisterFormData) => {
@@ -77,7 +73,7 @@ const Register: React.FC = () => {
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
-                  loading: submitting,
+                  loading: false,
                   size: 'large',
                   style: {
                     width: '100%',
@@ -132,7 +128,7 @@ const Register: React.FC = () => {
               />
               <div style={{ marginBottom: 24 }}>
                 <Form.Item label="Captcha" name="captcha" rules={[{ required: false, message: 'Please fill out the bot check' }]}>
-                  <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" onChange={(value: string) => { captcha = value ? value : "" }} />
+                  <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" onChange={(value: string) => { captcha = value }} />
                 </Form.Item>
               </div>
 

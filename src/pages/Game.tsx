@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography, Col, Row, Tabs, Spin, Statistic, Divider, Tag, Breadcrumb, Layout, Table } from 'antd';
 import GameCard from '@/components/GameCard';
-import API from '../system/api';
+import { MgoGameMode, MgoGameModeNames, MgoMap, MgoMapNames } from '@/system/constants';
+import { getMapPreview } from '@/system/utility';
+import { PageContainer } from '@ant-design/pro-layout';
+import { Alert, Spin, Table, Tag, Typography } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'umi';
-import { MgoGameModeNames, MgoGameMode, MgoMapNames, MgoMap } from '@/system/constants';
-import { getRegionFlag, getMapPreview } from '@/system/utility';
-import { Content } from 'antd/lib/layout/layout';
+import API from '../system/api';
 
 const { Text } = Typography;
 
@@ -68,10 +67,10 @@ export default (): React.ReactNode => {
         return;
       }
 
-      const game = response.data.lobbies.find((g) => g.id == parseInt(params.id));
+      const game = response.data.lobbies.find((g) => g.id === parseInt(params.id));
 
       if (game) {
-        setData({ loading: false, game: game });
+        setData({ loading: false, game });
       } else {
         setData({ loading: false, game: {} as GameLobby });
       }
@@ -111,15 +110,14 @@ export default (): React.ReactNode => {
       document.title = `${props.game.name} - Metal Gear Online`;
 
       const maps: any = [];
-      const cardRegion = <img src={getRegionFlag(props.game.location)} style={{ width: "32px" }} />;
       let key = 0;
       for (const game of props.game.games) {
         const gameModeId = game[0];
         const mapId = game[1];
         const mode = props.game.lobbyId === 7 ? "Combat Training" : MgoGameModeNames[gameModeId as MgoGameMode];
-        let mapName = MgoMapNames[mapId as MgoMap];
+        const mapName = MgoMapNames[mapId as MgoMap];
         let mapElement = <React.Fragment>{mapName}</React.Fragment>
-        if (key == props.game.currentGame) {
+        if (key === props.game.currentGame) {
           mapElement = <Text type="warning">{mapName}</Text>
         }
         const map = <React.Fragment><img src={getMapPreview(mapId)} style={{ maxHeight: "24px" }} /> {mapElement}</React.Fragment>
@@ -127,7 +125,7 @@ export default (): React.ReactNode => {
 
         maps.push({ key, map, mode })
 
-        key++;
+        key += 1;
       }
 
       content = <div className="row">

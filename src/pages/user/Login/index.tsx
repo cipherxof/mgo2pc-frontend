@@ -3,8 +3,8 @@ import {
   LockOutlined, UserOutlined
 } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { Alert, Card } from 'antd';
-import React, { useState } from 'react';
+import { Card } from 'antd';
+import React from 'react';
 import { history, Link, NavLink } from 'umi';
 import API from '../../../system/api';
 import styles from './index.less';
@@ -14,35 +14,7 @@ type LoginFormData = {
   password: string;
 }
 
-const LoginMessage: React.FC<{
-  content: string;
-}> = ({ content }) => (
-  <Alert
-    style={{
-      marginBottom: 24,
-    }}
-    message={content}
-    type="error"
-    showIcon
-  />
-);
-
-const goto = () => {
-  if (!history) return;
-  setTimeout(() => {
-    const { query } = history.location;
-    const { redirect } = query as {
-      redirect: string;
-    };
-    history.push(redirect || '/');
-  }, 10);
-};
-
 const Login: React.FC = () => {
-  const [submitting, setSubmitting] = useState(false);
-  const [userLoginState, setUserLoginState] = useState<any>({});
-  const [type, setType] = useState<string>('account');
-
   document.title = "Login - Metal Gear Online";
 
   const onFinish = async (values: LoginFormData) => {
@@ -58,7 +30,6 @@ const Login: React.FC = () => {
     history.push("/account");
   };
 
-  const { status, type: loginType } = userLoginState;
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -85,7 +56,7 @@ const Login: React.FC = () => {
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
-                  loading: submitting,
+                  loading: false,
                   size: 'large',
                   style: {
                     width: '100%',
@@ -96,9 +67,6 @@ const Login: React.FC = () => {
                 onFinish(values);
               }}
             >
-              {status === 'error' && loginType === 'account' && (
-                <LoginMessage content={'Incorrect username/password（admin/ant.design)'} />
-              )}
               <ProFormText
                 name="username"
                 fieldProps={{

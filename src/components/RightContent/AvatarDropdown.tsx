@@ -1,4 +1,4 @@
-import { getUserName, getUserToken } from '@/system/utility';
+import { getUserName } from '@/system/utility';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
@@ -10,7 +10,6 @@ import styles from './index.less';
 export type GlobalHeaderRightProps = {
   menu?: boolean;
 };
-
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const history = useHistory();

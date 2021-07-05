@@ -20,9 +20,9 @@ export class WebAPI {
     let output: AxiosResponse<any> | boolean = false;
 
     await axios({
-      method: method,
+      method,
       url: this.url + path,
-      data: data,
+      data,
       headers: {
         authorization: token
       }
@@ -92,5 +92,5 @@ export class WebAPI {
 }
 
 const host = window.location.hostname === "localhost" ? "localhost" : window.location.hostname;
-const apiInstance = new WebAPI(window.location.protocol + "//" + host);
+const apiInstance = new WebAPI(`${window.location.protocol}//${host}`);
 export default apiInstance;

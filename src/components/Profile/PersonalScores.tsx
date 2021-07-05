@@ -1,9 +1,8 @@
 
-import { Card, Input, Select, Statistic } from "antd";
+import { Card, Input, Statistic } from "antd";
 import React, { useState } from "react";
 import { formatTime } from "../../system/utility";
 
-const { Option } = Select;
 const { Search } = Input;
 
 type PersonalScoresProps = {
@@ -64,19 +63,19 @@ export default function PersonalScores(props: PersonalScoresProps): JSX.Element 
     { key: 'Total Time: Sneaking Mission', value: formatTime(statsSM.time) },
   ];
 
-  let contents = [<div></div>];
+  const contents = [<div></div>];
   let col = 0;
   let cols = [];
 
   for (const stat of dataSource) {
-    if (col == 4) {
+    if (col === 4) {
       contents.push(<div className="row" style={{ marginBottom: "16px" }}>{cols}</div>);
       cols = [];
       col = 0;
     }
     if (stat.key.toLowerCase().indexOf(data.search.toLowerCase()) !== -1) {
       cols.push(<div className="col-md-3"><Card><Statistic title={stat.key} value={stat.value} /></Card></div>)
-      col++;
+      col+=1;
     }
   }
 

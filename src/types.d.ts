@@ -13,7 +13,7 @@ type GameLobby = {
   maxPlayers: number;
   locked: boolean;
   currentGame: number;
-  games: Array<number[]>;
+  games: number[][];
   comment: string;
   location: string;
 }
