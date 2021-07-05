@@ -7,6 +7,7 @@ export default [
   { path: '/guides', component: './Home' },
   { path: '/login', component: './user/Login', layout: false },
   { path: '/register', component: './user/Register', layout: false },
+  { path: '/activate/:user/:key', component: './Activate' },
   {
     path: '/faq',
     name: 'More',
@@ -21,7 +22,6 @@ export default [
       },
     ],
   },
-  //{ name: 'More', icon: 'more', routes: [{ path: '/faq', name: 'FAQ', component: './FAQ' }]},
   { path: '/', component: './Home' },
   { component: './404' },
 ];
