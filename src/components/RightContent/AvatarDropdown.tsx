@@ -22,7 +22,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
 
   const onLogout = useCallback(
     () => {
-      sessionStorage.removeItem('token');
+      localStorage.removeItem('token');
       notification.success({ message: `Success`, description: "You have been logged out.", placement: "topRight" });
       history.push('/');
     },

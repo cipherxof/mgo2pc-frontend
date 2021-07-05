@@ -1,7 +1,8 @@
-import { getUserToken } from '@/system/utility';
+import { getUserToken, isLoggedIn } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Button, Card, Form, Input, Menu, notification } from 'antd';
 import React from 'react';
+import { useHistory } from 'umi';
 import API from '../system/api';
 
 const layout = {
@@ -37,6 +38,12 @@ const onUpdateAccount = async (e: any) => {
 }
 
 export default (): React.ReactNode => {
+  const history = useHistory();
+
+  if (!isLoggedIn()) {
+    history.push("/");
+  }
+
   return (
     <PageContainer>
       <Card>

@@ -1,11 +1,11 @@
 import CharacterLevelTag from '@/components/CharacterLevelTag';
-import { getExpLevel, getLevelReq } from '@/system/utility';
+import { getExpLevel, getLevelReq, getUserToken, isLoggedIn } from '@/system/utility';
 import { EditOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Popover } from 'antd';
 import { Avatar, Card, Progress } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'umi';
+import { NavLink, useHistory } from 'umi';
 import API from '../system/api';
 
 const { Meta } = Card;
@@ -22,10 +22,17 @@ export default (): React.ReactNode => {
     main: 0,
     characters: [],
   });
-  const token = sessionStorage.getItem('token');
+
+  const history = useHistory();
+
+  if (!isLoggedIn()) {
+    history.push("/");
+  }
 
   useEffect(() => {
     const fetchData = async () => {
+      const token = getUserToken();
+      
       if (!token) return;
 
       const response = await API.getAccount(token);

@@ -1,7 +1,5 @@
 import Footer from '@/components/Footer';
-import {
-  LockOutlined, UserOutlined
-} from '@ant-design/icons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { Card } from 'antd';
 import React from 'react';
@@ -12,10 +10,10 @@ import styles from './index.less';
 type LoginFormData = {
   username: string;
   password: string;
-}
+};
 
 const Login: React.FC = () => {
-  document.title = "Login - Metal Gear Online";
+  document.title = 'Login - Metal Gear Online';
 
   const onFinish = async (values: LoginFormData) => {
     const result = await API.login(values.username, values.password);
@@ -24,10 +22,11 @@ const Login: React.FC = () => {
       return;
     }
 
-    sessionStorage.setItem('token', result.data.data);
-    sessionStorage.setItem('username', result.data.username);
+    localStorage.setItem('token', result.data.data);
+    localStorage.setItem('username', result.data.username);
+    localStorage.setItem('expiry', `${new Date(Date.now() + 12096e5)}`); // two weeks
 
-    history.push("/account");
+    history.push('/account');
   };
 
   return (
@@ -40,11 +39,18 @@ const Login: React.FC = () => {
               <span className={styles.title}>Metal Gear Online</span>
             </Link>
           </div>
-          <div className={styles.desc}>
-          </div>
+          <div className={styles.desc}></div>
         </div>
 
-        <div className={styles.main} style={{ position: "absolute", left: "50%", top: "40%", transform: "translate(-50%, -50%)" }}>
+        <div
+          className={styles.main}
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: '40%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        >
           <Card>
             <ProForm
               initialValues={{
@@ -107,9 +113,7 @@ const Login: React.FC = () => {
 
                 <p className="text-center">
                   <br />
-                  <NavLink to="/register">
-                    Don't have an account?
-                  </NavLink>
+                  <NavLink to="/register">Don't have an account?</NavLink>
                 </p>
               </div>
             </ProForm>

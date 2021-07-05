@@ -1,9 +1,34 @@
 export const getUserToken = () => {
-  return sessionStorage.getItem('token');
+  return localStorage.getItem('token');
 }
 
 export const getUserName = () => {
-  return sessionStorage.getItem('username');
+  return localStorage.getItem('username');
+}
+
+export const isLoggedIn = () => {
+  if (getUserToken() === null) {
+    return false;
+  }
+
+  try{
+    const expiry = localStorage.getItem('expiry');
+
+    if (expiry === null) {
+      return false;
+    }
+
+    const date = Date.parse(expiry);
+
+    if (new Date().getTime() > date) {
+      localStorage.removeItem("token");
+      return false;
+    }
+
+    return true;
+  } catch(e) {
+    return false;
+  }
 }
 
 export const getMapPreview = (mapId: number) => {
