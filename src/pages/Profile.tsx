@@ -2,6 +2,7 @@ import CharacterLevelTag from '@/components/CharacterLevelTag';
 import PersonalScores from '@/components/Profile/PersonalScores';
 import StatsTable from '@/components/Profile/StatsTable';
 import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
+import { getRankPreview } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Card, Divider, PageHeader, Spin, Tabs, Tag } from 'antd';
@@ -20,6 +21,7 @@ type Profile = {
   main: number;
   xp: number;
   xp_alt: number;
+  rank: number;
 }
 
 
@@ -53,6 +55,9 @@ export default (): React.ReactNode => {
     const xp = data.profile.main === data.profile.id ? data.profile.xp : data.profile.xp_alt;
 
     const headerTags = [];
+    if (data.profile.rank > 0) {
+      headerTags.push(<img style={{width: "32px"}} src={`https://mgo2pc.com/static/media/emblem/${getRankPreview(data.profile.rank)}.png`} />);
+    }
     if (data.profile.clan) {
       headerTags.push(<Tag color="gold">{data.profile.clan}</Tag>);
     }

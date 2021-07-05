@@ -1,3 +1,11 @@
+type UserAccount = {
+  displayName: string;
+  username: string;
+  email: string;
+  bannedUntil: string;
+  bannedReason: string;
+}
+
 export const getUserToken = () => {
   return localStorage.getItem('token');
 };
@@ -27,14 +35,6 @@ export const isLoggedIn = () => {
   }
 };
 
-type UserAccount = {
-  displayName: string;
-  username: string;
-  email: string;
-  bannedUntil: string;
-  bannedReason: string;
-}
-
 export const getUserAccount = (): UserAccount | null => {
   if (!isLoggedIn()) {
     return null;
@@ -46,6 +46,42 @@ export const getUserAccount = (): UserAccount | null => {
     }
   } catch (e) {
     return null;
+  }
+  return null;
+};
+
+export const getRankPreview = (rank: number) => {
+  switch (rank) {
+    case 1: return 'Foxhound';
+    case 2: return 'Fox';
+    case 3: return 'Doberman';
+    case 4: return 'Hound';
+    case 5: return 'Gator';
+    case 6: return 'Eagle';
+    case 7: return 'Shark';
+    case 8: return 'Waterbear';
+    case 9: return 'Sloth';
+    case 10: return 'Flying Squirrel';
+    case 11: return 'Pigeon';
+    case 12: return 'Owl';
+    case 13: return 'Tsuchinoko';
+    case 14: return 'Snake';
+    case 15: return 'Kerotan';
+    case 16: return 'GAKO';
+    case 17: return 'CHAMELEON';
+    case 18: return 'Chicken';
+    case 19: return 'Bear';
+    case 20: return 'Turtle';
+    case 21: return 'Bee';
+    case 22: return 'Rat';
+    case 23: return 'Fish';
+    case 24: return 'Komodo';
+    case 25: return 'Skua';
+    case 26: return 'Whale';
+    case 27: return 'Elephant';
+    case 28: return 'Cuckoo';
+    case 29: return 'Hog';
+    case 30: return 'Boss';
   }
   return null;
 };
