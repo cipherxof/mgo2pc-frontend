@@ -1,5 +1,4 @@
 export default [
-  { path: '/', component: './Home' },
   { path: '/games', name: 'Games', icon: 'desktop', component: './Games' },
   { path: '/game/:id', component: './Game' },
   { path: '/profile/:character', component: './Profile' },
@@ -8,10 +7,21 @@ export default [
   { path: '/guides', component: './Home' },
   { path: '/login', component: './user/Login', layout: false },
   { path: '/register', component: './user/Register', layout: false },
-  { component: './404' },
   {
+    path: '/faq',
     name: 'More',
     icon: 'more',
-    routes: [{ path: '/faq', name: 'FAQ', component: './FAQ' }]
+    component: './FAQ',
+    routes: [
+      {
+        path: '/faq',
+        name: 'FAQ',
+        icon: 'smile',
+        component: './FAQ',
+      },
+    ],
   },
+  //{ name: 'More', icon: 'more', routes: [{ path: '/faq', name: 'FAQ', component: './FAQ' }]},
+  { path: '/', component: './Home' },
+  { component: './404' },
 ];
