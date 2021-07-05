@@ -5,7 +5,7 @@ import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
 import { getRankPreview } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Avatar, Card, Divider, PageHeader, Spin, Tabs, Tag } from 'antd';
+import { Avatar, Card, Divider, PageHeader, Spin, Switch, Tabs, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'umi';
 import API from '../system/api';
@@ -17,6 +17,7 @@ type Profile = {
   name: string;
   comment: string;
   stats: Stats;
+  statsWeek: Stats;
   clan: string;
   main: number;
   xp: number;
@@ -32,6 +33,7 @@ type ProfileParams = {
 export default (): React.ReactNode => {
   const params = useParams<ProfileParams>();
   const [data, setData] = useState({ loading: true, profile: { name: params.character } as Profile });
+  const [weekly, setWeekly] = useState(false);
 
   document.title = `${data.profile.name} - Metal Gear Online`;
 
@@ -79,16 +81,23 @@ export default (): React.ReactNode => {
 
         <Divider />
 
+        <div>
+          <Switch onChange={(e) => setWeekly(e)}  /> Weekly 
+        </div>
+        
+        <br/>
+
         <div className="card-container">
+
           <Tabs defaultActiveKey="1" type="card" size="small">
             <TabPane tab="Game Modes" key="1">
               <Card>
-                <StatsTable stats={data.profile.stats} />
+                <StatsTable stats={weekly ? data.profile.statsWeek : data.profile.stats} />
               </Card>
             </TabPane>
             <TabPane tab="Personal Scores" key="2">
               <Card>
-                <PersonalScores stats={data.profile.stats} />
+                <PersonalScores stats={weekly ? data.profile.statsWeek : data.profile.stats} />
               </Card>
             </TabPane>
             <TabPane tab="Title History" key="3">
