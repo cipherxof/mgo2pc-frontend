@@ -17,7 +17,7 @@ export default (): React.ReactNode => {
             However, if you are using a laptop we recommend one equipped with an 8-core/16-thread 35W+ H-series CPU such as an Intel Core i7-10870H or an AMD Ryzen 7 5800H.
             <Divider />
             <p><b>Minimum</b></p>
-            <p><i>These CPUs are the minimum recommended to maintain close to 30 FPS in full lobbies with shadows off.</i> </p>
+            <p><i>These CPUs are the minimum recommended to maintain close to 30 FPS in full lobbies.</i> </p>
             <p><i>It is possible to play on weaker hardware than this but we cannot recommend them.</i> </p>
             <ul>
               <li>CPU: Intel i5 10400 or AMD Ryzen 3600</li>
