@@ -72,6 +72,37 @@ ROOKIE+ 125-249
 ROOKIE 0-124
 */
 
+const gradePoints = [
+  0,
+  125,
+  250,
+  375,
+  500,
+  600,
+  800,
+  950,
+  1100,
+  1250,
+  1400,
+  1550,
+  1700,
+  1850,
+  2000,
+  2175,
+  2350,
+  2525,
+  2725,
+  2925,
+  3275
+]
+
+export const getLevelReq = (level: number) => {
+  if (!gradePoints[level]) {
+    return 0;
+  }
+  return gradePoints[level];
+}
+
 export const getExpLevel = (exp: number) => {
   if (exp < 125) {
     return 0;
@@ -107,7 +138,7 @@ export const getExpLevel = (exp: number) => {
     return 15;
   } else if (exp < 2525) {
     return 16;
-  } else if (exp < 2575) {
+  } else if (exp < 2725) {
     return 17;
   } else if (exp < 2925) {
     return 18;
