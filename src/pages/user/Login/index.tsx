@@ -22,8 +22,10 @@ const Login: React.FC = () => {
       return;
     }
 
+    const account = JSON.stringify(result.data.account);
+
     localStorage.setItem('token', result.data.data);
-    localStorage.setItem('username', result.data.username);
+    localStorage.setItem('account', account);
     localStorage.setItem('expiry', `${new Date(Date.now() + 12096e5)}`); // two weeks
 
     history.push('/account');

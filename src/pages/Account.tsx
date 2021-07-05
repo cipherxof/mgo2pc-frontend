@@ -1,7 +1,7 @@
-import { getUserToken, isLoggedIn } from '@/system/utility';
+import { getUserAccount, getUserToken, isLoggedIn } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Button, Card, Form, Input, Menu, notification } from 'antd';
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { useHistory } from 'umi';
 import API from '../system/api';
 
@@ -18,53 +18,77 @@ const onUpdateAccount = async (e: any) => {
   const token = getUserToken();
 
   if (!token) {
-    notification.error({ message: `Error`, description: "You are not logged in.", placement: "topRight" });
+    notification.error({
+      message: `Error`,
+      description: 'You are not logged in.',
+      placement: 'topRight',
+    });
     return;
   }
 
-  const data: UserAccount = {
-    username: '',
+  const data = {
     displayName: e.target[0].value,
-    email: '',
-    banned: false,
-    bannedReason: '',
-    exp: 0,
-    exp_alt: 0,
-    main: 0,
-    characters: []
-  }
+    password: e.target[1].value,
+    passwordNew: e.target[2].value,
+  };
 
   await API.updateAccount(token, data);
-}
+};
 
 export default (): React.ReactNode => {
+  const [menu, setMenu] = useState('basic');
+
   const history = useHistory();
+  const account = getUserAccount();
+  const displayName = account ? account.displayName : 'User';
 
   if (!isLoggedIn()) {
-    history.push("/");
+    history.push('/');
   }
 
+  const onMenuClick = useCallback(
+    (event) => {
+      setMenu(event.key);
+    },
+    [menu, setMenu],
+  );
+  
   return (
     <PageContainer>
       <Card>
         <div className="row">
           <div className="col-md-3">
-            <Menu defaultSelectedKeys={['1']} mode="inline">
-              <Menu.Item key="1">Basic Settings</Menu.Item>
+            <Menu defaultSelectedKeys={[menu]} mode="inline" onSelect={onMenuClick}>
+              <Menu.Item key="basic">Basic Settings</Menu.Item>
             </Menu>
           </div>
           <div className="col-md-9">
-            <Form {...layout} name="basic" initialValues={{ remember: true }} onSubmitCapture={onUpdateAccount}>
-              <Form.Item label="Display Name" name="display_name">
-                <Input placeholder="" />
-              </Form.Item>
+            {menu === 'basic' && (
+              <Form
+                {...layout}
+                name="basic"
+                initialValues={{ remember: true }}
+                onSubmitCapture={onUpdateAccount}
+              >
+                <Form.Item label="Display Name" name="display_name">
+                  <Input placeholder={displayName} />
+                </Form.Item>
 
-              <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
-                  Update Information
-                </Button>
-              </Form.Item>
-            </Form>
+                <Form.Item label="Current Password" name="password">
+                  <Input.Password placeholder="Your current password" />
+                </Form.Item>
+
+                <Form.Item label="New Password" name="password_new">
+                  <Input.Password placeholder="Your new password" />
+                </Form.Item>
+
+                <Form.Item {...tailLayout}>
+                  <Button type="primary" htmlType="submit">
+                    Update Information
+                  </Button>
+                </Form.Item>
+              </Form>
+            )}
           </div>
         </div>
       </Card>

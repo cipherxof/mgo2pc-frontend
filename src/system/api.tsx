@@ -85,7 +85,7 @@ export class WebAPI {
     return result.data;
   }
 
-  public async updateAccount(token: string, data: UserAccount): Promise<WebAPIResponse<any> | false> {
+  public async updateAccount(token: string, data: any): Promise<WebAPIResponse<any> | false> {
     const result = await this.makeRequest(`/api/v1/account`, 'put', data, token);
     return result.data;
   }

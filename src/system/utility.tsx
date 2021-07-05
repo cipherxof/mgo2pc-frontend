@@ -1,17 +1,13 @@
 export const getUserToken = () => {
   return localStorage.getItem('token');
-}
-
-export const getUserName = () => {
-  return localStorage.getItem('username');
-}
+};
 
 export const isLoggedIn = () => {
   if (getUserToken() === null) {
     return false;
   }
 
-  try{
+  try {
     const expiry = localStorage.getItem('expiry');
 
     if (expiry === null) {
@@ -21,15 +17,38 @@ export const isLoggedIn = () => {
     const date = Date.parse(expiry);
 
     if (new Date().getTime() > date) {
-      localStorage.removeItem("token");
+      localStorage.removeItem('token');
       return false;
     }
 
     return true;
-  } catch(e) {
+  } catch (e) {
     return false;
   }
+};
+
+type UserAccount = {
+  displayName: string;
+  username: string;
+  email: string;
+  bannedUntil: string;
+  bannedReason: string;
 }
+
+export const getUserAccount = (): UserAccount | null => {
+  if (!isLoggedIn()) {
+    return null;
+  }
+  try {
+    const account = localStorage.getItem('account');
+    if (account) {
+      return JSON.parse(account) as UserAccount;
+    }
+  } catch (e) {
+    return null;
+  }
+  return null;
+};
 
 export const getMapPreview = (mapId: number) => {
   try {
@@ -37,11 +56,11 @@ export const getMapPreview = (mapId: number) => {
   } catch {
     return require('../assets/img/maps/1.jpg');
   }
-}
+};
 
 export const getRegionFlag = (region: string) => {
   return `https://purecatamphetamine.github.io/country-flag-icons/3x2/${region}.svg`;
-}
+};
 
 /**
  * Get the time passed since a date in a readable format
@@ -70,7 +89,7 @@ export function formatTime(time: number) {
   if (interval > 1) {
     return `${interval} minutes`;
   }
-  return Math.floor(seconds) + " seconds";
+  return Math.floor(seconds) + ' seconds';
 }
 
 /*
@@ -98,35 +117,16 @@ ROOKIE 0-124
 */
 
 const gradePoints = [
-  0,
-  125,
-  250,
-  375,
-  500,
-  600,
-  800,
-  950,
-  1100,
-  1250,
-  1400,
-  1550,
-  1700,
-  1850,
-  2000,
-  2175,
-  2350,
-  2525,
-  2725,
-  2925,
-  3275
-]
+  0, 125, 250, 375, 500, 600, 800, 950, 1100, 1250, 1400, 1550, 1700, 1850, 2000, 2175, 2350, 2525,
+  2725, 2925, 3275,
+];
 
 export const getLevelReq = (level: number) => {
   if (!gradePoints[level]) {
     return 0;
   }
   return gradePoints[level];
-}
+};
 
 export const getExpLevel = (exp: number) => {
   if (exp < 125) {
@@ -171,4 +171,4 @@ export const getExpLevel = (exp: number) => {
     return 19;
   }
   return 20;
-}
+};

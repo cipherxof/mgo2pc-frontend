@@ -1,4 +1,4 @@
-import { getUserName } from '@/system/utility';
+import { getUserAccount } from '@/system/utility';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
@@ -13,6 +13,8 @@ export type GlobalHeaderRightProps = {
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const history = useHistory();
+  const account = getUserAccount();
+  const displayName = account ? account.displayName : "User";
 
   const onMenuClick = useCallback(
     (event: MenuInfo) => {
@@ -53,11 +55,12 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
       </Menu.Item>
     </Menu>
   );
+  
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
       <span className={`${styles.action} ${styles.account}`}>
         <Avatar size="small" className={styles.avatar} alt="avatar" />
-        <span className={`${styles.name} anticon`}>{getUserName()}</span>
+        <span className={`${styles.name} anticon`}>{displayName}</span>
       </span>
     </HeaderDropdown>
   );
