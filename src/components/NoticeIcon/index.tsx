@@ -115,18 +115,19 @@ const NoticeIconView = () => {
     setNotices(
       notices.map((item) => {
         const notice = { ...item };
-        if (notice.id === id) {
+        if (notice.id === id && !notice.read) {
           notice.read = true;
+          notice.unread = 0;
+
+          const token = getUserToken();
+
+          if (token) {
+            API.readNotification(id, token);
+          }
         }
         return notice;
       }),
     );
-
-    const token = getUserToken();
-
-    if (token) {
-      API.readNotification(id, token);
-    }
   };
 
   const clearReadState = (title: string, key: string) => {
@@ -139,7 +140,13 @@ const NoticeIconView = () => {
         return notice;
       }),
     );
-    message.success(`${'清空了'} ${title}`);
+    const token = getUserToken();
+
+    if (token) {
+      API.readNotification("0", token);
+    }
+
+    message.success(`Marking all notifications as read.`);
   };
 
   return (
@@ -152,7 +159,6 @@ const NoticeIconView = () => {
       onClear={(title: string, key: string) => clearReadState(title, key)}
       loading={false}
       clearText="Clear"
-      viewMoreText="View all"
       onViewMore={() => message.info('Click on view more')}
       clearClose
     >
