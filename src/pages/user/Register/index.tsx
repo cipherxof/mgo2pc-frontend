@@ -126,14 +126,11 @@ const Register: React.FC = () => {
                   },
                 ]}
               />
-              <div style={{ marginBottom: 24 }}>
-                <Form.Item label="Captcha" name="captcha" rules={[{ required: false, message: 'Please fill out the bot check' }]}>
-                  <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" onChange={(value: string | null) => { captcha = value ? value : "" }} />
-                </Form.Item>
-              </div>
+              <Form.Item label="Captcha" name="captcha" rules={[{ required: false, message: 'Please fill out the bot check' }]}>
+                <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" size="compact" theme="dark" onChange={(value: string | null) => { captcha = value ? value : "" }} />
+              </Form.Item>
 
               <p className="text-center">
-                <br />
                 <NavLink to="/login">
                   Already have an account?
                 </NavLink>

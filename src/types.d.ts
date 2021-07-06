@@ -50,6 +50,15 @@ type MgoCharacter = {
   comment: string;
 }
 
+type UserNotification = {
+  id: number;
+  user: number;
+  unread: number
+  title: string;
+  contents: string;
+  type: string;
+}
+
 type TitleHistory = {
   id: number;
   chara: number;
@@ -109,6 +118,7 @@ type MgoPlayer = {
 type MgoUser = {
   id: number;
   username: string;
+  password: string;
   display_name: string;
   email: string;
   banned_until: number;
@@ -187,6 +197,7 @@ type Stats = {
   knife_kills: number;
   knife_stuns: number;
   evg_time: number;
+  bases_captured: number;
 }
 
 type StatsGameMode = {

@@ -3,6 +3,7 @@ import { Space } from 'antd';
 import React from 'react';
 import { NavLink } from 'umi';
 import HeaderSearch from '../HeaderSearch';
+import NoticeIcon from '../NoticeIcon';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
 
@@ -21,6 +22,7 @@ const GlobalHeaderRight: React.FC = () => {
           //   console.log('input', value);
           // }}
         />
+        <NoticeIcon />
         <Avatar />
       </Space>
     );

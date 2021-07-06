@@ -70,6 +70,14 @@ export class WebAPI {
     return await this.makeRequest(`/api/v1/status`);
   }
 
+  public async getNotifications(token: string): Promise<WebAPIResponse<{ notifications: UserNotification[] }> | false> {
+    return await this.makeRequest(`/api/v1/notifications/get/0`, 'get', {}, token);
+  }
+
+  public async readNotification(id: string, token: string): Promise<WebAPIResponse<{ notifications: UserNotification[] }> | false> {
+    return await this.makeRequest(`/api/v1/notifications/read/${id}`, 'get', {}, token);
+  }
+
   public async getGames(): Promise<WebAPIResponse<{ players: number, lobbies: GameLobby[] }> | false> {
     const result = await this.makeRequest(`/api/v1/games`);
     return result.data;
