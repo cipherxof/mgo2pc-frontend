@@ -57,8 +57,7 @@ export default (): React.ReactNode => {
     if (!character.name.includes(':#')) {
       const xp = character.id === account.main ? account.exp : account.exp_alt;
       const level = getExpLevel(xp);
-      const levelReq = getLevelReq(level + 1);
-      const progress = (xp / levelReq) * 100;
+      const progress = (xp - getLevelReq(level)) /  (getLevelReq(level + 1) - getLevelReq(level)) * 100;
 
       characterCards.push(
         <div className="col-md-3" key={character.id} style={{ marginBottom: '16px' }}>
@@ -66,7 +65,7 @@ export default (): React.ReactNode => {
             <Card hoverable={true} actions={[<EditOutlined key="edit" disabled={true} />]}>
               <Meta
                 avatar={
-                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                  <Avatar src={require("../assets/img/oldsnake.png")} />
                 }
                 title={character.name}
                 description={<CharacterLevelTag xp={xp} />}
