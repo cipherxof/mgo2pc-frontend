@@ -49,7 +49,7 @@ export default function PersonalScores(props: PersonalScoresProps): JSX.Element 
     { key: 'Knife Stuns', value: props.stats.knife_stuns },
     { key: 'Time in Cardboard Box', value: props.stats.box_time },
     { key: 'Cardboard Box Uses', value: props.stats.box_uses },
-    { key: 'Total Time Using ENVG', value: props.stats.evg_time },
+    { key: 'Total Time Using ENVG', value: formatTime(props.stats.evg_time) },
     { key: 'Total Time: Deathmatch', value: formatTime(statsDM.time) },
     { key: 'Total Time: Stealth Deathmatch', value: formatTime(statsSDM.time) },
     { key: 'Total Time: Solo Capture', value: formatTime(statsSCAP.time) },
