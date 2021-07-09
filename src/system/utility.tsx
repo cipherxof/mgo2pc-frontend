@@ -4,6 +4,7 @@ type UserAccount = {
   email: string;
   bannedUntil: string;
   bannedReason: string;
+  role: number;
 }
 
 export const getUserToken = () => {
@@ -57,6 +58,7 @@ export const logoutUser = () => {
 };
 
 
+// todo: rename files to rank id
 export const getRankPreview = (rank: number) => {
   switch (rank) {
     case 1: return 'Foxhound';

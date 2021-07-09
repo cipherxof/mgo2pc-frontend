@@ -1,5 +1,5 @@
 import { getUserAccount } from '@/system/utility';
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { IdcardOutlined, LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Menu, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
@@ -14,25 +14,39 @@ export type GlobalHeaderRightProps = {
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const history = useHistory();
   const account = getUserAccount();
-  const displayName = account ? account.displayName : "User";
+  const displayName = account ? account.displayName : 'User';
 
-  const onMenuClick = useCallback(
-    (event: MenuInfo) => {
-    },
-    [],
-  );
+  if (!account) {
+    return <React.Fragment></React.Fragment>;
+  }
 
-  const onLogout = useCallback(
-    () => {
-      localStorage.removeItem('token');
-      notification.success({ message: `Success`, description: "You have been logged out.", placement: "topRight" });
-      history.push('/');
-    },
-    [],
-  );
+  const isAdmin = account.role !== undefined && account.role >= 20;
+
+  console.log(account);
+
+  const onMenuClick = useCallback((event: MenuInfo) => {}, []);
+
+  const onLogout = useCallback(() => {
+    localStorage.removeItem('token');
+    notification.success({
+      message: `Success`,
+      description: 'You have been logged out.',
+      placement: 'topRight',
+    });
+    history.push('/');
+  }, []);
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
+      {isAdmin && (
+        <NavLink to="/admin">
+          <Menu.Item key="center">
+            <IdcardOutlined />
+            Admin
+          </Menu.Item>
+        </NavLink>
+      )}
+
       <NavLink to="/account/characters">
         <Menu.Item key="center">
           <UserOutlined />
@@ -55,11 +69,16 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
       </Menu.Item>
     </Menu>
   );
-  
+
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
       <span className={`${styles.action} ${styles.account}`}>
-        <Avatar size="small" className={styles.avatar} alt="avatar" src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png" />
+        <Avatar
+          size="small"
+          className={styles.avatar}
+          alt="avatar"
+          src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
+        />
         <span className={`${styles.name} anticon`}>{displayName}</span>
       </span>
     </HeaderDropdown>
