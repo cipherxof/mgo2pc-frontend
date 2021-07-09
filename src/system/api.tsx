@@ -1,5 +1,6 @@
 import { notification } from "antd";
 import axios, { AxiosResponse } from "axios";
+import { logoutUser } from "./utility";
 
 type WebAPIResponse<T> = {
   success: boolean;
@@ -31,7 +32,11 @@ export class WebAPI {
 
       if (response && response.data) {
         if (!response.data.success && response.data.message.length > 0) {
-          notification.error({ message: `Error`, description: response.data.message, placement: "topRight" });
+          if (response.data.message === "Invalid token.") {
+            logoutUser();
+          } else {
+            notification.error({ message: `Error`, description: response.data.message, placement: "topRight" });
+          }
           output = false;
         } else if (response.data.success && response.data.message.length > 0) {
           notification.success({ message: `Success`, description: response.data.message, placement: "topRight" });

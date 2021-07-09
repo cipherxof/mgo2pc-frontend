@@ -50,6 +50,13 @@ export const getUserAccount = (): UserAccount | null => {
   return null;
 };
 
+export const logoutUser = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('account');
+  localStorage.removeItem('expiry');
+};
+
+
 export const getRankPreview = (rank: number) => {
   switch (rank) {
     case 1: return 'Foxhound';
