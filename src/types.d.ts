@@ -3,6 +3,7 @@ type GameLobbyPlayer = {
   name: string;
   host: boolean;
   rank: number;
+  emblem: string;
 }
 
 type GameLobby = {

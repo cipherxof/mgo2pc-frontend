@@ -22,8 +22,6 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
 
   const isAdmin = account.role !== undefined && account.role >= 20;
 
-  console.log(account);
-
   const onMenuClick = useCallback((event: MenuInfo) => {}, []);
 
   const onLogout = useCallback(() => {

@@ -97,7 +97,7 @@ const NoticeIconView = () => {
 
     fetchData();
 
-    const timeout = setInterval(() => fetchData(), 1000 * 60 * 1); // refresh every 1 minutes
+    const timeout = setInterval(() => fetchData(), 1000 * 60 * 30); // refresh every 30 minutes
 
     return () => {
       clearInterval(timeout);

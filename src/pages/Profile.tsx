@@ -23,16 +23,19 @@ type Profile = {
   xp: number;
   xp_alt: number;
   rank: number;
-}
-
+  emblem: string;
+};
 
 type ProfileParams = {
   character: string;
-}
+};
 
 export default (): React.ReactNode => {
   const params = useParams<ProfileParams>();
-  const [data, setData] = useState({ loading: true, profile: { name: params.character } as Profile });
+  const [data, setData] = useState({
+    loading: true,
+    profile: { name: params.character } as Profile,
+  });
   const [weekly, setWeekly] = useState(false);
 
   document.title = `${data.profile.name} - Metal Gear Online`;
@@ -49,7 +52,7 @@ export default (): React.ReactNode => {
     };
 
     fetchData();
-  }, [])
+  }, []);
 
   let content = <React.Fragment></React.Fragment>;
 
@@ -58,7 +61,12 @@ export default (): React.ReactNode => {
 
     const headerTags = [];
     if (data.profile.rank > 0) {
-      headerTags.push(<img style={{width: "32px"}} src={`https://mgo2pc.com/static/media/emblem/${getRankPreview(data.profile.rank)}.png`} />);
+      headerTags.push(
+        <img
+          style={{ width: '32px' }}
+          src={`https://mgo2pc.com/static/media/emblem/${getRankPreview(data.profile.rank)}.png`}
+        />,
+      );
     }
     if (data.profile.clan) {
       headerTags.push(<Tag color="gold">{data.profile.clan}</Tag>);
@@ -72,7 +80,17 @@ export default (): React.ReactNode => {
           onBack={() => window.history.back()}
           title={
             <React.Fragment>
-              <Avatar shape="square" icon={<UserOutlined />} /> {data.profile.name}
+              <Avatar
+                src={
+                  data.profile.emblem === ''
+                    ? ''
+                    : `https://mgo2pc.com/static/media/emblems/${data.profile.emblem}.png`
+                }
+                size="small"
+                shape="square"
+                icon={<UserOutlined />}
+              />{' '}
+              {data.profile.name}
             </React.Fragment>
           }
           subTitle={data.profile.comment}
@@ -82,13 +100,12 @@ export default (): React.ReactNode => {
         <Divider />
 
         <div>
-          <Switch onChange={(e) => setWeekly(e)}  /> Weekly 
+          <Switch onChange={(e) => setWeekly(e)} /> Weekly
         </div>
-        
-        <br/>
+
+        <br />
 
         <div className="card-container">
-
           <Tabs defaultActiveKey="1" type="card" size="small">
             <TabPane tab="Game Modes" key="1">
               <Card>
