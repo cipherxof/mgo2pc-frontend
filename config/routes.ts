@@ -8,12 +8,17 @@ export default [
   { path: '/login', component: './user/Login', layout: false },
   { path: '/register', component: './user/Register', layout: false },
   { path: '/activate/:user/:key', component: './Activate' },
+  { path: '/clans', component: './Clans' },
   {
-    path: '/faq',
     name: 'More',
     icon: 'more',
     component: './FAQ',
     routes: [
+      /*{
+        path: '/clans',
+        name: 'Clans',
+        icon: 'smile',
+      },*/
       {
         path: '/faq',
         name: 'FAQ',
