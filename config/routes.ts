@@ -12,7 +12,7 @@ export default [
   {
     name: 'More',
     icon: 'more',
-    component: './FAQ',
+    component: './Home',
     routes: [
       /*{
         path: '/clans',
