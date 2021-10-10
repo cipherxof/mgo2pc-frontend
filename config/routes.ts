@@ -9,9 +9,10 @@ export default [
   { path: '/register', component: './user/Register', layout: false },
   { path: '/activate/:user/:key', component: './Activate' },
   { path: '/clans', component: './Clans' },
+  { path: '/shop', component: './shop/Shop' },
+  { path: '/shop/:id', component: './shop/ShopItem' },
   { path: '/', component: './Home' },
   {
-    path: '/faq',
     name: 'More',
     icon: 'more',
     routes: [
@@ -25,6 +26,12 @@ export default [
         name: 'FAQ',
         icon: 'smile',
         component: './FAQ',
+      },
+      {
+        path: '/shop',
+        name: 'Reward Shop',
+        icon: 'test',
+        component: './shop/Shop',
       },
     ],
   },

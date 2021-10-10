@@ -219,3 +219,11 @@ type StatsGameMode = {
   lockStuns: number
   lockStunsRec: number
 }
+
+type ShopItem = {
+  id: number;
+  name: string;
+  cost: number;
+  gear_slot: number;
+  color: number;
+}

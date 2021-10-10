@@ -67,6 +67,11 @@ export class WebAPI {
     return await this.makeRequest(`/api/v1/titles/${character}`, 'get');
   }
 
+  public async getShopItems(): Promise<WebAPIResponse<{ items: ShopItem[] }> | false> {
+    const result = await this.makeRequest(`/api/v1/shop`);
+    return result.data;
+  }
+
   public async login(username: string, password: string): Promise<any | false> {
     return await this.makeRequest(`/api/v1/login`, "post", { username, password });
   }
