@@ -9,10 +9,11 @@ export default [
   { path: '/register', component: './user/Register', layout: false },
   { path: '/activate/:user/:key', component: './Activate' },
   { path: '/clans', component: './Clans' },
+  { path: '/', component: './Home' },
   {
+    path: '/faq',
     name: 'More',
     icon: 'more',
-    component: './Home',
     routes: [
       /*{
         path: '/clans',
@@ -27,6 +28,5 @@ export default [
       },
     ],
   },
-  { path: '/', component: './Home' },
   { component: './404' },
 ];

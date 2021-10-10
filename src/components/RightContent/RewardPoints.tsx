@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'umi';
 
 type RewardPointProps = {
   value: number;
@@ -7,7 +8,7 @@ type RewardPointProps = {
 export default (props: RewardPointProps) => {
   return (
     <React.Fragment>
-      <img style={{width: "16px"}} src={require('../../assets/img/coins.png')} /> 0
+      <NavLink to="/shop"><img style={{width: "16px"}} src={require('../../assets/img/coins.png')} /></NavLink> 0
     </React.Fragment>
   );
 };
