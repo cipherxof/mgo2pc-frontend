@@ -6,6 +6,7 @@ import HeaderSearch from '../HeaderSearch';
 import NoticeIcon from '../NoticeIcon';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
+import RewardPoints from './RewardPoints';
 
 const GlobalHeaderRight: React.FC = () => {
   const loggedIn = isLoggedIn();
@@ -23,6 +24,7 @@ const GlobalHeaderRight: React.FC = () => {
           // }}
         />
         <NoticeIcon />
+        <RewardPoints value={0} />
         <Avatar />
       </Space>
     );
