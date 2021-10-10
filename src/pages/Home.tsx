@@ -16,7 +16,7 @@ export default (): React.ReactNode => {
             <br />
             <p>We provide a service which allows you to play the multiplayer mode of Metal Gear Solid 4: Guns of the Patriots on PC using the <a href="https://rpcs3.net/" target="_blank">RPCS3</a> emulator.</p>
             <p>If you are looking to get started then watch our <a href="https://www.youtube.com/watch?v=nzRP6sWCSic" target="_blank">getting started video</a> or head over to our <NavLink to="/faq">frequently asked questions</NavLink> section.</p>
-            <p>Feel free to stop by the <a href="https://discord.gg/mgo2pc" target="_blank">discord</a> if you have any questions.</p>
+            <p>Feel free to stop by the <a href="https://discord.gg/MNqmzuW2wH" target="_blank">discord</a> if you have any questions.</p>
           </Card>
         </div>
       </div>
