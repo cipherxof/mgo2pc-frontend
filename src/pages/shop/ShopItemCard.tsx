@@ -1,6 +1,6 @@
 import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Avatar, Card, Modal, Tag } from 'antd';
+import { Avatar, Card, Modal, notification, Tag } from 'antd';
 import React, { useState } from 'react';
 import { NavLink } from 'umi';
 import API from '../../system/api';
@@ -24,7 +24,10 @@ export default (props: ShopItemProps) => {
     
     setIsModalVisible(false);
 
-    if (!token) return;
+    if (!token) {
+      notification.error({ message: `Error`, description: "You must be logged in to make purchases.", placement: "topRight" });
+      return;
+    }
 
     const response = await API.purchaseItem(props.item.id.toString(), token);
 
