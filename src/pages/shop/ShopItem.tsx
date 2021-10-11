@@ -17,7 +17,7 @@ export default (): React.ReactNode => {
     loading: true,
     item: { id: 1, name: '', cost: 0, gear_slot: 14, color: 13, owned: false },
   });
-  const path = `/img/shop/items/${data.item.gear_slot}_${data.item.color}`;
+  const path = `/img/shop/items/previews/${data.item.gear_slot}_${data.item.color}`;
   const params = useParams<ShopItemParams>();
 
   document.title = 'Shop Item - Metal Gear Online';

@@ -31,9 +31,7 @@ export default (props: ShopItemProps) => {
 
     const response = await API.purchaseItem(props.item.id.toString(), token);
 
-    console.log(response);
-
-    if (response.data.success) {
+    if (response.data && response.data.success) {
       setOwned(true);
     }
   };
@@ -42,7 +40,7 @@ export default (props: ShopItemProps) => {
     setIsModalVisible(false);
   };
 
-  const icon = `/img/shop/items/${props.item.gear_slot}_${props.item.color}.png`;
+  const icon = `/img/shop/items/icons/${props.item.gear_slot}_${props.item.color}.png`;
   const coinIcon = <img style={{ width: '16px' }} src={require('../../assets/img/coin.png')} />;
   const modalTitle = (
     <>
