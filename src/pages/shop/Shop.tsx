@@ -1,15 +1,12 @@
-import { ShoppingCartOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Table, Avatar, Divider  } from 'antd';
 import React, { useEffect, useState } from 'react';
-import ShopItemCard from './ShopItemCard';
 import API from '../../system/api';
-
-const { Meta } = Card;
+import ShopItemCard from './ShopItemCard';
 
 export default (): React.ReactNode => {
-  const [data, setData] = useState({items: [] as ShopItem[]});
-  document.title = "Reward Shop - Metal Gear Online";
+  const [data, setData] = useState({ items: [] as ShopItem[] });
+
+  document.title = 'Reward Shop - Metal Gear Online';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,33 +16,25 @@ export default (): React.ReactNode => {
         return;
       }
 
-      setData({items: response.data.items});
+      setData({ items: response.data.items });
       console.log(response);
     };
 
     fetchData();
-
-    const timeout = setInterval(() => fetchData(), 10000); // refresh every 10 seconds
-
-    return () => {
-      clearInterval(timeout);
-    };
   }, []);
 
   const itemJsx = [];
   for (const item of data.items) {
-    itemJsx.push( 
+    itemJsx.push(
       <div className="col-md-3">
         <ShopItemCard item={item} />
-      </div>
+      </div>,
     );
   }
 
   return (
     <PageContainer>
-      <div className="row">
-        {itemJsx}
-      </div>
+      <div className="row">{itemJsx}</div>
     </PageContainer>
   );
 };

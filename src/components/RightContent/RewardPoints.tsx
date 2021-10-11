@@ -2,7 +2,7 @@ import { Popover, Typography } from "antd";
 import React from "react";
 import { NavLink } from 'umi';
 
-const { Text, Link } = Typography;
+const { Text } = Typography;
 
 type RewardPointProps = {
   value: number;
