@@ -72,6 +72,10 @@ export class WebAPI {
     return result.data;
   }
 
+  public async purchaseItem(id: string, token: string): Promise<any | false> {
+    return await this.makeRequest(`/api/v1/shopbuy/${id}`, 'get', {}, token);
+  }
+
   public async login(username: string, password: string): Promise<any | false> {
     return await this.makeRequest(`/api/v1/login`, "post", { username, password });
   }

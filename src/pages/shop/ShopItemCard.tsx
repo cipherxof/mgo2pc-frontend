@@ -1,7 +1,9 @@
+import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Avatar, Card, Modal, Tag } from 'antd';
 import React, { useState } from 'react';
 import { NavLink } from 'umi';
+import API from '../../system/api';
 
 const { Meta } = Card;
 
@@ -11,13 +13,26 @@ type ShopItemProps = {
 
 export default (props: ShopItemProps) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-
+  const [owned, setOwned] = useState(props.item.owned);
+  
   const showModal = () => {
     setIsModalVisible(true);
   };
 
-  const handleOk = () => {
+  const handleOk = async () => {
+    const token = getUserToken();
+    
     setIsModalVisible(false);
+
+    if (!token) return;
+
+    const response = await API.purchaseItem(props.item.id.toString(), token);
+
+    console.log(response);
+
+    if (response.data.success) {
+      setOwned(true);
+    }
   };
 
   const handleCancel = () => {
@@ -32,7 +47,7 @@ export default (props: ShopItemProps) => {
     </>
   );
 
-  const actions = props.item.owned ? [<Tag color="green">Owned</Tag>] : [<ShoppingCartOutlined onClick={() => showModal()} key="buy" />];
+  const actions = props.item.owned || owned ? [<Tag color="green">Owned</Tag>] : [<ShoppingCartOutlined onClick={() => showModal()} key="buy" />];
 
   return (
     <>
