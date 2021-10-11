@@ -29,6 +29,7 @@ type UserAccount = {
   exp: number;
   exp_alt: number;
   main: number;
+  rp: number;
 }
 
 type MgoGame = {

@@ -1,15 +1,43 @@
-import { isLoggedIn } from '@/system/utility';
+import { getUserToken, isLoggedIn } from '@/system/utility';
 import { Space } from 'antd';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'umi';
 import HeaderSearch from '../HeaderSearch';
 import NoticeIcon from '../NoticeIcon';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
 import RewardPoints from './RewardPoints';
+import API from '../../system/api';
 
 const GlobalHeaderRight: React.FC = () => {
   const loggedIn = isLoggedIn();
+  const [data, setData] = useState({ rp: 0 });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!loggedIn) return;
+
+      const token = getUserToken();
+      
+      if (!token) return;
+
+      const response = await API.getAccount(token);
+
+      if (!response) {
+        return;
+      }
+
+      setData({rp: response.data.rp});
+
+      return () => {
+        clearInterval(timeout);
+      };
+    };
+
+    const timeout = setInterval(() => fetchData(), 1000 * 60); // refresh every 120 seconds
+
+    fetchData();
+  }, []);
 
   if (loggedIn) {
     return (
@@ -24,7 +52,7 @@ const GlobalHeaderRight: React.FC = () => {
           // }}
         />
         <NoticeIcon />
-        <RewardPoints value={0} />
+        <RewardPoints value={data.rp} />
         <Avatar />
       </Space>
     );
