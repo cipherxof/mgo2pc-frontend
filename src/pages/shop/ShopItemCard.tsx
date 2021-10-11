@@ -1,5 +1,5 @@
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Avatar, Card, Modal } from 'antd';
+import { Avatar, Card, Modal, Tag } from 'antd';
 import React, { useState } from 'react';
 import { NavLink } from 'umi';
 
@@ -32,13 +32,15 @@ export default (props: ShopItemProps) => {
     </>
   );
 
+  const actions = props.item.owned ? [<Tag color="green">Owned</Tag>] : [<ShoppingCartOutlined onClick={() => showModal()} key="buy" />];
+
   return (
     <>
       <Card
         hoverable={true}
         style={{ marginTop: 16 }}
         loading={false}
-        actions={[<ShoppingCartOutlined onClick={() => showModal()} key="buy" />]}
+        actions={actions}
       >
         <NavLink to={`/shop/${props.item.id}`}>
           <Meta

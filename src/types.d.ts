@@ -226,4 +226,5 @@ type ShopItem = {
   cost: number;
   gear_slot: number;
   color: number;
+  owned: boolean;
 }

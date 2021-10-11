@@ -67,8 +67,8 @@ export class WebAPI {
     return await this.makeRequest(`/api/v1/titles/${character}`, 'get');
   }
 
-  public async getShopItems(): Promise<WebAPIResponse<{ items: ShopItem[] }> | false> {
-    const result = await this.makeRequest(`/api/v1/shop`);
+  public async getShopItems(token: string, id?: string): Promise<WebAPIResponse<{ items: ShopItem[] }> | false> {
+    const result = await this.makeRequest(`/api/v1/shop` + `${id ? `/${id}` : ''}`, 'get', {}, token);
     return result.data;
   }
 

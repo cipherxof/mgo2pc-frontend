@@ -1,23 +1,25 @@
+import { getUserToken } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
+import { Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
 import API from '../../system/api';
 import ShopItemCard from './ShopItemCard';
 
 export default (): React.ReactNode => {
-  const [data, setData] = useState({ items: [] as ShopItem[] });
+  const [data, setData] = useState({ loading: true, items: [] as ShopItem[] });
 
   document.title = 'Reward Shop - Metal Gear Online';
-
+  
   useEffect(() => {
     const fetchData = async () => {
-      const response = await API.getShopItems();
+      const token = getUserToken();
+      const response = await API.getShopItems(token ? token : "");
 
       if (!response) {
         return;
       }
 
-      setData({ items: response.data.items });
-      console.log(response);
+      setData({ loading: false, items: response.data.items });
     };
 
     fetchData();
@@ -34,7 +36,10 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
-      <div className="row">{itemJsx}</div>
+      <div className="row">
+        <Spin spinning={data.loading} size="large"></Spin>
+        {itemJsx}
+      </div>
     </PageContainer>
   );
 };
