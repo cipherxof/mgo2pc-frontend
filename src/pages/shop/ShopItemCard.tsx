@@ -1,6 +1,6 @@
 import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Avatar, Card, Modal, notification, Tag } from 'antd';
+import { Avatar, Button, Card, Modal, notification, Tag } from 'antd';
 import React, { useState } from 'react';
 import { NavLink } from 'umi';
 import API from '../../system/api';
@@ -9,6 +9,7 @@ const { Meta } = Card;
 
 type ShopItemProps = {
   item: ShopItem;
+  showButton?: boolean;
 };
 
 export default (props: ShopItemProps) => {
@@ -48,12 +49,18 @@ export default (props: ShopItemProps) => {
     </>
   );
 
-  const actions = props.item.owned || owned ? [<Tag color="green">Owned</Tag>] : [<ShoppingCartOutlined onClick={() => showModal()} key="buy" />];
+  let buyButton = <Button type="ghost" icon={<ShoppingCartOutlined />} size="large" onClick={() => showModal()}>Purchase</Button>;
+
+  if (props.showButton !== true) {
+    buyButton = <ShoppingCartOutlined onClick={() => showModal()} key="buy" />;
+  }
+
+  const actions = props.item.owned || owned ? [<Tag color="green">Owned</Tag>] : [buyButton];
 
   return (
     <>
       <Card
-        hoverable={true}
+        hoverable={props.showButton !== true}
         style={{ marginTop: 16 }}
         loading={false}
         actions={actions}

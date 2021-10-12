@@ -50,7 +50,7 @@ export default (): React.ReactNode => {
       <div className="row">
         <div className="col-md-1"></div>
         <div className="col-md-3">
-          <ShopItemCard item={data.item} />
+          <ShopItemCard item={data.item} showButton={true} />
         </div>
         <div className="col-md-2">
           <Card style={{ marginTop: 16 }} hoverable  cover={<img src={`${path}_front.jpg`} />} loading={data.loading}  >
