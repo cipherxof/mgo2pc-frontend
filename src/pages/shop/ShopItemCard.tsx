@@ -68,10 +68,10 @@ export default (props: ShopItemProps) => {
         <NavLink to={`/shop/${props.item.id}`}>
           <Meta
             avatar={<Avatar shape="square" size="large" src={icon} />}
-            title={props.item.name}
+            title={<>{props.item.name} <img src={require("../../assets/img/shop/type_0.png")} style={{width: "16px"}} /></>}
             description={
               <React.Fragment>
-                {coinIcon} {props.item.cost}
+                {coinIcon} {props.item.cost} 
               </React.Fragment>
             }
           />
