@@ -28,7 +28,7 @@ export default (): React.ReactNode => {
   const itemJsx = [];
   for (const item of data.items) {
     itemJsx.push(
-      <div className="col-md-3">
+      <div key={item.id} className="col-md-3">
         <ShopItemCard item={item} />
       </div>,
     );

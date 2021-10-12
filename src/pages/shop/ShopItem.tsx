@@ -1,5 +1,5 @@
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Spin } from 'antd';
+import { Image, Card, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
 import ShopItemCard from './ShopItemCard';
 import API from '../../system/api';
@@ -53,19 +53,19 @@ export default (): React.ReactNode => {
           <ShopItemCard item={data.item} showButton={true} />
         </div>
         <div className="col-md-2">
-          <Card style={{ marginTop: 16 }} hoverable  cover={<img src={`${path}_front.jpg`} />} loading={data.loading}  >
+          <Card style={{ marginTop: 16 }} hoverable  cover={<Image src={`${path}_front.jpg`} />} loading={data.loading}  >
             <Meta title="Front" />
           </Card>
         </div>
 
         <div className="col-md-2">
-          <Card style={{ marginTop: 16 }} hoverable  cover={<img src={`${path}_side.jpg`} />} loading={data.loading}  >
+          <Card style={{ marginTop: 16 }} hoverable  cover={<Image src={`${path}_side.jpg`} />} loading={data.loading}  >
             <Meta title="Side" />
           </Card>
         </div>
 
         <div className="col-md-2">
-        <Card style={{ marginTop: 16 }} hoverable  cover={<img src={`${path}_back.jpg`} />} loading={data.loading}  >
+        <Card style={{ marginTop: 16 }} hoverable  cover={<Image src={`${path}_back.jpg`} />} loading={data.loading}  >
             <Meta title="Back" />
           </Card>
         </div>
@@ -75,19 +75,19 @@ export default (): React.ReactNode => {
       <div className="row">
         <div className="col-md-4"></div>
         <div className="col-md-2">
-          <Card style={{ marginTop: 16 }} hoverable  cover={<img src={`${path}_front_f.jpg`} />} loading={data.loading}  >
+          <Card style={{ marginTop: 16 }} hoverable  cover={<Image src={`${path}_front_f.jpg`} />} loading={data.loading}  >
             <Meta title="Front" />
           </Card>
         </div>
 
         <div className="col-md-2">
-          <Card style={{ marginTop: 16 }} hoverable  cover={<img src={`${path}_side_f.jpg`} />} loading={data.loading}  >
+          <Card style={{ marginTop: 16 }} hoverable  cover={<Image src={`${path}_side_f.jpg`} />} loading={data.loading}  >
             <Meta title="Side" />
           </Card>
         </div>
 
         <div className="col-md-2">
-        <Card style={{ marginTop: 16 }} hoverable  cover={<img src={`${path}_back_f.jpg`} />} loading={data.loading}  >
+        <Card style={{ marginTop: 16 }} hoverable  cover={<Image src={`${path}_back_f.jpg`} />} loading={data.loading}  >
             <Meta title="Back" />
           </Card>
         </div>
