@@ -37,7 +37,7 @@ export default (): React.ReactNode => {
   return (
     <PageContainer>
       <div className="row">
-        <img style={{marginLeft: "auto", marginRight: "auto", width: "512px", maxWidth: "100%"}} src={require('../../assets/img/rewardshop.png')} />
+        <img style={{marginLeft: "auto", marginRight: "auto", width: "512px", maxWidth: "100%"}} src={require('../../assets/img/rewardshop2.png')} />
       </div>
       <div className="row">
         <Spin spinning={data.loading} size="large"></Spin>
