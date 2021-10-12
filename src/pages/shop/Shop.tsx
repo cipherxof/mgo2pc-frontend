@@ -2,6 +2,7 @@ import { getUserToken } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'umi';
 import API from '../../system/api';
 import ShopItemCard from './ShopItemCard';
 
@@ -37,7 +38,9 @@ export default (): React.ReactNode => {
   return (
     <PageContainer>
       <div className="row">
-        <img style={{marginLeft: "auto", marginRight: "auto", width: "512px", maxWidth: "100%"}} src={require('../../assets/img/rewardshop3.png')} />
+        <NavLink to="/shop" style={{marginLeft: "auto", marginRight: "auto"}}>
+          <img style={{width: "512px", maxWidth: "100%"}} src={require('../../assets/img/rewardshop3.png')} />
+        </NavLink>
       </div>
       <div className="row">
         <Spin spinning={data.loading} size="large"></Spin>

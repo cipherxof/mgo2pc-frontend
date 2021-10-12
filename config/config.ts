@@ -13,6 +13,13 @@ export default defineConfig({
   dva: {
     hmr: true,
   },
+  locale: {
+    // default zh-CN
+    default: 'en-US',
+    antd: true,
+    // default true, when it is true, will use `navigator.language` overwrite default
+    baseNavigator: true,
+  },
   layout: {
     // https://umijs.org/zh-CN/plugins/plugin-layout
     locale: true,
