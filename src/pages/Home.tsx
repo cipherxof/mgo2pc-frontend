@@ -1,8 +1,11 @@
 import ServerStatus from '@/components/ServerStatus';
+import { InfoOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Divider } from 'antd';
+import { Button, Card, Divider, Typography } from 'antd';
 import React from 'react';
 import { NavLink } from 'umi';
+
+const { Title } = Typography;
 
 export default (): React.ReactNode => {
   document.title = "Home - Metal Gear Online";
@@ -26,15 +29,16 @@ export default (): React.ReactNode => {
       <div className="row">
         <div className="col-md-6" style={{marginBottom: "16px"}}>
           <Card>
-            <div className="container-video">
-              <iframe className="video" width="10000" height="10000" src="https://www.youtube.com/embed/6W7PWfPVi74" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
+            <img style={{maxWidth: "100%", maxHeight: "140px"}} src={require('../assets/img/banner-200.jpg')} />
+           <Divider />
+           <Title>Patch 2.00 is live!</Title>
+           <NavLink to="/changelog"><Button type="ghost" icon={<InfoOutlined />} size="large">View Changelog</Button></NavLink>
           </Card>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6" style={{marginBottom: "16px"}}>
           <Card>
             <div className="container-video">
-              <iframe className="video" width="10000" height="10000" src="https://www.youtube.com/embed/nzRP6sWCSic" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className="video" width="10000" height="10000" src="https://www.youtube.com/embed/6W7PWfPVi74" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </Card>
         </div>

@@ -10,6 +10,7 @@ export default [
   { path: '/activate/:user/:key', component: './Activate' },
   { path: '/clans', component: './Clans' },
   { path: '/shop', component: './shop/Shop' },
+  { path: '/changelog', component: './Changelog' },
   { path: '/shop/:id', component: './shop/ShopItem' },
   { path: '/', component: './Home' },
   {
@@ -26,6 +27,12 @@ export default [
         name: 'FAQ',
         icon: 'smile',
         component: './FAQ',
+      },
+      {
+        path: '/changelog',
+        name: 'Changelog',
+        icon: 'test',
+        component: './Changelog',
       },
       {
         path: '/shop',
