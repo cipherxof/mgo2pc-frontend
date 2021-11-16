@@ -51,6 +51,16 @@ export const getUserAccount = (): UserAccount | null => {
   return null;
 };
 
+export const isModerator = (): boolean => {
+  const account = getUserAccount();
+  return (account !== null && account.role >= 10);
+}
+
+export const isAdmin = (): boolean => {
+  const account = getUserAccount();
+  return (account !== null && account.role >= 20);
+}
+
 export const logoutUser = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('account');

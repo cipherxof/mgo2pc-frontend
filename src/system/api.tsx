@@ -102,6 +102,11 @@ export class WebAPI {
     return result.data;
   }
 
+  public async getUserAdmin(charId: string, token: string): Promise<WebAPIResponse<any> | false> {
+    const result = await this.makeRequest(`/api/v1/admin/user/${charId}`, 'get', {}, token);
+    return result.data;
+  }
+
   public async getCharacter(token: string, id: number): Promise<WebAPIResponse<any> | false> {
     const result = await this.makeRequest(`/api/v1/character?id=${id}`, 'get', {}, token);
     return result.data;

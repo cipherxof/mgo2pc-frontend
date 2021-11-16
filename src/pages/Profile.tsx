@@ -2,12 +2,12 @@ import CharacterLevelTag from '@/components/CharacterLevelTag';
 import PersonalScores from '@/components/Profile/PersonalScores';
 import StatsTable from '@/components/Profile/StatsTable';
 import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
-import { getRankPreview } from '@/system/utility';
+import { getRankPreview, isModerator } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Avatar, Card, Divider, PageHeader, Spin, Switch, Tabs, Tag } from 'antd';
+import { Avatar, Card, Divider, Dropdown, Menu, PageHeader, Spin, Switch, Tabs, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'umi';
+import { useParams, useHistory } from 'umi';
 import API from '../system/api';
 
 const { TabPane } = Tabs;
@@ -30,6 +30,7 @@ type ProfileParams = {
   character: string;
 };
 
+
 export default (): React.ReactNode => {
   const params = useParams<ProfileParams>();
   const [data, setData] = useState({
@@ -37,8 +38,15 @@ export default (): React.ReactNode => {
     profile: { name: params.character } as Profile,
   });
   const [weekly, setWeekly] = useState(false);
+  const history = useHistory();
 
   document.title = `${data.profile.name} - Metal Gear Online`;
+
+  const handleMenuClick = (e: any) => {
+    if (history) {
+      history.push(e.key);
+    }
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,9 +76,24 @@ export default (): React.ReactNode => {
         />,
       );
     }
+    
+    if (isModerator()) {
+      const menu = (
+        <Menu onClick={handleMenuClick}>
+          <Menu.Item key={`/admin/user/${data.profile.id}`}>View Account</Menu.Item>
+          <Menu.Item key="2">Kick Character</Menu.Item>
+        </Menu>
+      );
+
+      headerTags.push(
+        <Dropdown.Button size="small" overlay={menu}>Moderate</Dropdown.Button>
+      );
+    }
+
     if (data.profile.clan) {
       headerTags.push(<Tag color="gold">{data.profile.clan}</Tag>);
     }
+
     headerTags.push(<CharacterLevelTag xp={xp} />);
 
     content = (

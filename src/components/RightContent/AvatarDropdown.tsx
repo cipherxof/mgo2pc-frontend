@@ -16,12 +16,6 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const account = getUserAccount();
   const displayName = account ? account.displayName : 'User';
 
-  if (!account) {
-    return <React.Fragment></React.Fragment>;
-  }
-
-  const isAdmin = account.role !== undefined && account.role >= 20;
-
   const onMenuClick = useCallback((event: MenuInfo) => {}, []);
 
   const onLogout = useCallback(() => {
@@ -33,6 +27,13 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     });
     history.push('/');
   }, []);
+  
+  if (!account) {
+    return <React.Fragment></React.Fragment>;
+  }
+
+  const isAdmin = account.role !== undefined && account.role >= 10;
+
 
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>

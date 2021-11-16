@@ -11,6 +11,8 @@ export default [
   { path: '/clans', component: './Clans' },
   { path: '/shop', component: './shop/Shop' },
   { path: '/changelog', component: './Changelog' },
+  { path: '/admin', component: './admin/Index' },
+  { path: '/admin/user/:id', component: './admin/User' },
   { path: '/shop/:id', component: './shop/ShopItem' },
   { path: '/', component: './Home' },
   {
