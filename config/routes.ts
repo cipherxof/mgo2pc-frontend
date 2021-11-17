@@ -13,6 +13,8 @@ export default [
   { path: '/changelog', component: './Changelog' },
   { path: '/admin', component: './admin/Index' },
   { path: '/admin/user/:id', component: './admin/User' },
+  { path: '/admin/chat/:id', component: './admin/Chat' },
+  { path: '/admin/chatgame/:id', component: './admin/ChatGame' },
   { path: '/shop/:id', component: './shop/ShopItem' },
   { path: '/', component: './Home' },
   {

@@ -81,7 +81,8 @@ export default (): React.ReactNode => {
       const menu = (
         <Menu onClick={handleMenuClick}>
           <Menu.Item key={`/admin/user/${data.profile.id}`}>View Account</Menu.Item>
-          <Menu.Item key="2">Kick Character</Menu.Item>
+          <Menu.Item key={`/admin/chat/${data.profile.id}`}>View Chat History</Menu.Item>
+          <Menu.Item key="/">Kick Character</Menu.Item>
         </Menu>
       );
 

@@ -102,6 +102,16 @@ export class WebAPI {
     return result.data;
   }
 
+  public async getChatAdmin(charId: string, token: string): Promise<WebAPIResponse<any> | false> {
+    const result = await this.makeRequest(`/api/v1/admin/chat/${charId}`, 'get', {}, token);
+    return result.data;
+  }
+
+  public async getChatGameAdmin(gameId: string, token: string): Promise<WebAPIResponse<any> | false> {
+    const result = await this.makeRequest(`/api/v1/admin/chatgame/${gameId}`, 'get', {}, token);
+    return result.data;
+  }
+
   public async getUserAdmin(charId: string, token: string): Promise<WebAPIResponse<any> | false> {
     const result = await this.makeRequest(`/api/v1/admin/user/${charId}`, 'get', {}, token);
     return result.data;
