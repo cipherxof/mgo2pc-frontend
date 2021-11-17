@@ -15,6 +15,7 @@ export default [
   { path: '/admin/user/:id', component: './admin/User' },
   { path: '/admin/chat/:id', component: './admin/Chat' },
   { path: '/admin/chatgame/:id', component: './admin/ChatGame' },
+  { path: '/admin/events/:id', component: './admin/Events' },
   { path: '/shop/:id', component: './shop/ShopItem' },
   { path: '/', component: './Home' },
   {

@@ -19,7 +19,7 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   for (const player of props.game.players) {
     const popContent = (
       <div className="text-center">
-        <NavLink to={`/profile/${player.name}`}>
+        <NavLink to={`/profile/${encodeURIComponent(player.name)}`}>
           <Button type="primary" size={"large"}>View Profile</Button>
         </NavLink>
       </div>);

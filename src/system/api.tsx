@@ -112,6 +112,11 @@ export class WebAPI {
     return result.data;
   }
 
+  public async getEventAdmin(charId: string, token: string): Promise<WebAPIResponse<any> | false> {
+    const result = await this.makeRequest(`/api/v1/admin/event/${charId}`, 'get', {}, token);
+    return result.data;
+  }
+
   public async getUserAdmin(charId: string, token: string): Promise<WebAPIResponse<any> | false> {
     const result = await this.makeRequest(`/api/v1/admin/user/${charId}`, 'get', {}, token);
     return result.data;
