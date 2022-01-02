@@ -200,6 +200,8 @@ type Stats = {
   knife_stuns: number;
   evg_time: number;
   bases_captured: number;
+  time_dedi: number;
+  withdrawals: number;
 }
 
 type StatsGameMode = {
