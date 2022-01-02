@@ -21,7 +21,7 @@ export default (): React.ReactNode => {
               <Title>Version 2.00</Title>
               
               <p>
-                <a href="/emu/rpcs3-9823.7z">
+                <a href="/emu/rpcs3-9829.7z">
                   <Button type="ghost" icon={<DownloadOutlined />} size="large">Download</Button>
                 </a>
               </p>

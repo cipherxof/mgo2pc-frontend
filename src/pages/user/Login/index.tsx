@@ -58,6 +58,7 @@ const Login: React.FC = () => {
               initialValues={{
                 autoLogin: true,
               }}
+              isKeyPressSubmit={true}
               submitter={{
                 searchConfig: {
                   submitText: 'Login',

@@ -17,8 +17,8 @@ export default (): React.ReactNode => {
             However, if you are using a laptop we recommend one equipped with an 8-core/16-thread 35W+ H-series CPU such as an Intel Core i7-10870H or an AMD Ryzen 7 5800H.
             <Divider />
             <p><b>Minimum</b></p>
-            <p><i>These CPUs are the minimum recommended to maintain close to 30 FPS in full lobbies.</i> </p>
-            <p><i>It is possible to play on weaker hardware than this but we cannot recommend them.</i> </p>
+            <p><i>These CPUs are the minimum recommended to maintain 30 FPS in full lobbies.</i> </p>
+            <p><i>It is possible to play on weaker hardware than this but we cannot recommend it.</i> </p>
             <ul>
               <li>CPU: Intel i5 10400 or AMD Ryzen 3600</li>
               <li>GPU: Anything with Vulkan Support</li>
@@ -66,7 +66,7 @@ export default (): React.ReactNode => {
         <Panel header="Why can't I login?" key="5">
           <div>
             This is generally a result of having an outdated emulator. Make sure to update to the newest version. The latest builds have an auto updater so this should only be an issue if you are on a really old build.<br /><br />
-            You can find a newer build <a href="https://mgo2pc.com/emu/rpcs3-9840.7z">here</a> or <a href="https://mgo2pc.com/rpcs3-mgo2.zip">here</a>. Upon launching it you will be notified if there's a newer build or not and it will automatically update.
+            You can find a newer build <a href="https://mgo2pc.com/emu/rpcs3-9829.7z">here</a>.
           </div>
         </Panel>
       </Collapse>

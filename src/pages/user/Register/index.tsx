@@ -61,12 +61,13 @@ const Register: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.main} style={{ position: "absolute", left: "50%", top: "40%", transform: "translate(-50%, -50%)" }}>
+        <div className={styles.main} style={{ marginTop: "5%"}}>
           <Card>
             <ProForm
               initialValues={{
                 autoLogin: true,
               }}
+              isKeyPressSubmit={true}
               submitter={{
                 searchConfig: {
                   submitText: 'Create Account',
