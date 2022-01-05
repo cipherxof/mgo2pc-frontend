@@ -59,8 +59,8 @@ export class WebAPI {
     return await this.makeRequest(`/api/v1/activate/${userId}/${key}`, 'get');
   }
 
-  public async getProfile(character: string): Promise<any | false> {
-    return await this.makeRequest(`/api/v1/profile/${character}`, 'get');
+  public async getProfile(character: string, token: string): Promise<any | false> {
+    return await this.makeRequest(`/api/v1/profile/${character}`, 'get', {}, token);
   }
 
   public async getTitles(character: string): Promise<any | false> {

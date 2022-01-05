@@ -2,7 +2,7 @@ import CharacterLevelTag from '@/components/CharacterLevelTag';
 import PersonalScores from '@/components/Profile/PersonalScores';
 import StatsTable from '@/components/Profile/StatsTable';
 import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
-import { getRankPreview, isModerator } from '@/system/utility';
+import { getRankPreview, getUserToken, isModerator } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Card, Divider, Dropdown, Menu, PageHeader, Spin, Switch, Tabs, Tag } from 'antd';
@@ -24,6 +24,7 @@ type Profile = {
   xp_alt: number;
   rank: number;
   emblem: string;
+  user?: number;
 };
 
 type ProfileParams = {
@@ -50,7 +51,8 @@ export default (): React.ReactNode => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await API.getProfile(params.character);
+      const token = getUserToken();
+      const response = await API.getProfile(params.character, token ? token : "");
 
       if (!response) {
         return;
@@ -80,7 +82,7 @@ export default (): React.ReactNode => {
     if (isModerator()) {
       const menu = (
         <Menu onClick={handleMenuClick}>
-          <Menu.Item key={`/admin/user/${data.profile.id}`}>View Account</Menu.Item>
+          <Menu.Item key={`/admin/user/${data.profile.user}`}>View Account</Menu.Item>
           <Menu.Item key={`/admin/chat/${data.profile.id}`}>View Chat History</Menu.Item>
           <Menu.Item key={`/admin/events/${data.profile.id}`}>View Events</Menu.Item>
           <Menu.Item key="/">Kick Character</Menu.Item>

@@ -75,6 +75,7 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
   const contents = [<div></div>];
   let col = 0;
   let cols = [];
+  let foundTitles = false;
 
   for (const [key, value] of Object.entries(data.titles)) {
     console.log(`${key}: ${value}`);
@@ -88,6 +89,7 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
       col = 0;
     }
     if (value > 0 && key !== "id" && key !== "chara" && titleData[key]) {
+      foundTitles = true;
       cols.push(
         <div className="col-md-3 text-center">
           <Card>
@@ -103,7 +105,8 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
 
   if (col > 0) {
     contents.push(<div className="row" style={{ marginBottom: "16px" }}>{cols}</div>);
-  } else {
+  }
+  if (!foundTitles) {
     contents.push(
       <div key="0" className="col-md-12">
         <Alert
