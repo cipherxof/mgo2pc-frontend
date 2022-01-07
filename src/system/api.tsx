@@ -67,8 +67,8 @@ export class WebAPI {
     return await this.makeRequest(`/api/v1/titles/${character}`, 'get');
   }
 
-  public async getRankings(mode: string, page: number): Promise<any | false> {
-    return await this.makeRequest(`/api/v1/rankings/${mode}/${page}`, 'get');
+  public async getRankings(mode: string, page: number, weekly?: boolean): Promise<any | false> {
+    return await this.makeRequest(`/api/v1/rankings/${mode}/${page}/${weekly ? "weekly" : ""}`, 'get');
   }
 
   public async getShopItems(token: string, id?: string): Promise<WebAPIResponse<{ items: ShopItem[] }> | false> {

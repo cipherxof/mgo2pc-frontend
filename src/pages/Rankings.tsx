@@ -1,6 +1,6 @@
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Avatar, Pagination, Select, Spin, Table, Typography } from 'antd';
+import { Avatar, Pagination, Select, Spin, Switch, Table, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useHistory, useParams } from 'umi';
 import API from '../system/api';
@@ -19,6 +19,7 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
+    width: "70%",
     render: (text: any) => (
       <>
         <NavLink to={`/profile/${text.split('\t')[2]}`}>
@@ -57,28 +58,26 @@ type RankingParams = {
 export default (): React.ReactNode => {
   document.title = 'Rankings - Metal Gear Online';
 
-  console.log("RENDER");
-
   const history = useHistory();
   const params = useParams<RankingParams>();
 
-  console.log(params);
-  
   const [data, setData] = useState({
+    weekly: false,
     loading: true,
     pages: 1,
     page: params.page ? params.page : 1,
-    mode: params.mode ? params.mode : 'dm',
+    mode: params.mode ? params.mode : 'total',
     tableData: {} as any,
   });
 
   function onModeChange(value: string) {
-    setData({ loading: true, pages: data.pages, page: 1, mode: value, tableData: {} as any });
+    setData({ weekly: false, loading: true, pages: data.pages, page: 1, mode: value, tableData: {} as any });
     history.push(`/rankings/${value}/1`);
   }
 
   function onPageChange(value: number) {
     setData({
+      weekly: data.weekly, 
       loading: true,
       pages: data.pages,
       page: value,
@@ -88,15 +87,27 @@ export default (): React.ReactNode => {
     history.push(`/rankings/${data.mode}/${value}`);
   }
 
+  function setWeekly(value: boolean) {
+    setData({
+      weekly: value, 
+      loading: true,
+      pages: data.pages,
+      page: 1,
+      mode: data.mode,
+      tableData: {} as any,
+    });
+  }
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await API.getRankings(data.mode, data.page);
+      const response = await API.getRankings(data.mode, data.page, data.weekly);
 
       if (!response) {
         return;
       }
 
       setData({
+        weekly: data.weekly,
         loading: false,
         pages: response.data.pages,
         page: data.page,
@@ -106,9 +117,7 @@ export default (): React.ReactNode => {
     };
 
     fetchData();
-  }, [data.mode, data.page]);
-
-  console.log(data);
+  }, [data.mode, data.page, data.weekly]);
 
   if (data.loading) {
     return (
@@ -120,31 +129,43 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
-      <Select
-        defaultValue={data.mode}
-        onChange={onModeChange}
-        style={{ float: 'right', width: 180, marginBottom: '16px' }}
-      >
-        <Option value="dm">Deathmatch</Option>
-        <Option value="sdm">Stealth Deathmatch</Option>
-        <Option value="tdm">Team Deathmatch</Option>
-        <Option value="cap">Capture Mission</Option>
-        <Option value="base">Base Mission</Option>
-        <Option value="bomb">Bomb Mission</Option>
-        <Option value="race">Race Mission</Option>
-        <Option value="res">Rescue Mission</Option>
-        <Option value="tsne">Team Sneaking</Option>
-        <Option value="sm">Sneaking Mission</Option>
-      </Select>
-      <Table columns={columns} dataSource={data.tableData} pagination={false} />
-      <Pagination
-        defaultCurrent={data.page}
-        total={data.pages}
-        pageSize={15}
-        style={{ float: 'right', marginTop: '16px' }}
-        showSizeChanger={false}
-        onChange={onPageChange}
-      />
+      <div className="row">
+        <div className="col-md-8">
+          <Switch checked={data.weekly} onChange={(e: any) => setWeekly(e)} /> Weekly
+        </div>
+        <div className="col-md-4">
+          <Select
+            defaultValue={data.mode}
+            onChange={onModeChange}
+            style={{ float: 'right', width: 180, marginBottom: '16px' }}
+          >
+            <Option value="total">Total</Option>
+            <Option value="dm">Deathmatch</Option>
+            <Option value="sdm">Stealth Deathmatch</Option>
+            <Option value="tdm">Team Deathmatch</Option>
+            <Option value="cap">Capture Mission</Option>
+            <Option value="base">Base Mission</Option>
+            <Option value="bomb">Bomb Mission</Option>
+            <Option value="race">Race Mission</Option>
+            <Option value="res">Rescue Mission</Option>
+            <Option value="tsne">Team Sneaking</Option>
+            <Option value="sm">Sneaking Mission</Option>
+          </Select>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+          <Table columns={columns} dataSource={data.tableData} pagination={false} />
+          <Pagination
+            defaultCurrent={data.page}
+            total={data.pages}
+            pageSize={15}
+            style={{ float: 'right', marginTop: '16px' }}
+            showSizeChanger={false}
+            onChange={onPageChange}
+          />
+        </div>
+      </div>
     </PageContainer>
   );
 };
