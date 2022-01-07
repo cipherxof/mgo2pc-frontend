@@ -1,5 +1,7 @@
 export default [
   { path: '/games', name: 'Games', icon: 'desktop', component: './Games' },
+  { path: '/rankings', name: 'Leaderboards', icon: 'crown', component: './Rankings' },
+  { path: '/shop', name: 'Reward Shop', icon: 'table', component: './shop/Shop' },
   { path: '/game/:id', component: './Game' },
   { path: '/profile/:character', component: './Profile' },
   { path: '/account', component: './Account' },
@@ -9,6 +11,7 @@ export default [
   { path: '/register', component: './user/Register', layout: false },
   { path: '/activate/:user/:key', component: './Activate' },
   { path: '/clans', component: './Clans' },
+  { path: '/rankings/:mode/:page', component: './Rankings' },
   { path: '/shop', component: './shop/Shop' },
   { path: '/changelog', component: './Changelog' },
   { path: '/admin', component: './admin/Index' },
@@ -38,13 +41,7 @@ export default [
         name: 'Changelog',
         icon: 'test',
         component: './Changelog',
-      },
-      {
-        path: '/shop',
-        name: 'Reward Shop',
-        icon: 'test',
-        component: './shop/Shop',
-      },
+      }
     ],
   },
   { component: './404' },

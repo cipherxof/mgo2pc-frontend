@@ -67,6 +67,10 @@ export class WebAPI {
     return await this.makeRequest(`/api/v1/titles/${character}`, 'get');
   }
 
+  public async getRankings(mode: string, page: number): Promise<any | false> {
+    return await this.makeRequest(`/api/v1/rankings/${mode}/${page}`, 'get');
+  }
+
   public async getShopItems(token: string, id?: string): Promise<WebAPIResponse<{ items: ShopItem[] }> | false> {
     const result = await this.makeRequest(`/api/v1/shop` + `${id ? `/${id}` : ''}`, 'get', {}, token);
     return result.data;
