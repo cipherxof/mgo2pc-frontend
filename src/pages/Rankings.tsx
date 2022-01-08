@@ -19,7 +19,7 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    width: "70%",
+    width: '70%',
     render: (text: any) => (
       <>
         <NavLink to={`/profile/${text.split('\t')[2]}`}>
@@ -65,13 +65,20 @@ export default (): React.ReactNode => {
   });
 
   function onModeChange(value: string) {
-    setData({ weekly: data.weekly, loading: true, pages: data.pages, page: 1, mode: value, tableData: [] as any });
+    setData({
+      weekly: data.weekly,
+      loading: true,
+      pages: data.pages,
+      page: 1,
+      mode: value,
+      tableData: [] as any,
+    });
     history.push(`/rankings/${value}/1`);
   }
 
   function onPageChange(value: number) {
     setData({
-      weekly: data.weekly, 
+      weekly: data.weekly,
       loading: true,
       pages: data.pages,
       page: value,
@@ -83,7 +90,7 @@ export default (): React.ReactNode => {
 
   function setWeekly(value: boolean) {
     setData({
-      weekly: value, 
+      weekly: value,
       loading: true,
       pages: data.pages,
       page: 1,
@@ -98,6 +105,7 @@ export default (): React.ReactNode => {
       const response = await API.getRankings(data.mode, data.page, data.weekly);
 
       if (!response) {
+        console.log('no response');
         return;
       }
 
@@ -114,47 +122,61 @@ export default (): React.ReactNode => {
     fetchData();
   }, [data.mode, data.page, data.weekly]);
 
-  return (
-    <PageContainer>
-      <div className="row">
-        <div className="col-md-8">
-          <Switch checked={data.weekly} onChange={(e: any) => setWeekly(e)} /> Weekly
-        </div>
-        <div className="col-md-4">
-          <Select
-            defaultValue={data.mode}
-            onChange={onModeChange}
-            style={{ float: 'right', width: 180, marginBottom: '16px' }}
-          >
-            <Option value="total">Total</Option>
-            <Option value="dm">Deathmatch</Option>
-            <Option value="sdm">Stealth Deathmatch</Option>
-            <Option value="tdm">Team Deathmatch</Option>
-            <Option value="cap">Capture Mission</Option>
-            <Option value="base">Base Mission</Option>
-            <Option value="bomb">Bomb Mission</Option>
-            <Option value="race">Race Mission</Option>
-            <Option value="res">Rescue Mission</Option>
-            <Option value="tsne">Team Sneaking</Option>
-            <Option value="sm">Sneaking Mission</Option>
-          </Select>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12">
+  if (data.loading) {
+    return (
+      <PageContainer>
+        <div className="text-center">
           <Spin spinning={data.loading} size="large">
-            <Table columns={columns} dataSource={data.tableData} pagination={false} />
-            <Pagination
-              defaultCurrent={data.page}
-              total={data.pages}
-              pageSize={15}
-              style={{ float: 'right', marginTop: '16px' }}
-              showSizeChanger={false}
-              onChange={onPageChange}
-            />
           </Spin>
         </div>
-      </div>
-    </PageContainer>
+      </PageContainer>
+    );
+  }
+
+  return (
+      <PageContainer>
+        <div className="row">
+          <div className="col-md-8">
+            <Switch checked={data.weekly} onChange={(e: any) => setWeekly(e)} /> Weekly
+          </div>
+          <div className="col-md-4">
+            <Select
+              defaultValue={data.mode}
+              onChange={onModeChange}
+              style={{ float: 'right', width: 180, marginBottom: '16px' }}
+            >
+              <Option value="total">Total Score</Option>
+              <Option value="exp">Experience</Option>
+              <Option value="kdr">Kill / Death Ratio</Option>
+              <Option value="winrat">Win / Loss Ratio</Option>
+              <Option value="dm">Deathmatch</Option>
+              <Option value="sdm">Stealth Deathmatch</Option>
+              <Option value="tdm">Team Deathmatch</Option>
+              <Option value="cap">Capture Mission</Option>
+              <Option value="base">Base Mission</Option>
+              <Option value="bomb">Bomb Mission</Option>
+              <Option value="race">Race Mission</Option>
+              <Option value="res">Rescue Mission</Option>
+              <Option value="tsne">Team Sneaking</Option>
+              <Option value="sm">Sneaking Mission</Option>
+            </Select>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <Spin spinning={data.loading} size="large">
+              <Table columns={columns} dataSource={data.tableData} pagination={false} />
+              <Pagination
+                defaultCurrent={data.page}
+                total={data.pages}
+                pageSize={15}
+                style={{ float: 'right', marginTop: '16px' }}
+                showSizeChanger={false}
+                onChange={onPageChange}
+              />
+            </Spin>
+          </div>
+        </div>
+      </PageContainer>
   );
 };
