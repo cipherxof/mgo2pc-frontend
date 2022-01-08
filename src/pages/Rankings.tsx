@@ -44,12 +44,6 @@ const columns = [
   },
 ];
 
-type RankingData = {
-  id: number;
-  chara: number;
-  dm: number;
-};
-
 type RankingParams = {
   mode?: string;
   page?: string;
@@ -67,11 +61,11 @@ export default (): React.ReactNode => {
     pages: 1,
     page: params.page ? params.page : 1,
     mode: params.mode ? params.mode : 'total',
-    tableData: {} as any,
+    tableData: [] as any,
   });
 
   function onModeChange(value: string) {
-    setData({ weekly: false, loading: true, pages: data.pages, page: 1, mode: value, tableData: {} as any });
+    setData({ weekly: data.weekly, loading: true, pages: data.pages, page: 1, mode: value, tableData: [] as any });
     history.push(`/rankings/${value}/1`);
   }
 
@@ -82,7 +76,7 @@ export default (): React.ReactNode => {
       pages: data.pages,
       page: value,
       mode: data.mode,
-      tableData: {} as any,
+      tableData: data.tableData,
     });
     history.push(`/rankings/${data.mode}/${value}`);
   }
@@ -94,8 +88,9 @@ export default (): React.ReactNode => {
       pages: data.pages,
       page: 1,
       mode: data.mode,
-      tableData: {} as any,
+      tableData: data.tableData,
     });
+    history.push(`/rankings/${data.mode}/1`);
   }
 
   useEffect(() => {
@@ -118,14 +113,6 @@ export default (): React.ReactNode => {
 
     fetchData();
   }, [data.mode, data.page, data.weekly]);
-
-  if (data.loading) {
-    return (
-      <div className="text-center">
-        <Spin spinning={data.loading} size="large"></Spin>
-      </div>
-    );
-  }
 
   return (
     <PageContainer>
@@ -155,15 +142,17 @@ export default (): React.ReactNode => {
       </div>
       <div className="row">
         <div className="col-md-12">
-          <Table columns={columns} dataSource={data.tableData} pagination={false} />
-          <Pagination
-            defaultCurrent={data.page}
-            total={data.pages}
-            pageSize={15}
-            style={{ float: 'right', marginTop: '16px' }}
-            showSizeChanger={false}
-            onChange={onPageChange}
-          />
+          <Spin spinning={data.loading} size="large">
+            <Table columns={columns} dataSource={data.tableData} pagination={false} />
+            <Pagination
+              defaultCurrent={data.page}
+              total={data.pages}
+              pageSize={15}
+              style={{ float: 'right', marginTop: '16px' }}
+              showSizeChanger={false}
+              onChange={onPageChange}
+            />
+          </Spin>
         </div>
       </div>
     </PageContainer>
