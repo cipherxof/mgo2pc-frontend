@@ -20,7 +20,9 @@ export enum MgoMap {
   WinterWarehouse = 13,
   VirtuousVista = 14,
   OuterOutlet = 15,
-  DesertDuel = 17
+  DesertDuel = 17,
+  LethalLeviathan = 18,
+  JadeJunciton = 21,
 }
 
 export enum MgoGameMode {
@@ -60,7 +62,9 @@ export const MgoMapNames = {
   [MgoMap.WinterWarehouse]: "Winter Warehouse",
   [MgoMap.VirtuousVista]: "Virtuous Vista",
   [MgoMap.OuterOutlet]: "Outer Outlet",
-  [MgoMap.DesertDuel]: "Desert Duel"
+  [MgoMap.DesertDuel]: "Desert Duel",
+  [MgoMap.LethalLeviathan]: "Lethal Leviathan",
+  [MgoMap.JadeJunciton]: "Jade Junction",
 }
 
 export const MgoGameModeNames = {
