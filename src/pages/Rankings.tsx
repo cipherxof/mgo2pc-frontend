@@ -20,7 +20,8 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     width: '70%',
-    render: (text: any) => (
+    render: (text: any) => {
+      return (
       <>
         <NavLink to={`/profile/${text.split('\t')[2]}`}>
           <Avatar
@@ -35,7 +36,7 @@ const columns = [
           <Text>{text.split('\t')[1]}</Text>
         </NavLink>
       </>
-    ),
+    )},
   },
   {
     title: 'Score',
@@ -97,7 +98,7 @@ export default (): React.ReactNode => {
       mode: data.mode,
       tableData: data.tableData,
     });
-    history.push(`/rankings/${data.mode}/1`);
+    //history.push(`/rankings/${data.mode}/1`);
   }
 
   useEffect(() => {
@@ -147,8 +148,9 @@ export default (): React.ReactNode => {
             >
               <Option value="total">Total Score</Option>
               <Option value="exp">Experience</Option>
-              <Option value="kdr">Kill / Death Ratio</Option>
-              <Option value="winrat">Win / Loss Ratio</Option>
+              <Option value="stuns">Stuns</Option>
+              <Option value="knife">Knife Kills</Option>
+              <Option value="scans">Scans</Option>
               <Option value="dm">Deathmatch</Option>
               <Option value="sdm">Stealth Deathmatch</Option>
               <Option value="tdm">Team Deathmatch</Option>
@@ -159,6 +161,8 @@ export default (): React.ReactNode => {
               <Option value="res">Rescue Mission</Option>
               <Option value="tsne">Team Sneaking</Option>
               <Option value="sm">Sneaking Mission</Option>
+              <Option value="kdr">Kill / Death Ratio</Option>
+              <Option value="winrat">Win / Loss Ratio</Option>
             </Select>
           </div>
         </div>

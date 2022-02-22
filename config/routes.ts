@@ -1,7 +1,7 @@
 export default [
-  { path: '/games', name: 'Games', icon: 'desktop', component: './Games' },
-  { path: '/rankings', name: 'Leaderboards', icon: 'crown', component: './Rankings' },
-  { path: '/shop', name: 'Reward Shop', icon: 'table', component: './shop/Shop' },
+  { path: '/games', name: 'Games', icon: 'https://mgo2pc.com/static/games.png', component: './Games' },
+  { path: '/rankings/score/1', name: 'Leaderboards', icon: 'https://mgo2pc.com/static/leaderboards.png', component: './Rankings' },
+  { path: '/shop', name: 'Reward Shop', icon: 'https://mgo2pc.com/static/money.png', component: './shop/Shop' },
   { path: '/game/:id', component: './Game' },
   { path: '/profile/:character', component: './Profile' },
   { path: '/account', component: './Account' },
