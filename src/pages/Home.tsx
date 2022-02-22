@@ -8,7 +8,7 @@ import { NavLink } from 'umi';
 const { Title } = Typography;
 
 export default (): React.ReactNode => {
-  document.title = "Home - Metal Gear Online";
+  document.title = 'Home - Metal Gear Online';
 
   return (
     <PageContainer>
@@ -17,9 +17,28 @@ export default (): React.ReactNode => {
           <Card>
             <ServerStatus />
             <br />
-            <p>We provide a service which allows you to play the multiplayer mode of Metal Gear Solid 4: Guns of the Patriots on PC using the <a href="https://rpcs3.net/" target="_blank">RPCS3</a> emulator.</p>
-            <p>If you are looking to get started then watch our <a href="https://www.youtube.com/watch?v=JFG_oGKQrTI" target="_blank">getting started video</a> or head over to our <NavLink to="/faq">frequently asked questions</NavLink> section.</p>
-            <p>Feel free to stop by the <a href="https://discord.gg/MNqmzuW2wH" target="_blank">discord</a> if you have any questions.</p>
+            <p>
+              We provide a service which allows you to play the multiplayer mode of Metal Gear Solid
+              4: Guns of the Patriots on PC using the{' '}
+              <a href="https://rpcs3.net/" target="_blank">
+                RPCS3
+              </a>{' '}
+              emulator.
+            </p>
+            <p>
+              If you are looking to get started then watch our{' '}
+              <a href="https://www.youtube.com/watch?v=JFG_oGKQrTI" target="_blank">
+                getting started video
+              </a>{' '}
+              or head over to our <NavLink to="/faq">frequently asked questions</NavLink> section.
+            </p>
+            <p>
+              Feel free to stop by the{' '}
+              <a href="https://discord.gg/MNqmzuW2wH" target="_blank">
+                discord
+              </a>{' '}
+              if you have any questions.
+            </p>
           </Card>
         </div>
       </div>
@@ -27,23 +46,39 @@ export default (): React.ReactNode => {
       <Divider />
 
       <div className="row">
-        <div className="col-md-6" style={{marginBottom: "16px"}}>
-          <Card>
-            <img style={{maxWidth: "100%", maxHeight: "140px"}} src={require('../assets/img/banner-200.jpg')} />
-           <Divider />
-           <Title>Patch 2.00 is live!</Title>
-           <NavLink to="/changelog"><Button type="ghost" icon={<InfoOutlined />} size="large">View Changelog</Button></NavLink>
-          </Card>
-        </div>
-        <div className="col-md-6" style={{marginBottom: "16px"}}>
+        <div className="col-md-6" style={{ marginBottom: '16px' }}>
           <Card>
             <div className="container-video">
-              <iframe className="video" width="10000" height="10000" src="https://www.youtube.com/embed/6W7PWfPVi74" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe
+                className="video"
+                width="10000"
+                height="10000"
+                src="https://www.youtube.com/embed/JFG_oGKQrTI"
+                title="PC Setup Guide"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </Card>
+        </div>
+        <div className="col-md-6" style={{ marginBottom: '16px' }}>
+          <Card>
+            <div className="container-video">
+              <iframe
+                className="video"
+                width="10000"
+                height="10000"
+                src="https://www.youtube.com/embed/OoISLt7aR-c"
+                title="PS3 Setup Guide"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </Card>
         </div>
       </div>
-
     </PageContainer>
   );
 };

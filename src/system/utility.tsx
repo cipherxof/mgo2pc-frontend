@@ -5,7 +5,7 @@ type UserAccount = {
   bannedUntil: string;
   bannedReason: string;
   role: number;
-}
+};
 
 export const getUserToken = () => {
   return localStorage.getItem('token');
@@ -53,13 +53,13 @@ export const getUserAccount = (): UserAccount | null => {
 
 export const isModerator = (): boolean => {
   const account = getUserAccount();
-  return (account !== null && account.role >= 10);
-}
+  return account !== null && account.role >= 10;
+};
 
 export const isAdmin = (): boolean => {
   const account = getUserAccount();
-  return (account !== null && account.role >= 20);
-}
+  return account !== null && account.role >= 20;
+};
 
 export const logoutUser = () => {
   localStorage.removeItem('token');
@@ -67,42 +67,74 @@ export const logoutUser = () => {
   localStorage.removeItem('expiry');
 };
 
-
-// todo: rename files to rank id
 export const getRankPreview = (rank: number) => {
-  switch (rank) {
-    case 1: return 'Foxhound';
-    case 2: return 'Fox';
-    case 3: return 'Doberman';
-    case 4: return 'Hound';
-    case 5: return 'Gator';
-    case 6: return 'Eagle';
-    case 7: return 'Shark';
-    case 8: return 'Waterbear';
-    case 9: return 'Sloth';
-    case 10: return 'Flying Squirrel';
-    case 11: return 'Pigeon';
-    case 12: return 'Owl';
-    case 13: return 'Tsuchinoko';
-    case 14: return 'Snake';
-    case 15: return 'Kerotan';
-    case 16: return 'GAKO';
-    case 17: return 'CHAMELEON';
-    case 18: return 'Chicken';
-    case 19: return 'Bear';
-    case 20: return 'Turtle';
-    case 21: return 'Bee';
-    case 22: return 'Rat';
-    case 23: return 'Fish';
-    case 24: return 'Komodo';
-    case 25: return 'Skua';
-    case 26: return 'Whale';
-    case 27: return 'Elephant';
-    case 28: return 'Cuckoo';
-    case 29: return 'Hog';
-    case 30: return 'Boss';
+  return `https://mgo2pc.com/static/media/emblem/${rank}.png`;
+};
+
+export const getRankId = (name: string) => {
+  switch (name) {
+    case 'foxhound':
+      return 1;
+    case 'fox':
+      return 22;
+    case 'doberman':
+      return 3;
+    case 'hound':
+      return 4;
+    case 'crocodile':
+      return 5;
+    case 'eagle':
+      return 6;
+    case 'jaws':
+      return 7;
+    case 'waterbear':
+      return 8;
+    case 'sloth':
+      return 9;
+    case 'squirrel':
+      return 10;
+    case 'pigeon':
+      return 11;
+    case 'owl':
+      return 12;
+    case 'tsuchinoko':
+      return 13;
+    case 'snake':
+      return 14;
+    case 'kerotan':
+      return 15;
+    case 'gako':
+      return 16;
+    case 'chameleon':
+      return 17;
+    case 'chicken':
+      return 18;
+    case 'bear':
+      return 19;
+    case 'tortoise':
+      return 20;
+    case 'bee':
+      return 21;
+    case 'rat':
+      return 22;
+    case 'fish':
+      return 23;
+    case 'komodo':
+      return 24;
+    case 'skua':
+      return 25;
+    case 'whale':
+      return 26;
+    case 'elephant':
+      return 27;
+    case 'cuckoo':
+      return 28;
+    case 'hog':
+      return 29;
+    case 'boss':
+      return 30;
   }
-  return null;
+  return 0;
 };
 
 export const getMapPreview = (mapId: number) => {
@@ -151,31 +183,31 @@ export function formatTime(time: number) {
  * Get the time passed since a date in a readable format
  * @param date
  */
- export function timeSince(date: Date) {
+export function timeSince(date: Date) {
   const diff = new Date().getTime() - date.getTime();
   const seconds = Math.floor(diff / 1000);
   let interval = Math.floor(seconds / 31536000);
 
   if (interval > 1) {
-    return interval + " years";
+    return interval + ' years';
   }
   interval = Math.floor(seconds / 2592000);
   if (interval > 1) {
-    return interval + " months";
+    return interval + ' months';
   }
   interval = Math.floor(seconds / 86400);
   if (interval > 1) {
-    return interval + " days";
+    return interval + ' days';
   }
   interval = Math.floor(seconds / 3600);
   if (interval > 1) {
-    return interval + " hours";
+    return interval + ' hours';
   }
   interval = Math.floor(seconds / 60);
   if (interval > 1) {
-    return interval + " minutes";
+    return interval + ' minutes';
   }
-  return Math.floor(seconds) + " seconds";
+  return Math.floor(seconds) + ' seconds';
 }
 
 /*

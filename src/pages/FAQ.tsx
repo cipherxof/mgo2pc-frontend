@@ -12,12 +12,15 @@ export default (): React.ReactNode => {
       <Collapse defaultActiveKey={['1']}>
         <Panel header="What are the system requirements?" key="1">
           <div>
-            Playstation 3 emulation is very CPU intensive and works best on desktops with 8 cores and 16 threads. That being said you can get playable framerates on weaker CPUs.
-            The best value for performance you will likely get is with the Ryzen 3600 ($199) or the Intel i5 11400 ($189).
-            However, if you are using a laptop we recommend one equipped with an 8-core/16-thread 35W+ H-series CPU such as an Intel Core i7-10870H or an AMD Ryzen 7 5800H.
+            <p>Playstation 3 emulation is very CPU intensive and works best on desktops with 8 cores and 16 threads. That being said you can get playable framerates on weaker CPUs.
+            The best value for performance you will likely get is with the Intel i3 12100 ($97) or the Intel i5 12400f ($179).
+            However, if you are using a laptop we recommend one equipped with an 8-core/16-thread 35W+ H-series CPU such as an Intel Core i7-10870H or an AMD Ryzen 7 5800H.<br/>
+            <br/>
+            If you are looking to play at a mostly stable 60 FPS then you will need Intel's 12th generation CPUs, namely the 12700k or better.
+            </p>
             <Divider />
             <p><b>Minimum</b></p>
-            <p><i>These CPUs are the minimum recommended to maintain 30 FPS in full lobbies.</i> </p>
+            <p><i>These CPUs are the minimum recommended to maintain 30 FPS in 12 player lobbies.</i> </p>
             <p><i>It is possible to play on weaker hardware than this but we cannot recommend it.</i> </p>
             <ul>
               <li>CPU: Intel i5 10400 or AMD Ryzen 3600</li>
@@ -25,6 +28,7 @@ export default (): React.ReactNode => {
             </ul>
 
             <p><b>Recommended</b></p>
+            <p><i>These CPUs are the minimum recommended to maintain 40 FPS in 12 player lobbies.</i> </p>
             <ul>
               <li>CPU: Intel i7-10700K or AMD Ryzen 3700x (or better)</li>
               <li>GPU: Anything with Vulkan Support</li>

@@ -2,7 +2,7 @@ import CharacterLevelTag from '@/components/CharacterLevelTag';
 import PersonalScores from '@/components/Profile/PersonalScores';
 import StatsTable from '@/components/Profile/StatsTable';
 import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
-import { getRankPreview, getUserToken, isModerator } from '@/system/utility';
+import { getRankPreview, getUserToken, isAdmin, isModerator } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Card, Divider, Dropdown, Menu, PageHeader, Spin, Switch, Tabs, Tag } from 'antd';
@@ -74,7 +74,7 @@ export default (): React.ReactNode => {
       headerTags.push(
         <img
           style={{ width: '32px' }}
-          src={`https://mgo2pc.com/static/media/emblem/${getRankPreview(data.profile.rank)}.png`}
+          src={`${getRankPreview(data.profile.rank)}`}
         />,
       );
     }
@@ -85,12 +85,11 @@ export default (): React.ReactNode => {
           <Menu.Item key={`/admin/user/${data.profile.user}`}>View Account</Menu.Item>
           <Menu.Item key={`/admin/chat/${data.profile.id}`}>View Chat History</Menu.Item>
           <Menu.Item key={`/admin/events/${data.profile.id}`}>View Events</Menu.Item>
-          <Menu.Item key="/">Kick Character</Menu.Item>
         </Menu>
       );
 
       headerTags.push(
-        <Dropdown.Button size="small" overlay={menu}>Moderate</Dropdown.Button>
+        <Dropdown.Button size="small" overlay={menu}>Moderate ({data.profile.id})</Dropdown.Button>
       );
     }
 

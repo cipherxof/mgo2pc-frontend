@@ -1,4 +1,4 @@
-import { formatTime, timeSince } from '@/system/utility';
+import { formatTime, getRankId, timeSince } from '@/system/utility';
 import { Alert, Card, Image, Spin, Statistic, Table, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import API from '../../system/api';
@@ -40,7 +40,7 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
   }
 
   const titleData: TitleData[] = [];
-  titleData["bear"] = { name: "Bear", image: "Bear.png" };
+  titleData["bear"] = { name: "Bear", image: "19.png" };
   titleData["bee"] = { name: "Bee", image: "Bee.png" };
   titleData["boss"] = { name: "Big Boss", image: "boss.png" };
   titleData["chameleon"] = { name: "Chameleon", image: "CHAMELEON.png" };
@@ -94,7 +94,7 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
         <div className="col-md-3 text-center">
           <Card>
             <Title level={3}>{titleData[key].name}</Title>
-            <Image width={96} src={`https://mgo2pc.com/static/media/emblem/${titleData[key].image}`} />
+            <Image width={96} src={`https://mgo2pc.com/static/media/emblem/${getRankId(key)}.png`} />
             <Statistic value={`${timeSince(new Date(value * 1000))} ago`} />
           </Card>
         </div>,
