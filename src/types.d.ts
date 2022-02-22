@@ -202,6 +202,16 @@ type Stats = {
   bases_captured: number;
   time_dedi: number;
   withdrawals: number;
+  sop_destab: number;
+  snake_spotted: number;
+  snake_holdups: number;
+  spotted: number;
+  points_assist: number;
+  points_base: number;
+  snake_tags_spawned: number;
+  snake_tags_spawned: number;
+  snake_tags_taken: number;
+  wins_snake: number;
 }
 
 type StatsGameMode = {

@@ -1,5 +1,5 @@
-import { formatTime, getRankId, timeSince } from '@/system/utility';
-import { Alert, Card, Image, Spin, Statistic, Table, Typography } from 'antd';
+import { getRankId, timeSince } from '@/system/utility';
+import { Alert, Card, Image, Spin, Statistic, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import API from '../../system/api';
 

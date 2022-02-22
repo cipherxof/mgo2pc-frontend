@@ -1,4 +1,5 @@
 import CharacterLevelTag from '@/components/CharacterLevelTag';
+import MedalTable from '@/components/Profile/MedalTable';
 import PersonalScores from '@/components/Profile/PersonalScores';
 import StatsTable from '@/components/Profile/StatsTable';
 import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
@@ -146,6 +147,11 @@ export default (): React.ReactNode => {
             <TabPane tab="Title History" key="3">
               <Card>
                 <TitleHistoryTable character={data.profile.id} />
+              </Card>
+            </TabPane>
+            <TabPane tab="Medals" key="4">
+              <Card>
+                <MedalTable stats={data.profile.stats} />
               </Card>
             </TabPane>
           </Tabs>

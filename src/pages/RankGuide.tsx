@@ -1,6 +1,6 @@
 import { getRankId, getRankPreview } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Typography } from 'antd';
+import { Alert, Card, Divider, Typography } from 'antd';
 import React from 'react';
 
 const { Meta } = Card;
@@ -105,6 +105,19 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
+      <div className="row">
+        <div className="col-md-12">
+        <Alert
+          message="Information"
+          description={<>This guide is incomplete. You can see the full guide <a target="_blank" href="https://mgo2pc.com/MGO2PC_Emblem_Guide-1.pdf">here</a></>}
+          type="warning"
+          showIcon
+        />
+        </div>
+      </div>
+
+      <Divider/>
+
       <div className="row">
         {cards}
       </div>
