@@ -72,11 +72,11 @@ export const getRankPreview = (rank: number) => {
 };
 
 export const getRankId = (name: string) => {
-  switch (name) {
+  switch (name.toLowerCase()) {
     case 'foxhound':
       return 1;
     case 'fox':
-      return 22;
+      return 2;
     case 'doberman':
       return 3;
     case 'hound':

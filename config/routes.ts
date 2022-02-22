@@ -37,6 +37,12 @@ export default [
         component: './FAQ',
       },
       {
+        path: '/rankguide',
+        name: 'Ranking Guide',
+        icon: 'smile',
+        component: './RankGuide',
+      },
+      {
         path: '/changelog',
         name: 'Changelog',
         icon: 'test',
