@@ -18,7 +18,7 @@ const GlobalHeaderRight: React.FC = () => {
       if (!loggedIn) return;
 
       const token = getUserToken();
-      
+
       if (!token) return;
 
       const response = await API.getAccount(token);
@@ -27,7 +27,7 @@ const GlobalHeaderRight: React.FC = () => {
         return;
       }
 
-      setData({rp: response.data.rp});
+      setData({ rp: response.data.rp });
 
       return () => {
         clearInterval(timeout);
@@ -41,7 +41,7 @@ const GlobalHeaderRight: React.FC = () => {
 
   if (loggedIn) {
     return (
-      <Space className={`${styles.right}  ${styles.dark}`}>
+      <Space className={`${styles.right} ${styles.dark}`}>
         <HeaderSearch
           className={`${styles.action} ${styles.search}`}
           placeholder="Search"

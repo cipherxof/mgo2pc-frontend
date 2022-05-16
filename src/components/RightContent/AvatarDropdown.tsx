@@ -27,38 +27,37 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     });
     history.push('/');
   }, []);
-  
+
   if (!account) {
     return <React.Fragment></React.Fragment>;
   }
 
   const isAdmin = account.role !== undefined && account.role >= 10;
 
-
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
       {isAdmin && (
-        <NavLink to="/admin">
-          <Menu.Item key="center">
+        <Menu.Item key="admin">
+          <NavLink to="/admin">
             <IdcardOutlined />
             Admin
-          </Menu.Item>
-        </NavLink>
+          </NavLink>
+        </Menu.Item>
       )}
 
-      <NavLink to="/account/characters">
-        <Menu.Item key="center">
+      <Menu.Item key="center">
+        <NavLink to="/account/characters">
           <UserOutlined />
           Characters
-        </Menu.Item>
-      </NavLink>
+        </NavLink>
+      </Menu.Item>
 
-      <NavLink to="/account">
-        <Menu.Item key="settings">
+      <Menu.Item key="settings">
+        <NavLink to="/account">
           <SettingOutlined />
           Settings
-        </Menu.Item>
-      </NavLink>
+        </NavLink>
+      </Menu.Item>
 
       <Menu.Divider />
 
