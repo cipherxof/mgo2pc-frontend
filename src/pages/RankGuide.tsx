@@ -84,7 +84,7 @@ export default (): React.ReactNode => {
             Withdrawal % = <Text type="success">≤4%</Text>
           </p>
           <p>
-            <Text type="success">50</Text> rounds in all previously mentioned modes.
+            <Text type="success">25</Text> rounds in all previously mentioned modes.
           </p>
         </>
       ),

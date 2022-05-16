@@ -1,6 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# admin
 /src/pages/admin
+/src/services/mgo2pc/admin
 
 # dependencies
 **/node_modules
@@ -10,7 +12,6 @@ _roadhog-api-doc
 
 # production
 /dist
-/.vscode
 
 # misc
 .DS_Store
@@ -21,8 +22,9 @@ yarn-error.log
 .idea
 yarn.lock
 package-lock.json
+pnpm-lock.yaml
 *bak
-.vscode
+
 
 # visual studio code
 .history

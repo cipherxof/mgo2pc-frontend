@@ -1,7 +1,6 @@
-
-import { Select, Statistic, Table } from "antd";
-import React, { useState } from "react";
-import { formatTime } from "../../system/utility";
+import { Select, Statistic, Table } from 'antd';
+import React, { useState } from 'react';
+import { formatTime } from '../../system/utility';
 
 const { Option } = Select;
 
@@ -34,17 +33,32 @@ const columns = [
 ];
 
 type StatsTableProps = {
-  stats: Stats
-}
+  stats: Stats;
+};
 
-type StatsMode = "all" | "stats_dm" | "stats_sdm" | "stats_scap" | "stats_tdm" | "stats_cap" | "stats_base" | "stats_bomb" | "stats_race" | "stats_res" | "stats_tsne" | "stats_sm";
+type StatsMode =
+  | 'all'
+  | 'stats_dm'
+  | 'stats_sdm'
+  | 'stats_scap'
+  | 'stats_tdm'
+  | 'stats_cap'
+  | 'stats_base'
+  | 'stats_bomb'
+  | 'stats_race'
+  | 'stats_res'
+  | 'stats_tsne'
+  | 'stats_sm';
 
 export default function StatsTable(props: StatsTableProps): JSX.Element {
-  const [data, setData] = useState({ mode: "all" as StatsMode });
+  const [data, setData] = useState({ mode: 'all' as StatsMode });
+
+  console.log('StatsTable');
+  console.log(props);
 
   const stats: Record<string, number> = {};
 
-  if (data.mode !== "all") {
+  if (data.mode !== 'all') {
     try {
       const statData = JSON.parse(props.stats[data.mode]);
 
@@ -99,7 +113,7 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
       kills: stats.headshot_kills,
       deaths: stats.headshot_deaths,
       stuns: stats.headshot_stuns,
-      stunsrec: stats.headshot_stuns_received
+      stunsrec: stats.headshot_stuns_received,
     },
     {
       key: 'typel',
@@ -107,7 +121,7 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
       kills: stats.lock_kills,
       deaths: stats.lock_deaths,
       stuns: stats.lock_stuns,
-      stunsrec: stats.lock_stuns_received
+      stunsrec: stats.lock_stuns_received,
     },
     {
       key: 'typeo',
@@ -115,7 +129,7 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
       kills: stats.kills - (stats.headshot_kills + stats.lock_kills),
       deaths: stats.deaths - (stats.headshot_deaths + stats.lock_deaths),
       stuns: stats.stuns - (stats.headshot_stuns + stats.lock_stuns),
-      stunsrec: stats.stuns_received - (stats.headshot_stuns_received + stats.lock_stuns_received)
+      stunsrec: stats.stuns_received - (stats.headshot_stuns_received + stats.lock_stuns_received),
     },
     {
       key: 'typea',
@@ -123,13 +137,17 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
       kills: stats.kills,
       deaths: stats.deaths,
       stuns: stats.stuns,
-      stunsrec: stats.stuns_received
+      stunsrec: stats.stuns_received,
     },
   ];
 
   return (
-    <div style={{ overflowX: "auto" }}>
-      <Select defaultValue="all" style={{ float: "right", width: 180, marginBottom: "16px" }} onChange={(e) => setData({ mode: e })}>
+    <div style={{ overflowX: 'auto' }}>
+      <Select
+        defaultValue="all"
+        style={{ float: 'right', width: 180, marginBottom: '16px' }}
+        onChange={(e) => setData({ mode: e as StatsMode })}
+      >
         <Option value="all">Total</Option>
         <Option value="stats_dm">Deathmatch</Option>
         <Option value="stats_sdm">Stealth Deathmatch</Option>
@@ -147,10 +165,18 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
       <br />
 
       <div className="row text-center">
-        <div className="col-md-3"><Statistic title="Rounds" value={stats.rounds} /></div>
-        <div className="col-md-3"><Statistic title="Wins" value={stats.wins} /></div>
-        <div className="col-md-3"><Statistic title="Score" value={stats.score} /></div>
-        <div className="col-md-3"><Statistic title="Time Played" value={formatTime(stats.time)} /></div>
+        <div className="col-md-3">
+          <Statistic title="Rounds" value={stats.rounds} />
+        </div>
+        <div className="col-md-3">
+          <Statistic title="Wins" value={stats.wins} />
+        </div>
+        <div className="col-md-3">
+          <Statistic title="Score" value={stats.score} />
+        </div>
+        <div className="col-md-3">
+          <Statistic title="Time Played" value={formatTime(stats.time)} />
+        </div>
       </div>
 
       <br />
