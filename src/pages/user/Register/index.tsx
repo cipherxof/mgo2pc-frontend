@@ -3,7 +3,7 @@ import { createAccount } from '@/services/mgo2pc/api';
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
 import { Card, Form, notification } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { history, Link, NavLink } from 'umi';
 import styles from './index.less';
@@ -18,6 +18,8 @@ type RegisterFormData = {
 let captcha: string = '';
 
 const Register: React.FC = () => {
+  const [data, setData] = useState({ loading: false });
+
   document.title = 'Create Account - Metal Gear Online';
 
   const onFinish = async (values: RegisterFormData) => {
@@ -32,7 +34,7 @@ const Register: React.FC = () => {
 
       if (!result) {
         return;
-      } else if (!result.data.success) {
+      } else if (!result.success) {
         notification.error({
           message: `Error`,
           description: result.data.message,
@@ -43,7 +45,7 @@ const Register: React.FC = () => {
 
       notification.success({
         message: `Success`,
-        description: 'Please check your email to activate your account.',
+        description: 'Your account has been created!',
         placement: 'topRight',
         duration: 30,
       });
@@ -78,7 +80,7 @@ const Register: React.FC = () => {
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
-                  loading: false,
+                  loading: data.loading,
                   size: 'large',
                   style: {
                     width: '100%',
@@ -86,7 +88,9 @@ const Register: React.FC = () => {
                 },
               }}
               onFinish={async (values: RegisterFormData) => {
-                onFinish(values);
+                setData({ loading: true });
+                await onFinish(values);
+                setData({ loading: false });
               }}
             >
               <ProFormText

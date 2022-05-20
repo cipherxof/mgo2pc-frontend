@@ -3,7 +3,7 @@ import { login } from '@/services/mgo2pc/api';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { Card } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import { history, Link, NavLink } from 'umi';
 import styles from './index.less';
 
@@ -13,6 +13,8 @@ type LoginFormData = {
 };
 
 const Login: React.FC = () => {
+  const [data, setData] = useState({ loading: false });
+
   document.title = 'Login - Metal Gear Online';
 
   const onFinish = async (values: LoginFormData) => {
@@ -67,7 +69,7 @@ const Login: React.FC = () => {
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
-                  loading: false,
+                  loading: data.loading,
                   size: 'large',
                   style: {
                     width: '100%',
@@ -75,7 +77,9 @@ const Login: React.FC = () => {
                 },
               }}
               onFinish={async (values: LoginFormData) => {
-                onFinish(values);
+                setData({ loading: true });
+                await onFinish(values);
+                setData({ loading: false });
               }}
             >
               <ProFormText

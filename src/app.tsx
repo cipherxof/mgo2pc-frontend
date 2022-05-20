@@ -22,8 +22,7 @@ export const layout: RunTimeLayoutConfig = () => {
 };
 
 const baseURLInterceptor = (url: null | string, options: RequestOptionsInit) => {
-  const host =
-    window.location.hostname === 'localhost' ? 'http://localhost:80' : window.location.hostname;
+  const host = window.location.hostname === 'localhost' ? 'http://localhost:80' : '';
 
   options.headers = {
     authorization: `${getUserToken()}`,
