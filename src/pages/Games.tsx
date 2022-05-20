@@ -1,24 +1,28 @@
 import GameCard from '@/components/GameCard';
+import { getGames } from '@/services/mgo2pc/api';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Alert, Divider, Spin, Statistic } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'umi';
-import API from '../system/api';
 
 export default (): React.ReactNode => {
   const [data, setData] = useState({ loading: true, players: '...', games: [] as GameLobby[] });
 
-  document.title = "Games - Metal Gear Online";
+  document.title = 'Games - Metal Gear Online';
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await API.getGames();
+      const response = await getGames();
 
       if (!response) {
         return;
       }
 
-      setData({ loading: false, players: `${response.data.players}`, games: response.data.lobbies });
+      setData({
+        loading: false,
+        players: `${response.data.players}`,
+        games: response.data.lobbies,
+      });
     };
 
     fetchData();
@@ -30,18 +34,17 @@ export default (): React.ReactNode => {
     };
   }, []);
 
-
   data.games.sort((a, b) => b.players.length - a.players.length);
 
   const cards: JSX.Element[] = [];
 
   for (const game of data.games) {
     cards.push(
-      <div className="col-md-3" key={game.id} style={{ marginBottom: "16px" }}>
+      <div className="col-md-3" key={game.id} style={{ marginBottom: '16px' }}>
         <NavLink to={`/game/${game.id}`}>
           <GameCard game={game} />
         </NavLink>
-      </div>
+      </div>,
     );
   }
 
@@ -63,16 +66,15 @@ export default (): React.ReactNode => {
           type="info"
           showIcon
         />
-      </div>)
+      </div>,
+    );
   }
 
   return (
     <PageContainer>
       {statistics}
       <Spin spinning={data.loading} size="large">
-        <div className="row">
-          {cards}
-        </div>
+        <div className="row">{cards}</div>
       </Spin>
     </PageContainer>
   );

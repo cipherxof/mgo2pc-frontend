@@ -1,29 +1,17 @@
-import { Alert } from "antd";
-import { useState } from "react";
-import { useEffect } from "react";
-import API from '../../system/api';
+import { getStatus } from '@/services/mgo2pc/api';
+import { Alert } from 'antd';
+import { useRequest } from 'umi';
 
 export default () => {
-  const [data, setData] = useState({ status: 1 });
+  let { data, loading } = useRequest(getStatus);
 
-  const message = `The server is currently ${data.status === 1 ? "online" : "offline"}.`;
+  if (loading) {
+    data = { status: 1 };
+  } else if (!data) {
+    data = { status: 0 };
+  }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await API.getStatus();
+  const message = `The server is currently ${data.status === 1 ? 'online' : 'offline'}.`;
 
-      if (!response) {
-        setData({ status: 0 });
-        return;
-      }
-
-      setData({ status: response.data.status });
-    };
-
-    fetchData();
-  }, []);
-
-  return (
-    <Alert message={message} type={data.status === 1 ? "success" : "error"} showIcon banner />
-  );
+  return <Alert message={message} type={data.status === 1 ? 'success' : 'error'} showIcon banner />;
 };

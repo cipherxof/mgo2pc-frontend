@@ -50,7 +50,6 @@
     "@umijs/route-utils": "^2.0.0",
     "ahooks": "^2.0.0",
     "antd": "^4.19.0",
-    "axios": "^0.21.1",
     "bizcharts": "^3.5.3-beta.0",
     "bizcharts-plugin-slider": "^2.1.1-beta.1",
     "classnames": "^2.3.0",

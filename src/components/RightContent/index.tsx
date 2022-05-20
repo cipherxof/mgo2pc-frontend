@@ -1,3 +1,4 @@
+import { getAccount } from '@/services/mgo2pc/api';
 import { getUserToken, isLoggedIn } from '@/system/utility';
 import { Space } from 'antd';
 import React, { useEffect, useState } from 'react';
@@ -7,7 +8,6 @@ import NoticeIcon from '../NoticeIcon';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
 import RewardPoints from './RewardPoints';
-import API from '../../system/api';
 
 const GlobalHeaderRight: React.FC = () => {
   const loggedIn = isLoggedIn();
@@ -21,7 +21,7 @@ const GlobalHeaderRight: React.FC = () => {
 
       if (!token) return;
 
-      const response = await API.getAccount(token);
+      const response = await getAccount();
 
       if (!response) {
         return;

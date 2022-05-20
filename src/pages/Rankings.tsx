@@ -1,9 +1,9 @@
+import { getRankings } from '@/services/mgo2pc/api';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Pagination, Select, Spin, Switch, Table, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useHistory, useParams } from 'umi';
-import API from '../system/api';
 
 const { Option } = Select;
 const { Text } = Typography;
@@ -22,21 +22,22 @@ const columns = [
     width: '70%',
     render: (text: any) => {
       return (
-      <>
-        <NavLink to={`/profile/${text.split('\t')[2]}`}>
-          <Avatar
-            size="small"
-            src={
-              text.split('\t')[0] === ''
-                ? ''
-                : `https://mgo2pc.com/static/media/emblems/${text.split('\t')[0]}.png`
-            }
-            icon={<UserOutlined />}
-          />{' '}
-          <Text>{text.split('\t')[1]}</Text>
-        </NavLink>
-      </>
-    )},
+        <>
+          <NavLink to={`/profile/${text.split('\t')[2]}`}>
+            <Avatar
+              size="small"
+              src={
+                text.split('\t')[0] === ''
+                  ? ''
+                  : `https://mgo2pc.com/static/media/emblems/${text.split('\t')[0]}.png`
+              }
+              icon={<UserOutlined />}
+            />{' '}
+            <Text>{text.split('\t')[1]}</Text>
+          </NavLink>
+        </>
+      );
+    },
   },
   {
     title: 'Score',
@@ -103,7 +104,7 @@ export default (): React.ReactNode => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await API.getRankings(data.mode, data.page, data.weekly);
+      const response = await getRankings(data.mode, data.page, data.weekly);
 
       if (!response) {
         console.log('no response');
@@ -113,10 +114,10 @@ export default (): React.ReactNode => {
       setData({
         weekly: data.weekly,
         loading: false,
-        pages: response.data.pages,
+        pages: response.pages,
         page: data.page,
         mode: data.mode,
-        tableData: response.data.rankings,
+        tableData: response.data,
       });
     };
 
@@ -127,60 +128,59 @@ export default (): React.ReactNode => {
     return (
       <PageContainer>
         <div className="text-center">
-          <Spin spinning={data.loading} size="large">
-          </Spin>
+          <Spin spinning={data.loading} size="large"></Spin>
         </div>
       </PageContainer>
     );
   }
 
   return (
-      <PageContainer>
-        <div className="row">
-          <div className="col-md-8">
-            <Switch checked={data.weekly} onChange={(e: any) => setWeekly(e)} /> Weekly
-          </div>
-          <div className="col-md-4">
-            <Select
-              defaultValue={data.mode}
-              onChange={onModeChange}
-              style={{ float: 'right', width: 180, marginBottom: '16px' }}
-            >
-              <Option value="total">Total Score</Option>
-              <Option value="exp">Experience</Option>
-              <Option value="stuns">Stuns</Option>
-              <Option value="knife">Knife Kills</Option>
-              <Option value="scans">Scans</Option>
-              <Option value="dm">Deathmatch</Option>
-              <Option value="sdm">Stealth Deathmatch</Option>
-              <Option value="tdm">Team Deathmatch</Option>
-              <Option value="cap">Capture Mission</Option>
-              <Option value="base">Base Mission</Option>
-              <Option value="bomb">Bomb Mission</Option>
-              <Option value="race">Race Mission</Option>
-              <Option value="res">Rescue Mission</Option>
-              <Option value="tsne">Team Sneaking</Option>
-              <Option value="sm">Sneaking Mission</Option>
-              <Option value="kdr">Kill / Death Ratio</Option>
-              <Option value="winrat">Win / Loss Ratio</Option>
-            </Select>
-          </div>
+    <PageContainer>
+      <div className="row">
+        <div className="col-md-8">
+          <Switch checked={data.weekly} onChange={(e: any) => setWeekly(e)} /> Weekly
         </div>
-        <div className="row">
-          <div className="col-md-12">
-            <Spin spinning={data.loading} size="large">
-              <Table columns={columns} dataSource={data.tableData} pagination={false} />
-              <Pagination
-                defaultCurrent={data.page}
-                total={data.pages}
-                pageSize={15}
-                style={{ float: 'right', marginTop: '16px' }}
-                showSizeChanger={false}
-                onChange={onPageChange}
-              />
-            </Spin>
-          </div>
+        <div className="col-md-4">
+          <Select
+            defaultValue={data.mode}
+            onChange={onModeChange}
+            style={{ float: 'right', width: 180, marginBottom: '16px' }}
+          >
+            <Option value="total">Total Score</Option>
+            <Option value="exp">Experience</Option>
+            <Option value="stuns">Stuns</Option>
+            <Option value="knife">Knife Kills</Option>
+            <Option value="scans">Scans</Option>
+            <Option value="dm">Deathmatch</Option>
+            <Option value="sdm">Stealth Deathmatch</Option>
+            <Option value="tdm">Team Deathmatch</Option>
+            <Option value="cap">Capture Mission</Option>
+            <Option value="base">Base Mission</Option>
+            <Option value="bomb">Bomb Mission</Option>
+            <Option value="race">Race Mission</Option>
+            <Option value="res">Rescue Mission</Option>
+            <Option value="tsne">Team Sneaking</Option>
+            <Option value="sm">Sneaking Mission</Option>
+            <Option value="kdr">Kill / Death Ratio</Option>
+            <Option value="winrat">Win / Loss Ratio</Option>
+          </Select>
         </div>
-      </PageContainer>
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+          <Spin spinning={data.loading} size="large">
+            <Table columns={columns} dataSource={data.tableData} pagination={false} />
+            <Pagination
+              defaultCurrent={data.page}
+              total={data.pages}
+              pageSize={15}
+              style={{ float: 'right', marginTop: '16px' }}
+              showSizeChanger={false}
+              onChange={onPageChange}
+            />
+          </Spin>
+        </div>
+      </div>
+    </PageContainer>
   );
 };

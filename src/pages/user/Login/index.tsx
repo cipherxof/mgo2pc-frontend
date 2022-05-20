@@ -1,10 +1,10 @@
 import Footer from '@/components/Footer';
+import { login } from '@/services/mgo2pc/api';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { Card } from 'antd';
 import React from 'react';
 import { history, Link, NavLink } from 'umi';
-import API from '../../../system/api';
 import styles from './index.less';
 
 type LoginFormData = {
@@ -16,19 +16,21 @@ const Login: React.FC = () => {
   document.title = 'Login - Metal Gear Online';
 
   const onFinish = async (values: LoginFormData) => {
-    const result = await API.login(values.username, values.password);
+    try {
+      const result = await login(values.username, values.password);
 
-    if (!result) {
-      return;
-    }
+      if (!result) {
+        return;
+      }
 
-    const account = JSON.stringify(result.data.account);
+      const account = JSON.stringify(result.account);
 
-    localStorage.setItem('token', result.data.data);
-    localStorage.setItem('account', account);
-    localStorage.setItem('expiry', `${new Date(Date.now() + 12096e5)}`); // two weeks
+      localStorage.setItem('token', result.data);
+      localStorage.setItem('account', account);
+      localStorage.setItem('expiry', `${new Date(Date.now() + 12096e5)}`); // two weeks
 
-    history.push('/account');
+      history.push('/account');
+    } catch (e) {}
   };
 
   return (
@@ -116,7 +118,7 @@ const Login: React.FC = () => {
 
                 <p className="text-center">
                   <br />
-                  <NavLink to="/register">Don't have an account?</NavLink>
+                  <NavLink to="/register">Don&#39;t have an account?</NavLink>
                 </p>
               </div>
             </ProForm>

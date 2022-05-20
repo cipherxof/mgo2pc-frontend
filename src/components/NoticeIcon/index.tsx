@@ -1,9 +1,9 @@
+import { getNotifications, readNotification } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
 import { message, Tag } from 'antd';
 import { groupBy } from 'lodash';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
-import API from '../../system/api';
 import styles from './index.less';
 import NoticeIcon from './NoticeIcon';
 
@@ -75,24 +75,24 @@ const NoticeIconView = () => {
   useEffect(() => {
     const fetchData = async () => {
       const token = getUserToken();
-      
+
       if (!token) return;
-      
-      const response = await API.getNotifications(token);
+
+      const response = await getNotifications();
 
       if (!response) {
         return;
       }
-      
-      response.data.notifications.forEach((n) => { 
-        n.type = "notification";
+
+      response.notifications.forEach((n: any) => {
+        n.type = 'notification';
         //@ts-ignore
-        n.read = n.unread === 0; 
+        n.read = n.unread === 0;
         //@ts-ignore
-        n.description = n.contents
+        n.description = n.contents;
       });
 
-      setNotices(response.data.notifications);
+      setNotices(response.notifications);
     };
 
     fetchData();
@@ -103,9 +103,9 @@ const NoticeIconView = () => {
       clearInterval(timeout);
     };
   }, []);
-  
+
   useEffect(() => {
-   //setNotices(getNotices());
+    //setNotices(getNotices());
   }, []);
 
   const noticeData = getNoticeData(notices);
@@ -122,7 +122,7 @@ const NoticeIconView = () => {
           const token = getUserToken();
 
           if (token) {
-            API.readNotification(id, token);
+            readNotification(id);
           }
         }
         return notice;
@@ -143,7 +143,7 @@ const NoticeIconView = () => {
     const token = getUserToken();
 
     if (token) {
-      API.readNotification("0", token);
+      readNotification('0');
     }
 
     message.success(`Marking all notifications as read.`);

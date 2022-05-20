@@ -1,13 +1,11 @@
 import Footer from '@/components/Footer';
-import {
-  LockOutlined, MailOutlined, UserOutlined
-} from '@ant-design/icons';
+import { createAccount } from '@/services/mgo2pc/api';
+import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
 import { Card, Form, notification } from 'antd';
 import React from 'react';
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from 'react-google-recaptcha';
 import { history, Link, NavLink } from 'umi';
-import API from '../../../system/api';
 import styles from './index.less';
 
 type RegisterFormData = {
@@ -15,36 +13,43 @@ type RegisterFormData = {
   password: string;
   email: string;
   display_name: string;
-}
+};
 
-let captcha: string = "";
+let captcha: string = '';
 
 const Register: React.FC = () => {
-  document.title = "Create Account - Metal Gear Online";
+  document.title = 'Create Account - Metal Gear Online';
 
   const onFinish = async (values: RegisterFormData) => {
-    const result = await API.createAccount(values.username, values.password, values.email, captcha, values.display_name);
+    try {
+      const result = await createAccount(
+        values.username,
+        values.password,
+        values.email,
+        captcha,
+        values.display_name,
+      );
 
-    if (!result) {
-      return;
-    }
-    else if (!result.data.success) {
-      notification.error({
-        message: `Error`,
-        description: result.data.message,
-        placement: "topRight",
+      if (!result) {
+        return;
+      } else if (!result.data.success) {
+        notification.error({
+          message: `Error`,
+          description: result.data.message,
+          placement: 'topRight',
+        });
+        return;
+      }
+
+      notification.success({
+        message: `Success`,
+        description: 'Please check your email to activate your account.',
+        placement: 'topRight',
+        duration: 30,
       });
-      return;
-    }
 
-    notification.success({
-      message: `Success`,
-      description: "Please check your email to activate your account.",
-      placement: "topRight",
-      duration: 30
-    });
-
-    history.push("/");
+      history.push('/');
+    } catch (e) {}
   };
 
   return (
@@ -57,11 +62,10 @@ const Register: React.FC = () => {
               <span className={styles.title}>Metal Gear Online</span>
             </Link>
           </div>
-          <div className={styles.desc}>
-          </div>
+          <div className={styles.desc}></div>
         </div>
 
-        <div className={styles.main} style={{ marginTop: "5%"}}>
+        <div className={styles.main} style={{ marginTop: '5%' }}>
           <Card>
             <ProForm
               initialValues={{
@@ -127,14 +131,23 @@ const Register: React.FC = () => {
                   },
                 ]}
               />
-              <Form.Item label="Captcha" name="captcha" rules={[{ required: false, message: 'Please fill out the bot check' }]}>
-                <ReCAPTCHA sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V" size="compact" theme="dark" onChange={(value: string | null) => { captcha = value ? value : "" }} />
+              <Form.Item
+                label="Captcha"
+                name="captcha"
+                rules={[{ required: false, message: 'Please fill out the bot check' }]}
+              >
+                <ReCAPTCHA
+                  sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V"
+                  size="compact"
+                  theme="dark"
+                  onChange={(value: string | null) => {
+                    captcha = value ? value : '';
+                  }}
+                />
               </Form.Item>
 
               <p className="text-center">
-                <NavLink to="/login">
-                  Already have an account?
-                </NavLink>
+                <NavLink to="/login">Already have an account?</NavLink>
               </p>
             </ProForm>
           </Card>

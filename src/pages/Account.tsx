@@ -1,9 +1,9 @@
+import { updateAccount } from '@/services/mgo2pc/api';
 import { getUserAccount, getUserToken, isLoggedIn } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Button, Card, Form, Input, Menu, notification } from 'antd';
 import React, { useCallback, useState } from 'react';
 import { useHistory } from 'umi';
-import API from '../system/api';
 
 const layout = {
   labelCol: { span: 4 },
@@ -32,7 +32,9 @@ const onUpdateAccount = async (e: any) => {
     passwordNew: e.target[2].value,
   };
 
-  await API.updateAccount(token, data);
+  try {
+    await updateAccount(data);
+  } catch (err) {}
 };
 
 export default (): React.ReactNode => {
@@ -52,7 +54,7 @@ export default (): React.ReactNode => {
     },
     [menu, setMenu],
   );
-  
+
   return (
     <PageContainer>
       <Card>

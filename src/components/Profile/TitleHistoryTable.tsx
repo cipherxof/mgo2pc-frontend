@@ -1,7 +1,8 @@
+import { getTitles } from '@/services/mgo2pc/api';
 import { getRankId, timeSince } from '@/system/utility';
 import { Alert, Card, Image, Spin, Statistic, Typography } from 'antd';
-import React, { useEffect, useState } from 'react';
-import API from '../../system/api';
+import React from 'react';
+import { useRequest } from 'umi';
 
 const { Title } = Typography;
 
@@ -12,72 +13,58 @@ type TitleHistoryProps = {
 type TitleData = {
   name: string;
   image: string;
-}
+};
+
+const titleData: TitleData[] = [];
+titleData['bear'] = { name: 'Bear', image: '19.png' };
+titleData['bee'] = { name: 'Bee', image: 'Bee.png' };
+titleData['boss'] = { name: 'Big Boss', image: 'boss.png' };
+titleData['chameleon'] = { name: 'Chameleon', image: 'CHAMELEON.png' };
+titleData['chicken'] = { name: 'Chicken', image: 'Chicken.png' };
+titleData['crocodile'] = { name: 'Crocodile', image: 'Gator.png' };
+titleData['cuckoo'] = { name: 'Cuckoo', image: 'Cuckoo.png' };
+titleData['doberman'] = { name: 'Doberman', image: 'Doberman.png' };
+titleData['eagle'] = { name: 'Eagle', image: 'Eagle.png' };
+titleData['elephant'] = { name: 'Elephant', image: 'Elephant.png' };
+titleData['fish'] = { name: 'Fish', image: 'Fish.png' };
+titleData['fox'] = { name: 'Fox', image: 'Fox.png' };
+titleData['foxhound'] = { name: 'Foxhound', image: 'Foxhound.png' };
+titleData['gako'] = { name: 'GAKO', image: 'GAKO.png' };
+titleData['hog'] = { name: 'Hog', image: 'Hog.png' };
+titleData['hound'] = { name: 'Hound', image: 'Hound.png' };
+titleData['jaws'] = { name: 'Jaws', image: 'Shark.png' };
+titleData['kerotan'] = { name: 'Kerotan', image: 'Kerotan.png' };
+titleData['komodo'] = { name: 'Komodo', image: 'Komodo.png' };
+titleData['owl'] = { name: 'Owl', image: 'Owl.png' };
+titleData['pigeon'] = { name: 'Pigeon', image: 'Pigeon.png' };
+titleData['rat'] = { name: 'Rat', image: 'Rat.png' };
+titleData['skua'] = { name: 'Skua', image: 'Skua.png' };
+titleData['sloth'] = { name: 'Sloth', image: 'Sloth.png' };
+titleData['snake'] = { name: 'Snake', image: 'Snake.png' };
+titleData['squirrel'] = { name: 'Squirrel', image: 'Flying Squirrel.png' };
+titleData['theboss'] = { name: 'Boss', image: 'Boss.png' };
+titleData['tortoise'] = { name: 'Tortoise', image: 'Turtle.png' };
+titleData['tsuchinoko'] = { name: 'Tsuchinoko', image: 'TSUCHINOKO.png' };
+titleData['waterbear'] = { name: 'Waterbear', image: 'Waterbear.png' };
+titleData['whale'] = { name: 'Whale', image: 'Whale.png' };
 
 export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element {
-  const [data, setData] = useState({ loading: true, titles: {} as TitleHistory });
+  const { data, loading } = useRequest(() => getTitles(props.character));
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await API.getTitles(`${props.character}`);
-
-      if (!response) {
-        return;
-      }
-
-      setData({ loading: false, titles: response.data.titles });
-    };
-
-    fetchData();
-  }, []);
-
-  if (data.loading) {
+  if (!data || loading) {
     return (
       <div className="text-center">
-        <Spin spinning={data.loading} size="large"></Spin>
+        <Spin spinning={loading} size="large" />
       </div>
     );
   }
 
-  const titleData: TitleData[] = [];
-  titleData["bear"] = { name: "Bear", image: "19.png" };
-  titleData["bee"] = { name: "Bee", image: "Bee.png" };
-  titleData["boss"] = { name: "Big Boss", image: "boss.png" };
-  titleData["chameleon"] = { name: "Chameleon", image: "CHAMELEON.png" };
-  titleData["chicken"] = { name: "Chicken", image: "Chicken.png" };
-  titleData["crocodile"] = { name: "Crocodile", image: "Gator.png" };
-  titleData["cuckoo"] = { name: "Cuckoo", image: "Cuckoo.png" };
-  titleData["doberman"] = { name: "Doberman", image: "Doberman.png" };
-  titleData["eagle"] = { name: "Eagle", image: "Eagle.png" };
-  titleData["elephant"] = { name: "Elephant", image: "Elephant.png" };
-  titleData["fish"] = { name: "Fish", image: "Fish.png" };
-  titleData["fox"] = { name: "Fox", image: "Fox.png" };
-  titleData["foxhound"] = { name: "Foxhound", image: "Foxhound.png" };
-  titleData["gako"] = { name: "GAKO", image: "GAKO.png" };
-  titleData["hog"] = { name: "Hog", image: "Hog.png" };
-  titleData["hound"] = { name: "Hound", image: "Hound.png" };
-  titleData["jaws"] = { name: "Jaws", image: "Shark.png" };
-  titleData["kerotan"] = { name: "Kerotan", image: "Kerotan.png" };
-  titleData["komodo"] = { name: "Komodo", image: "Komodo.png" };
-  titleData["owl"] = { name: "Owl", image: "Owl.png" };
-  titleData["pigeon"] = { name: "Pigeon", image: "Pigeon.png" };
-  titleData["rat"] = { name: "Rat", image: "Rat.png" };
-  titleData["skua"] = { name: "Skua", image: "Skua.png" };
-  titleData["sloth"] = { name: "Sloth", image: "Sloth.png" };
-  titleData["snake"] = { name: "Snake", image: "Snake.png" };
-  titleData["squirrel"] = { name: "Squirrel", image: "Flying Squirrel.png" };
-  titleData["theboss"] = { name: "Boss", image: "Boss.png" };
-  titleData["tortoise"] = { name: "Tortoise", image: "Turtle.png" };
-  titleData["tsuchinoko"] = { name: "Tsuchinoko", image: "TSUCHINOKO.png" };
-  titleData["waterbear"] = { name: "Waterbear", image: "Waterbear.png" };
-  titleData["whale"] = { name: "Whale", image: "Whale.png" };
-
-  const contents = [<div></div>];
+  const contents = [<div key="empty" />];
   let col = 0;
   let cols = [];
   let foundTitles = false;
 
-  for (const [key, value] of Object.entries(data.titles)) {
+  for (const [key, value] of Object.entries(data)) {
     console.log(`${key}: ${value}`);
     if (col === 4) {
       contents.push(
@@ -88,13 +75,16 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
       cols = [];
       col = 0;
     }
-    if (value > 0 && key !== "id" && key !== "chara" && titleData[key]) {
+    if (value > 0 && key !== 'id' && key !== 'chara' && titleData[key]) {
       foundTitles = true;
       cols.push(
         <div className="col-md-3 text-center">
           <Card>
             <Title level={3}>{titleData[key].name}</Title>
-            <Image width={96} src={`https://mgo2pc.com/static/media/emblem/${getRankId(key)}.png`} />
+            <Image
+              width={96}
+              src={`https://mgo2pc.com/static/media/emblem/${getRankId(key)}.png`}
+            />
             <Statistic value={`${timeSince(new Date(value * 1000))} ago`} />
           </Card>
         </div>,
@@ -104,7 +94,11 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
   }
 
   if (col > 0) {
-    contents.push(<div className="row" style={{ marginBottom: "16px" }}>{cols}</div>);
+    contents.push(
+      <div className="row" style={{ marginBottom: '16px' }}>
+        {cols}
+      </div>,
+    );
   }
   if (!foundTitles) {
     contents.push(
@@ -115,7 +109,8 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
           type="info"
           showIcon
         />
-      </div>)
+      </div>,
+    );
   }
 
   return <div>{contents}</div>;

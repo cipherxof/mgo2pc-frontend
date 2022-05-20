@@ -1,9 +1,9 @@
+import { purchaseItem } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Avatar, Button, Card, Modal, notification, Tag } from 'antd';
 import React, { useState } from 'react';
 import { NavLink } from 'umi';
-import API from '../../system/api';
 
 const { Meta } = Card;
 
@@ -15,26 +15,32 @@ type ShopItemProps = {
 export default (props: ShopItemProps) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [owned, setOwned] = useState(props.item.owned);
-  
+
   const showModal = () => {
     setIsModalVisible(true);
   };
 
   const handleOk = async () => {
     const token = getUserToken();
-    
+
     setIsModalVisible(false);
 
     if (!token) {
-      notification.error({ message: `Error`, description: "You must be logged in to make purchases.", placement: "topRight" });
+      notification.error({
+        message: `Error`,
+        description: 'You must be logged in to make purchases.',
+        placement: 'topRight',
+      });
       return;
     }
 
-    const response = await API.purchaseItem(props.item.id.toString(), token);
+    try {
+      const response = await purchaseItem(props.item.id);
 
-    if (response.data && response.data.success) {
-      setOwned(true);
-    }
+      if (response && response.success) {
+        setOwned(true);
+      }
+    } catch (e) {}
   };
 
   const handleCancel = () => {
@@ -49,7 +55,11 @@ export default (props: ShopItemProps) => {
     </>
   );
 
-  let buyButton = <Button type="ghost" icon={<ShoppingCartOutlined />} size="large" onClick={() => showModal()}>Purchase</Button>;
+  let buyButton = (
+    <Button type="ghost" icon={<ShoppingCartOutlined />} size="large" onClick={() => showModal()}>
+      Purchase
+    </Button>
+  );
 
   if (props.showButton !== true) {
     buyButton = <ShoppingCartOutlined onClick={() => showModal()} key="buy" />;
@@ -68,10 +78,15 @@ export default (props: ShopItemProps) => {
         <NavLink to={`/shop/${props.item.id}`}>
           <Meta
             avatar={<Avatar shape="square" size="large" src={icon} />}
-            title={<>{props.item.name} <img src={require("../../assets/img/shop/type_0.png")} style={{width: "16px"}} /></>}
+            title={
+              <>
+                {props.item.name}{' '}
+                <img src={require('../../assets/img/shop/type_0.png')} style={{ width: '16px' }} />
+              </>
+            }
             description={
               <React.Fragment>
-                {coinIcon} {props.item.cost} 
+                {coinIcon} {props.item.cost}
               </React.Fragment>
             }
           />
