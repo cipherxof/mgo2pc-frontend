@@ -67,7 +67,7 @@ export default (): React.ReactNode => {
         return;
       }
 
-      const game = response.lobbies.find((g: any) => g.id === parseInt(params.id));
+      const game = response.data.lobbies.find((g: any) => g.id === parseInt(params.id));
 
       if (game) {
         setData({ loading: false, game });
