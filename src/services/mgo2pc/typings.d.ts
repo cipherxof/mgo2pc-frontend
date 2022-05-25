@@ -58,6 +58,8 @@ declare namespace API {
   type ShopItems = {
     data: {
       items: ShopItem[];
+      slots: ShopSlots[];
+      characters: MgoCharacter[];
     };
     success: boolean;
     message: string;

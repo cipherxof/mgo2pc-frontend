@@ -1,11 +1,13 @@
+import { LocalizedModal } from '@/components/LocalizedModal';
 import { purchaseItem } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Avatar, Button, Card, Modal, notification, Tag } from 'antd';
+import { ShoppingCartOutlined, UserAddOutlined } from '@ant-design/icons';
+import { Avatar, Button, Card, Divider, Modal, notification, Select, Space, Tag } from 'antd';
 import React, { useState } from 'react';
 import { NavLink } from 'umi';
 
 const { Meta } = Card;
+const { Option } = Select;
 
 type ShopItemProps = {
   item: ShopItem;
@@ -48,6 +50,42 @@ export default (props: ShopItemProps) => {
   };
 
   const icon = `/img/shop/items/icons/${props.item.gear_slot}_${props.item.color}.png`;
+
+  function handleEquip() {
+    Modal.confirm({
+      title: <div className="text-center">{props.item.name}</div>,
+      icon: (
+        <div className="text-center">
+          <img src={icon} />
+        </div>
+      ),
+      content: (
+        <div>
+          <Divider />
+          Please select the character that you want to equip this item.
+          <Divider />
+          <Select
+            style={{ width: '100%' }}
+            showSearch
+            placeholder="Select a person"
+            optionFilterProp="children"
+            filterOption={(input, option) =>
+              (option!.children as unknown as string).toLowerCase().includes(input.toLowerCase())
+            }
+          >
+            <Option value="jack">Jack</Option>
+            <Option value="lucy">Lucy</Option>
+            <Option value="tom">Tom</Option>
+          </Select>
+        </div>
+      ),
+      okText: 'Equip',
+      cancelText: 'Cancel',
+      okType: 'ghost',
+      onOk: () => () => {},
+    });
+  }
+
   const coinIcon = <img style={{ width: '16px' }} src={require('../../assets/img/coin.png')} />;
   const modalTitle = (
     <>
@@ -61,29 +99,37 @@ export default (props: ShopItemProps) => {
     </Button>
   );
 
+  const equipButton = (
+    <Button type="ghost" icon={<UserAddOutlined />} size="small" onClick={() => handleEquip()}>
+      Equip
+    </Button>
+  );
+
   if (props.showButton !== true) {
-    buyButton = <ShoppingCartOutlined onClick={() => showModal()} key="buy" />;
+    buyButton = (
+      <Button type="ghost" icon={<ShoppingCartOutlined />} size="small" onClick={() => showModal()}>
+        Purchase
+      </Button>
+    );
   }
 
-  const actions = props.item.owned || owned ? [<Tag color="green">Owned</Tag>] : [buyButton];
+  const actions =
+    props.item.owned || owned
+      ? [
+          <Tag key={props.item.id} color="green">
+            Owned
+          </Tag>,
+          equipButton,
+        ]
+      : [buyButton];
 
   return (
     <>
-      <Card
-        hoverable={props.showButton !== true}
-        style={{ marginTop: 16 }}
-        loading={false}
-        actions={actions}
-      >
+      <Card hoverable={props.showButton !== true} loading={false} actions={actions}>
         <NavLink to={`/shop/${props.item.id}`}>
           <Meta
             avatar={<Avatar shape="square" size="large" src={icon} />}
-            title={
-              <>
-                {props.item.name}{' '}
-                <img src={require('../../assets/img/shop/type_0.png')} style={{ width: '16px' }} />
-              </>
-            }
+            title={<>{props.item.name} </>}
             description={
               <React.Fragment>
                 {coinIcon} {props.item.cost}
@@ -92,6 +138,9 @@ export default (props: ShopItemProps) => {
           />
         </NavLink>
       </Card>
+      <Space>
+        <LocalizedModal />
+      </Space>
       <Modal
         title={modalTitle}
         visible={isModalVisible}

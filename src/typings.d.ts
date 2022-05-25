@@ -274,7 +274,15 @@ type ShopItem = {
   cost: number;
   gear_slot: number;
   color: number;
+  icon: number;
   owned: boolean;
+};
+
+type ShopSlot = {
+  id: number;
+  gear_slot: number;
+  name: string;
+  info: string;
 };
 
 type RankingsData = {

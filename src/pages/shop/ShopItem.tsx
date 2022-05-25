@@ -15,9 +15,12 @@ type ShopItemParams = {
 export default (): React.ReactNode => {
   const [data, setData] = useState({
     loading: true,
-    item: { id: 1, name: '', cost: 0, gear_slot: 14, color: 13, owned: false },
+    item: { id: 1, name: '', cost: 0, gear_slot: 14, color: 13, owned: false, icon: 0 },
   });
-  const path = `/img/shop/items/previews/${data.item.gear_slot}_${data.item.color}`;
+  let path = `/img/shop/items/previews/${data.item.gear_slot}_${data.item.color}`;
+  if (data.item.icon > 0) {
+    path = `/img/shop/items/previews/${data.item.icon}`;
+  }
   const params = useParams<ShopItemParams>();
 
   document.title = 'Shop Item - Metal Gear Online';
@@ -39,7 +42,7 @@ export default (): React.ReactNode => {
   if (data.loading) {
     return (
       <PageContainer>
-        <Spin spinning={data.loading} size="large"></Spin>
+        <Spin spinning={data.loading} size="large" />
       </PageContainer>
     );
   }
@@ -59,65 +62,6 @@ export default (): React.ReactNode => {
             loading={data.loading}
           >
             <Meta title="Front" />
-          </Card>
-        </div>
-
-        <div className="col-md-2">
-          <Card
-            style={{ marginTop: 16 }}
-            hoverable
-            cover={<Image src={`${path}_side.jpg`} />}
-            loading={data.loading}
-          >
-            <Meta title="Side" />
-          </Card>
-        </div>
-
-        <div className="col-md-2">
-          <Card
-            style={{ marginTop: 16 }}
-            hoverable
-            cover={<Image src={`${path}_back.jpg`} />}
-            loading={data.loading}
-          >
-            <Meta title="Back" />
-          </Card>
-        </div>
-        <div className="col-md-1"></div>
-      </div>
-
-      <div className="row">
-        <div className="col-md-4"></div>
-        <div className="col-md-2">
-          <Card
-            style={{ marginTop: 16 }}
-            hoverable
-            cover={<Image src={`${path}_front_f.jpg`} />}
-            loading={data.loading}
-          >
-            <Meta title="Front" />
-          </Card>
-        </div>
-
-        <div className="col-md-2">
-          <Card
-            style={{ marginTop: 16 }}
-            hoverable
-            cover={<Image src={`${path}_side_f.jpg`} />}
-            loading={data.loading}
-          >
-            <Meta title="Side" />
-          </Card>
-        </div>
-
-        <div className="col-md-2">
-          <Card
-            style={{ marginTop: 16 }}
-            hoverable
-            cover={<Image src={`${path}_back_f.jpg`} />}
-            loading={data.loading}
-          >
-            <Meta title="Back" />
           </Card>
         </div>
         <div className="col-md-1"></div>
