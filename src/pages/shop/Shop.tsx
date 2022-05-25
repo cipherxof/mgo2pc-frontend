@@ -74,7 +74,7 @@ export default (): React.ReactNode => {
     setMenu(menuLookup);
   }
 
-  if (charaId === 0 && data?.characters) {
+  if (charaId === 0 && data && data.characters && data.characters.length > 0) {
     setCharaId(data.characters[0].id);
   }
 
