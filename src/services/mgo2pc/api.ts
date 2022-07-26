@@ -33,7 +33,11 @@ export async function getAccount() {
 }
 
 export async function activateAccount(userId: string, key: string) {
-  return request<API.Activate>(`/api/v1/activate/${userId}/${key}`, { method: 'GET' });
+  return request<API.Response>(`/api/v1/activate/${userId}/${key}`, { method: 'GET' });
+}
+
+export async function resetPassword(userId: string, key: string) {
+  return request<API.ResetPassword>(`/api/v1/resetpw/${userId}/${key}`, { method: 'GET' });
 }
 
 export async function purchaseItem(id: number | string) {
@@ -47,6 +51,16 @@ export async function equipItem(id: number | string, chara: number | string) {
 export async function getRankings(mode: string, page: number | string, weekly?: boolean) {
   return request<API.Rankings>(`/api/v1/rankings/${mode}/${page}/${weekly ? 'weekly' : ''}`, {
     method: 'GET',
+  });
+}
+
+export async function recoverPassword(email: string, captcha: string) {
+  return request(`/api/v1/recovery`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: { email, captcha },
   });
 }
 

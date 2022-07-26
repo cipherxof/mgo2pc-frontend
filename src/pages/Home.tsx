@@ -27,7 +27,7 @@ export default (): React.ReactNode => {
             </p>
             <p>
               If you are looking to get started then watch our{' '}
-              <a href="https://www.youtube.com/watch?v=JFG_oGKQrTI" target="_blank">
+              <a href="https://www.youtube.com/watch?v=7uHWGNLxmQI" target="_blank">
                 getting started video
               </a>{' '}
               or head over to our <NavLink to="/faq">frequently asked questions</NavLink> section.
@@ -53,7 +53,7 @@ export default (): React.ReactNode => {
                 className="video"
                 width="10000"
                 height="10000"
-                src="https://www.youtube.com/embed/JFG_oGKQrTI"
+                src="https://www.youtube.com/embed/7uHWGNLxmQI"
                 title="PC Setup Guide"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,10 +1,11 @@
 import { GithubOutlined, TwitterOutlined, YoutubeOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-layout';
 export default () => {
-  const defaultMessage = 'Metal Gear Online 2 PC. All rights reserved. This website is not associated with Konami or its affiliates. Special thanks to SaveMGO.';
+  const defaultMessage =
+    'Metal Gear Online 2 PC. All rights reserved. This website is not associated with Konami or its affiliates. Special thanks to SaveMGO.';
   return (
     <DefaultFooter
-      copyright={`2021 ${defaultMessage}`}
+      copyright={`2022 ${defaultMessage}`}
       links={[
         {
           key: 'github',
@@ -23,7 +24,7 @@ export default () => {
           title: <TwitterOutlined />,
           href: 'https://twitter.com/mgo2pc',
           blankTarget: true,
-        }
+        },
       ]}
     />
   );

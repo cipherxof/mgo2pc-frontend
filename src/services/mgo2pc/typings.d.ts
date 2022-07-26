@@ -14,6 +14,12 @@ declare namespace API {
     };
   };
 
+  type ResetPassword = {
+    data: string;
+    success: boolean;
+    message: string;
+  };
+
   type Profile = {
     data: ProfileData;
     success: boolean;
@@ -29,11 +35,6 @@ declare namespace API {
   type Rankings = {
     pages: number;
     data: RankingsData[];
-    success: boolean;
-    message: string;
-  };
-
-  type Activate = {
     success: boolean;
     message: string;
   };

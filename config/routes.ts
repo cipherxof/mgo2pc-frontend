@@ -24,6 +24,8 @@ export default [
   { path: '/guides', component: './Home' },
   { path: '/login', component: './user/Login', layout: false },
   { path: '/register', component: './user/Register', layout: false },
+  { path: '/recovery', component: './user/Recovery', layout: false },
+  { path: '/resetpassword/:user/:key', component: './ResetPassword' },
   { path: '/activate/:user/:key', component: './Activate' },
   { path: '/clans', component: './Clans' },
   { path: '/rankings/:mode/:page', component: './Rankings' },

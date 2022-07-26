@@ -19,13 +19,15 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in{' '}
-            <Text type="warning">DM, TDM, SDM, and SNE</Text> at least{' '}
-            <Text type="success">1.45</Text>
+            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
+            at least <Text type="success">1.45</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RACE, RES, TSNE</Text> at least{' '}
-            <Text type="success">55%</Text>
+            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
+            <Text type="success">52.5%</Text>
+          </p>
+          <p>
+            Win % in <Text type="warning">RACE</Text> at least <Text type="success">50%</Text>
           </p>
           <p>
             Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.60</Text>
@@ -44,13 +46,15 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in{' '}
-            <Text type="warning">DM, TDM, SDM, and SNE</Text> at least{' '}
-            <Text type="success">1.40</Text>
+            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
+            at least <Text type="success">1.40</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RACE, RES, TSNE</Text> at least{' '}
-            <Text type="success">50%</Text>
+            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
+            <Text type="success">47.5%</Text>
+          </p>
+          <p>
+            Win % in <Text type="warning">RACE</Text> at least <Text type="success">45%</Text>
           </p>
           <p>
             Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.40</Text>
@@ -69,13 +73,15 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in{' '}
-            <Text type="warning">DM, TDM, SDM, and SNE</Text> at least{' '}
-            <Text type="success">1.35</Text>
+            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
+            at least <Text type="success">1.35</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RACE, RES, TSNE</Text> at least{' '}
-            <Text type="success">47.5%</Text>
+            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
+            <Text type="success">45%</Text>
+          </p>
+          <p>
+            Win % in <Text type="warning">RACE</Text> at least <Text type="success">42.5%</Text>
           </p>
           <p>
             Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.20</Text>
@@ -94,13 +100,15 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in{' '}
-            <Text type="warning">DM, TDM, SDM, and SNE</Text> at least{' '}
-            <Text type="success">1.30</Text>
+            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
+            at least <Text type="success">1.30</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RACE, RES, TSNE</Text> at least{' '}
-            <Text type="success">45%</Text>
+            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
+            <Text type="success">42.5%</Text>
+          </p>
+          <p>
+            Win % in <Text type="warning">RACE</Text> at least <Text type="success">40%</Text>
           </p>
           <p>
             Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.00</Text>
@@ -208,17 +216,6 @@ export default (): React.ReactNode => {
           </p>
           <p>
             Deaths ÷ Rounds {`<=`} <Text type="success">0.5</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      name: 'Crocodile',
-      description: (
-        <>
-          <p>
-            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.5</Text>
           </p>
           <br />
         </>
@@ -396,28 +393,11 @@ export default (): React.ReactNode => {
       ),
     },
     {
-      name: 'jaws',
-      description: (
-        <>
-          <p>
-            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.25</Text>
-          </p>
-          <p>
-            Knife Kills ÷ Kills {`>=`} <Text type="success">0.075</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
       name: 'Sloth',
       description: (
         <>
           <p>
             Kills ÷ Deaths {`<=`} <Text type="success">0.85</Text>
-          </p>
-          <p>
-            Knife Kills ÷ Kills {`>=`} <Text type="success">0.075</Text>
           </p>
           <p>
             Headshot Deaths ÷ Deaths {`>=`} <Text type="success">0.60</Text>
@@ -470,7 +450,7 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Deaths ÷ Rounds Played in SDM, RES, and TSNE {`<=`} <Text type="success">0.5</Text> Days
+            Deaths ÷ Rounds Played in RES and TSNE {`<=`} <Text type="success">0.5</Text>
           </p>
           <br />
         </>
@@ -483,7 +463,7 @@ export default (): React.ReactNode => {
   for (const rank of ranks) {
     cards.push(
       <div className="col-md-3 text-center">
-        <Card hoverable style={{ marginBottom: '16px', minHeight: "400px" }}>
+        <Card hoverable style={{ marginBottom: '16px', minHeight: '400px' }}>
           <img src={`${getRankPreview(getRankId(rank.name))}`} />
           <Meta title={rank.name} description={rank.description} />
         </Card>
@@ -493,26 +473,6 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
-      <div className="row">
-        <div className="col-md-12">
-          <Alert
-            message="Information"
-            description={
-              <>
-                We also have a PDF guide {' '}
-                <a target="_blank" href="https://mgo2pc.com/MGO2PC_Emblem_Guide-1.pdf">
-                  here
-                </a>
-              </>
-            }
-            type="info"
-            showIcon
-          />
-        </div>
-      </div>
-
-      <Divider />
-
       <div className="row">{cards}</div>
     </PageContainer>
   );

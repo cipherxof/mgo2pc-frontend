@@ -275,6 +275,7 @@ export default (): React.ReactNode => {
 
             mainButton = (
               <Button
+                className="mb-4"
                 type="ghost"
                 icon={<UserAddOutlined />}
                 size="large"
@@ -292,6 +293,7 @@ export default (): React.ReactNode => {
 
             mainButton = (
               <Button
+                className="mb-4"
                 type="ghost"
                 icon={<ShoppingCartOutlined />}
                 size="large"
@@ -383,10 +385,11 @@ export default (): React.ReactNode => {
         <NavLink to="/shop" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
           <img
             style={{ width: '512px', maxWidth: '100%' }}
-            src={require('../../assets/img/rewardshop2.png')}
+            src={require('../../assets/img/rewardshop3.png')}
           />
         </NavLink>
       </div>
+      <Divider />
       <div className="row">
         <div className="col-md-2">
           <Menu defaultSelectedKeys={[menu]} mode="inline" onSelect={onMenuClick}>

@@ -27,11 +27,15 @@ export default (): React.ReactNode => {
   const characterCards: JSX.Element[] = [];
 
   for (const character of data.characters) {
+    const isMain = character.id === data.main;
+
     if (!character.name.includes(':#')) {
       const xp = character.id === data.main ? data.exp : data.exp_alt;
       const level = getExpLevel(xp);
       const progress =
         ((xp - getLevelReq(level)) / (getLevelReq(level + 1) - getLevelReq(level))) * 100;
+
+      const title = isMain ? `${character.name} *` : character.name;
 
       characterCards.push(
         <div className="col-md-3" key={character.id} style={{ marginBottom: '16px' }}>
@@ -39,7 +43,7 @@ export default (): React.ReactNode => {
             <Card hoverable={true} actions={[<EditOutlined key="edit" disabled={true} />]}>
               <Meta
                 avatar={<Avatar src={require('../assets/img/oldsnake.png')} />}
-                title={character.name}
+                title={title}
                 description={<CharacterLevelTag xp={xp} />}
               />
               <br />

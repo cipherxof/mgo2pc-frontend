@@ -18,8 +18,48 @@ export default (): React.ReactNode => {
             <div>
               <img style={{ maxWidth: '100%' }} src={require('../assets/img/banner-200.jpg')} />
               <Divider />
+              <Title>Version 2.10.3</Title>
+              07/03/22
+              <Title level={3}>New Features</Title>
+              <ul>
+                <li>- Further improvements to PS3 performance</li>
+                <li>- The dust storm on CC has been removed</li>
+                <li>- TSNE is now playable with Drebin Points (QQ only)</li>
+                <li>- Added 10 new designs to the reward shop</li>
+                <li>- The lighting has been improved on QQ</li>
+              </ul>
+              <Title level={3}>Fixes</Title>
+              <ul>
+                <li>- Reduced memory usage on custom maps in order to mitigate crashing</li>
+              </ul>
+              <Divider />
+              <Title>Version 2.10.2</Title>
+              06/30/22
+              <Title level={3}>New Features</Title>
+              <ul>
+                <li>- Removed motion blur and improved performance on PS3</li>
+              </ul>
+              <Title level={3}>Fixes</Title>
+              <ul>
+                <li>- Added missing vehicle textures on JJ</li>
+              </ul>
+              <Divider />
+              <Title>Version 2.10.1</Title>
+              06/14/22
+              <Title level={3}>Fixes</Title>
+              <ul>
+                <li>- Updated TSNE, SNE, BOMB, and CAP spawns in QQ</li>
+                <li>- Updated TSNE, TDM, and CAP spawns in PP</li>
+              </ul>
+              <Divider />
+              <Title>Version 2.10</Title>
+              06/12/22
+              <Title level={3}>New Features</Title>
+              <ul>
+                <li>- Added 3 new maps (JJ, QQ, and PP)</li>
+              </ul>
+              <Divider />
               <Title>Version 2.02</Title>
-
               <Title level={3}>New Features</Title>
               <ul>
                 <li>
@@ -43,7 +83,6 @@ export default (): React.ReactNode => {
                   </ul>
                 </li>
               </ul>
-
               <Title level={3}>Fixes</Title>
               <ul>
                 <li>- Custom maps no longer reset to Forest Firefight.</li>
@@ -51,10 +90,8 @@ export default (): React.ReactNode => {
                   - The network has been cancelled error has been resolved (New emulator only).
                 </li>
               </ul>
-
               <Divider />
               <Title>Version 2.00</Title>
-
               <p>
                 We're excited to bring you new content and features in the first official game
                 update for MGO2PC!
@@ -74,7 +111,6 @@ export default (): React.ReactNode => {
                   ever.
                 </li>
               </ul>
-
               <Title level={3}>Changes</Title>
               <ul>
                 <li>
@@ -84,7 +120,6 @@ export default (): React.ReactNode => {
                 </li>
                 <li>- The "Time as Dedicated Host" stat is now being tracked.</li>
               </ul>
-
               <Title level={3}>Fixes</Title>
               <ul>
                 <li>- Water and ladders in Ravaged Riverfront now work properly.</li>

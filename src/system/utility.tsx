@@ -131,8 +131,10 @@ export const getRankId = (name: string) => {
       return 28;
     case 'hog':
       return 29;
-    case 'boss':
+    case 'bigboss':
       return 30;
+    case 'theboss':
+      return 31;
   }
   return 0;
 };

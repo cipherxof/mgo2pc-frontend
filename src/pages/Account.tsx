@@ -14,31 +14,9 @@ const tailLayout = {
   wrapperCol: { offset: 4, span: 16 },
 };
 
-const onUpdateAccount = async (e: any) => {
-  const token = getUserToken();
-
-  if (!token) {
-    notification.error({
-      message: `Error`,
-      description: 'You are not logged in.',
-      placement: 'topRight',
-    });
-    return;
-  }
-
-  const data = {
-    displayName: e.target[0].value,
-    password: e.target[1].value,
-    passwordNew: e.target[2].value,
-  };
-
-  try {
-    await updateAccount(data);
-  } catch (err) {}
-};
-
 export default (): React.ReactNode => {
   const [menu, setMenu] = useState('basic');
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
   const account = getUserAccount();
@@ -47,6 +25,37 @@ export default (): React.ReactNode => {
   if (!isLoggedIn()) {
     history.push('/');
   }
+
+  const onUpdateAccount = async (e: any) => {
+    const token = getUserToken();
+
+    if (!token) {
+      notification.error({
+        message: `Error`,
+        description: 'You are not logged in.',
+        placement: 'topRight',
+      });
+      return;
+    }
+
+    const data = {
+      displayName: e.target[0].value,
+      password: e.target[1].value,
+      passwordNew: e.target[2].value,
+    };
+
+    try {
+      setLoading(true);
+      await updateAccount(data);
+      notification.success({
+        message: `Success`,
+        description: 'Your account has been updated.',
+        placement: 'topRight',
+      });
+      history.push('/');
+    } catch (err) {}
+    setLoading(false);
+  };
 
   const onMenuClick = useCallback(
     (event) => {
@@ -85,7 +94,7 @@ export default (): React.ReactNode => {
                 </Form.Item>
 
                 <Form.Item {...tailLayout}>
-                  <Button type="primary" htmlType="submit">
+                  <Button loading={loading} type="primary" htmlType="submit">
                     Update Information
                   </Button>
                 </Form.Item>

@@ -1,37 +1,38 @@
 import Footer from '@/components/Footer';
-import { login } from '@/services/mgo2pc/api';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { login, recoverPassword } from '@/services/mgo2pc/api';
+import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { Card, Divider } from 'antd';
+import { Card, Divider, Form, notification } from 'antd';
 import React, { useState } from 'react';
 import { history, Link, NavLink } from 'umi';
 import styles from './index.less';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-type LoginFormData = {
-  username: string;
-  password: string;
+type RecoveryFormData = {
+  email: string;
 };
 
-const Login: React.FC = () => {
+let captcha: string = '';
+
+const Recovery: React.FC = () => {
   const [data, setData] = useState({ loading: false });
 
-  document.title = 'Login - Metal Gear Online';
+  document.title = 'Recover Account - Metal Gear Online';
 
-  const onFinish = async (values: LoginFormData) => {
+  const onFinish = async (values: RecoveryFormData) => {
     try {
-      const result = await login(values.username, values.password);
+      const result = await recoverPassword(values.email, captcha);
 
-      if (!result) {
+      if (!result || !result.success) {
         return;
       }
 
-      const account = JSON.stringify(result.account);
-
-      localStorage.setItem('token', result.data);
-      localStorage.setItem('account', account);
-      localStorage.setItem('expiry', `${new Date(Date.now() + 12096e5)}`); // two weeks
-
-      history.push('/account');
+      notification.success({
+        message: `Success`,
+        description: result.message,
+        placement: 'topRight',
+      });
+      //history.push('/');
     } catch (e) {}
   };
 
@@ -65,7 +66,7 @@ const Login: React.FC = () => {
               isKeyPressSubmit={true}
               submitter={{
                 searchConfig: {
-                  submitText: 'Login',
+                  submitText: 'Reset Password',
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
@@ -76,60 +77,41 @@ const Login: React.FC = () => {
                   },
                 },
               }}
-              onFinish={async (values: LoginFormData) => {
+              onFinish={async (values: RecoveryFormData) => {
                 setData({ loading: true });
                 await onFinish(values);
                 setData({ loading: false });
               }}
             >
               <ProFormText
-                name="username"
+                name="email"
                 fieldProps={{
                   size: 'large',
-                  prefix: <UserOutlined className={styles.prefixIcon} />,
+                  prefix: <MailOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={'Username'}
+                placeholder={'Email'}
                 rules={[
                   {
                     required: true,
-                    message: 'Please input your username!',
-                  },
-                ]}
-              />
-              <ProFormText.Password
-                name="password"
-                fieldProps={{
-                  size: 'large',
-                  prefix: <LockOutlined className={styles.prefixIcon} />,
-                }}
-                placeholder={'Password'}
-                rules={[
-                  {
-                    required: true,
-                    message: 'Please input your password!',
+                    message: 'Please input your email!',
                   },
                 ]}
               />
 
-              <div
-                style={{
-                  marginBottom: 24,
-                }}
+              <Form.Item
+                label="Captcha"
+                name="captcha"
+                rules={[{ required: false, message: 'Please fill out the bot check' }]}
               >
-                <ProFormCheckbox noStyle name="autoLogin">
-                  Remember me
-                </ProFormCheckbox>
-
-                <Divider />
-
-                <p className="text-center">
-                  <NavLink to="/register">Don&#39;t have an account?</NavLink>
-                </p>
-
-                <p className="text-center">
-                  <NavLink to="/recovery">Forgot your password?</NavLink>
-                </p>
-              </div>
+                <ReCAPTCHA
+                  sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V"
+                  size="compact"
+                  theme="dark"
+                  onChange={(value: string | null) => {
+                    captcha = value ? value : '';
+                  }}
+                />
+              </Form.Item>
             </ProForm>
           </Card>
         </div>
@@ -139,4 +121,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Recovery;
