@@ -1,7 +1,7 @@
 export enum MgoMode {
   Normal = 0,
   Drebin = 2,
-  Headshots = 4
+  Headshots = 4,
 }
 
 export enum MgoMap {
@@ -22,6 +22,8 @@ export enum MgoMap {
   OuterOutlet = 15,
   DesertDuel = 17,
   LethalLeviathan = 18,
+  PerilousPalace = 19,
+  QuaintQuarrel = 20,
   JadeJunciton = 21,
 }
 
@@ -37,47 +39,49 @@ export enum MgoGameMode {
   StealthDeathmatch = 12,
   Interval = 13,
   SoloCapture = 15,
-  RaceMission = 16
+  RaceMission = 16,
 }
 
 export const MgoModeNames = {
-  [MgoMode.Normal]: "Normal",
-  [MgoMode.Drebin]: "Drebin Points Enabled",
-  [MgoMode.Headshots]: "Headshots Only",
-}
+  [MgoMode.Normal]: 'Normal',
+  [MgoMode.Drebin]: 'Drebin Points Enabled',
+  [MgoMode.Headshots]: 'Headshots Only',
+};
 
 export const MgoMapNames = {
-  [MgoMap.ForestFirefight]: "Forest Firefight",
-  [MgoMap.AmbushAlley]: "Ambush Alley",
-  [MgoMap.UrbanUltimatum]: "Urban Ultimatum",
-  [MgoMap.GronznyjGrad]: "Gronznyj Grad",
-  [MgoMap.CoppertownConflict]: "Coppertown Conflict",
-  [MgoMap.HazardHouse]: "Hazard House",
-  [MgoMap.BloodBath]: "Blood Bath",
-  [MgoMap.TombOfTubes]: "Tomb of Tubes",
-  [MgoMap.RavagedRiverfront]: "Ravaged Riverfront",
-  [MgoMap.SiloSunset]: "Silo Sunset",
-  [MgoMap.IceboundInferno]: "Icebound Inferno",
-  [MgoMap.MidtownMaelstrom]: "Midtown Maelstrom",
-  [MgoMap.WinterWarehouse]: "Winter Warehouse",
-  [MgoMap.VirtuousVista]: "Virtuous Vista",
-  [MgoMap.OuterOutlet]: "Outer Outlet",
-  [MgoMap.DesertDuel]: "Desert Duel",
-  [MgoMap.LethalLeviathan]: "Lethal Leviathan",
-  [MgoMap.JadeJunciton]: "Jade Junction",
-}
+  [MgoMap.ForestFirefight]: 'Forest Firefight',
+  [MgoMap.AmbushAlley]: 'Ambush Alley',
+  [MgoMap.UrbanUltimatum]: 'Urban Ultimatum',
+  [MgoMap.GronznyjGrad]: 'Gronznyj Grad',
+  [MgoMap.CoppertownConflict]: 'Coppertown Conflict',
+  [MgoMap.HazardHouse]: 'Hazard House',
+  [MgoMap.BloodBath]: 'Blood Bath',
+  [MgoMap.TombOfTubes]: 'Tomb of Tubes',
+  [MgoMap.RavagedRiverfront]: 'Ravaged Riverfront',
+  [MgoMap.SiloSunset]: 'Silo Sunset',
+  [MgoMap.IceboundInferno]: 'Icebound Inferno',
+  [MgoMap.MidtownMaelstrom]: 'Midtown Maelstrom',
+  [MgoMap.WinterWarehouse]: 'Winter Warehouse',
+  [MgoMap.VirtuousVista]: 'Virtuous Vista',
+  [MgoMap.OuterOutlet]: 'Outer Outlet',
+  [MgoMap.DesertDuel]: 'Desert Duel',
+  [MgoMap.LethalLeviathan]: 'Lethal Leviathan',
+  [MgoMap.PerilousPalace]: 'Perilous Palace',
+  [MgoMap.QuaintQuarrel]: 'Quaint Quarrel',
+  [MgoMap.JadeJunciton]: 'Jade Junction',
+};
 
 export const MgoGameModeNames = {
-  [MgoGameMode.Deathmatch]: "Deathmatch",
-  [MgoGameMode.TeamDeathmatch]: "Team Deathmatch",
-  [MgoGameMode.RescueMission]: "Rescue Mission",
-  [MgoGameMode.CaptureMission]: "Capture Mission",
-  [MgoGameMode.SneakingMission]: "Sneaking Mission",
-  [MgoGameMode.BaseMission]: "Base Mission",
-  [MgoGameMode.BombMission]: "Bomb Mission",
-  [MgoGameMode.TeamSneaking]: "Team Sneaking",
-  [MgoGameMode.StealthDeathmatch]: "Stealth Deathmatch",
-  [MgoGameMode.Interval]: "Interval",
-  [MgoGameMode.SoloCapture]: "Solo Capture",
-  [MgoGameMode.RaceMission]: "Race Mission",
-}
+  [MgoGameMode.Deathmatch]: 'Deathmatch',
+  [MgoGameMode.TeamDeathmatch]: 'Team Deathmatch',
+  [MgoGameMode.RescueMission]: 'Rescue Mission',
+  [MgoGameMode.CaptureMission]: 'Capture Mission',
+  [MgoGameMode.SneakingMission]: 'Sneaking Mission',
+  [MgoGameMode.BaseMission]: 'Base Mission',
+  [MgoGameMode.BombMission]: 'Bomb Mission',
+  [MgoGameMode.TeamSneaking]: 'Team Sneaking',
+  [MgoGameMode.StealthDeathmatch]: 'Stealth Deathmatch',
+  [MgoGameMode.Interval]: 'Interval',
+  [MgoGameMode.SoloCapture]: 'Solo Capture',
+  [MgoGameMode.RaceMission]: 'Race Mission',
+};
