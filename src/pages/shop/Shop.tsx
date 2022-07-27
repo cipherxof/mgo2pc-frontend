@@ -19,7 +19,7 @@ import {
   Tooltip,
 } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
-import { NavLink, useHistory, useParams, useRequest } from 'umi';
+import { NavLink, useHistory, useIntl, useParams, useRequest } from 'umi';
 import ShopSlotCard from './ShopSlotCard';
 
 /*
@@ -62,6 +62,7 @@ function getSlotFromGearId(slots: ShopSlot[] | undefined, gearId: string | undef
 }
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   const params = useParams<ShopParams>();
   const isSlotParam = params.id && slotData[params.id] !== undefined;
   const { data, loading, refresh } = useRequest(getShopItems);
@@ -193,7 +194,7 @@ export default (): React.ReactNode => {
       content: (
         <div>
           <Divider />
-          Please select the character that you want to equip this item.
+          {intl.formatMessage({ id: 'app.equipcharselect' })}
           <Divider />
           <Select
             style={{ width: '100%' }}
@@ -271,7 +272,7 @@ export default (): React.ReactNode => {
           gearCost = item.cost;
 
           if (item.owned) {
-            subText = <Tag color="green">Owned</Tag>;
+            subText = <Tag color="green">{intl.formatMessage({ id: 'app.owned' })}</Tag>;
 
             mainButton = (
               <Button
@@ -281,7 +282,7 @@ export default (): React.ReactNode => {
                 size="large"
                 onClick={() => handleEquip(item)}
               >
-                Equip
+                {intl.formatMessage({ id: 'app.equip' })}
               </Button>
             );
           } else {
@@ -299,7 +300,7 @@ export default (): React.ReactNode => {
                 size="large"
                 onClick={() => handlePurchase(item)}
               >
-                Purchase
+                {intl.formatMessage({ id: 'app.purchase' })}
               </Button>
             );
           }

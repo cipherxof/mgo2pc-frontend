@@ -1,8 +1,11 @@
 import { GithubOutlined, TwitterOutlined, YoutubeOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-layout';
+import { useIntl } from 'umi';
 export default () => {
-  const defaultMessage =
-    'Metal Gear Online 2 PC. All rights reserved. This website is not associated with Konami or its affiliates. Special thanks to SaveMGO.';
+  const intl = useIntl();
+
+  const defaultMessage = intl.formatMessage({ id: 'app.copyright' });
+
   return (
     <DefaultFooter
       copyright={`2022 ${defaultMessage}`}

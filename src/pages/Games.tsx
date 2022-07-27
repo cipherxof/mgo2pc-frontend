@@ -3,9 +3,10 @@ import { getGames } from '@/services/mgo2pc/api';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Alert, Divider, Spin, Statistic } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'umi';
+import { NavLink, useIntl } from 'umi';
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   const [data, setData] = useState({ loading: true, players: '...', games: [] as GameLobby[] });
 
   document.title = 'Games - Metal Gear Online';
@@ -51,7 +52,7 @@ export default (): React.ReactNode => {
   const statistics = (
     <div className="row">
       <div className="col-md-12 text-center">
-        <Statistic title="Online Players" value={data.players} />
+        <Statistic title={intl.formatMessage({ id: 'app.onlineplayers' })} value={data.players} />
       </div>
       <Divider />
     </div>

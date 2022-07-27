@@ -4,7 +4,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { Card, Divider } from 'antd';
 import React, { useState } from 'react';
-import { history, Link, NavLink } from 'umi';
+import { history, Link, NavLink, useIntl } from 'umi';
 import styles from './index.less';
 
 type LoginFormData = {
@@ -13,6 +13,7 @@ type LoginFormData = {
 };
 
 const Login: React.FC = () => {
+  const intl = useIntl();
   const [data, setData] = useState({ loading: false });
 
   document.title = 'Login - Metal Gear Online';
@@ -65,7 +66,7 @@ const Login: React.FC = () => {
               isKeyPressSubmit={true}
               submitter={{
                 searchConfig: {
-                  submitText: 'Login',
+                  submitText: intl.formatMessage({ id: 'navBar.login' }),
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
@@ -88,11 +89,11 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={'Username'}
+                placeholder={intl.formatMessage({ id: 'app.username' })}
                 rules={[
                   {
                     required: true,
-                    message: 'Please input your username!',
+                    message: intl.formatMessage({ id: 'app.inputusername' }),
                   },
                 ]}
               />
@@ -102,11 +103,11 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <LockOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={'Password'}
+                placeholder={intl.formatMessage({ id: 'app.password' })}
                 rules={[
                   {
                     required: true,
-                    message: 'Please input your password!',
+                    message: intl.formatMessage({ id: 'app.inputpassword' }),
                   },
                 ]}
               />
@@ -117,17 +118,17 @@ const Login: React.FC = () => {
                 }}
               >
                 <ProFormCheckbox noStyle name="autoLogin">
-                  Remember me
+                  {intl.formatMessage({ id: 'app.rememberme' })}
                 </ProFormCheckbox>
 
                 <Divider />
 
                 <p className="text-center">
-                  <NavLink to="/register">Don&#39;t have an account?</NavLink>
+                  <NavLink to="/register">{intl.formatMessage({ id: 'app.donthaveacc' })}</NavLink>
                 </p>
 
                 <p className="text-center">
-                  <NavLink to="/recovery">Forgot your password?</NavLink>
+                  <NavLink to="/recovery">{intl.formatMessage({ id: 'app.forgotpw' })}</NavLink>
                 </p>
               </div>
             </ProForm>

@@ -5,7 +5,7 @@ import ProForm, { ProFormText } from '@ant-design/pro-form';
 import { Card, Form, notification } from 'antd';
 import React, { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { history, Link, NavLink } from 'umi';
+import { history, Link, NavLink, useIntl } from 'umi';
 import styles from './index.less';
 
 type RegisterFormData = {
@@ -18,6 +18,7 @@ type RegisterFormData = {
 let captcha: string = '';
 
 const Register: React.FC = () => {
+  const intl = useIntl();
   const [data, setData] = useState({ loading: false });
 
   document.title = 'Create Account - Metal Gear Online';
@@ -76,7 +77,7 @@ const Register: React.FC = () => {
               isKeyPressSubmit={true}
               submitter={{
                 searchConfig: {
-                  submitText: 'Create Account',
+                  submitText: intl.formatMessage({ id: 'navBar.register' }),
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
@@ -99,11 +100,11 @@ const Register: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={'Username'}
+                placeholder={intl.formatMessage({ id: 'app.username' })}
                 rules={[
                   {
                     required: true,
-                    message: 'Please input your username!',
+                    message: intl.formatMessage({ id: 'app.inputusername' }),
                   },
                 ]}
               />
@@ -113,11 +114,11 @@ const Register: React.FC = () => {
                   size: 'large',
                   prefix: <LockOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={'Password'}
+                placeholder={intl.formatMessage({ id: 'app.password' })}
                 rules={[
                   {
                     required: true,
-                    message: 'Please input your password!',
+                    message: intl.formatMessage({ id: 'app.inputpassword' }),
                   },
                 ]}
               />
@@ -127,11 +128,11 @@ const Register: React.FC = () => {
                   size: 'large',
                   prefix: <MailOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={'Email'}
+                placeholder={intl.formatMessage({ id: 'app.email' })}
                 rules={[
                   {
                     required: true,
-                    message: 'Please input your email!',
+                    message: intl.formatMessage({ id: 'app.inputemail' }),
                   },
                 ]}
               />
@@ -151,7 +152,7 @@ const Register: React.FC = () => {
               </Form.Item>
 
               <p className="text-center">
-                <NavLink to="/login">Already have an account?</NavLink>
+                <NavLink to="/login">{intl.formatMessage({ id: 'app.alreadyhaveacc' })}</NavLink>
               </p>
             </ProForm>
           </Card>

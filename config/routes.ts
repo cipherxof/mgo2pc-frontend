@@ -1,19 +1,21 @@
+import { useIntl } from 'umi';
+
 export default [
   {
     path: '/games',
-    name: 'Games',
+    name: 'games',
     icon: 'https://mgo2pc.com/static/games.png',
     component: './Games',
   },
   {
     path: '/rankings/score/1',
-    name: 'Leaderboards',
+    name: 'leaderboards',
     icon: 'https://mgo2pc.com/static/leaderboards.png',
     component: './Rankings',
   },
   {
     path: '/shop',
-    name: 'Reward Shop',
+    name: 'rewardshop',
     icon: 'https://mgo2pc.com/static/money.png',
     component: './shop/Shop',
   },
@@ -38,7 +40,7 @@ export default [
   { path: '/admin/events/:id', component: './admin/Events' },
   { path: '/', component: './Home' },
   {
-    name: 'More',
+    name: 'more',
     icon: 'more',
     routes: [
       /*{
@@ -48,19 +50,19 @@ export default [
       },*/
       {
         path: '/faq',
-        name: 'FAQ',
+        name: 'faq',
         icon: 'smile',
         component: './FAQ',
       },
       {
         path: '/rankguide',
-        name: 'Ranking Guide',
+        name: 'rankguide',
         icon: 'smile',
         component: './RankGuide',
       },
       {
         path: '/changelog',
-        name: 'Changelog',
+        name: 'changelog',
         icon: 'test',
         component: './Changelog',
       },

@@ -3,7 +3,7 @@ import { IdcardOutlined, LogoutOutlined, SettingOutlined, UserOutlined } from '@
 import { Avatar, Menu, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
-import { NavLink, useHistory } from 'umi';
+import { NavLink, useHistory, useIntl } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 
@@ -12,6 +12,7 @@ export type GlobalHeaderRightProps = {
 };
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
+  const intl = useIntl();
   const history = useHistory();
   const account = getUserAccount();
   const displayName = account ? account.displayName : 'User';
@@ -48,14 +49,14 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
       <Menu.Item key="center">
         <NavLink to="/account/characters">
           <UserOutlined />
-          Characters
+          {intl.formatMessage({ id: 'navBar.characters' })}
         </NavLink>
       </Menu.Item>
 
       <Menu.Item key="settings">
         <NavLink to="/account">
           <SettingOutlined />
-          Settings
+          {intl.formatMessage({ id: 'navBar.settings' })}
         </NavLink>
       </Menu.Item>
 
@@ -63,7 +64,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
 
       <Menu.Item key="logout" onClick={() => onLogout()}>
         <LogoutOutlined />
-        Logout
+        {intl.formatMessage({ id: 'navBar.logout' })}
       </Menu.Item>
     </Menu>
   );

@@ -1,36 +1,9 @@
 import { Select, Statistic, Table } from 'antd';
 import React, { useState } from 'react';
+import { useIntl } from 'umi';
 import { formatTime } from '../../system/utility';
 
 const { Option } = Select;
-
-const columns = [
-  {
-    title: '',
-    dataIndex: 'type',
-    key: 'type',
-  },
-  {
-    title: 'Kills',
-    dataIndex: 'kills',
-    key: 'kills',
-  },
-  {
-    title: 'Deaths',
-    dataIndex: 'deaths',
-    key: 'deaths',
-  },
-  {
-    title: 'Stuns',
-    dataIndex: 'stuns',
-    key: 'stuns',
-  },
-  {
-    title: 'Stuns Received',
-    dataIndex: 'stunsrec',
-    key: 'stunsrec',
-  },
-];
 
 type StatsTableProps = {
   stats: Stats;
@@ -51,12 +24,38 @@ type StatsMode =
   | 'stats_sm';
 
 export default function StatsTable(props: StatsTableProps): JSX.Element {
+  const intl = useIntl();
   const [data, setData] = useState({ mode: 'all' as StatsMode });
 
-  console.log('StatsTable');
-  console.log(props);
-
   const stats: Record<string, number> = {};
+
+  const columns = [
+    {
+      title: '',
+      dataIndex: 'type',
+      key: 'type',
+    },
+    {
+      title: intl.formatMessage({ id: 'app.kills' }),
+      dataIndex: 'kills',
+      key: 'kills',
+    },
+    {
+      title: intl.formatMessage({ id: 'app.deaths' }),
+      dataIndex: 'deaths',
+      key: 'deaths',
+    },
+    {
+      title: intl.formatMessage({ id: 'app.stuns' }),
+      dataIndex: 'stuns',
+      key: 'stuns',
+    },
+    {
+      title: intl.formatMessage({ id: 'app.stunsreceived' }),
+      dataIndex: 'stunsrec',
+      key: 'stunsrec',
+    },
+  ];
 
   if (data.mode !== 'all') {
     try {
@@ -109,7 +108,7 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
   const tableData = [
     {
       key: 'typehs',
-      type: <strong>Headshot</strong>,
+      type: <strong>{intl.formatMessage({ id: 'app.headshot' })}</strong>,
       kills: stats.headshot_kills,
       deaths: stats.headshot_deaths,
       stuns: stats.headshot_stuns,
@@ -117,7 +116,7 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
     },
     {
       key: 'typel',
-      type: <strong>Lock-on</strong>,
+      type: <strong>{intl.formatMessage({ id: 'app.lockon' })}</strong>,
       kills: stats.lock_kills,
       deaths: stats.lock_deaths,
       stuns: stats.lock_stuns,
@@ -125,7 +124,7 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
     },
     {
       key: 'typeo',
-      type: <strong>Other</strong>,
+      type: <strong>{intl.formatMessage({ id: 'app.other' })}</strong>,
       kills: stats.kills - (stats.headshot_kills + stats.lock_kills),
       deaths: stats.deaths - (stats.headshot_deaths + stats.lock_deaths),
       stuns: stats.stuns - (stats.headshot_stuns + stats.lock_stuns),
@@ -133,7 +132,7 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
     },
     {
       key: 'typea',
-      type: <strong>All</strong>,
+      type: <strong>{intl.formatMessage({ id: 'app.all' })}</strong>,
       kills: stats.kills,
       deaths: stats.deaths,
       stuns: stats.stuns,
@@ -148,34 +147,37 @@ export default function StatsTable(props: StatsTableProps): JSX.Element {
         style={{ float: 'right', width: 180, marginBottom: '16px' }}
         onChange={(e) => setData({ mode: e as StatsMode })}
       >
-        <Option value="all">Total</Option>
-        <Option value="stats_dm">Deathmatch</Option>
-        <Option value="stats_sdm">Stealth Deathmatch</Option>
-        <Option value="stats_scap">Solo Capture</Option>
-        <Option value="stats_tdm">Team Deathmatch</Option>
-        <Option value="stats_cap">Capture Mission</Option>
-        <Option value="stats_base">Base Mission</Option>
-        <Option value="stats_bomb">Bomb Mission</Option>
-        <Option value="stats_race">Race Mission</Option>
-        <Option value="stats_res">Rescue Mission</Option>
-        <Option value="stats_tsne">Team Sneaking</Option>
-        <Option value="stats_sm">Sneaking Mission</Option>
+        <Option value="all">{intl.formatMessage({ id: 'app.total' })}</Option>
+        <Option value="stats_dm">{intl.formatMessage({ id: 'app.deathmatch' })}</Option>
+        <Option value="stats_sdm">{intl.formatMessage({ id: 'app.stealthdeathmatch' })}</Option>
+        <Option value="stats_scap">{intl.formatMessage({ id: 'app.solocapture' })}</Option>
+        <Option value="stats_tdm">{intl.formatMessage({ id: 'app.teamdeathmatch' })}</Option>
+        <Option value="stats_cap">{intl.formatMessage({ id: 'app.capturemission' })}</Option>
+        <Option value="stats_base">{intl.formatMessage({ id: 'app.basemission' })}</Option>
+        <Option value="stats_bomb">{intl.formatMessage({ id: 'app.bombmission' })}</Option>
+        <Option value="stats_race">{intl.formatMessage({ id: 'app.racemission' })}</Option>
+        <Option value="stats_res">{intl.formatMessage({ id: 'app.rescuemission' })}</Option>
+        <Option value="stats_tsne">{intl.formatMessage({ id: 'app.teamsneaking' })}</Option>
+        <Option value="stats_sm">{intl.formatMessage({ id: 'app.sneakingmission' })}</Option>
       </Select>
 
       <br />
 
       <div className="row text-center">
         <div className="col-md-3">
-          <Statistic title="Rounds" value={stats.rounds} />
+          <Statistic title={intl.formatMessage({ id: 'app.rounds' })} value={stats.rounds} />
         </div>
         <div className="col-md-3">
-          <Statistic title="Wins" value={stats.wins} />
+          <Statistic title={intl.formatMessage({ id: 'app.wins' })} value={stats.wins} />
         </div>
         <div className="col-md-3">
-          <Statistic title="Score" value={stats.score} />
+          <Statistic title={intl.formatMessage({ id: 'app.score' })} value={stats.score} />
         </div>
         <div className="col-md-3">
-          <Statistic title="Time Played" value={formatTime(stats.time)} />
+          <Statistic
+            title={intl.formatMessage({ id: 'app.timeplayed' })}
+            value={formatTime(stats.time)}
+          />
         </div>
       </div>
 

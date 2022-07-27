@@ -3,7 +3,7 @@ import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Pagination, Select, Spin, Switch, Table, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { NavLink, useHistory, useParams } from 'umi';
+import { NavLink, useHistory, useIntl, useParams } from 'umi';
 
 const { Option } = Select;
 const { Text } = Typography;
@@ -54,6 +54,7 @@ type RankingParams = {
 export default (): React.ReactNode => {
   document.title = 'Rankings - Metal Gear Online';
 
+  const intl = useIntl();
   const history = useHistory();
   const params = useParams<RankingParams>();
 
@@ -138,7 +139,8 @@ export default (): React.ReactNode => {
     <PageContainer>
       <div className="row">
         <div className="col-md-8">
-          <Switch checked={data.weekly} onChange={(e: any) => setWeekly(e)} /> Weekly
+          <Switch checked={data.weekly} onChange={(e: any) => setWeekly(e)} />{' '}
+          {intl.formatMessage({ id: 'app.weekly' })}
         </div>
         <div className="col-md-4">
           <Select
@@ -146,23 +148,23 @@ export default (): React.ReactNode => {
             onChange={onModeChange}
             style={{ float: 'right', width: 180, marginBottom: '16px' }}
           >
-            <Option value="total">Total Score</Option>
-            <Option value="exp">Experience</Option>
-            <Option value="stuns">Stuns</Option>
-            <Option value="knife">Knife Kills</Option>
-            <Option value="scans">Scans</Option>
-            <Option value="dm">Deathmatch</Option>
-            <Option value="sdm">Stealth Deathmatch</Option>
-            <Option value="tdm">Team Deathmatch</Option>
-            <Option value="cap">Capture Mission</Option>
-            <Option value="base">Base Mission</Option>
-            <Option value="bomb">Bomb Mission</Option>
-            <Option value="race">Race Mission</Option>
-            <Option value="res">Rescue Mission</Option>
-            <Option value="tsne">Team Sneaking</Option>
-            <Option value="sm">Sneaking Mission</Option>
-            <Option value="kdr">Kill / Death Ratio</Option>
-            <Option value="winrat">Win / Loss Ratio</Option>
+            <Option value="total">{intl.formatMessage({ id: 'app.totalscore' })}</Option>
+            <Option value="exp">{intl.formatMessage({ id: 'app.exp' })}</Option>
+            <Option value="stuns">{intl.formatMessage({ id: 'app.stuns' })}</Option>
+            <Option value="knife">{intl.formatMessage({ id: 'app.knifekills' })}</Option>
+            <Option value="scans">{intl.formatMessage({ id: 'app.scans' })}</Option>
+            <Option value="dm">{intl.formatMessage({ id: 'app.deathmatch' })}</Option>
+            <Option value="sdm">{intl.formatMessage({ id: 'app.stealthdeathmatch' })}</Option>
+            <Option value="tdm">{intl.formatMessage({ id: 'app.teamdeathmatch' })}</Option>
+            <Option value="cap">{intl.formatMessage({ id: 'app.capturemission' })}</Option>
+            <Option value="base">{intl.formatMessage({ id: 'app.basemission' })}</Option>
+            <Option value="bomb">{intl.formatMessage({ id: 'app.bombmission' })}</Option>
+            <Option value="race">{intl.formatMessage({ id: 'app.racemission' })}</Option>
+            <Option value="res">{intl.formatMessage({ id: 'app.rescuemission' })}</Option>
+            <Option value="tsne">{intl.formatMessage({ id: 'app.teamsneaking' })}</Option>
+            <Option value="sm">{intl.formatMessage({ id: 'app.sneakingmission' })}</Option>
+            <Option value="kdr">{intl.formatMessage({ id: 'app.kdr' })}</Option>
+            <Option value="winrat">{intl.formatMessage({ id: 'app.wlr' })}</Option>
           </Select>
         </div>
       </div>

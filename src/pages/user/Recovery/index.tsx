@@ -1,12 +1,12 @@
 import Footer from '@/components/Footer';
-import { login, recoverPassword } from '@/services/mgo2pc/api';
-import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
-import ProForm, { ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
-import { Card, Divider, Form, notification } from 'antd';
+import { recoverPassword } from '@/services/mgo2pc/api';
+import { MailOutlined } from '@ant-design/icons';
+import ProForm, { ProFormText } from '@ant-design/pro-form';
+import { Card, Form, notification } from 'antd';
 import React, { useState } from 'react';
-import { history, Link, NavLink } from 'umi';
-import styles from './index.less';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { Link, useIntl } from 'umi';
+import styles from './index.less';
 
 type RecoveryFormData = {
   email: string;
@@ -15,6 +15,7 @@ type RecoveryFormData = {
 let captcha: string = '';
 
 const Recovery: React.FC = () => {
+  const intl = useIntl();
   const [data, setData] = useState({ loading: false });
 
   document.title = 'Recover Account - Metal Gear Online';
@@ -66,7 +67,7 @@ const Recovery: React.FC = () => {
               isKeyPressSubmit={true}
               submitter={{
                 searchConfig: {
-                  submitText: 'Reset Password',
+                  submitText: intl.formatMessage({ id: 'app.resetpw' }),
                 },
                 render: (_, dom) => dom.pop(),
                 submitButtonProps: {
@@ -89,11 +90,11 @@ const Recovery: React.FC = () => {
                   size: 'large',
                   prefix: <MailOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={'Email'}
+                placeholder={intl.formatMessage({ id: 'app.email' })}
                 rules={[
                   {
                     required: true,
-                    message: 'Please input your email!',
+                    message: intl.formatMessage({ id: 'app.inputemail' }),
                   },
                 ]}
               />

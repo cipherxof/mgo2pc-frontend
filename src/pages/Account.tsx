@@ -3,7 +3,7 @@ import { getUserAccount, getUserToken, isLoggedIn } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Button, Card, Form, Input, Menu, notification } from 'antd';
 import React, { useCallback, useState } from 'react';
-import { useHistory } from 'umi';
+import { useHistory, useIntl } from 'umi';
 
 const layout = {
   labelCol: { span: 4 },
@@ -15,6 +15,7 @@ const tailLayout = {
 };
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   const [menu, setMenu] = useState('basic');
   const [loading, setLoading] = useState(false);
 
@@ -85,17 +86,17 @@ export default (): React.ReactNode => {
                   <Input placeholder={displayName} />
                 </Form.Item>
 
-                <Form.Item label="Current Password" name="password">
+                <Form.Item label={intl.formatMessage({ id: 'app.currentpw' })} name="password">
                   <Input.Password placeholder="Your current password" />
                 </Form.Item>
 
-                <Form.Item label="New Password" name="password_new">
+                <Form.Item label={intl.formatMessage({ id: 'app.newpw' })} name="password_new">
                   <Input.Password placeholder="Your new password" />
                 </Form.Item>
 
                 <Form.Item {...tailLayout}>
                   <Button loading={loading} type="primary" htmlType="submit">
-                    Update Information
+                    {intl.formatMessage({ id: 'app.updateinfo' })}
                   </Button>
                 </Form.Item>
               </Form>

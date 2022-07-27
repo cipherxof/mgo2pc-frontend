@@ -9,7 +9,7 @@ import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Button, Card, Divider, PageHeader, Spin, Switch, Tabs, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { NavLink, useParams, useRequest } from 'umi';
+import { NavLink, useIntl, useParams, useRequest } from 'umi';
 
 const { TabPane } = Tabs;
 
@@ -18,6 +18,7 @@ type ProfileParams = {
 };
 
 export const ProfilePage: React.FC = () => {
+  const intl = useIntl();
   const params = useParams<ProfileParams>();
   const initialState = { name: params.character } as ProfileData;
   const [profile, setProfile] = useState<ProfileData>(initialState);
@@ -77,27 +78,27 @@ export const ProfilePage: React.FC = () => {
         <Divider />
 
         <div className="mb-3">
-          <Switch onChange={(e) => setWeekly(e)} /> Weekly
+          <Switch onChange={(e) => setWeekly(e)} /> {intl.formatMessage({ id: 'app.weekly' })}
         </div>
 
         <div className="card-container">
           <Tabs defaultActiveKey="1" type="card" size="small">
-            <TabPane tab="Game Modes" key="1">
+            <TabPane tab={intl.formatMessage({ id: 'app.gamemodes' })} key="1">
               <Card>
                 <StatsTable stats={weekly ? profile.statsWeek : profile.stats} />
               </Card>
             </TabPane>
-            <TabPane tab="Personal Scores" key="2">
+            <TabPane tab={intl.formatMessage({ id: 'app.personalscores' })} key="2">
               <Card>
                 <PersonalScores stats={weekly ? profile.statsWeek : profile.stats} />
               </Card>
             </TabPane>
-            <TabPane tab="Title History" key="3">
+            <TabPane tab={intl.formatMessage({ id: 'app.titlehistory' })} key="3">
               <Card>
                 <TitleHistoryTable character={profile.id} />
               </Card>
             </TabPane>
-            <TabPane tab="Medals" key="4">
+            <TabPane tab={intl.formatMessage({ id: 'app.medals' })} key="4">
               <Card>
                 <MedalTable stats={profile.stats} />
               </Card>
