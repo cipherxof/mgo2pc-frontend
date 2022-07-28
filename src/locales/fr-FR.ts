@@ -64,7 +64,7 @@ export default {
   'app.timeplayed': 'temps joué',
   'app.headshot': 'tirs à la tête',
   'app.lockon': 'Verrouillage',
-  'app.autre': 'Autre',
+  'app.other': 'Autre',
   'app.all': 'Tous',
   'app.kills': 'tués',
   'app.deaths': 'morts',
@@ -84,4 +84,6 @@ export default {
   'app.faq.login': 'Pourquoi ne puis-je pas me connecter ?',
   'app.faq.sysreqtitle': 'Quelle est la configuration requise ?',
   'app.faq.sysreq': `L'émulation Playstation 3 est très gourmande en CPU et fonctionne mieux sur les ordinateurs de bureau avec 8 cœurs et 16 threads. Cela étant dit, vous pouvez obtenir des fréquences d'images jouables sur des processeurs plus faibles. La meilleure valeur pour les performances que vous obtiendrez probablement est avec l'Intel i3 12100 (97€ ) ou l'Intel i5 12400f (179 €). Cependant, si vous utilisez un ordinateur portable, nous vous recommandons d'en utiliser un équipé d'un processeur de série H à 8 cœurs/16 threads 35W+, tel qu'un Intel Core i7-10870H ou un AMD Ryzen 7 5800H.`,
+  'app.welcome':
+    'We provide a service which allows you to play the multiplayer mode of Metal Gear Solid 4: Guns of the Patriots PC using the {rpcs3} emulator, with crossplay between PS3 players.\n\nIf you are looking to get started then watch our {startvideo} or head over to our frequently asked questions section.\n\nFeel free to stop by the {discord} if you have any questions.',
 };

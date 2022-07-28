@@ -83,4 +83,6 @@ export default {
   'app.faq.login': "Why can't I login?",
   'app.faq.sysreqtitle': 'What are the system requirements?',
   'app.faq.sysreq': `Playstation 3 emulation is very CPU intensive and works best on desktops with 8 cores and 16 threads. That being said you can get playable framerates on weaker CPUs. The best value for performance you will likely get is with the Intel i3 12100 ($97) or the Intel i5 12400f ($179). However, if you are using a laptop we recommend one equipped with an 8-core/16-thread 35W+ H-series CPU such as an Intel Core i7-10870H or an AMD Ryzen 7 5800H.`,
+  'app.welcome':
+    'We provide a service which allows you to play the multiplayer mode of Metal Gear Solid 4: Guns of the Patriots PC using the {rpcs3} emulator, with crossplay between PS3 players.\n\nIf you are looking to get started then watch our {startvideo} or head over to our frequently asked questions section.\n\nFeel free to stop by the {discord} if you have any questions.',
 };

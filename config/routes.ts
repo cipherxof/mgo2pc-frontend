@@ -1,5 +1,3 @@
-import { useIntl } from 'umi';
-
 export default [
   {
     path: '/games',

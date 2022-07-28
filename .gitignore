@@ -3,6 +3,7 @@
 # admin
 /src/pages/admin
 /src/services/mgo2pc/admin
+/config/routes-admin.ts
 
 # dependencies
 **/node_modules

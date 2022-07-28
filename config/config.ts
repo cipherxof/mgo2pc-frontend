@@ -1,11 +1,22 @@
 // https://umijs.org/config/
+import { IConfigFromPlugins } from '@/.umi/core/pluginConfig';
 import { defineConfig } from 'umi';
-import { join } from 'path';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
+
 const { REACT_APP_ENV } = process.env;
-export default defineConfig({
+
+(async () => {
+  try {
+    const adminRoutes = await import('./routes-admin');
+    if (adminRoutes) {
+      routes.concat(adminRoutes.default);
+    }
+  } catch (e) {}
+})();
+
+const config: IConfigFromPlugins = {
   hash: true,
   antd: {
     dark: true,
@@ -38,7 +49,6 @@ export default defineConfig({
   // esbuild is father build tools
   // https://umijs.org/plugins/plugin-esbuild
   esbuild: {},
-  title: false,
   ignoreMomentLocale: true,
   proxy: proxy[REACT_APP_ENV || 'dev'],
   manifest: {
@@ -52,4 +62,6 @@ export default defineConfig({
   mfsu: {},
   webpack5: {},
   exportStatic: {},
-});
+};
+
+export default defineConfig(config);

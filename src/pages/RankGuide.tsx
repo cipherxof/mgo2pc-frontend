@@ -1,6 +1,6 @@
 import { getRankId, getRankPreview } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Alert, Card, Divider, Typography } from 'antd';
+import { Card, Typography } from 'antd';
 import React from 'react';
 
 const { Meta } = Card;
@@ -463,7 +463,7 @@ export default (): React.ReactNode => {
   for (const rank of ranks) {
     cards.push(
       <div className="col-md-3 text-center">
-        <Card hoverable style={{ marginBottom: '16px', minHeight: '400px' }}>
+        <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
           <img src={`${getRankPreview(getRankId(rank.name))}`} />
           <Meta title={rank.name} description={rank.description} />
         </Card>
