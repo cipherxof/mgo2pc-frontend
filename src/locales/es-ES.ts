@@ -13,6 +13,7 @@ export default {
   'menu.more.faq': 'Preguntas frecuentes',
   'menu.more.rankguide': 'Guia de rangos',
   'menu.more.changelog': 'Lista de cambios',
+  'menu.more.gameguides': 'Game Guides',
   'app.copyright':
     'Metal Gear Online 2 PC. Todos los derechos reservados. Este sitio web no está asociado con Konami o sus afiliados. Agradecimientos especiales a SaveMGO.',
   'app.serveron': 'El server está actualmente conectado',

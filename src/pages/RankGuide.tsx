@@ -192,10 +192,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Team Sneaking Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">TSNE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Team Sneaking {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">TSNE</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -226,10 +227,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Bomb Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">BOMB</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Bomb Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">BOMB</Text> {`>=`} <Text type="success">30</Text>
           </p>
 
           <br />
@@ -241,10 +243,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Base Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">BASE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Base Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">BASE</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -255,10 +258,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Deathmatch Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">DM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Deathmatch Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">DM</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -280,10 +284,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Rescue Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">RES</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Rescue Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">RES</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -294,10 +299,10 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Capture Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">CAP</Text> ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Capture Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">CAP</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -308,10 +313,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Team Deathmatch Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">TDM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Team Deathmatch Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">TDM</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -322,10 +328,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Race Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">RACE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Race Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">RACE</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -336,10 +343,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Stealth Deathmatch Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">SDM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
           </p>
           <p>
-            Weekly Rounds of Stealth Deathmatch Mission {`>=`} <Text type="success">30</Text>
+            Weekly Rounds of <Text type="warning">SDM</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -450,7 +458,8 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Deaths ÷ Rounds Played in RES and TSNE {`<=`} <Text type="success">0.5</Text>
+            Deaths ÷ Rounds Played in <Text type="warning">RES</Text> and{' '}
+            <Text type="warning">TSNE</Text> {`<=`} <Text type="success">0.5</Text>
           </p>
           <br />
         </>

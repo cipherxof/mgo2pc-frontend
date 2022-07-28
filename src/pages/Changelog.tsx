@@ -60,6 +60,7 @@ export default (): React.ReactNode => {
               </ul>
               <Divider />
               <Title>Version 2.02</Title>
+              05/25/2022
               <Title level={3}>New Features</Title>
               <ul>
                 <li>
@@ -92,6 +93,9 @@ export default (): React.ReactNode => {
               </ul>
               <Divider />
               <Title>Version 2.00</Title>
+              10/17/2021
+              <br />
+              <br />
               <p>
                 We're excited to bring you new content and features in the first official game
                 update for MGO2PC!

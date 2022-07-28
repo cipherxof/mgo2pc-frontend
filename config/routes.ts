@@ -53,6 +53,12 @@ export default [
         component: './FAQ',
       },
       {
+        path: '/tutorials',
+        name: 'gameguides',
+        icon: 'smile',
+        component: './VideoGuides',
+      },
+      {
         path: '/rankguide',
         name: 'rankguide',
         icon: 'smile',
