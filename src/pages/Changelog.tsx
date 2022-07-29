@@ -1,7 +1,5 @@
-import ServerStatus from '@/components/ServerStatus';
-import { DownloadOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Button, Card, Divider, Typography } from 'antd';
+import { Card, Divider, Typography } from 'antd';
 import React from 'react';
 import { NavLink } from 'umi';
 
