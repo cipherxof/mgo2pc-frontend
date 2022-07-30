@@ -24,6 +24,7 @@ type ProfileData = {
   stats: Stats;
   statsWeek: Stats;
   clan: string;
+  clanId: number;
   main: number;
   xp: number;
   xp_alt: number;

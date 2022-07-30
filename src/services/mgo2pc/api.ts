@@ -4,6 +4,10 @@ export async function getGames() {
   return request<API.GameList>(`/api/v1/games`, { method: 'GET' });
 }
 
+export async function getClan(clanId: number | string) {
+  return request<API.Clan>(`/api/v1/clan/${clanId}`, { method: 'GET' });
+}
+
 export async function getProfile(character: number | string) {
   return request<API.Profile>(`/api/v1/profile/${character}`, { method: 'GET' });
 }

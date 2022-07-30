@@ -51,7 +51,11 @@ export const ProfilePage: React.FC = () => {
     }
 
     if (profile.clan) {
-      headerTags.push(<Tag color="gold">{profile.clan}</Tag>);
+      headerTags.push(
+        <NavLink to={`/clan/${profile.clanId}`}>
+          <Tag color="gold">{profile.clan}</Tag>
+        </NavLink>,
+      );
     }
 
     headerTags.push(<CharacterLevelTag xp={xp} />);

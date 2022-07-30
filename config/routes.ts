@@ -28,6 +28,7 @@ export default [
   { path: '/resetpassword/:user/:key', component: './ResetPassword' },
   { path: '/activate/:user/:key', component: './Activate' },
   { path: '/clans', component: './Clans' },
+  { path: '/clan/:id', component: './Clan' },
   { path: '/rankings/:mode/:page', component: './Rankings' },
   { path: '/shop/:id?', component: './shop/Shop' },
   { path: '/changelog', component: './Changelog' },

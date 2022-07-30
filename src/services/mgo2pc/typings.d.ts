@@ -26,6 +26,20 @@ declare namespace API {
     message: string;
   };
 
+  type Clan = {
+    data: {
+      name: string;
+      comment: string;
+      notice: string;
+      leader: string;
+      members: any[];
+      owner: boolean;
+      emblem: string;
+    };
+    success: boolean;
+    message: string;
+  };
+
   type Titles = {
     data: TitleHistory;
     success: boolean;
