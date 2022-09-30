@@ -256,10 +256,8 @@ export default (): React.ReactNode => {
       let subText = <></>;
 
       for (const item of data.items) {
+        if (item.cost === 9999999 && !item.owned) continue;
         if (item.gear_slot.toString() != params.id) continue;
-
-        console.log(item.gear_slot);
-        console.log(slotData[menu]);
 
         if (!slotData[menu].includes(item.gear_slot)) continue;
 

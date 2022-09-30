@@ -51,7 +51,7 @@ export default (): React.ReactNode => {
   ];
 
   const handleChange: UploadProps['onChange'] = (info: UploadChangeParam<UploadFile>) => {
-    console.log(info);
+    //console.log(info);
     if (info.file.status === 'uploading') {
       setUploading(true);
       return;
@@ -121,7 +121,7 @@ export default (): React.ReactNode => {
             name="emblem"
             listType="picture-card"
             showUploadList={false}
-            action="http://localhost:80/api/v1/uploademblem"
+            action="/api/v1/uploademblem"
             beforeUpload={beforeUpload}
             onChange={handleChange}
             headers={{ authorization: `${getUserToken()}`, clan: params.id }}

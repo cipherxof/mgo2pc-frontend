@@ -15,7 +15,7 @@ export default {
   'menu.more.changelog': 'Note della patch',
   'menu.more.gameguides': 'Guide di Gioco',
   'app.copyright':
-    'Metal Gear Online 2 PC. Tutti i diritti riservati. Il presente sito non è associato a Konami o ai suoi affilati. Ringraziamenti Speciali al team di SaveMGO.',
+    'Metal Gear Online 2 PC. Tutti i diritti riservati. Il presente sito non è associato a Konami o ai suoi affilati.',
   'app.serveron': 'Il server è online al momento',
   'app.serveroff': 'Il server è offline al momento',
   'app.setupvideopc': 'https://www.youtube.com/embed/7uHWGNLxmQI',

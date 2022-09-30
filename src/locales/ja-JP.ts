@@ -15,7 +15,7 @@ export default {
   'menu.more.changelog': '更新ログ',
   'menu.more.gameguides': 'Game Guides',
   'app.copyright':
-    'Metal Gear Online 2 PC. All rights reserved. このWEBサイトはコナミ(株)と関係や、協力を示唆するものではありません。 スペシャルサンクス！SaveMGO',
+    'Metal Gear Online 2 PC. All rights reserved. このWEBサイトはコナミ(株)と関係や、協力を示唆するものではありません。',
   'app.serveron': 'サーバーは現在オンラインです',
   'app.serveroff': 'サーバーは現在オフラインです',
   'app.setupvideopc': 'https://www.youtube.com/embed/z1D7xzg_jKA',

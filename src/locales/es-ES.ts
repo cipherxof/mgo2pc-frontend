@@ -15,7 +15,7 @@ export default {
   'menu.more.changelog': 'Lista de cambios',
   'menu.more.gameguides': 'Game Guides',
   'app.copyright':
-    'Metal Gear Online 2 PC. Todos los derechos reservados. Este sitio web no está asociado con Konami o sus afiliados. Agradecimientos especiales a SaveMGO.',
+    'Metal Gear Online 2 PC. Todos los derechos reservados. Este sitio web no está asociado con Konami o sus afiliados.',
   'app.serveron': 'El server está actualmente conectado',
   'app.serveroff': 'El server está actualmente desconectado',
   'app.setupvideopc': 'https://www.youtube.com/embed/7uHWGNLxmQI',
