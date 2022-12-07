@@ -31,7 +31,7 @@ export default function PersonalScores(props: PersonalScoresProps): JSX.Element 
     { key: 'Suicides', value: props.stats.suicides },
     { key: 'Friendly Kills', value: props.stats.team_kills },
     { key: 'Friendly Stuns', value: props.stats.stuns_friendly },
-    { key: 'Times Stunned', value: props.stats.stuns },
+    { key: 'Times Stunned', value: props.stats.stuns_received },
     { key: 'Aborts', value: props.stats.withdrawals },
     { key: 'Radio Uses', value: props.stats.radio },
     { key: 'Chat Uses', value: props.stats.chat },
