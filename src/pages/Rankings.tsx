@@ -3,7 +3,8 @@ import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Avatar, Pagination, Select, Spin, Switch, Table, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { NavLink, useHistory, useIntl, useParams } from 'umi';
+import { NavLink, useIntl, useParams } from 'umi';
+import { history } from '@umijs/max';
 
 const { Option } = Select;
 const { Text } = Typography;
@@ -55,7 +56,6 @@ export default (): React.ReactNode => {
   document.title = 'Rankings - Metal Gear Online';
 
   const intl = useIntl();
-  const history = useHistory();
   const params = useParams<RankingParams>();
 
   const [data, setData] = useState({

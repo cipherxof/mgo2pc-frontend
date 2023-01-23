@@ -1,21 +1,27 @@
-import { Settings as LayoutSettings } from '@ant-design/pro-layout';
+import { ProLayoutProps } from '@ant-design/pro-components';
 
-const Settings: LayoutSettings & {
+/**
+ * @name
+ */
+const Settings: ProLayoutProps & {
   pwa?: boolean;
   logo?: string;
 } = {
   navTheme: 'realDark',
   // 拂晓蓝
-  primaryColor: '#1890ff',
-  layout: 'top',
+  colorPrimary: '#1890ff',
+  layout: 'mix',
   contentWidth: 'Fixed',
   fixedHeader: true,
-  fixSiderbar: false,
+  fixSiderbar: true,
   colorWeak: false,
-  title: 'Metal Gear Online',
-  pwa: false,
-  logo: '/icons/icon-512x512.png',
+  title: '',
+  splitMenus: false,
+  pwa: true,
+  logo: 'https://media.discordapp.net/attachments/915718508942348288/1066518658882486342/2023-native.png?width=1352&height=301',
   iconfontUrl: '',
+  defaultCollapsed: true,
+  breakpoint: false,
 };
 
 export default Settings;

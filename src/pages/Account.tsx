@@ -1,9 +1,10 @@
 import { updateAccount } from '@/services/mgo2pc/api';
 import { getUserAccount, getUserToken, isLoggedIn } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
+import { history } from '@umijs/max';
 import { Button, Card, Form, Input, Menu, notification } from 'antd';
 import React, { useCallback, useState } from 'react';
-import { useHistory, useIntl } from 'umi';
+import { useIntl } from 'umi';
 
 const layout = {
   labelCol: { span: 4 },
@@ -19,7 +20,6 @@ export default (): React.ReactNode => {
   const [menu, setMenu] = useState('basic');
   const [loading, setLoading] = useState(false);
 
-  const history = useHistory();
   const account = getUserAccount();
   const displayName = account ? account.displayName : 'User';
 

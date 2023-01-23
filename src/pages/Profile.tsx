@@ -6,12 +6,11 @@ import TitleHistoryTable from '@/components/Profile/TitleHistoryTable';
 import { getProfile } from '@/services/mgo2pc/api';
 import { getRankPreview, isModerator } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Avatar, Button, Card, Divider, PageHeader, Spin, Switch, Tabs, Tag } from 'antd';
+import { ProCard } from '@ant-design/pro-components';
+import { PageContainer, PageHeader } from '@ant-design/pro-layout';
+import { Avatar, Button, Divider, Spin, Switch, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useIntl, useParams, useRequest } from 'umi';
-
-const { TabPane } = Tabs;
 
 type ProfileParams = {
   character: string;
@@ -23,7 +22,7 @@ export const ProfilePage: React.FC = () => {
   const initialState = { name: params.character } as ProfileData;
   const [profile, setProfile] = useState<ProfileData>(initialState);
   const [weekly, setWeekly] = useState(false);
-  const { data, loading } = useRequest(() => getProfile(params.character));
+  const { data, loading } = useRequest(() => getProfile(params.character ?? 0));
 
   document.title = `${profile.name} - Metal Gear Online`;
 
@@ -86,28 +85,20 @@ export const ProfilePage: React.FC = () => {
         </div>
 
         <div className="card-container">
-          <Tabs defaultActiveKey="1" type="card" size="small">
-            <TabPane tab={intl.formatMessage({ id: 'app.gamemodes' })} key="1">
-              <Card>
-                <StatsTable stats={weekly ? profile.statsWeek : profile.stats} />
-              </Card>
-            </TabPane>
-            <TabPane tab={intl.formatMessage({ id: 'app.personalscores' })} key="2">
-              <Card>
-                <PersonalScores stats={weekly ? profile.statsWeek : profile.stats} />
-              </Card>
-            </TabPane>
-            <TabPane tab={intl.formatMessage({ id: 'app.titlehistory' })} key="3">
-              <Card>
-                <TitleHistoryTable character={profile.id} />
-              </Card>
-            </TabPane>
-            <TabPane tab={intl.formatMessage({ id: 'app.medals' })} key="4">
-              <Card>
-                <MedalTable stats={profile.stats} />
-              </Card>
-            </TabPane>
-          </Tabs>
+          <ProCard tabs={{ type: 'card' }}>
+            <ProCard.TabPane key="1" tab={intl.formatMessage({ id: 'app.gamemodes' })}>
+              <StatsTable stats={weekly ? profile.statsWeek : profile.stats} />
+            </ProCard.TabPane>
+            <ProCard.TabPane key="2" tab={intl.formatMessage({ id: 'app.personalscores' })}>
+              <PersonalScores stats={weekly ? profile.statsWeek : profile.stats} />
+            </ProCard.TabPane>
+            <ProCard.TabPane key="3" tab={intl.formatMessage({ id: 'app.titlehistory' })}>
+              <TitleHistoryTable character={profile.id} />
+            </ProCard.TabPane>
+            <ProCard.TabPane key="4" tab={intl.formatMessage({ id: 'app.medals' })}>
+              <MedalTable stats={profile.stats} />
+            </ProCard.TabPane>
+          </ProCard>
         </div>
       </>
     );

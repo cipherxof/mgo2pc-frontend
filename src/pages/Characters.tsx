@@ -1,20 +1,17 @@
 import CharacterLevelTag from '@/components/CharacterLevelTag';
 import { getAccount } from '@/services/mgo2pc/api';
-import { getExpLevel, getLevelReq, getUserToken, isLoggedIn } from '@/system/utility';
+import { getExpLevel, getLevelReq, isLoggedIn } from '@/system/utility';
 import { EditOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Popover } from 'antd';
-import { Avatar, Card, Progress } from 'antd';
-import React, { useEffect, useState } from 'react';
-import { NavLink, useHistory, useRequest } from 'umi';
-import API from '../system/api';
+import { Avatar, Card, Popover, Progress } from 'antd';
+import React from 'react';
+import { NavLink, useRequest } from 'umi';
+import { history } from '@umijs/max';
 
 const { Meta } = Card;
 
 export default (): React.ReactNode => {
-  const { data, loading } = useRequest(getAccount);
-
-  const history = useHistory();
+  const { data } = useRequest(getAccount);
 
   if (!isLoggedIn()) {
     history.push('/');

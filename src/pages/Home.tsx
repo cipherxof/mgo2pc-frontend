@@ -13,6 +13,11 @@ export default (): React.ReactNode => {
     <PageContainer>
       <div className="row">
         <div className="col-md-12">
+
+          <img style={{maxWidth: "100%"}} src={require('../assets/img/logo-full.png')} />
+          
+          <Divider />
+
           <Card>
             <ServerStatus />
             <p className="mt-3" style={{ whiteSpace: 'pre-line' }}>

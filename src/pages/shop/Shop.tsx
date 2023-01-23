@@ -19,8 +19,9 @@ import {
   Tooltip,
 } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
-import { NavLink, useHistory, useIntl, useParams, useRequest } from 'umi';
+import { NavLink, useIntl, useParams, useRequest } from 'umi';
 import ShopSlotCard from './ShopSlotCard';
+import { history } from '@umijs/max';
 
 /*
 this turned into a mess lol
@@ -78,8 +79,6 @@ export default (): React.ReactNode => {
   if (charaId === 0 && data && data.characters && data.characters.length > 0) {
     setCharaId(data.characters[0].id);
   }
-
-  const history = useHistory();
 
   const onMenuClick = useCallback(
     (event) => {

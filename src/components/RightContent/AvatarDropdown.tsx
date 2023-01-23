@@ -1,25 +1,74 @@
 import { getUserAccount } from '@/system/utility';
-import { IdcardOutlined, LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Menu, notification } from 'antd';
+import { DashboardOutlined, LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { setAlpha } from '@ant-design/pro-components';
+import { useEmotionCss } from '@ant-design/use-emotion-css';
+import { history, NavLink } from '@umijs/max';
+import { Avatar, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
-import { NavLink, useHistory, useIntl } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
-import styles from './index.less';
 
 export type GlobalHeaderRightProps = {
   menu?: boolean;
 };
 
+const AvatarLogo = () => {
+  const avatarClassName = useEmotionCss(({ token }) => {
+    return {
+      marginRight: '8px',
+      color: token.colorPrimary,
+      verticalAlign: 'top',
+      background: setAlpha(token.colorBgContainer, 0.85),
+      [`@media only screen and (max-width: ${token.screenMD}px)`]: {
+        margin: 0,
+      },
+    };
+  });
+
+  return (
+    <Avatar
+      size="small"
+      className={avatarClassName}
+      src={'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'}
+      alt="avatar"
+    />
+  );
+};
+
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
-  const intl = useIntl();
-  const history = useHistory();
   const account = getUserAccount();
-  const displayName = account ? account.displayName : 'User';
 
-  const onMenuClick = useCallback((event: MenuInfo) => {}, []);
+  const actionClassName = useEmotionCss(({ token }) => {
+    return {
+      display: 'flex',
+      height: '48px',
+      marginLeft: 'auto',
+      overflow: 'hidden',
+      alignItems: 'center',
+      padding: '0 8px',
+      cursor: 'pointer',
+      borderRadius: token.borderRadius,
+      '&:hover': {
+        backgroundColor: token.colorBgTextHover,
+      },
+    };
+  });
 
-  const onLogout = useCallback(() => {
+  const nameClassName = useEmotionCss(({ token }) => {
+    return {
+      maxWidth: '200px',
+      height: '48px',
+      overflow: 'hidden',
+      lineHeight: '48px',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+      [`@media only screen and (max-width: ${token.screenMD}px)`]: {
+        display: 'none',
+      },
+    };
+  });
+
+  const loginOut = () => {
     localStorage.removeItem('token');
     notification.success({
       message: `Success`,
@@ -27,58 +76,74 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
       placement: 'topRight',
     });
     history.push('/');
+  };
+
+  const onMenuClick = useCallback((event: MenuInfo) => {
+    const { key } = event;
+    if (key === 'logout') {
+      loginOut();
+      return;
+    }
+    history.push(key);
   }, []);
 
+  const displayName = account ? account.displayName : 'User';
+
   if (!account) {
-    return <React.Fragment></React.Fragment>;
+    return (
+      <>
+        <NavLink className={actionClassName} style={{ color: 'inherit' }} to="/login">
+          <span>Login</span>
+        </NavLink>
+        <NavLink className={actionClassName} style={{ color: 'inherit' }} to="/register">
+          <span>Register</span>
+        </NavLink>
+      </>
+    );
   }
 
   const isAdmin = account.role !== undefined && account.role >= 10;
 
-  const menuHeaderDropdown = (
-    <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-      {isAdmin && (
-        <Menu.Item key="admin">
-          <NavLink to="/admin">
-            <IdcardOutlined />
-            Admin
-          </NavLink>
-        </Menu.Item>
-      )}
+  const menuItems = [
+    {
+      key: '/account/characters',
+      icon: <UserOutlined />,
+      label: 'Characters',
+    },
+    {
+      key: '/account',
+      icon: <SettingOutlined />,
+      label: 'Settings',
+    },
+    {
+      type: 'divider' as const,
+    },
+    {
+      key: 'logout',
+      icon: <LogoutOutlined />,
+      label: 'Logout',
+    },
+  ];
 
-      <Menu.Item key="center">
-        <NavLink to="/account/characters">
-          <UserOutlined />
-          {intl.formatMessage({ id: 'navBar.characters' })}
-        </NavLink>
-      </Menu.Item>
-
-      <Menu.Item key="settings">
-        <NavLink to="/account">
-          <SettingOutlined />
-          {intl.formatMessage({ id: 'navBar.settings' })}
-        </NavLink>
-      </Menu.Item>
-
-      <Menu.Divider />
-
-      <Menu.Item key="logout" onClick={() => onLogout()}>
-        <LogoutOutlined />
-        {intl.formatMessage({ id: 'navBar.logout' })}
-      </Menu.Item>
-    </Menu>
-  );
+  if (isAdmin) {
+    menuItems.unshift({
+      key: '/admin',
+      icon: <DashboardOutlined />,
+      label: 'Admin',
+    });
+  }
 
   return (
-    <HeaderDropdown overlay={menuHeaderDropdown}>
-      <span className={`${styles.action} ${styles.account}`}>
-        <Avatar
-          size="small"
-          className={styles.avatar}
-          alt="avatar"
-          src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
-        />
-        <span className={`${styles.name} anticon`}>{displayName}</span>
+    <HeaderDropdown
+      menu={{
+        selectedKeys: [],
+        onClick: onMenuClick,
+        items: menuItems,
+      }}
+    >
+      <span className={actionClassName}>
+        <AvatarLogo />
+        <span className={`${nameClassName} anticon`}>{displayName}</span>
       </span>
     </HeaderDropdown>
   );

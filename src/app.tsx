@@ -1,29 +1,29 @@
 import Footer from '@/components/Footer';
 import RightContent from '@/components/RightContent';
-import { PageLoading } from '@ant-design/pro-layout';
-import type { RequestConfig, RunTimeLayoutConfig } from 'umi';
-import type { RequestOptionsInit } from 'umi-request';
+import type { Settings as LayoutSettings } from '@ant-design/pro-components';
+import { SettingDrawer } from '@ant-design/pro-components';
+import type { RunTimeLayoutConfig } from '@umijs/max';
+import defaultSettings from '../config/defaultSettings';
+import { errorConfig } from './requestErrorConfig';
 import { getUserToken } from './system/utility';
 
-// const isDev = process.env.NODE_ENV === 'development';
-
-export const initialStateConfig = {
-  loading: <PageLoading />,
-};
-
-export const layout: RunTimeLayoutConfig = () => {
+/**
+ * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
+ * */
+export async function getInitialState(): Promise<{
+  settings?: Partial<LayoutSettings>;
+  currentUser?: API.CurrentUser;
+  loading?: boolean;
+  fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
+}> {
   return {
-    rightContentRender: () => <RightContent />,
-    disableContentMargin: false,
-    footerRender: () => <Footer />,
-    links: [],
-    menuHeaderRender: undefined,
+    settings: defaultSettings as Partial<LayoutSettings>,
   };
-};
+}
 
-const baseURLInterceptor = (url: null | string, options: RequestOptionsInit) => {
+const baseURLInterceptor = (url: null | string, options: any) => {
   const host = window.location.hostname === 'localhost' ? 'http://localhost:80' : '';
-
+  
   options.headers = {
     authorization: `${getUserToken()}`,
   };
@@ -34,15 +34,26 @@ const baseURLInterceptor = (url: null | string, options: RequestOptionsInit) => 
   };
 };
 
-export const request: RequestConfig = {
-  requestInterceptors: [baseURLInterceptor],
-  errorConfig: {
-    adaptor: (resData: { success: boolean; message: string; data: any }) => {
-      return {
-        ...resData.data,
-        success: resData.success,
-        errorMessage: resData.message,
-      };
+export const layout: RunTimeLayoutConfig = ({ initialState }) => {
+  return {
+    rightContentRender: () => <RightContent />,
+    waterMarkProps: {
+      content: initialState?.currentUser?.name,
     },
-  },
+    footerRender: () => <Footer />,
+    menuHeaderRender: undefined,
+    childrenRender: (children) => {
+      return (
+        <>
+          {children}
+        </>
+      );
+    },
+    ...initialState?.settings,
+  };
+};
+
+export const request = {
+  ...errorConfig,
+  requestInterceptors: [baseURLInterceptor],
 };

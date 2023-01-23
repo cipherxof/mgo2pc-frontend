@@ -1,8 +1,9 @@
 import { getClan } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
+import { PageHeader } from '@ant-design/pro-components';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Alert, Card, Descriptions, Divider, message, PageHeader, Table, Upload } from 'antd';
+import { Alert, Descriptions, Divider, message, Table, Upload } from 'antd';
 import type { UploadChangeParam } from 'antd/es/upload';
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 import React, { useState } from 'react';

@@ -1,8 +1,8 @@
-import { activateAccount, resetPassword } from '@/services/mgo2pc/api';
+import { resetPassword } from '@/services/mgo2pc/api';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Button, Result, Spin } from 'antd';
+import { Result, Spin } from 'antd';
 import React from 'react';
-import { NavLink, useParams, useRequest } from 'umi';
+import { useParams, useRequest } from 'umi';
 
 type ResetParams = {
   user: string;

@@ -130,7 +130,7 @@ export default (): React.ReactNode => {
         }
         const map = (
           <React.Fragment>
-            <img src={getMapPreview(mapId)} style={{ maxHeight: '24px' }} /> {mapElement}
+            <img src={getMapPreview(mapId)} style={{ maxHeight: '32px', margin: "auto" }} /> {mapElement}
           </React.Fragment>
         );
 
