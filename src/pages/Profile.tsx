@@ -8,7 +8,7 @@ import { getRankPreview, isModerator } from '@/system/utility';
 import { UserOutlined } from '@ant-design/icons';
 import { ProCard } from '@ant-design/pro-components';
 import { PageContainer, PageHeader } from '@ant-design/pro-layout';
-import { Avatar, Button, Divider, Spin, Switch, Tag } from 'antd';
+import { Avatar, Button, Card, Divider, Spin, Switch, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useIntl, useParams, useRequest } from 'umi';
 
@@ -70,6 +70,7 @@ export const ProfilePage: React.FC = () => {
 
     content = (
       <>
+      <Card>
         <PageHeader
           ghost={false}
           onBack={() => window.history.back()}
@@ -77,7 +78,7 @@ export const ProfilePage: React.FC = () => {
           subTitle={profile.comment}
           extra={headerTags}
         />
-
+  </Card>
         <Divider />
 
         <div className="mb-3">

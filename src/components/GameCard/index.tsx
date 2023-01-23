@@ -1,7 +1,6 @@
 import { MgoGameMode, MgoGameModeNames, MgoMode, MgoModeNames } from '@/system/constants';
 import { getMapPreview, getRegionFlag } from '@/system/utility';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { StatisticCard } from '@ant-design/pro-components';
 import { Avatar, Button, Card, Divider, Popover, Typography } from 'antd';
 import React from 'react';
 import { NavLink } from 'umi';
@@ -31,16 +30,17 @@ export default function GameCard(props: GameCardProps): JSX.Element {
     playerList.push(
       <Popover content={popContent} placement="left" key={player.id}>
         <p key={player.id}>
-          <Avatar
-            src={
-              player.emblem === ''
-                ? ''
-                : `/media/emblems/${player.emblem}.png`
-            }
-            size="small"
-            shape="square"
-            icon={<UserOutlined />}
-          />{' '}
+          {player.emblem !== '' ? (
+            <Avatar
+              className="mr-1"
+              src={`/static/media/emblems/${player.emblem}.png`}
+              size="small"
+              shape="square"
+              icon={<UserOutlined />}
+            />
+          ) : (
+            <Avatar className="mr-1" size="small" shape="square" icon={<UserOutlined />} />
+          )}
           {player.name}
         </p>
       </Popover>,
@@ -98,11 +98,13 @@ export default function GameCard(props: GameCardProps): JSX.Element {
         title={
           <div>
             <div>{cardTitle}</div>
-            <small>
-              <Text italic type="warning">
-                {gameMode}
-              </Text>
-            </small>
+            <div>
+              <small>
+                <Text italic type="warning">
+                  {gameMode}
+                </Text>
+              </small>
+            </div>
           </div>
         }
         description={props.game.comment}

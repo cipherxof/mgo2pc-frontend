@@ -3,6 +3,7 @@ import { equipItem, getShopItems, purchaseItem } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined, UserAddOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
+import { history } from '@umijs/max';
 import {
   Alert,
   Button,
@@ -21,7 +22,6 @@ import {
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink, useIntl, useParams, useRequest } from 'umi';
 import ShopSlotCard from './ShopSlotCard';
-import { history } from '@umijs/max';
 
 /*
 this turned into a mess lol
@@ -274,7 +274,6 @@ export default (): React.ReactNode => {
             mainButton = (
               <Button
                 className="mb-4"
-                type="ghost"
                 icon={<UserAddOutlined />}
                 size="large"
                 onClick={() => handleEquip(item)}
@@ -292,7 +291,6 @@ export default (): React.ReactNode => {
             mainButton = (
               <Button
                 className="mb-4"
-                type="ghost"
                 icon={<ShoppingCartOutlined />}
                 size="large"
                 onClick={() => handlePurchase(item)}
@@ -304,11 +302,11 @@ export default (): React.ReactNode => {
         }
 
         colorIcons.push(
-          <Tooltip placement="top" title={item.name}>
-            <a href={`#${item.color}`} onClick={() => onColorClick(item.color)}>
+          <a href={`#${item.color}`} onClick={() => onColorClick(item.color)}>
+            <Tooltip placement="top" title={item.name}>
               <img src={getItemIcon(item)} style={{ width: '48px' }} className="mr-2 mb-2" />
-            </a>
-          </Tooltip>,
+            </Tooltip>
+          </a>,
         );
       }
 
