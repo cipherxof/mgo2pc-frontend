@@ -1,13 +1,11 @@
-import { LocalizedModal } from '@/components/LocalizedModal';
 import { purchaseItem } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined, UserAddOutlined } from '@ant-design/icons';
-import { Avatar, Button, Card, Divider, Modal, notification, Select, Space, Tag } from 'antd';
+import { Avatar, Button, Card, Divider, Modal, notification, Select, Tag } from 'antd';
 import React, { useState } from 'react';
 import { NavLink } from 'umi';
 
 const { Meta } = Card;
-const { Option } = Select;
 
 type ShopItemProps = {
   item: ShopItem;
@@ -72,11 +70,7 @@ export default (props: ShopItemProps) => {
             filterOption={(input, option) =>
               (option!.children as unknown as string).toLowerCase().includes(input.toLowerCase())
             }
-          >
-            <Option value="jack">Jack</Option>
-            <Option value="lucy">Lucy</Option>
-            <Option value="tom">Tom</Option>
-          </Select>
+          ></Select>
         </div>
       ),
       okText: 'Equip',
@@ -94,20 +88,20 @@ export default (props: ShopItemProps) => {
   );
 
   let buyButton = (
-    <Button type="ghost" icon={<ShoppingCartOutlined />} size="large" onClick={() => showModal()}>
+    <Button icon={<ShoppingCartOutlined />} size="large" onClick={() => showModal()}>
       Purchase
     </Button>
   );
 
   const equipButton = (
-    <Button type="ghost" icon={<UserAddOutlined />} size="small" onClick={() => handleEquip()}>
+    <Button icon={<UserAddOutlined />} size="small" onClick={() => handleEquip()}>
       Equip
     </Button>
   );
 
   if (props.showButton !== true) {
     buyButton = (
-      <Button type="ghost" icon={<ShoppingCartOutlined />} size="small" onClick={() => showModal()}>
+      <Button icon={<ShoppingCartOutlined />} size="small" onClick={() => showModal()}>
         Purchase
       </Button>
     );
@@ -138,16 +132,12 @@ export default (props: ShopItemProps) => {
           />
         </NavLink>
       </Card>
-      <Space>
-        <LocalizedModal />
-      </Space>
       <Modal
         title={modalTitle}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
         okText={'Purchase'}
-        okType="ghost"
         cancelText="Cancel"
       >
         Are you sure you want to purchase this item for {props.item.cost} reward points?

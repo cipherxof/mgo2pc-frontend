@@ -1,4 +1,3 @@
-import { LocalizedModal } from '@/components/LocalizedModal';
 import { equipItem, getShopItems, purchaseItem } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined, UserAddOutlined } from '@ant-design/icons';
@@ -14,7 +13,6 @@ import {
   Modal,
   notification,
   Select,
-  Space,
   Spin,
   Tag,
   Tooltip,
@@ -70,6 +68,7 @@ export default (): React.ReactNode => {
   const [menu, setMenu] = useState(isSlotParam ? params.id : 'upper');
   const [color, setColor] = useState(0);
   const [charaId, setCharaId] = useState(0);
+  const [modal, contextHolder] = Modal.useModal();
 
   const menuLookup = getSlotFromGearId(data?.slots, params.id);
   if (!isSlotParam && menuLookup !== menu) {
@@ -154,7 +153,7 @@ export default (): React.ReactNode => {
   };
 
   function handlePurchase(item: ShopItem) {
-    Modal.confirm({
+    modal.confirm({
       title: <>Purchase {item.name}</>,
       content: (
         <>
@@ -183,10 +182,10 @@ export default (): React.ReactNode => {
       }
     }
 
-    Modal.confirm({
+    modal.confirm({
       title: <div className="text-center">{item.name}</div>,
       icon: (
-        <div className="text-center mb-4">
+        <div className="col-md-12 text-center mb-4">
           <img src={getItemIcon(item)} />
         </div>
       ),
@@ -214,7 +213,6 @@ export default (): React.ReactNode => {
       ),
       okText: 'Equip',
       cancelText: 'Cancel',
-      okType: 'ghost',
       onOk: async () => await onEquip(item),
     });
   }
@@ -373,10 +371,7 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
-      <Space>
-        <LocalizedModal />
-      </Space>
-
+      {contextHolder}
       <div className="row">
         <NavLink to="/shop" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
           <img
