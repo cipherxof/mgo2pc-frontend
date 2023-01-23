@@ -1,6 +1,7 @@
 import { MgoGameMode, MgoGameModeNames, MgoMode, MgoModeNames } from '@/system/constants';
 import { getMapPreview, getRegionFlag } from '@/system/utility';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { StatisticCard } from '@ant-design/pro-components';
 import { Avatar, Button, Card, Divider, Popover, Typography } from 'antd';
 import React from 'react';
 import { NavLink } from 'umi';
@@ -34,7 +35,7 @@ export default function GameCard(props: GameCardProps): JSX.Element {
             src={
               player.emblem === ''
                 ? ''
-                : `https://mgo2pc.com/static/media/emblems/${player.emblem}.png`
+                : `/media/emblems/${player.emblem}.png`
             }
             size="small"
             shape="square"
@@ -53,14 +54,14 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   );
   const cardRegion = <img src={getRegionFlag(props.game.location)} style={{ width: '16px' }} />;
   const gameTitle = (
-    <React.Fragment>
+    <>
       {cardRegion} {props.game.name} {playerCount}
-    </React.Fragment>
+    </>
   );
   const cardTitle = props.game.locked ? (
-    <React.Fragment>
+    <>
       <LockOutlined /> {gameTitle}
-    </React.Fragment>
+    </>
   ) : (
     gameTitle
   );
@@ -77,17 +78,17 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   const mode = MgoModeNames[modeId as MgoMode];
 
   let modeElement = <React.Fragment></React.Fragment>;
+
   if (modeId > 0) {
     modeElement = (
-      <React.Fragment>
-        <br />{' '}
+      <>
         <img
           alt={mode}
           src={require(`../../assets/img/modes/${modeId}.png`)}
           style={{ maxWidth: '16px' }}
         />{' '}
         {mode}
-      </React.Fragment>
+      </>
     );
   }
 
@@ -96,16 +97,12 @@ export default function GameCard(props: GameCardProps): JSX.Element {
       <Meta
         title={
           <div>
-            {cardTitle}
-            <br />
-            {
-              <small>
-                {' '}
-                <Text type="warning">
-                  <i>{gameMode}</i>
-                </Text>
-              </small>
-            }
+            <div>{cardTitle}</div>
+            <small>
+              <Text italic type="warning">
+                {gameMode}
+              </Text>
+            </small>
           </div>
         }
         description={props.game.comment}

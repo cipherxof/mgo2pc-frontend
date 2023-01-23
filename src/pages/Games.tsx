@@ -1,7 +1,8 @@
 import GameCard from '@/components/GameCard';
 import { getGames } from '@/services/mgo2pc/api';
+import { StatisticCard } from '@ant-design/pro-components';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Alert, Divider, Spin, Statistic } from 'antd';
+import { Alert, Divider, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useIntl } from 'umi';
 
@@ -38,8 +39,11 @@ export default (): React.ReactNode => {
   data.games.sort((a, b) => b.players.length - a.players.length);
 
   const cards: JSX.Element[] = [];
+  let playersInGame = 0;
 
   for (const game of data.games) {
+    playersInGame += game.players.length;
+
     cards.push(
       <div className="col-md-3" key={game.id} style={{ marginBottom: '16px' }}>
         <NavLink to={`/game/${game.id}`}>
@@ -52,7 +56,28 @@ export default (): React.ReactNode => {
   const statistics = (
     <div className="row">
       <div className="col-md-12 text-center">
-        <Statistic title={intl.formatMessage({ id: 'app.onlineplayers' })} value={data.players} />
+        <StatisticCard.Group>
+          <StatisticCard
+            statistic={{
+              title: 'Lobbies',
+              value: data.games.length,
+            }}
+          />
+
+          <StatisticCard
+            statistic={{
+              title: 'Online',
+              value: data.players,
+            }}
+          />
+
+          <StatisticCard
+            statistic={{
+              title: intl.formatMessage({ id: 'app.onlineplayers' }),
+              value: playersInGame,
+            }}
+          />
+        </StatisticCard.Group>
       </div>
       <Divider />
     </div>
