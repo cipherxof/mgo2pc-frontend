@@ -59,8 +59,7 @@ export const ProfilePage: React.FC = () => {
 
     headerTags.push(<CharacterLevelTag xp={xp} />);
 
-    const emblem =
-      profile.emblem === '' ? '' : `https://mgo2pc.com/static/media/emblems/${profile.emblem}.png`;
+    const emblem = profile.emblem === '' ? '' : `/static/media/emblems/${profile.emblem}.png`;
 
     const title = (
       <>
@@ -70,15 +69,15 @@ export const ProfilePage: React.FC = () => {
 
     content = (
       <>
-      <Card>
-        <PageHeader
-          ghost={false}
-          onBack={() => window.history.back()}
-          title={title}
-          subTitle={profile.comment}
-          extra={headerTags}
-        />
-  </Card>
+        <Card>
+          <PageHeader
+            ghost={false}
+            onBack={() => window.history.back()}
+            title={title}
+            subTitle={profile.comment}
+            extra={headerTags}
+          />
+        </Card>
         <Divider />
 
         <div className="mb-3">

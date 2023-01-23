@@ -3,7 +3,7 @@ import { getGames } from '@/services/mgo2pc/api';
 import { MgoGameMode, MgoGameModeNames, MgoMap, MgoMapNames } from '@/system/constants';
 import { getMapPreview } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Alert, Spin, Table, Tag, Typography } from 'antd';
+import { Alert, Space, Spin, Table, Tag, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'umi';
 
@@ -130,7 +130,7 @@ export default (): React.ReactNode => {
         }
         const map = (
           <React.Fragment>
-            <img src={getMapPreview(mapId)} style={{ maxHeight: '32px', margin: "auto" }} /> {mapElement}
+            <Space><img src={getMapPreview(mapId)} style={{ maxHeight: '32px', margin: "auto" }} /> {mapElement} </Space>
           </React.Fragment>
         );
 

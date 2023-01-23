@@ -8,10 +8,6 @@ import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
 import HeaderDropdown from '../HeaderDropdown';
 
-export type GlobalHeaderRightProps = {
-  menu?: boolean;
-};
-
 const AvatarLogo = () => {
   const avatarClassName = useEmotionCss(({ token }) => {
     return {
@@ -35,7 +31,7 @@ const AvatarLogo = () => {
   );
 };
 
-const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
+const AvatarDropdown: React.FC = () => {
   const account = getUserAccount();
 
   const actionClassName = useEmotionCss(({ token }) => {

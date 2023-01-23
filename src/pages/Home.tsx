@@ -13,9 +13,8 @@ export default (): React.ReactNode => {
     <PageContainer>
       <div className="row">
         <div className="col-md-12">
+          <img style={{ maxWidth: '100%' }} src={require('../assets/img/logo-full.png')} />
 
-          <img style={{maxWidth: "100%"}} src={require('../assets/img/logo-full.png')} />
-          
           <Divider />
 
           <Card>
@@ -54,35 +53,23 @@ export default (): React.ReactNode => {
 
       <div className="row">
         <div className="col-md-6" style={{ marginBottom: '16px' }}>
-          <Card>
-            <div className="container-video">
-              <iframe
-                className="video"
-                width="10000"
-                height="10000"
-                src={intl.formatMessage({ id: 'app.setupvideopc' })}
-                title="PC Setup Guide"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+          <Card hoverable>
+            <a href="https://www.youtube.com/watch?v=7uHWGNLxmQI" target="_blank" rel="noreferrer">
+              <img
+                style={{ maxWidth: '100%' }}
+                src={require('../assets/img/pcbutton.png')}
               />
-            </div>
+            </a>
           </Card>
         </div>
         <div className="col-md-6" style={{ marginBottom: '16px' }}>
-          <Card>
-            <div className="container-video">
-              <iframe
-                className="video"
-                width="10000"
-                height="10000"
-                src={intl.formatMessage({ id: 'app.setupvideops3' })}
-                title="PS3 Setup Guide"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+          <Card hoverable>
+            <a href="https://www.youtube.com/watch?v=7cuOGinyPJ8" target="_blank" rel="noreferrer">
+              <img
+                style={{ maxWidth: '100%' }}
+                src={require('../assets/img/ps3button.png')}
               />
-            </div>
+            </a>
           </Card>
         </div>
       </div>
