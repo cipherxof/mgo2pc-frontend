@@ -18,7 +18,7 @@ const Settings: ProLayoutProps & {
   title: '',
   splitMenus: false,
   pwa: true,
-  logo: 'https://media.discordapp.net/attachments/915718508942348288/1066518658882486342/2023-native.png?width=1352&height=301',
+  logo: '/static/logo.4185b845.png',
   iconfontUrl: '',
   defaultCollapsed: true,
   breakpoint: false,

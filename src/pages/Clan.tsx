@@ -37,7 +37,7 @@ export default (): React.ReactNode => {
   const [uploading, setUploading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string>();
 
-  const url = `https://mgo2pc.com/static/media/emblems/${data?.emblem}.png`;
+  const url = `/static/media/emblems/${data?.emblem}.png`;
   if (!loading && data && data.emblem && data.emblem !== '' && !imageUrl) {
     setImageUrl(url);
   }

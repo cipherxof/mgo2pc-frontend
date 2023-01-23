@@ -17,6 +17,7 @@
         #root {
           background-repeat: no-repeat;
           background-size: 100% auto;
+          background-color: #141414;
         }
 
         .loading-title {
@@ -191,10 +192,10 @@
           </div>
         </div>
         <div class="loading-title">
-          正在加载资源
+          SaveMGO
         </div>
         <div class="loading-sub-title">
-          初次加载资源可能需要较多时间 请耐心等待
+        It may take a minute to load resources for the first time, please be patient.
         </div>
       </div>
     `;

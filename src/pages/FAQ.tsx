@@ -92,7 +92,7 @@ export default (): React.ReactNode => {
             if you are on a really old build.
             <br />
             <br />
-            You can find a newer build <a href="https://mgo2pc.com/emu/rpcs3-13715.7z">here</a>.
+            You can find a newer build <a href="/emu/rpcs3-13720.7z">here</a>.
           </div>
         </Panel>
       </Collapse>

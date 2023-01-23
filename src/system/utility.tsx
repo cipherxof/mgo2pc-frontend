@@ -68,7 +68,7 @@ export const logoutUser = () => {
 };
 
 export const getRankPreview = (rank: number) => {
-  return `https://mgo2pc.com/static/media/emblem/${rank}.png`;
+  return `/static/media/emblem/${rank}.png`;
 };
 
 export const getRankId = (name: string) => {
@@ -285,7 +285,7 @@ export const getExpLevel = (exp: number) => {
     return 16;
   } else if (exp < 2725) {
     return 17;
-  } else if (exp < 2925) {
+  } else if (exp < 2975) {
     return 18;
   } else if (exp < 3275) {
     return 19;

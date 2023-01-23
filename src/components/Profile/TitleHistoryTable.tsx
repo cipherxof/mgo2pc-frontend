@@ -84,7 +84,7 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
             <Title level={3}>{titleData[key].name}</Title>
             <Image
               width={96}
-              src={`https://mgo2pc.com/static/media/emblem/${getRankId(key)}.png`}
+              src={`/static/media/emblem/${getRankId(key)}.png`}
             />
             <Statistic value={`${timeSince(new Date(value * 1000))} ago`} />
           </Card>

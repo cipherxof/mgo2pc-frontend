@@ -135,7 +135,7 @@ export default function MedalTable(props: MedalTableProps): JSX.Element {
   for (const data of medalData) {
     medals.push({
       key: data.image, 
-      img: <img src={`https://mgo2pc.com/static/media/medals/${data.image}`} />, 
+      img: <img src={`/static/media/medals/${data.image}`} />, 
       desc: <Text strong>{data.text}</Text>
     });
   }

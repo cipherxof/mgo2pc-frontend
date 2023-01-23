@@ -30,7 +30,7 @@ const columns = [
               src={
                 text.split('\t')[0] === ''
                   ? ''
-                  : `https://mgo2pc.com/static/media/emblems/${text.split('\t')[0]}.png`
+                  : `/static/media/emblems/${text.split('\t')[0]}.png`
               }
               icon={<UserOutlined />}
             />{' '}
