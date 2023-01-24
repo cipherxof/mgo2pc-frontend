@@ -81,11 +81,11 @@ export default function GameCard(props: GameCardProps): JSX.Element {
 
   if (modeId > 0) {
     modeElement = (
-      <div>
+      <div className="mt-3">
         <img
           alt={mode}
           src={require(`../../assets/img/modes/${modeId}.png`)}
-          style={{ maxWidth: '16px' }}
+          style={{ maxWidth: '16px', verticalAlign: "middle" }}
         />{' '}
         {mode}
       </div>

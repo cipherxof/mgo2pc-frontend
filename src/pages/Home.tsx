@@ -2,11 +2,9 @@ import ServerStatus from '@/components/ServerStatus';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Divider } from 'antd';
 import React from 'react';
-import { FormattedMessage, useIntl } from 'umi';
+import { FormattedMessage } from 'umi';
 
 export default (): React.ReactNode => {
-  const intl = useIntl();
-
   document.title = 'Home - Metal Gear Online';
 
   return (
@@ -55,20 +53,14 @@ export default (): React.ReactNode => {
         <div className="col-md-6" style={{ marginBottom: '16px' }}>
           <Card hoverable>
             <a href="https://www.youtube.com/watch?v=7uHWGNLxmQI" target="_blank" rel="noreferrer">
-              <img
-                style={{ maxWidth: '100%' }}
-                src={require('../assets/img/pcbutton.png')}
-              />
+              <img style={{ maxWidth: '100%' }} src={require('../assets/img/pcbutton.png')} />
             </a>
           </Card>
         </div>
         <div className="col-md-6" style={{ marginBottom: '16px' }}>
           <Card hoverable>
             <a href="https://www.youtube.com/watch?v=7cuOGinyPJ8" target="_blank" rel="noreferrer">
-              <img
-                style={{ maxWidth: '100%' }}
-                src={require('../assets/img/ps3button.png')}
-              />
+              <img style={{ maxWidth: '100%' }} src={require('../assets/img/ps3button.png')} />
             </a>
           </Card>
         </div>

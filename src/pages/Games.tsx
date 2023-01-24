@@ -2,55 +2,34 @@ import GameCard from '@/components/GameCard';
 import { getGames } from '@/services/mgo2pc/api';
 import { StatisticCard } from '@ant-design/pro-components';
 import { PageContainer } from '@ant-design/pro-layout';
+import { useRequest } from '@umijs/max';
 import { Alert, Divider, Spin } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink, useIntl } from 'umi';
 
 export default (): React.ReactNode => {
   const intl = useIntl();
-  const [data, setData] = useState({ loading: true, players: '...', games: [] as GameLobby[] });
+  const { data, loading } = useRequest(getGames, { pollingInterval: 10000 });
+
+  let playersInGame = 0;
+  const cards: JSX.Element[] = [];
 
   document.title = 'Games - Metal Gear Online';
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getGames();
+  if (data) {
+    data.lobbies.sort((a, b) => b.players.length - a.players.length);
 
-      if (!response) {
-        return;
-      }
+    for (const game of data.lobbies) {
+      playersInGame += game.players.length;
 
-      setData({
-        loading: false,
-        players: `${response.data.players}`,
-        games: response.data.lobbies,
-      });
-    };
-
-    fetchData();
-
-    const timeout = setInterval(() => fetchData(), 10000); // refresh every 10 seconds
-
-    return () => {
-      clearInterval(timeout);
-    };
-  }, []);
-
-  data.games.sort((a, b) => b.players.length - a.players.length);
-
-  const cards: JSX.Element[] = [];
-  let playersInGame = 0;
-
-  for (const game of data.games) {
-    playersInGame += game.players.length;
-
-    cards.push(
-      <div className="col-md-3" key={game.id} style={{ marginBottom: '16px' }}>
-        <NavLink to={`/game/${game.id}`}>
-          <GameCard game={game} />
-        </NavLink>
-      </div>,
-    );
+      cards.push(
+        <div className="col-md-3" key={game.id} style={{ marginBottom: '16px' }}>
+          <NavLink to={`/game/${game.id}`}>
+            <GameCard game={game} />
+          </NavLink>
+        </div>,
+      );
+    }
   }
 
   const statistics = (
@@ -60,14 +39,14 @@ export default (): React.ReactNode => {
           <StatisticCard
             statistic={{
               title: 'Lobbies',
-              value: data.games.length,
+              value: data?.lobbies.length,
             }}
           />
 
           <StatisticCard
             statistic={{
               title: 'Online',
-              value: data.players,
+              value: data?.players,
             }}
           />
 
@@ -83,7 +62,7 @@ export default (): React.ReactNode => {
     </div>
   );
 
-  if (data.games.length <= 0) {
+  if (data && data.lobbies.length <= 0) {
     cards.push(
       <div key="0" className="col-md-12">
         <Alert
@@ -99,7 +78,7 @@ export default (): React.ReactNode => {
   return (
     <PageContainer>
       {statistics}
-      <Spin spinning={data.loading} size="large">
+      <Spin spinning={loading} size="large">
         <div className="row">{cards}</div>
       </Spin>
     </PageContainer>

@@ -163,7 +163,6 @@ export default (): React.ReactNode => {
       ),
       okText: 'Purchase',
       cancelText: 'Cancel',
-      okType: 'ghost',
       onOk: async () => await onPurchase(item),
     });
   }

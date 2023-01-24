@@ -75,7 +75,6 @@ export default (props: ShopItemProps) => {
       ),
       okText: 'Equip',
       cancelText: 'Cancel',
-      okType: 'ghost',
       onOk: () => () => {},
     });
   }

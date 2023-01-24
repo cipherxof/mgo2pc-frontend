@@ -33,6 +33,21 @@ type ProfileData = {
   user?: number;
 };
 
+type GameLobbySettings = { 
+  dedicated: boolean;
+  briefingTime: number;
+  nonStat: boolean;
+  friendlyFire: boolean;
+  autoAim: boolean;
+  uniques: { enabled: boolean, random: boolean, red: number, blue: number };
+  enemyNametags: boolean;
+  silentMode: boolean;
+  autoAssign: boolean;
+  teamsSwitch: boolean;
+  ghosts: boolean;
+  levelLimit: { enabled: boolean, base: number, tolerance: number },
+}
+
 type GameLobbyPlayer = {
   id: number;
   name: string;
@@ -52,6 +67,7 @@ type GameLobby = {
   games: number[][];
   comment: string;
   location: string;
+  settings?: GameLobbySettings;
 };
 
 type UserAccount = {

@@ -1,7 +1,7 @@
 import { request } from '@umijs/max';
 
-export async function getGames() {
-  return request<API.GameList>(`/api/v1/games`, { method: 'GET' });
+export async function getGames(extraData = false) {
+  return request<API.GameList>(`/api/v1/games?extra=${extraData}`, { method: 'GET' });
 }
 
 export async function getClan(clanId: number | string) {
