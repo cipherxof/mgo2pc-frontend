@@ -78,6 +78,15 @@ export default defineConfig({
    * @doc https://umijs.org/docs/max/layout-menu
    */
   title: 'SaveMGO',
+
+  metas: [
+    { name: 'keywords', content: 'metal gear online 2 pc, mgo, mgo2pc, mgs, mgs4, metal gear, kojima, rpcs3, emulator, emulation, emu, savemgo, metal gear, mgo2' },
+    { name: 'description', content: 'SaveMGO provides a service which allows you to play the multiplayer mode of Metal Gear Solid 4: Guns of the Patriots on Playstation 3 or PC using the RPCS3 emulator.' },
+  ],
+
+  analytics: {
+    ga_v2: "G-6BLWRK76ZT"
+  },
   layout: {
     locale: true,
     ...defaultSettings,
