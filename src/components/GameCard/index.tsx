@@ -11,39 +11,49 @@ const { Text } = Typography;
 type GameCardProps = {
   game: GameLobby;
   hoverable?: boolean;
+  collapsed?: boolean;
 };
 
 export default function GameCard(props: GameCardProps): JSX.Element {
   const playerList: JSX.Element[] = [];
+  let roomDescription = <>{props.game.comment}</>;
 
-  for (const player of props.game.players) {
-    const popContent = (
-      <div className="text-center">
-        <NavLink to={`/profile/${encodeURIComponent(player.name)}`}>
-          <Button type="primary" size={'large'}>
-            View Profile
-          </Button>
-        </NavLink>
-      </div>
-    );
+  if (!props.collapsed) {
+    playerList.push(<Divider />);
 
-    playerList.push(
-      <Popover content={popContent} placement="left" key={player.id}>
-        <p key={player.id}>
-          {player.emblem !== '' ? (
-            <Avatar
-              className="mr-1"
-              src={`/static/media/emblems/${player.emblem}.png`}
-              size="small"
-              shape="square"
-              icon={<UserOutlined />}
-            />
-          ) : (
-            <Avatar className="mr-1" size="small" shape="square" icon={<UserOutlined />} />
-          )}
-          {player.name}
-        </p>
-      </Popover>,
+    for (const player of props.game.players) {
+      const popContent = (
+        <div className="text-center">
+          <NavLink to={`/profile/${encodeURIComponent(player.name)}`}>
+            <Button type="primary" size={'large'}>
+              View Profile
+            </Button>
+          </NavLink>
+        </div>
+      );
+
+      playerList.push(
+        <Popover content={popContent} placement="left" key={player.id}>
+          <p key={player.id}>
+            {player.emblem !== '' ? (
+              <Avatar
+                className="mr-1"
+                src={`/static/media/emblems/${player.emblem}.png`}
+                size="small"
+                shape="square"
+                icon={<UserOutlined />}
+              />
+            ) : (
+              <Avatar className="mr-1" size="small" shape="square" icon={<UserOutlined />} />
+            )}
+            {player.name}
+          </p>
+        </Popover>,
+      );
+    }
+  } else {
+    roomDescription = (
+      <div style={{ height: '50px', textOverflow: 'ellipsis' }}>{props.game.comment}</div>
     );
   }
 
@@ -77,15 +87,15 @@ export default function GameCard(props: GameCardProps): JSX.Element {
   // const map = MgoMapNames[mapId as MgoMap];
   const mode = MgoModeNames[modeId as MgoMode];
 
-  let modeElement = <React.Fragment></React.Fragment>;
+  let modeElement = <></>;
 
-  if (modeId > 0) {
+  if (!props.collapsed && modeId > 0) {
     modeElement = (
       <div className="mt-3">
         <img
           alt={mode}
           src={require(`../../assets/img/modes/${modeId}.png`)}
-          style={{ maxWidth: '16px', verticalAlign: "middle" }}
+          style={{ maxWidth: '16px', verticalAlign: 'middle' }}
         />{' '}
         {mode}
       </div>
@@ -107,10 +117,9 @@ export default function GameCard(props: GameCardProps): JSX.Element {
             </div>
           </div>
         }
-        description={props.game.comment}
+        description={roomDescription}
       />
       {modeElement}
-      <Divider />
       {playerList}
     </Card>
   );

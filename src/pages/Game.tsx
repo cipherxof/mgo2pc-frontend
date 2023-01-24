@@ -1,4 +1,5 @@
 import GameCard from '@/components/GameCard';
+import SettingTag from '@/components/SettingTag/SettingTag';
 import { getGames } from '@/services/mgo2pc/api';
 import { MgoGameMode, MgoGameModeNames, MgoMap, MgoMapNames } from '@/system/constants';
 import { getMapPreview } from '@/system/utility';
@@ -9,10 +10,6 @@ import React from 'react';
 import { useParams } from 'umi';
 
 const { Text } = Typography;
-
-type GameProps = {
-  lobby: GameLobby;
-};
 
 type GameParams = {
   id: string;
@@ -30,6 +27,19 @@ const modeColors: Record<string, string> = {
   'Sneaking Mission': 'cyan',
   'Stealth Deathmatch': 'magenta',
   Deathmatch: 'red',
+};
+
+const settingName: Record<string, string> = {
+  dedicated: 'Dedicated Host',
+  nonStat: 'Stats Disabled',
+  friendlyFire: 'Friendly Fire',
+  autoAim: 'Auto Aim',
+  enemyNametags: 'Enemy Name Tags',
+  silentMode: 'Silent Mode',
+  autoAssign: 'Auto Teams',
+  teamsSwitch: 'Team Switch',
+  ghosts: 'Ghosts',
+  voiceChat: 'Voice Chat',
 };
 
 const columns = [
@@ -73,23 +83,26 @@ export default (): React.ReactNode => {
 
     const maps: any = [];
     let key = 0;
+
     for (const entry of game.games) {
       const gameModeId = entry[0];
       const mapId = entry[1];
       const mode =
         game.lobbyId === 7 ? 'Combat Training' : MgoGameModeNames[gameModeId as MgoGameMode];
       const mapName = MgoMapNames[mapId as MgoMap];
-      let mapElement = <React.Fragment>{mapName}</React.Fragment>;
+      let mapElement = <>{mapName}</>;
+
       if (key === game.currentGame) {
         mapElement = <Text type="warning">{mapName}</Text>;
       }
+
       const map = (
-        <React.Fragment>
+        <>
           <Space>
             <img src={getMapPreview(mapId)} style={{ maxHeight: '32px', margin: 'auto' }} />{' '}
             {mapElement}{' '}
           </Space>
-        </React.Fragment>
+        </>
       );
 
       maps.push({ key, map, mode });
@@ -97,62 +110,29 @@ export default (): React.ReactNode => {
       key += 1;
     }
 
-    const dataSource = [];
-
-    const columns2 = [
-      {
-        title: 'Setting',
-        dataIndex: 'setting',
-        key: 'setting',
-      },
-      {
-        title: 'Value',
-        dataIndex: 'value',
-        key: 'value',
-      },
-    ];
-
-    const settingTags = [];
-    /*dataSource.push({ key: '4', setting: 'Record Stats', value: `${!game.settings?.nonStat}` });
-    dataSource.push({ key: '1', setting: 'Briefing Time', value: `${game.settings?.briefingTime}` });
-    dataSource.push({ key: '2', setting: 'Auto-Teams', value: `${game.settings?.autoAssign}` });
-    dataSource.push({ key: '3', setting: 'Friendly Fire', value: `${game.settings?.friendlyFire}` });
-    dataSource.push({ key: '5', setting: 'Uniques', value: `${game.settings?.uniques.enabled}` });*/
-
-    const settingName = {
-      dedicated: 'Dedicated Host',
-      nonStat: 'Stats Disabled',
-      friendlyFire: 'Friendly Fire',
-      autoAim: 'Auto Aim',
-      enemyNametags: 'Enemy Name Tags',
-      silentMode: 'Silent Mode',
-      autoAssign: 'Auto Teams',
-      teamsSwitch: 'Team Switch',
-      ghosts: 'Ghosts',
-      voiceChat: 'Voice Chat',
-    };
+    const settingTags: JSX.Element[] = [];
 
     settingTags.push(
-      <Tag className="mr-2 mb-2" color={!game.settings?.nonStat ? 'green' : 'red'}>
-        Stats Enabled
-      </Tag>,
+      <div>
+        <SettingTag name="Stats Enabled" enabled={!game.settings?.nonStat} />
+      </div>,
+    );
+
+    settingTags.push(
+      <div>
+        <SettingTag name="Uniques" enabled={game.settings?.uniques.enabled ?? false} />
+      </div>,
     );
 
     for (const [key, value] of Object.entries(game.settings)) {
       if (typeof value !== 'boolean' || key === 'nonStat') continue;
 
       settingTags.push(
-        <Tag className="mr-2 mb-2" color={value ? 'green' : 'red'}>
-          {settingName[key] ? settingName[key] : key}
-        </Tag>,
+        <div>
+          <SettingTag name={settingName[key] ? settingName[key] : key} enabled={value} />
+        </div>,
       );
     }
-
-    settingTags.push(
-      <Tag className="mr-2 mb-2" color={game.settings?.uniques.enabled ? 'green' : 'red'}>
-        Uniques
-      </Tag>,
-    );
 
     content = (
       <div className="row">
@@ -160,7 +140,7 @@ export default (): React.ReactNode => {
         <div className="col-md-3" style={{ marginBottom: '16px' }}>
           <GameCard game={game} />
           <Divider />
-          <Card title="Settings">{settingTags}</Card>
+          <Card>{settingTags}</Card>
         </div>
         <div className="col-md-6">
           <Table columns={columns} dataSource={maps} pagination={false} />
