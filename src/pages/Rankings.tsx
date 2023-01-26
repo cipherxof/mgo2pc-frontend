@@ -24,7 +24,7 @@ const columns = [
     render: (text: any) => {
       return (
         <>
-          <NavLink to={`/profile/${text.split('\t')[2]}`}>
+          <NavLink to={`/profile/${encodeURIComponent(text.split('\t')[2])}`}>
             <Avatar
               size="small"
               src={
@@ -63,7 +63,7 @@ export default (): React.ReactNode => {
     loading: true,
     pages: 1,
     page: params.page ? params.page : 1,
-    mode: params.mode ? params.mode : 'total',
+    mode: params.mode ? params.mode : 'exp',
     tableData: [] as any,
   });
 

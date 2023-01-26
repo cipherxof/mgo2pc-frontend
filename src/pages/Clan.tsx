@@ -47,7 +47,7 @@ export default (): React.ReactNode => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: (text: any) => <NavLink to={`/profile/${text}`}>{text}</NavLink>,
+      render: (text: any) => <NavLink to={`/profile/${encodeURIComponent(text)}`}>{text}</NavLink>,
     },
   ];
 

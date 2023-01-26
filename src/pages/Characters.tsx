@@ -36,7 +36,7 @@ export default (): React.ReactNode => {
 
       characterCards.push(
         <div className="col-md-3" key={character.id} style={{ marginBottom: '16px' }}>
-          <NavLink to={`/profile/${character.name}`}>
+          <NavLink to={`/profile/${encodeURIComponent(character.name)}`}>
             <Card hoverable={true} actions={[<EditOutlined key="edit" disabled={true} />]}>
               <Meta
                 avatar={<Avatar src={require('../assets/img/oldsnake.png')} />}

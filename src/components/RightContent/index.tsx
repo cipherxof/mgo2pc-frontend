@@ -3,6 +3,7 @@ import { getUserToken, isLoggedIn } from '@/system/utility';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { SelectLang, useRequest } from '@umijs/max';
 import React from 'react';
+import NoticeIcon from '../NoticeIcon';
 import Avatar from './AvatarDropdown';
 import RewardPoints from './RewardPoints';
 
@@ -41,7 +42,13 @@ const GlobalHeaderRight: React.FC = () => {
 
   return (
     <div className={className}>
-      {loggedIn ? <RewardPoints value={data?.rp ?? 0} /> : <></>}
+      {loggedIn ? (
+        <>
+          <RewardPoints value={data?.rp ?? 0} />
+        </>
+      ) : (
+        <></>
+      )}
       <Avatar />
       <SelectLang className={actionClassName} />
     </div>

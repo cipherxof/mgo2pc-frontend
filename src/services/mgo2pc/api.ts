@@ -9,7 +9,7 @@ export async function getClan(clanId: number | string) {
 }
 
 export async function getProfile(character: number | string) {
-  return request<API.Profile>(`/api/v1/profile/${character}`, { method: 'GET' });
+  return request<API.Profile>(`/api/v1/profile/${encodeURIComponent(character)}`, { method: 'GET' });
 }
 
 export async function getTitles(character: number | string) {

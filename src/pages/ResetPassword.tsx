@@ -13,8 +13,6 @@ export default (): React.ReactNode => {
   const params = useParams<ResetParams>();
   const { data, error, loading } = useRequest(() => resetPassword(params.user, params.key));
 
-  console.log(data);
-
   document.title = 'Reset Password - Metal Gear Online';
 
   if (loading) {
