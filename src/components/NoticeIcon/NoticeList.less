@@ -2,12 +2,12 @@
   background-color: #141414;
   max-height: 400px;
   overflow: auto;
+  vertical-align: top;
   &::-webkit-scrollbar {
     display: none;
   }
   .item {
-    padding-right: 24px;
-    padding-left: 24px;
+    vertical-align: top;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s;
@@ -31,7 +31,7 @@
       border-bottom: 0;
     }
     &:hover {
-      background: @primary-1;
+      background: #40a9ff;
     }
     .title {
       margin-bottom: 8px;
@@ -39,12 +39,12 @@
     }
     .description {
       font-size: 12px;
-      line-height: @line-height-base;
+      line-height: 1.5715;
     }
     .datetime {
       margin-top: 4px;
       font-size: 12px;
-      line-height: @line-height-base;
+      line-height: 1.5715;
     }
     .extra {
       float: right;
@@ -79,11 +79,11 @@
 
 .bottomBar {
   height: 46px;
-  color: @text-color;
+  color: rgba(229, 224, 216, 0.85);
   line-height: 46px;
   text-align: center;
-  border-top: 1px solid @border-color-split;
-  border-radius: 0 0 @border-radius-base @border-radius-base;
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-radius: 0 0 2px 2px;
   transition: all 0.3s;
   div {
     display: inline-block;
@@ -96,7 +96,7 @@
       width: 100%;
     }
     &:not(:only-child):last-child {
-      border-left: 1px solid @border-color-split;
+      border-left: 1px solid rgba(0,0,0,.06);
     }
   }
 }

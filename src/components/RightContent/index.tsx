@@ -41,17 +41,14 @@ const GlobalHeaderRight: React.FC = () => {
   });
 
   return (
-    <div className={className}>
-      {loggedIn ? (
-        <>
-          <RewardPoints value={data?.rp ?? 0} />
-        </>
-      ) : (
-        <></>
-      )}
-      <Avatar />
-      <SelectLang className={actionClassName} />
-    </div>
+    <>
+      {loggedIn ? <div style={{padding: "0 8px"}}><NoticeIcon /></div> : <></>}
+      <div className={className}>
+        {loggedIn ? <RewardPoints value={data?.rp ?? 0} /> : <></>}
+        <Avatar />
+        <SelectLang className={actionClassName} />
+      </div>
+    </>
   );
 };
 export default GlobalHeaderRight;
