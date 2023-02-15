@@ -43,7 +43,7 @@ export default (): React.ReactNode => {
           </p>
           <p>
             <Text type="success">100</Text> rounds in all previously mentioned modes.
-          </p>    console.log(this.name);
+          </p>
         </>
       ),
     },
