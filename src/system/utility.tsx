@@ -68,7 +68,14 @@ export const logoutUser = () => {
 };
 
 export const getRankPreview = (rank: number) => {
-  return `/static/media/emblem/${rank}.png`;
+  return `https://mgo2pc.com/static/media/emblem/${rank}.png`;
+  // change to /static/media/emblem/${rank}.png
+};
+let countArrayAnimalRanks:number = 0;
+
+export const getRankImage= (rank: number) => {
+  // change to `/static/media/emblem/${rank}.png`;
+  return `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[rank][1]}.png`;
 };
 
 export const getRankId = (name: string) => {
@@ -138,6 +145,63 @@ export const getRankId = (name: string) => {
   }
   return 0;
 };
+
+
+
+
+
+
+
+
+// PlusMinus temporary hotfix
+//below
+export const arrayAnimalRanks = [
+  // callName              /filename        / displayName
+  ['reserved',             0,               'reserved'      ],
+  ['Foxhound',             1,               'Foxhound'      ],
+  ['Fox',                  2,               'Fox'           ],
+  ['Doberman',             3,               'Doberman'      ],
+  ['hound',                4,               'Hound'         ],
+  ['crocodile',            5,               'Crocodile'     ],
+  ['eagle',                6,               'Eagle'         ],
+  ['jaws',                 7,               'Jaws'          ],
+  ['waterbear',            8,               'WaterBear'     ], //?
+  ['sloth',                9,               'Sloth'         ],
+  ['squirrel',             10,              'Squirrel'      ],
+  ['pigeon',               11,              'Pigeon'        ],
+  ['owl',                  12,              'Owl'           ],
+  ['tsuchinoko',           13,              'Tsuchinoko'    ],
+  ['snake',                14,              'Snake'         ],
+  ['kerotan',              15,              'Kerotan'       ],
+  ['gako',                 16,              'GA-KO'         ],
+  ['chameleon',            17,              'Chameleon'     ],
+  ['chicken',              18,              'Chicken'       ],
+  ['bear',                 19,              'Bear'          ], //missing: bear id:19 + no text for RankGuide.tsx
+  ['tortoise',             20,              'Tortoise'      ],
+  ['bee',                  21,              'Bee'           ],
+  ['rat' ,                 22,              'rat'           ],
+  ['fish',                 23,              'fish'          ],
+  ['komododragon',         24,              'Komodo'        ], //missing: skua id:24 + no text for RankGuide.tsx
+  ['skua',                 25,              'Skua'          ],
+  ['killerwhale',          26,              'Whale'         ],
+  ['elephant',             27,              'Elephant'      ],
+  ['cuckoo',               28,              'Cuckoo'        ],
+  ['hog',                  29,              'Hog'           ],
+  ['bigboss',              30,              'Big Boss'      ] //missing: bigboss id:30 + text for RankGuide.tsx
+  // ['theboss',           99,              'The Boss'      ] //missing icon id:31 + no text for RankGuide.tsx
+];
+
+// console.log(arrayAnimalRanks[1][2]); --> Foxhound
+
+
+
+
+
+
+
+
+
+
 
 export const getMapPreview = (mapId: number) => {
   try {
@@ -292,3 +356,4 @@ export const getExpLevel = (exp: number) => {
   }
   return 20;
 };
+ 

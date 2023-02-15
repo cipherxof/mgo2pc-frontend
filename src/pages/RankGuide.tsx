@@ -1,20 +1,26 @@
-import { getRankId, getRankPreview } from '@/system/utility';
+import { getRankId, getRankPreview, getRankImage, arrayAnimalRanks } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Typography } from 'antd';
+import { Card, Descriptions, Typography } from 'antd';
 import React from 'react';
+import {useState}  from 'react';
 
 const { Meta } = Card;
 const { Text } = Typography;
 
 type RankInfo = {
+  id: number;
   name: string;
   description: JSX.Element;
 };
+
+
+
 export default (): React.ReactNode => {
   document.title = 'Ranking Guide - Metal Gear Online';
 
   const ranks: RankInfo[] = [
     {
+      id: 1,
       name: 'Foxhound',
       description: (
         <>
@@ -37,11 +43,13 @@ export default (): React.ReactNode => {
           </p>
           <p>
             <Text type="success">100</Text> rounds in all previously mentioned modes.
-          </p>
+          </p>    console.log(this.name);
         </>
       ),
     },
+
     {
+      id: 2,
       name: 'Fox',
       description: (
         <>
@@ -69,6 +77,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 3,
       name: 'Doberman',
       description: (
         <>
@@ -96,6 +105,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 4,
       name: 'Hound',
       description: (
         <>
@@ -123,6 +133,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 6,
       name: 'Eagle',
       description: (
         <>
@@ -136,6 +147,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 11,
       name: 'Pigeon',
       description: (
         <>
@@ -151,6 +163,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 7,
       name: 'Jaws',
       description: (
         <>
@@ -165,6 +178,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 5,
       name: 'Crocodile',
       description: (
         <>
@@ -176,6 +190,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 21,
       name: 'Bee',
       description: (
         <>
@@ -187,6 +202,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 17,
       name: 'Chameleon',
       description: (
         <>
@@ -202,6 +218,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 18,
       name: 'Chicken',
       description: (
         <>
@@ -222,6 +239,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 28,
       name: 'Cuckoo',
       description: (
         <>
@@ -238,6 +256,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 27,
       name: 'Elephant',
       description: (
         <>
@@ -253,6 +272,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 23,
       name: 'Fighting Fish',
       description: (
         <>
@@ -268,6 +288,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 10,
       name: 'Flying Squirrel',
       description: (
         <>
@@ -279,6 +300,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 16,
       name: 'GA-KO',
       description: (
         <>
@@ -294,6 +316,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 15,
       name: 'Kerotan',
       description: (
         <>
@@ -308,6 +331,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 26,
       name: 'Killer Whale',
       description: (
         <>
@@ -323,6 +347,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 29,
       name: 'Hog',
       description: (
         <>
@@ -338,6 +363,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 24,
       name: 'Komodo Dragon',
       description: (
         <>
@@ -353,6 +379,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 12,
       name: 'Owl',
       description: (
         <>
@@ -364,6 +391,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 22,
       name: 'Rat',
       description: (
         <>
@@ -375,7 +403,8 @@ export default (): React.ReactNode => {
       ),
     },
     {
-      name: 'Bear',
+      id: 8,
+      name: 'Water Bear',
       description: (
         <>
           <p>
@@ -386,6 +415,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 9,
       name: 'Sloth',
       description: (
         <>
@@ -403,6 +433,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 14,
       name: 'Snake',
       description: (
         <>
@@ -417,6 +448,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 20,
       name: 'Tortoise',
       description: (
         <>
@@ -428,6 +460,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 13,
       name: 'Tsuchinoko',
       description: (
         <>
@@ -439,6 +472,7 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 8,
       name: 'Water Bear',
       description: (
         <>
@@ -449,16 +483,20 @@ export default (): React.ReactNode => {
           <br />
         </>
       ),
-    },
+    }
   ];
-
   const cards: JSX.Element[] = [];
 
-  for (const rank of ranks) {
+  let countArrayAnimalRanks=1;
+  const pathToImg = `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
+  for(const rank of ranks){
+    `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
+    console.table(rank)
+    let currentNumber = rank.id;
     cards.push(
       <div className="col-md-3 text-center">
         <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
-          <img src={`${getRankPreview(getRankId(rank.name))}`} />
+          <img src={`${`https://mgo2pc.com/static/media/emblem/${currentNumber}.png`}`} />
           <Meta title={rank.name} description={rank.description} />
         </Card>
       </div>,
@@ -469,5 +507,32 @@ export default (): React.ReactNode => {
     <PageContainer>
       <div className="row">{cards}</div>
     </PageContainer>
-  );
-};
+  )};
+
+// for (const rank of ranks) {
+//   for(; countArrayAnimalRanks < arrayAnimalRanks.length; countArrayAnimalRanks++){
+//     const pathToImg = `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
+//     const rankName = `${arrayAnimalRanks[countArrayAnimalRanks][1]}`;
+
+
+//   cards.push(
+//     <div className="col-md-3 text-center">
+//       <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
+//         <img src={`${pathToImg}`} />
+//         <Meta title={rank.name} description={rank.description} />
+//       </Card>
+//     </div>,
+//   );
+//   }
+
+
+//   return (
+//     <PageContainer>
+//       <div className="row">{cards}</div>
+//     </PageContainer>
+//   )};
+
+
+
+
+
