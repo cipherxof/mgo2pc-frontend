@@ -3,13 +3,13 @@ import { getGames } from '@/services/mgo2pc/api';
 import { StatisticCard } from '@ant-design/pro-components';
 import { PageContainer } from '@ant-design/pro-layout';
 import { useRequest } from '@umijs/max';
-import { Alert, Divider, Switch } from 'antd';
+import { Alert, Divider, Spin, Switch } from 'antd';
 import React, { useState } from 'react';
 import { NavLink, useIntl } from 'umi';
 
 export default (): React.ReactNode => {
   const intl = useIntl();
-  const { data } = useRequest(getGames, { pollingInterval: 10000 });
+  const { data, loading } = useRequest(getGames, { pollingInterval: 10000 });
   const [compact, setCompact] = useState(false);
 
   let playersInGame = 0;
@@ -78,6 +78,7 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
+      <Spin spinning={loading && !data} size="large">
       {statistics}
       <div className="row">
         <div className="col-md-12 mb-4">
@@ -85,6 +86,7 @@ export default (): React.ReactNode => {
         </div>
         {cards}
       </div>
+      </Spin>
     </PageContainer>
   );
 };
