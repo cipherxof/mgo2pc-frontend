@@ -20,7 +20,6 @@ const GlobalHeaderRight: React.FC = () => {
       height: '48px',
       marginLeft: 'auto',
       overflow: 'hidden',
-      gap: 8,
     };
   });
 

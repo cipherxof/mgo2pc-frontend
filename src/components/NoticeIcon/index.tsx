@@ -22,7 +22,7 @@ const getNoticeData = (notices: any[]): Record<string, any[]> => {
     const newNotice = { ...notice };
 
     if (newNotice.datetime) {
-      newNotice.datetime = moment(notice.datetime as string).fromNow();
+      newNotice.datetime = notice.datetime;
     }
 
     if (newNotice.id) {
