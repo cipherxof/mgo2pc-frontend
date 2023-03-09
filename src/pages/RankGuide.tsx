@@ -133,6 +133,18 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 5,
+      name: 'Crocodile',
+      description: (
+        <>
+          <p>
+            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.50</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
       id: 6,
       name: 'Eagle',
       description: (
@@ -143,6 +155,96 @@ export default (): React.ReactNode => {
           <p>
             Headshot Kills + Headshot Stuns ÷ Kills + Stuns {`>=`} <Text type="success">0.50</Text>
           </p>
+        </>
+      ),
+    },
+    {
+      id: 7,
+      name: 'Jaws',
+      description: (
+        <>
+          <p>
+            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.25</Text>
+          </p>
+          <p>
+            Knife kills ÷ Total Kills {`>=`} <Text type="success">0.075</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 8,
+      name: 'Water Bear',
+      description: (
+        <>
+          <p>
+            Deaths ÷ Rounds Played in <Text type="warning">RES</Text> and{' '}
+            <Text type="warning">TSNE</Text> {`<=`} <Text type="success">0.5</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 9,
+      name: 'Sloth',
+      description: (
+        <>
+          <p>
+            Kills ÷ Deaths {`<=`} <Text type="success">0.85</Text>
+          </p>
+          <p>
+            Headshot Deaths ÷ Deaths {`>=`} <Text type="success">0.60</Text>
+          </p>
+          <p>
+            Stuns ÷ Stuns Received {`<=`} <Text type="success">0.85</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 10,
+      name: 'Flying Squirrel',
+      description: (
+        <>
+          <p>
+            Rolls ÷ Rounds {`>=`} <Text type="success">15.0</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 16,
+      name: 'GA-KO',
+      description: (
+        <>
+          <p>
+            <Text type="warning">RES</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">RES</Text> {`>=`} <Text type="success">30</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 17,
+      name: 'Chameleon',
+      description: (
+        <>
+          <p>
+            <Text type="warning">TSNE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">TSNE</Text> {`>=`} <Text type="success">30</Text>
+          </p>
+          <br />
         </>
       ),
     },
@@ -163,27 +265,54 @@ export default (): React.ReactNode => {
       ),
     },
     {
-      id: 7,
-      name: 'Jaws',
+      id: 12,
+      name: 'Owl',
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.25</Text>
-          </p>
-          <p>
-            Knife kills ÷ Total Kills {`>=`} <Text type="success">0.075</Text>
+            Time Using ENVG Goggles ÷ Play Time {`>=`} <Text type="success">0.05</Text>
           </p>
           <br />
         </>
       ),
     },
     {
-      id: 5,
-      name: 'Crocodile',
+      id: 13,
+      name: 'Tsuchinoko',
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.50</Text>
+            Last Login {`>=`} <Text type="success">30.0</Text> Days
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 14,
+      name: 'Snake',
+      description: (
+        <>
+          <p>
+            Sneaking Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of Sneaking Mission {`>=`} <Text type="success">30</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 15,
+      name: 'Kerotan',
+      description: (
+        <>
+          <p>
+            <Text type="warning">CAP</Text> Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">CAP</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -196,22 +325,6 @@ export default (): React.ReactNode => {
         <>
           <p>
             Scans ÷ Rounds {`>=`} <Text type="success">0.3</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      id: 17,
-      name: 'Chameleon',
-      description: (
-        <>
-          <p>
-            <Text type="warning">TSNE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
-          </p>
-          <p>
-            Weekly Rounds of <Text type="warning">TSNE</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -288,49 +401,6 @@ export default (): React.ReactNode => {
       ),
     },
     {
-      id: 10,
-      name: 'Flying Squirrel',
-      description: (
-        <>
-          <p>
-            Rolls ÷ Rounds {`>=`} <Text type="success">15.0</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      id: 16,
-      name: 'GA-KO',
-      description: (
-        <>
-          <p>
-            <Text type="warning">RES</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
-          </p>
-          <p>
-            Weekly Rounds of <Text type="warning">RES</Text> {`>=`} <Text type="success">30</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      id: 15,
-      name: 'Kerotan',
-      description: (
-        <>
-          <p>
-            <Text type="warning">CAP</Text> Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
-          </p>
-          <p>
-            Weekly Rounds of <Text type="warning">CAP</Text> {`>=`} <Text type="success">30</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
       id: 26,
       name: 'Killer Whale',
       description: (
@@ -378,18 +448,7 @@ export default (): React.ReactNode => {
         </>
       ),
     },
-    {
-      id: 12,
-      name: 'Owl',
-      description: (
-        <>
-          <p>
-            Time Using ENVG Goggles ÷ Play Time {`>=`} <Text type="success">0.05</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
+
     {
       id: 22,
       name: 'Rat',
@@ -414,39 +473,7 @@ export default (): React.ReactNode => {
         </>
       ),
     },
-    {
-      id: 9,
-      name: 'Sloth',
-      description: (
-        <>
-          <p>
-            Kills ÷ Deaths {`<=`} <Text type="success">0.85</Text>
-          </p>
-          <p>
-            Headshot Deaths ÷ Deaths {`>=`} <Text type="success">0.60</Text>
-          </p>
-          <p>
-            Stuns ÷ Stuns Received {`<=`} <Text type="success">0.85</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      id: 14,
-      name: 'Snake',
-      description: (
-        <>
-          <p>
-            Sneaking Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
-          </p>
-          <p>
-            Weekly Rounds of Sneaking Mission {`>=`} <Text type="success">30</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
+
     {
       id: 20,
       name: 'Tortoise',
@@ -458,32 +485,8 @@ export default (): React.ReactNode => {
           <br />
         </>
       ),
-    },
-    {
-      id: 13,
-      name: 'Tsuchinoko',
-      description: (
-        <>
-          <p>
-            Last Login {`>=`} <Text type="success">30.0</Text> Days
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      id: 8,
-      name: 'Water Bear',
-      description: (
-        <>
-          <p>
-            Deaths ÷ Rounds Played in <Text type="warning">RES</Text> and{' '}
-            <Text type="warning">TSNE</Text> {`<=`} <Text type="success">0.5</Text>
-          </p>
-          <br />
-        </>
-      ),
     }
+
   ];
   const cards: JSX.Element[] = [];
 
@@ -491,10 +494,11 @@ export default (): React.ReactNode => {
   const pathToImg = `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
   for(const rank of ranks){
     `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
-    console.table(rank)
+
     let currentNumber = rank.id;
     cards.push(
       <div className="col-md-3 text-center">
+      <p>{currentNumber}</p>
         <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
           <img src={`${`https://mgo2pc.com/static/media/emblem/${currentNumber}.png`}`} />
           <Meta title={rank.name} description={rank.description} />
@@ -508,29 +512,6 @@ export default (): React.ReactNode => {
       <div className="row">{cards}</div>
     </PageContainer>
   )};
-
-// for (const rank of ranks) {
-//   for(; countArrayAnimalRanks < arrayAnimalRanks.length; countArrayAnimalRanks++){
-//     const pathToImg = `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
-//     const rankName = `${arrayAnimalRanks[countArrayAnimalRanks][1]}`;
-
-
-//   cards.push(
-//     <div className="col-md-3 text-center">
-//       <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
-//         <img src={`${pathToImg}`} />
-//         <Meta title={rank.name} description={rank.description} />
-//       </Card>
-//     </div>,
-//   );
-//   }
-
-
-//   return (
-//     <PageContainer>
-//       <div className="row">{cards}</div>
-//     </PageContainer>
-//   )};
 
 
 
