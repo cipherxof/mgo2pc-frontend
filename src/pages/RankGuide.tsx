@@ -2,7 +2,6 @@ import { getRankId, getRankPreview, getRankImage, arrayAnimalRanks } from '@/sys
 import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Descriptions, Typography } from 'antd';
 import React from 'react';
-import {useState}  from 'react';
 
 const { Meta } = Card;
 const { Text } = Typography;
@@ -217,38 +216,6 @@ export default (): React.ReactNode => {
       ),
     },
     {
-      id: 16,
-      name: 'GA-KO',
-      description: (
-        <>
-          <p>
-            <Text type="warning">RES</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
-          </p>
-          <p>
-            Weekly Rounds of <Text type="warning">RES</Text> {`>=`} <Text type="success">30</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      id: 17,
-      name: 'Chameleon',
-      description: (
-        <>
-          <p>
-            <Text type="warning">TSNE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
-          </p>
-          <p>
-            Weekly Rounds of <Text type="warning">TSNE</Text> {`>=`} <Text type="success">30</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
       id: 11,
       name: 'Pigeon',
       description: (
@@ -319,12 +286,32 @@ export default (): React.ReactNode => {
       ),
     },
     {
-      id: 21,
-      name: 'Bee',
+      id: 16,
+      name: 'GA-KO',
       description: (
         <>
           <p>
-            Scans ÷ Rounds {`>=`} <Text type="success">0.3</Text>
+            <Text type="warning">RES</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">RES</Text> {`>=`} <Text type="success">30</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 17,
+      name: 'Chameleon',
+      description: (
+        <>
+          <p>
+            <Text type="warning">TSNE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">TSNE</Text> {`>=`} <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -352,33 +339,48 @@ export default (): React.ReactNode => {
       ),
     },
     {
-      id: 28,
-      name: 'Cuckoo',
+      id: 19,
+      name: 'Bear',
       description: (
         <>
           <p>
-            <Text type="warning">BOMB</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            CQC Attacks ÷ Rounds {`>=`} <Text type="success">5.0</Text>
           </p>
-          <p>
-            Weekly Rounds of <Text type="warning">BOMB</Text> {`>=`} <Text type="success">30</Text>
-          </p>
-
           <br />
         </>
       ),
     },
     {
-      id: 27,
-      name: 'Elephant',
+      id: 20,
+      name: 'Tortoise',
       description: (
         <>
           <p>
-            <Text type="warning">BASE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            Box Uses ÷ Overall Rounds {`>=`} <Text type="success">15.0</Text>
           </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 21,
+      name: 'Bee',
+      description: (
+        <>
           <p>
-            Weekly Rounds of <Text type="warning">BASE</Text> {`>=`} <Text type="success">30</Text>
+            Scans ÷ Rounds {`>=`} <Text type="success">0.3</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 22,
+      name: 'Rat',
+      description: (
+        <>
+          <p>
+            Stuck In Trap ÷ Rounds {`>=`} <Text type="success">0.3</Text>
           </p>
           <br />
         </>
@@ -401,6 +403,22 @@ export default (): React.ReactNode => {
       ),
     },
     {
+      id: 24,
+      name: 'Komodo Dragon',
+      description: (
+        <>
+          <p>
+            <Text type="warning">SDM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">SDM</Text> {`>=`} <Text type="success">30</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
       id: 26,
       name: 'Killer Whale',
       description: (
@@ -412,6 +430,39 @@ export default (): React.ReactNode => {
           <p>
             Weekly Rounds of <Text type="warning">TDM</Text> {`>=`} <Text type="success">30</Text>
           </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 27,
+      name: 'Elephant',
+      description: (
+        <>
+          <p>
+            <Text type="warning">BASE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">BASE</Text> {`>=`} <Text type="success">30</Text>
+          </p>
+          <br />
+        </>
+      ),
+    },
+    {
+      id: 28,
+      name: 'Cuckoo',
+      description: (
+        <>
+          <p>
+            <Text type="warning">BOMB</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
+            <Text type="success">0.6</Text>
+          </p>
+          <p>
+            Weekly Rounds of <Text type="warning">BOMB</Text> {`>=`} <Text type="success">30</Text>
+          </p>
+
           <br />
         </>
       ),
@@ -432,75 +483,21 @@ export default (): React.ReactNode => {
         </>
       ),
     },
-    {
-      id: 24,
-      name: 'Komodo Dragon',
-      description: (
-        <>
-          <p>
-            <Text type="warning">SDM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
-          </p>
-          <p>
-            Weekly Rounds of <Text type="warning">SDM</Text> {`>=`} <Text type="success">30</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-
-    {
-      id: 22,
-      name: 'Rat',
-      description: (
-        <>
-          <p>
-            Stuck In Trap ÷ Rounds {`>=`} <Text type="success">0.3</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-    {
-      id: 8,
-      name: 'Water Bear',
-      description: (
-        <>
-          <p>
-            CQC Attacks ÷ Rounds {`>=`} <Text type="success">5.0</Text>
-          </p>
-          <br />
-        </>
-      ),
-    },
-
-    {
-      id: 20,
-      name: 'Tortoise',
-      description: (
-        <>
-          <p>
-            Box Uses ÷ Overall Rounds {`>=`} <Text type="success">15.0</Text>
-          </p>
-          <br />
-        </>
-      ),
-    }
-
   ];
   const cards: JSX.Element[] = [];
 
   let countArrayAnimalRanks=1;
-  const pathToImg = `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
+
   for(const rank of ranks){
-    `https://mgo2pc.com/static/media/emblem/${arrayAnimalRanks[countArrayAnimalRanks][1]}.png`;
+
+    const pathToImgAndShowRankEmblem = `https://mgo2pc.com/static/media/emblem/${rank.id}.png`;
 
     let currentNumber = rank.id;
     cards.push(
       <div className="col-md-3 text-center">
       <p>{currentNumber}</p>
         <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
-          <img src={`${`https://mgo2pc.com/static/media/emblem/${currentNumber}.png`}`} />
+          <img src={`${pathToImgAndShowRankEmblem}`} />
           <Meta title={rank.name} description={rank.description} />
         </Card>
       </div>,
