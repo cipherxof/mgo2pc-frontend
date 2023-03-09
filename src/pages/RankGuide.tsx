@@ -495,7 +495,7 @@ export default (): React.ReactNode => {
     let currentNumber = rank.id;
     cards.push(
       <div className="col-md-3 text-center">
-      <p>{currentNumber}</p>
+
         <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
           <img src={`${pathToImgAndShowRankEmblem}`} />
           <Meta title={rank.name} description={rank.description} />
