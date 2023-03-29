@@ -68,7 +68,14 @@ export const logoutUser = () => {
 };
 
 export const getRankPreview = (rank: number) => {
-  return `/static/media/emblem/${rank}.png`;
+  return `static/media/emblem/${rank}.png`;
+
+};
+let countArrayAnimalRanks:number = 0;
+
+export const getRankImage= (rank: number) => {
+  // change to `/static/media/emblem/${rank}.png`;
+  return `/static/media/emblem/${arrayAnimalRanks[rank][1]}.png`;
 };
 
 export const getRankId = (name: string) => {
@@ -138,6 +145,7 @@ export const getRankId = (name: string) => {
   }
   return 0;
 };
+
 
 export const getMapPreview = (mapId: number) => {
   try {
@@ -292,3 +300,4 @@ export const getExpLevel = (exp: number) => {
   }
   return 20;
 };
+ 

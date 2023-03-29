@@ -30,7 +30,13 @@ export default defineConfig({
    * @doc https://umijs.org/docs/guides/routes
    */
   // umi routes: https://umijs.org/docs/routing
-  routes: routes.concat(adminRoutes),
+
+  //private
+  //  routes: routes.concat(adminRoutes),
+
+  //public
+  routes: routes,
+
   /**
    * @name 主题的配置
    * @description 虽然叫主题，但是其实只是 less 的变量设置
