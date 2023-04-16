@@ -33,7 +33,7 @@ export default [
     path: '/shop',
     name: 'rewardshop',
     icon: "shop",
-    component: './shop/Shop',
+    component: './Shop/Shop',
   },
   { path: '/game/:id', component: './Game' },
   { path: '/profile/:character', component: './Profile' },
@@ -53,7 +53,7 @@ export default [
   //{ path: '/clans', component: './Clans' },
   { path: '/clan/:id', component: './Clan' },
   { path: '/rankings/:mode/:page', component: './Rankings' },
-  { path: '/shop/:id', component: './shop/Shop' },
+  { path: '/shop/:id', component: './Shop/Shop' },
   { path: '/changelog', component: './Changelog' },
   { path: '/game/:id', component: './Game' },
   {
