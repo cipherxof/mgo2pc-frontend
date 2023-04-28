@@ -6,15 +6,13 @@ import { errorConfig } from './requestErrorConfig';
 import { getUserToken } from './system/utility';
 
 const baseURLInterceptor = (url: null | string, options: any) => {
-  const host = window.location.hostname === 'localhost' ? 'http://localhost:80' : '';
-
   options.headers = {
     authorization: `${getUserToken()}`,
   };
 
   return {
-    url: `${host}${url}`,
-    options: { ...options, interceptors: true },
+    url: `${url}`,
+    options: { ...options, interceptors: false },
   };
 };
 
