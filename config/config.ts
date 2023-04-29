@@ -4,6 +4,7 @@ import { join } from 'path';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
+//import adminRoutes from './routes-admin';
 
 const { REACT_APP_ENV = 'dev' } = process.env;
 
@@ -31,7 +32,7 @@ export default defineConfig({
   // umi routes: https://umijs.org/docs/routing
 
   //private
-  //  routes: routes.concat(adminRoutes),
+  //routes: routes.concat(adminRoutes),
 
   //public
   routes: routes,

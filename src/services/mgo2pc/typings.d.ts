@@ -83,6 +83,7 @@ declare namespace API {
   type ServerStatus = {
     data: {
       status: number;
+      players: number;
     };
     success: boolean;
     message: string;

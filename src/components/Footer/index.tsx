@@ -40,12 +40,6 @@ const Footer: React.FC = () => {
             blankTarget: true,
           },
           {
-            key: 'discord',
-            title: <Icon component={DiscordSVG} />,
-            href: 'https://discord.gg/MNqmzuW2wH',
-            blankTarget: true,
-          },
-          {
             key: 'youtube',
             title: <YoutubeOutlined />,
             href: 'https://www.youtube.com/channel/UC_9m-kGKK95xj-GvqUERrJw/videos',

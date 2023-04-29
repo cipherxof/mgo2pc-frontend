@@ -18,6 +18,7 @@ export default {
     'Metal Gear Online 2 PC. Todos los derechos reservados. Este sitio web no está asociado con Konami o sus afiliados.',
   'app.serveron': 'El server está actualmente conectado',
   'app.serveroff': 'El server está actualmente desconectado',
+  'app.servercount': 'Actualmente hay {players} jugadores en línea.',
   'app.setupvideopc': 'https://www.youtube.com/embed/7uHWGNLxmQI',
   'app.setupvideops3': 'https://www.youtube.com/embed/7cuOGinyPJ8',
   'app.onlineplayers': 'Jugadores conectados',

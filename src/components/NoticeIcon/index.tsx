@@ -80,7 +80,7 @@ const NoticeIconView = () => {
 
       const response = await getNotifications();
 
-      if (!response) {
+      if (!response || !response.notifications) {
         return;
       }
 
