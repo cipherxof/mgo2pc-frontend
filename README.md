@@ -2,15 +2,17 @@
 
 https://mgo2pc.com/ | https://savemgo.com
 
-![Discord](https://img.shields.io/discord/809840002989162516?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF")
+[![discord](https://img.shields.io/discord/809840002989162516?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF)](https://discord.gg/mgo2pc)
 
 This repository is for the website frontend of SaveMGO (formerly known as MGO2PC)
 
 ## Build instructions
 
-Install [Node.js](https://nodejs.org/en) and run the following commands.
+Make sure you have [Node.js](https://nodejs.org/en) and [Git](https://git-scm.com/) installed then run the following commands.
 
 ```bash
+git clone https://github.com/cipherxof/mgo2pc-frontend.git
+cd mgo2pc-frontend
 npm i
 npm run dev
 ```
