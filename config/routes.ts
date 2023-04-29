@@ -30,6 +30,12 @@ export default [
     component: './Rankings',
   },
   {
+    path: '/stats',
+    name: 'Server Stats',
+    icon: 'user',
+    component: './Stats',
+  },
+  {
     path: '/shop',
     name: 'rewardshop',
     icon: "shop",

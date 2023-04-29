@@ -20,6 +20,12 @@ declare namespace API {
     message: string;
   };
 
+  type ServerStats = {
+    data: { stats: StatsGame[]; static: any };
+    success: boolean;
+    message: string;
+  };
+
   type Profile = {
     data: ProfileData;
     success: boolean;

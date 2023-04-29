@@ -52,6 +52,10 @@ export async function equipItem(id: number | string, chara: number | string) {
   return request<API.Response>(`/api/v1/shopequip/${id}/${chara}`, { method: 'GET' });
 }
 
+export async function getServerStats() {
+  return request<API.ServerStats>(`/api/v1/stats`, { method: 'GET' });
+}
+
 export async function getRankings(mode: string, page: number | string, weekly?: boolean) {
   return request<API.Rankings>(`/api/v1/rankings/${mode}/${page}/${weekly ? 'weekly' : ''}`, {
     method: 'GET',
