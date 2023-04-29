@@ -28,8 +28,8 @@ const columns = [
             <Avatar
               size="small"
               src={
-                text.split('\t')[0] === ''
-                  ? ''
+                text.split('\t')[0].length <= 1
+                  ? undefined
                   : `/static/media/emblems/${text.split('\t')[0]}.png`
               }
               icon={<UserOutlined />}

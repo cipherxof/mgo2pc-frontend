@@ -43,7 +43,6 @@ export default (): React.ReactNode => {
                 title={title}
                 description={<CharacterLevelTag xp={xp} />}
               />
-              <br />
               <div className="row">
                 <div className="col-md-12">
                   <Popover content={`${Math.floor(progress)}%`}>
