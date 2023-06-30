@@ -107,3 +107,13 @@ export async function updateAccount(body: any) {
     data: body,
   });
 }
+
+export async function updateCharacter(charId: number | string, body: any) {
+  return request(`/api/v1/character?id=${charId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+  });
+}

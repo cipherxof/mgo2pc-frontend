@@ -68,14 +68,11 @@ export const logoutUser = () => {
 };
 
 export const getRankPreview = (rank: number) => {
-  return `static/media/emblem/${rank}.png`;
+  return `https://mgo2pc.com/static/media/emblem/${rank}.png`;
 
 };
-let countArrayAnimalRanks:number = 0;
-
-export const getRankImage= (rank: number) => {
-  // change to `/static/media/emblem/${rank}.png`;
-  return `/static/media/emblem/${arrayAnimalRanks[rank][1]}.png`;
+export const getRankImage = (rank: number) => {
+  return `/static/media/emblem/${rank}.png`;
 };
 
 export const getRankId = (name: string) => {

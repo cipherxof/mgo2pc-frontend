@@ -101,6 +101,7 @@ type MgoCharacter = {
   name: string;
   old_name?: string;
   rank: number;
+  available_ranks: string;
   comment: string;
 };
 

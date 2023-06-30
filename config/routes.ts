@@ -31,7 +31,7 @@ export default [
   },
   {
     path: '/stats',
-    name: 'Server Stats',
+    name: 'Population Graph',
     icon: 'user',
     component: './Stats',
   },

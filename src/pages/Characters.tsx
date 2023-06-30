@@ -1,17 +1,17 @@
 import CharacterLevelTag from '@/components/CharacterLevelTag';
-import { getAccount } from '@/services/mgo2pc/api';
+import RankSelect from '@/components/RankSelect';
+import { getAccount, updateAccount } from '@/services/mgo2pc/api';
 import { getExpLevel, getLevelReq, isLoggedIn } from '@/system/utility';
-import { EditOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Avatar, Card, Popover, Progress } from 'antd';
+import { history } from '@umijs/max';
+import { Avatar, Button, Card, notification, Popover, Progress } from 'antd';
 import React from 'react';
 import { NavLink, useRequest } from 'umi';
-import { history } from '@umijs/max';
 
 const { Meta } = Card;
 
 export default (): React.ReactNode => {
-  const { data } = useRequest(getAccount);
+  const { data, refresh } = useRequest(getAccount);
 
   if (!isLoggedIn()) {
     history.push('/');
@@ -22,6 +22,18 @@ export default (): React.ReactNode => {
   }
 
   const characterCards: JSX.Element[] = [];
+
+  async function updateMain(id: number) {
+    try {
+      await updateAccount({ main: id });
+      notification.success({
+        message: `Success`,
+        description: 'Your main character has been updated.',
+        placement: 'topRight',
+      });
+      refresh();
+    } catch (err) {}
+  }
 
   for (const character of data.characters) {
     const isMain = character.id === data.main;
@@ -36,8 +48,24 @@ export default (): React.ReactNode => {
 
       characterCards.push(
         <div className="col-md-3" key={character.id} style={{ marginBottom: '16px' }}>
-          <NavLink to={`/profile/${encodeURIComponent(character.name)}`}>
-            <Card hoverable={true} actions={[<EditOutlined key="edit" disabled={true} />]}>
+          <Card
+            hoverable={true}
+            actions={[
+              <Button
+                disabled={data.main === character.id}
+                onClick={() => updateMain(character.id)}
+              >
+                Set as main
+              </Button>,
+              <RankSelect
+                character={character.id}
+                allowed={
+                  character.available_ranks === '' ? [] : character.available_ranks.split(',')
+                }
+              />,
+            ]}
+          >
+            <NavLink to={`/profile/${encodeURIComponent(character.name)}`}>
               <Meta
                 avatar={<Avatar src={require('../assets/img/oldsnake.png')} />}
                 title={title}
@@ -57,8 +85,8 @@ export default (): React.ReactNode => {
                   </Popover>
                 </div>
               </div>
-            </Card>
-          </NavLink>
+            </NavLink>
+          </Card>
         </div>,
       );
     }

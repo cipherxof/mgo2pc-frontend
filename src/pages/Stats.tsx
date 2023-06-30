@@ -15,7 +15,7 @@ export default (): React.ReactNode => {
       <Spin spinning={loading}>
         <div className="row">
           <div className="col-md-12 text-center mb-2">
-            <Card>
+            <Card loading={loading}>
               <Row gutter={16}>
                 <Col span={4}></Col>
                 <Col span={8}>
