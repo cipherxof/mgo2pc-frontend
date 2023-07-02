@@ -84,7 +84,7 @@ export default {
   'app.faq.host': '¿Como Hosteo?',
   'app.faq.login': '¿Por qué no me puedo conectar?',
   'app.faq.sysreqtitle': '¿Cuales son los requerimientos de sistema?',
-  'app.faq.sysreq': `La emulación de Playstation 3 depende mucho de la CPU y funciona mejor en procesadores de 8 nucleos y 16 hilos. Con eso dicho, puedes obtener una tasa de cuadros por segundo aceptable en CPUs de menor potencia. El mejor valor por potencia que probablemente encuentres es un Intel i3 12100 ($97) o el Intel i5 12400f ($179). Sin embargo, sí estas usando una laptop recomendamos una equipada con un 8-nucleos/16-hilos 35W+ H-series CPU como un Intel Core i7-10870H o un AMD Ryzen 7 5800H.`,
+  'app.faq.sysreq': `La emulación de Playstation 3 depende mucho de la CPU y funciona mejor en procesadores de 8 nucleos y 16 hilos. Con eso dicho, puedes obtener una tasa de cuadros por segundo aceptable en CPUs de menor potencia. El mejor valor por potencia que probablemente encuentres es un Intel i3 12100 ($97) o el Intel i5 12400f ($150). Sin embargo, sí estas usando una laptop recomendamos una equipada con un 8-nucleos/16-hilos 35W+ H-series CPU como un Intel Core i7-10870H o un AMD Ryzen 7 5800H.`,
   'app.welcome':
     'We provide a service which allows you to play the multiplayer mode of Metal Gear Solid 4: Guns of the Patriots PC using the {rpcs3} emulator, with crossplay between PS3 players.\n\nIf you are looking to get started then watch our {startvideo} or head over to our frequently asked questions section.\n\nFeel free to stop by the {discord} if you have any questions.',
 };

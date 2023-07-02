@@ -80,12 +80,14 @@ export default {
   'app.updateinfo': 'アカウント更新',
   'app.minimum': '最低動作システム環境',
   'app.recommended': '推奨システム環境',
+  'app.discordlink': "https://discord.gg/savemgojapan",
+  'app.discordshield': "https://img.shields.io/discord/833996481144291348?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF",
   'app.faq.nosound': 'BGMなど音が出ない場合',
   'app.faq.host': '部屋の建て方・ホストの仕方',
   'app.faq.login': 'ログインに失敗する場合',
   'app.faq.sysreqtitle': '動作環境は何ですか？',
   'app.faq.sysreq':
-    'Playstation 3 のエミュレーションは非常に CPU に負荷がかかるため、8 コア 16 スレッドのデスクトップで最適に動作します。とはいえ、より低スペックのCPUでもプレイ可能なFPSを得ることができます。Intel i3 12100 ($97：１万３千円くらい) または Intel i5 12400f ($179：２万円くらい) が最もコストパフォーマンスに優れていると思われます。しかし、ノートパソコンを使用する場合は、Intel Core i7-10870H や AMD Ryzen 7 5800H などの 8 コア/16 スレッド 35W+ H シリーズ CPU を搭載したものをお勧めします。',
+    'Playstation 3 のエミュレーションは非常に CPU に負荷がかかるため、8 コア 16 スレッドのデスクトップで最適に動作します。とはいえ、より低スペックのCPUでもプレイ可能なFPSを得ることができます。Intel i3 12100 ($97：１万３千円くらい) または Intel i5 12400f ($150) が最もコストパフォーマンスに優れていると思われます。しかし、ノートパソコンを使用する場合は、Intel Core i7-10870H や AMD Ryzen 7 5800H などの 8 コア/16 スレッド 35W+ H シリーズ CPU を搭載したものをお勧めします。',
   'app.welcome':
     'メタルギア ソリッド 4 ガンズ・オブ・ザ・パトリオット』PC版のマルチプレイヤーモードを、{rpcs3}エミュレータを使用して、PS3プレイヤー同士のクロスプレイでプレイできるサービスを提供しています。\n\nこれから始める方は、{startvideo}をご覧いただくか、よくある質問のセクションをご覧ください。\n\n何かご質問があれば、お気軽に{discord}にお立ち寄りください。',
 };

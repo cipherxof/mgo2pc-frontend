@@ -1,5 +1,6 @@
 import Icon, { GithubOutlined, TwitterOutlined, YoutubeOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-components';
+import { useIntl } from '@umijs/max';
 import React from 'react';
 
 const DiscordSVG = () => (
@@ -19,11 +20,12 @@ const TikTokSVG = () => (
 );
 
 const Footer: React.FC = () => {
+  const intl = useIntl();
   const currentYear = new Date().getFullYear();
   const discordLink = (
     <div className="ml-auto mr-auto mb-2">
       <img
-        src="https://img.shields.io/discord/809840002989162516?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF"
+        src={intl.formatMessage({ id: 'app.discordshield' })}
       />
     </div>
   );
@@ -36,7 +38,7 @@ const Footer: React.FC = () => {
           {
             key: 'discordembed',
             title: discordLink,
-            href: 'https://discord.gg/mgo2pc',
+            href: intl.formatMessage({ id: 'app.discordlink' }),
             blankTarget: true,
           },
           {
