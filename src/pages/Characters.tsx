@@ -45,6 +45,7 @@ export default (): React.ReactNode => {
         ((xp - getLevelReq(level)) / (getLevelReq(level + 1) - getLevelReq(level))) * 100;
 
       const title = isMain ? `${character.name} *` : character.name;
+      const availRanks = character.available_ranks === '' ? [] : character.available_ranks.split(',');
 
       characterCards.push(
         <div className="col-md-3" key={character.id} style={{ marginBottom: '16px' }}>
@@ -59,9 +60,8 @@ export default (): React.ReactNode => {
               </Button>,
               <RankSelect
                 character={character.id}
-                allowed={
-                  character.available_ranks === '' ? [] : character.available_ranks.split(',')
-                }
+                allowed={availRanks}
+                rank={character.rank}
               />,
             ]}
           >

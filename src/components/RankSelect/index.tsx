@@ -1,8 +1,9 @@
 import { updateCharacter } from '@/services/mgo2pc/api';
 import { getRankPreview } from '@/system/utility';
-import { Alert, Select, notification } from 'antd';
+import { Select, notification } from 'antd';
 
 type RankSelectProps = {
+  rank: number;
   character: number;
   allowed: number[];
 };
@@ -22,6 +23,7 @@ export default (props: RankSelectProps) => {
 
   return (
     <Select
+      defaultValue={props.allowed.find(r => r == props.rank)}
       style={{width: "80%"}}
       disabled={props.allowed.length <= 0}
       options={props.allowed.map(rankId => {

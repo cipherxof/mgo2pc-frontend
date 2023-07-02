@@ -84,10 +84,10 @@ export default [
       icon: 'star',
       component: './RankGuide',
     },
-    {
+    /*{
       path: '/changelog',
       name: 'Changelog',
       icon: 'book',
       component: './Changelog',
-    },
+    },*/
 ];
