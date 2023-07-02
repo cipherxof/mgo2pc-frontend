@@ -261,7 +261,7 @@ type Stats = {
   spotted: number;
   points_assist: number;
   points_base: number;
-  snake_tags_spawned: number;
+  wakeups: number;
   snake_tags_spawned: number;
   snake_tags_taken: number;
   wins_snake: number;

@@ -50,7 +50,7 @@ export default function PersonalScores(props: PersonalScoresProps): JSX.Element 
     { key: 'Knife Stuns', value: props.stats.knife_stuns },
     { key: 'Assist Points', value: props.stats.points_assist },
     { key: 'Base Points', value: props.stats.points_base },
-    { key: 'TSNE Wakeups', value: props.stats.snake_tags_spawned },
+    { key: 'TSNE Wakeups', value: props.stats.wakeups },
     { key: 'SNE Tags Spawned', value: props.stats.snake_tags_spawned },
     { key: 'SNE Tags Collected', value: props.stats.snake_tags_taken },
     { key: 'SNE Wins as Snake', value: props.stats.wins_snake },
