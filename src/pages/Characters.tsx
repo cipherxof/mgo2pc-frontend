@@ -47,6 +47,10 @@ export default (): React.ReactNode => {
       const title = isMain ? `${character.name} *` : character.name;
       const availRanks = character.available_ranks === '' ? [] : character.available_ranks.split(',');
 
+      if (availRanks[0] === '') { // woops
+        availRanks.shift();
+      }
+
       characterCards.push(
         <div className="col-md-3" key={character.id} style={{ marginBottom: '16px' }}>
           <Card

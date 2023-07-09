@@ -11,6 +11,7 @@ const baseURLInterceptor = (url: null | string, options: any) => {
   };
 
   return {
+    //url: `http://localhost${url}`,
     url: `${url}`,
     options: { ...options, interceptors: false },
   };
