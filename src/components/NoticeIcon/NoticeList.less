@@ -18,6 +18,7 @@
 
     .avatar {
       margin-top: 4px;
+      margin-left: 16px;
       /*background: @component-background;*/
     }
     .iconElement {
@@ -31,10 +32,10 @@
       border-bottom: 0;
     }
     &:hover {
-      background: #40a9ff;
+      background: #313131;
     }
     .title {
-      margin-bottom: 8px;
+      font-size: 16px;
       font-weight: normal;
     }
     .description {
@@ -43,8 +44,10 @@
     }
     .datetime {
       margin-top: 4px;
-      font-size: 12px;
+      font-size: 10px;
+      font-style: italic;
       line-height: 1.5715;
+      color: #999;
     }
     .extra {
       float: right;
@@ -82,12 +85,13 @@
   color: rgba(229, 224, 216, 0.85);
   line-height: 46px;
   text-align: center;
+  margin-left: auto;
   border-top: 1px solid rgba(0,0,0,.06);
   border-radius: 0 0 2px 2px;
   transition: all 0.3s;
   div {
     display: inline-block;
-    width: 50%;
+    width: 100%;
     cursor: pointer;
     transition: all 0.3s;
     user-select: none;

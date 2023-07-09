@@ -88,7 +88,7 @@ const NoticeList: React.FC<NoticeIconTabProps> = ({
           );
         }}
       />
-      <div className={`${styles.bottomBar} text-center`}>
+      <div className={`${styles.bottomBar}`}>
         {showClear ? (
           <div onClick={onClear}>
             {clearText} {title}

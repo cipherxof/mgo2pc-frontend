@@ -2,7 +2,6 @@ import { getNotifications, readNotification } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
 import { message, Tag } from 'antd';
 import { groupBy } from 'lodash';
-import moment from 'moment';
 import { useEffect, useState } from 'react';
 import styles from './index.less';
 import NoticeIcon from './NoticeIcon';
@@ -55,6 +54,7 @@ const getNoticeData = (notices: any[]): Record<string, any[]> => {
 
 const getUnreadData = (noticeData: Record<string, any[]>) => {
   const unreadMsg: Record<string, number> = {};
+
   Object.keys(noticeData).forEach((key) => {
     const value = noticeData[key];
 
@@ -85,7 +85,7 @@ const NoticeIconView = () => {
       }
 
       response.notifications.forEach((n: any) => {
-        n.type = 'notification';
+        n.type = n.type === 0 ? 'notification' : 'message';
         //@ts-ignore
         n.read = n.unread === 0;
         //@ts-ignore
@@ -97,7 +97,7 @@ const NoticeIconView = () => {
 
     fetchData();
 
-    const timeout = setInterval(() => fetchData(), 1000 * 60 * 30); // refresh every 30 minutes
+    const timeout = setInterval(() => fetchData(), 1000 * 60 * 10); // refresh every 10 minutes
 
     return () => {
       clearInterval(timeout);
@@ -115,7 +115,7 @@ const NoticeIconView = () => {
     setNotices(
       notices.map((item) => {
         const notice = { ...item };
-        if (notice.id === id && !notice.read) {
+        if (notice.id === id && !notice.read && notice.type === 0) {
           notice.read = true;
           notice.unread = 0;
 

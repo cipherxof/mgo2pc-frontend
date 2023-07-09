@@ -105,7 +105,7 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
 
   return (
     <HeaderDropdown
-      placement="bottomRight"
+      placement="bottomCenter"
       overlay={notificationBox}
       overlayClassName={styles.popover}
       trigger={['click']}
