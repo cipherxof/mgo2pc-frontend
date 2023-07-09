@@ -38,7 +38,7 @@ const AvatarDropdown: React.FC = () => {
     return {
       display: 'flex',
       height: '48px',
-      marginLeft: 'auto',
+      marginLeft: '8px',
       overflow: 'hidden',
       alignItems: 'center',
       padding: '0 8px',
