@@ -14,7 +14,7 @@ export default [
   { 
     path: '/', 
     component: './Home',
-    name: 'Home',
+    name: 'home',
     icon: 'home',
   },
   {
@@ -31,7 +31,7 @@ export default [
   },
   {
     path: '/stats',
-    name: 'Population Graph',
+    name: 'population',
     icon: 'user',
     component: './Stats',
   },
@@ -68,19 +68,19 @@ export default [
   },
     {
       path: '/faq',
-      name: 'FAQ',
+      name: 'faq',
       icon: 'question',
       component: './FAQ',
     },
     {
       path: '/tutorials',
-      name: 'Guides',
+      name: 'guides',
       icon: 'camera',
       component: './VideoGuides',
     },
     {
       path: '/rankguide',
-      name: 'Ranks',
+      name: 'ranks',
       icon: 'star',
       component: './RankGuide',
     },

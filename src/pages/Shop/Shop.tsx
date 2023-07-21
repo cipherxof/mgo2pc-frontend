@@ -382,9 +382,7 @@ export default (): React.ReactNode => {
       <Divider />
       <Alert
         message="Notice"
-        description={
-          'Reward points are earned through playing the game and there is no way to otherwise purchase them.'
-        }
+        description={intl.formatMessage({ id: 'app.rewardshopinfo' })}
         type="info"
         showIcon
       />

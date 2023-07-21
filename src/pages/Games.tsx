@@ -39,14 +39,14 @@ export default (): React.ReactNode => {
         <StatisticCard.Group>
           <StatisticCard
             statistic={{
-              title: 'Lobbies',
+              title: intl.formatMessage({ id: 'app.lobbies' }),
               value: data?.lobbies.length,
             }}
           />
 
           <StatisticCard
             statistic={{
-              title: 'Online',
+              title: intl.formatMessage({ id: 'app.online' }),
               value: data?.players,
             }}
           />

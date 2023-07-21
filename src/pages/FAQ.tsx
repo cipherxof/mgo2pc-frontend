@@ -97,7 +97,7 @@ export default (): React.ReactNode => {
         <Panel header={intl.formatMessage({ id: 'app.faq.donate' })} key="6">
           <div>
             <p>
-              SaveMGO never has and never will ask for or accept donations of any kind. This is a passion project and we have no intention of profiting off of it. Furthermore, accepting donations of any kind puts the project at risk of being shut down.
+            {intl.formatMessage({ id: 'app.faq.donatetab' })}
             </p>
           </div>
         </Panel>

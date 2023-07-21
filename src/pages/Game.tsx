@@ -68,7 +68,7 @@ export default (): React.ReactNode => {
   const { data, loading } = useRequest(() => getGames(true), { pollingInterval: 10000 });
   const params = useParams<GameParams>();
 
-  const game = data?.lobbies.find((g: any) => g.id === parseInt(params.id ?? '0'));
+  const game: GameLobby = data?.lobbies.find((g: any) => g.id === parseInt(params.id ?? '0'));
 
   let content;
 
@@ -112,26 +112,35 @@ export default (): React.ReactNode => {
 
     const settingTags: JSX.Element[] = [];
 
-    settingTags.push(
-      <div>
-        <SettingTag name="Stats Enabled" enabled={!game.settings?.nonStat} />
-      </div>,
-    );
-
-    settingTags.push(
-      <div>
-        <SettingTag name="Uniques" enabled={game.settings?.uniques.enabled ?? false} />
-      </div>,
-    );
-
-    for (const [key, value] of Object.entries(game.settings)) {
-      if (typeof value !== 'boolean' || key === 'nonStat') continue;
+    if (game.settings) {
+      settingTags.push(
+        <div>
+          <SettingTag name="Stats Enabled" enabled={!game.settings?.nonStat} />
+        </div>,
+      );
 
       settingTags.push(
         <div>
-          <SettingTag name={settingName[key] ? settingName[key] : key} enabled={value} />
+          <SettingTag name="Uniques" enabled={game.settings?.uniques.enabled ?? false} />
         </div>,
       );
+      
+      const levelLimit = game.settings.levelLimit.enabled ? `Levels: ${game.settings.levelLimit.base} ± ${game.settings.levelLimit.tolerance}` : 'No level restrictions';
+      settingTags.push(
+        <div>
+          <SettingTag name={levelLimit} enabled={game.settings.levelLimit.enabled ?? false} />
+        </div>,
+      );
+
+      for (const [key, value] of Object.entries(game.settings)) {
+        if (typeof value !== 'boolean' || key === 'nonStat') continue;
+
+        settingTags.push(
+          <div>
+            <SettingTag name={settingName[key] ? settingName[key] : key} enabled={value} />
+          </div>,
+        );
+      }
     }
 
     content = (

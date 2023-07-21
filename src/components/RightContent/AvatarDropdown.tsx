@@ -2,11 +2,12 @@ import { getUserAccount } from '@/system/utility';
 import { DashboardOutlined, LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { setAlpha } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
-import { history, NavLink } from '@umijs/max';
+import { NavLink, history } from '@umijs/max';
 import { Avatar, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
 import HeaderDropdown from '../HeaderDropdown';
+import { useIntl } from '@umijs/max';
 
 const AvatarLogo = () => {
   const avatarClassName = useEmotionCss(({ token }) => {
@@ -33,7 +34,8 @@ const AvatarLogo = () => {
 
 const AvatarDropdown: React.FC = () => {
   const account = getUserAccount();
-
+  const intl = useIntl();
+  
   const actionClassName = useEmotionCss(({ token }) => {
     return {
       display: 'flex',
@@ -89,10 +91,10 @@ const AvatarDropdown: React.FC = () => {
     return (
       <>
         <NavLink className={actionClassName} style={{ color: 'inherit' }} to="/login">
-          <span>Login</span>
+          <span>{intl.formatMessage({ id: 'navBar.login' })}</span>
         </NavLink>
         <NavLink className={actionClassName} style={{ color: 'inherit' }} to="/register">
-          <span>Register</span>
+          <span>{intl.formatMessage({ id: 'navBar.register' })}</span>
         </NavLink>
       </>
     );

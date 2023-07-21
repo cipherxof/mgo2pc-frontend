@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <DefaultFooter
-        copyright={`${currentYear} SaveMGO. All rights reserved. This website is not associated with Konami or its affiliates.`}
+        copyright={`${currentYear} ${intl.formatMessage({ id: 'app.copyright' })}`}
         links={[
           {
             key: 'discordembed',
