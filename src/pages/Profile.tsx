@@ -78,14 +78,13 @@ export const ProfilePage: React.FC = () => {
             extra={headerTags}
           />
         </Card>
-        <Divider />
 
-        <div className="mb-3">
+        <div className="mt-4 mb-4">
           <Switch onChange={(e) => setWeekly(e)} /> {intl.formatMessage({ id: 'app.weekly' })}
         </div>
 
         <div className="card-container">
-          <ProCard tabs={{ type: 'card' }}>
+          <ProCard tabs={{ type: 'line' }}>
             <ProCard.TabPane key="1" tab={intl.formatMessage({ id: 'app.gamemodes' })}>
               <StatsTable stats={weekly ? profile.statsWeek : profile.stats} />
             </ProCard.TabPane>
