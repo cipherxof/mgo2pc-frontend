@@ -380,7 +380,15 @@ export default (): React.ReactNode => {
         </NavLink>
       </div>
       <Divider />
-      <div className="row">
+      <Alert
+        message="Notice"
+        description={
+          'Reward points are earned through playing the game and there is no way to otherwise purchase them.'
+        }
+        type="info"
+        showIcon
+      />
+      <div className="row mt-4">
         <div className="col-md-2">
           <Menu defaultSelectedKeys={[menu]} mode="inline" onSelect={onMenuClick}>
             <Menu.Item key="head">Head</Menu.Item>

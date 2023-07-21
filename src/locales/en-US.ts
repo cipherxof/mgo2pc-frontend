@@ -85,6 +85,7 @@ export default {
   'app.faq.nosound': 'Why do I have no sound?',
   'app.faq.host': 'How do I host?',
   'app.faq.login': "Why can't I login?",
+  'app.faq.donate': "Why doesn't SaveMGO allow donations?",
   'app.faq.sysreqtitle': 'What are the system requirements?',
   'app.faq.sysreq': `Playstation 3 emulation is very CPU intensive and works best on desktops with 8 cores and 16 threads. That being said you can get playable framerates on weaker CPUs. The best value for performance you will likely get is with the Intel i5 12400f ($150). However, if you are using a laptop we recommend one equipped with an 8-core/16-thread 35W+ H-series CPU such as an Intel Core i7-10870H or an AMD Ryzen 7 5800H.`,
   'app.welcome':

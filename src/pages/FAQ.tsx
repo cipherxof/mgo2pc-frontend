@@ -21,10 +21,10 @@ export default (): React.ReactNode => {
               <b>{intl.formatMessage({ id: 'app.minimum' })}</b>
             </p>
             <p>
-              <i>These CPUs are the minimum recommended to maintain 30 FPS in 12 player lobbies.</i>{' '}
+              <i>These CPUs are the minimum recommended to maintain 30 FPS in 12 player lobbies. </i>
             </p>
             <p>
-              <i>It is possible to play on weaker hardware than this but we cannot recommend it.</i>{' '}
+              <i>It is possible to play on weaker hardware than this but we cannot recommend it.</i>
             </p>
             <ul>
               <li>CPU: Intel i5 10400 or AMD Ryzen 3600</li>
@@ -38,7 +38,7 @@ export default (): React.ReactNode => {
               <i>
                 These CPUs are the minimum recommended to maintain 60 FPS in 16 player lobbies with
                 all graphical options enabled.
-              </i>{' '}
+              </i>
             </p>
             <ul>
               <li>CPU: Intel i7-12700K</li>
@@ -70,29 +70,35 @@ export default (): React.ReactNode => {
 
         <Panel header={intl.formatMessage({ id: 'app.faq.host' })} key="3">
           <div>
-            In order to host games you need to forward port 5730 UDP (or whatever port you selected
-            in-game. 5730 is the default).
-            <br />
-            <br />
-            The steps vary between ISPs and routers.
-            <br />
-            <br />
-            You can also try your luck with software such as Portmapper (
-            <a href="https://www.youtube.com/watch?v=eENjFkI7Zts&ab_channel=DormantHero">
-              Video Guide
-            </a>
+            <p>
+              In order to host games you need to forward port 5730 UDP (or whichever port you
+              selected in-game. 5730 is the default).
+            </p>
+            <p>The steps vary between ISPs and routers.</p>
+            <p>
+              You can also try your luck with software such as Portmapper (
+              <a href="https://www.youtube.com/watch?v=eENjFkI7Zts&ab_channel=DormantHero">
+                Video Guide
+              </a>
+            </p>
             ).
           </div>
         </Panel>
 
         <Panel header={intl.formatMessage({ id: 'app.faq.login' })} key="5">
           <div>
-            This is generally a result of having an outdated emulator. Make sure to update to the
-            newest version. The latest builds have an auto updater so this should only be an issue
-            if you are on a really old build.
-            <br />
-            <br />
-            You can find a newer build <a href="/emu/rpcs3-13720.7z">here</a>.
+            <p>
+              This is generally a result of having an outdated emulator. Make sure to update to the
+              newest version.
+            </p>
+          </div>
+        </Panel>
+
+        <Panel header={intl.formatMessage({ id: 'app.faq.donate' })} key="6">
+          <div>
+            <p>
+              SaveMGO never has and never will ask for or accept donations of any kind. This is a passion project and we have no intention of profiting off of it. Furthermore, accepting donations of any kind puts the project at risk of being shut down.
+            </p>
           </div>
         </Panel>
       </Collapse>
