@@ -487,7 +487,6 @@ export default (): React.ReactNode => {
   const cards: JSX.Element[] = [];
 
   for(const rank of ranks){
-    // let pathToImgAndShowRankEmblem:string = `https://mgo2pc.com/static/media/emblem/${1}.png`;
     let pathToImgAndShowRankEmblem:string = `/static/media/emblem/${rank.id}.png`;
 
     cards.push(
