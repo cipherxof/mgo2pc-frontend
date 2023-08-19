@@ -486,16 +486,12 @@ export default (): React.ReactNode => {
   ];
   const cards: JSX.Element[] = [];
 
-  let countArrayAnimalRanks=1;
-
   for(const rank of ranks){
+    // let pathToImgAndShowRankEmblem:string = `https://mgo2pc.com/static/media/emblem/${1}.png`;
+    let pathToImgAndShowRankEmblem:string = `/static/media/emblem/${rank.id}.png`;
 
-    const pathToImgAndShowRankEmblem = `/static/media/emblem/${rank.id}.png`;
-
-    let currentNumber = rank.id;
     cards.push(
       <div className="col-md-3 text-center">
-
         <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
           <img src={`${pathToImgAndShowRankEmblem}`} />
           <Meta title={rank.name} description={rank.description} />
