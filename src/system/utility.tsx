@@ -67,11 +67,11 @@ export const logoutUser = () => {
   localStorage.removeItem('expiry');
 };
 
-export const getRankPreview = (rank: number) => {
+export const getRankPreview = (rank: string) => { 
   return `https://mgo2pc.com/static/media/emblem/${rank}.png`;
 
 };
-export const getRankImage = (rank: number) => {
+export const getRankImage = (rank: string) => { 
   return `/static/media/emblem/${rank}.png`;
 };
 
