@@ -33,7 +33,7 @@ export default (): React.ReactNode => {
                   ),
                   startvideo: (
                     <a
-                      href="https://www.youtube.com/watch?v=7uHWGNLxmQI"
+                      href="https://www.youtube.com/playlist?list=PLO9KiFjS4cLoaKbfnpFnYoTNoE1Y5pZNn"
                       target="_blank"
                       rel="noreferrer"
                     >
