@@ -21,7 +21,7 @@ export default {
   'app.serveron': 'The server is currently online',
   'app.serveroff': 'The server is currently offline',
   'app.servercount': 'There are currently {players} players online',
-  'app.setupvideopc': 'https://www.youtube.com/embed/7uHWGNLxmQI',
+  'app.setupvideopc': 'https://www.youtube.com/embed/CnCHCIMU9ow',
   'app.setupvideops3': 'https://www.youtube.com/embed/7cuOGinyPJ8',
   'app.online': 'Online',
   'app.onlineplayers': 'Players',
