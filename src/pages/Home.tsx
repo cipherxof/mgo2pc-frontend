@@ -4,9 +4,11 @@ import { Card, Divider } from 'antd';
 import React from 'react';
 import { FormattedMessage } from 'umi';
 
-export default (): React.ReactNode => {
-  document.title = 'Home - Metal Gear Online';
 
+export default (): React.ReactNode => {
+  const intl = useIntl();
+  document.title = 'Home - Metal Gear Online';
+  
   return (
     <PageContainer>
       <div className="row">
@@ -33,7 +35,7 @@ export default (): React.ReactNode => {
                   ),
                   startvideo: (
                     <a
-                      href="https://www.youtube.com/watch?v=7uHWGNLxmQI"
+                      href={intl.formatMessage({ id: 'app.setupvideopc' })}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -52,7 +54,7 @@ export default (): React.ReactNode => {
       <div className="row">
         <div className="col-md-6" style={{ marginBottom: '16px' }}>
           <Card hoverable>
-            <a href="https://www.youtube.com/watch?v=7uHWGNLxmQI" target="_blank" rel="noreferrer">
+            <a href={intl.formatMessage({ id: 'app.setupvideops3' })} target="_blank" rel="noreferrer">
               <img style={{ maxWidth: '100%' }} src={require('../assets/img/pcbutton.png')} />
             </a>
           </Card>
