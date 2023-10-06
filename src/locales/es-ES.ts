@@ -19,7 +19,7 @@ export default {
   'app.serveron': 'El server está actualmente conectado',
   'app.serveroff': 'El server está actualmente desconectado',
   'app.servercount': 'Actualmente hay {players} jugadores en línea.',
-  'app.setupvideopc': 'https://www.youtube.com/embed/7uHWGNLxmQI',
+  'app.setupvideopc': 'https://www.youtube.com/embed/EYB3jIlbfAk',
   'app.setupvideops3': 'https://www.youtube.com/embed/7cuOGinyPJ8',
   'app.onlineplayers': 'Jugadores conectados',
   'app.weekly': 'Semanal',
