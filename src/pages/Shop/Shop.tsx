@@ -32,7 +32,7 @@ type ShopParams = {
 };
 
 const slotData: Record<string, number[]> = {};
-slotData.head = [42, 11];
+slotData.head = [42];
 slotData.upper = [11, 12, 14, 17];
 slotData.lower = [22];
 slotData.chest = [69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 192, 193, 194, 195, 196];

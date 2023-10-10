@@ -80,7 +80,7 @@ export default {
   'app.currentpw': 'Contraseña actual',
   'app.newpw': 'Nueva Contraseña',
   'app.updateinfo': 'Actualizar Cuenta',
-  'app.minimum': 'Mí¬nimo',
+  'app.minimum': 'Mínimo',
   'app.recommended': 'Recomendado',
   'app.discordshield':
     'https://img.shields.io/discord/809840002989162516?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF',
