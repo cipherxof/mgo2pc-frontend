@@ -17,7 +17,8 @@ export default {
   'menu.more.rankguide': 'ランキングと称号の取得',
   'menu.more.changelog': '更新ログ',
   'menu.more.gameguides': 'Game Guides',
-  'app.copyright': 'SaveMGO. 本サイトに掲載されている記事の無断転載を禁じます。本サイトは、コナミおよびその関連会社とは一切関係ありません。',
+  'app.copyright':
+    'SaveMGO. 本サイトに掲載されている記事の無断転載を禁じます。本サイトは、コナミおよびその関連会社とは一切関係ありません。',
   'app.serveron': 'サーバーは現在オンラインです',
   'app.serveroff': 'サーバーは現在オフラインです',
   'app.servercount': '現在 {players} 人のプレイヤーがオンラインです',
@@ -84,17 +85,123 @@ export default {
   'app.updateinfo': 'アカウント更新',
   'app.minimum': '最低動作システム環境',
   'app.recommended': '推奨システム環境',
-  'app.discordlink': "https://discord.gg/savemgojapan",
-  'app.discordshield': "https://img.shields.io/discord/833996481144291348?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF",
+  'app.discordlink': 'https://discord.gg/savemgojapan',
+  'app.discordshield':
+    'https://img.shields.io/discord/833996481144291348?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF',
   'app.faq.nosound': 'BGMなど音が出ない場合',
   'app.faq.host': '部屋の建て方・ホストの仕方',
   'app.faq.login': 'ログインに失敗する場合',
-  'app.faq.donate': "なぜSaveMGOは寄付を認めないのか？",
-  'app.faq.donatetab': "これまでも、そしてこれからも、寄付を求めたり受け取ったりすることはありません。これは情熱的なプロジェクトであり、利益を得るつもりはありません。さらに、いかなる寄付も受け入れることは、プロジェクトが閉鎖される危険性をはらんでいます。",
+  'app.faq.donate': 'なぜSaveMGOは寄付を認めないのか？',
+  'app.faq.donatetab':
+    'これまでも、そしてこれからも、寄付を求めたり受け取ったりすることはありません。これは情熱的なプロジェクトであり、利益を得るつもりはありません。さらに、いかなる寄付も受け入れることは、プロジェクトが閉鎖される危険性をはらんでいます。',
   'app.faq.sysreqtitle': '動作環境は何ですか？',
   'app.faq.sysreq':
     'Playstation 3 のエミュレーションは非常に CPU に負荷がかかるため、8 コア 16 スレッドのデスクトップで最適に動作します。とはいえ、より低スペックのCPUでもプレイ可能なFPSを得ることができます。Intel i3 12100 ($97：１万３千円くらい) または Intel i5 12400f ($150) が最もコストパフォーマンスに優れていると思われます。しかし、ノートパソコンを使用する場合は、Intel Core i7-10870H や AMD Ryzen 7 5800H などの 8 コア/16 スレッド 35W+ H シリーズ CPU を搭載したものをお勧めします。',
-  'app.rewardshopinfo': 'リワードポイントはゲームをプレーすることで獲得でき、それ以外の方法で購入することはできない。',
+  'app.rewardshopinfo':
+    'リワードポイントはゲームをプレーすることで獲得でき、それ以外の方法で購入することはできない。',
   'app.welcome':
     'メタルギア ソリッド 4 ガンズ・オブ・ザ・パトリオット』PC版のマルチプレイヤーモードを、{rpcs3}エミュレータを使用して、PS3プレイヤー同士のクロスプレイでプレイできるサービスを提供しています。\n\nこれから始める方は、{startvideo}をご覧いただくか、よくある質問のセクションをご覧ください。\n\n何かご質問があれば、お気軽に{discord}にお立ち寄りください。',
+  //Reward Shop Gear related locales
+  'app.gearslotname14': 'T-Shirt',
+  'app.gearslotdesc14':
+    'A short-sleeved T-shirt. Made of a material that readily absorbs and evaporates sweat.',
+  'app.gearslotname12': 'Long Sleeve',
+  'app.gearslotdesc12':
+    'A long-sleeved T-shirt. Protects the arms in regions where the sun is strong',
+  'app.gearslotname17': 'BDU',
+  'app.gearslotdesc17': 'The most basic camouflage uniform for the battlefield.',
+  'app.gearslotname22': 'Pants',
+  'app.gearslotdesc22': 'Combat pants with a plethora of pockets for your convenience.',
+  'app.gearslotname57': 'Boots & Knee Guards (A)',
+  'app.gearslotdesc57':
+    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. Also used by the mega PMC Praying Mantis.',
+  'app.gearslotname58': 'Boots & Knee Guards (B)',
+  'app.gearslotdesc58':
+    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. Also used by the mega PMC Pieuvre armement.',
+  'app.gearslotname60': 'Boots & Knee Guards (C)',
+  'app.gearslotdesc60':
+    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. The boots are the same type worn by the rebel army in South America.',
+  'app.gearslotname61': 'Boots & Knee Guards (D)',
+  'app.gearslotdesc61':
+    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. Worn by the U.S. troops stationed in Eastern Europe.',
+  'app.gearslotname59': 'Tactical Boots & Leg Armor',
+  'app.gearslotdesc59':
+    'A set including combat boots with slip-proof soles and made of lightweight material along with heavy but effective leg armor that protects the legs below the knees. The boots are the same type employed by the mega-PMC Raven Sword.',
+  'app.gearslotname42': 'Bandana',
+  'app.gearslotdesc42':
+    'The mens version is tied behind the head. The ladies version is hair band-type bandana with no knot.',
+  'app.gearslotname69': 'Tactical Armor (A)',
+  'app.gearslotdesc69':
+    'Body armor you can outfit with a variety of equipment. Also used by the mega PMC Praying Mantis.',
+  'app.gearslotname71': 'Tactical Armor (B)',
+  'app.gearslotdesc71':
+    'Body armor you can outfit with a variety of equipment. Features enhanced protection. Also used by the mega PMC Raven Sword.',
+  'app.gearslotname75': 'Tactical Armor (C)',
+  'app.gearslotdesc75':
+    'Body armor you can outfit with a variety of equipment. Offers heavy protection.Carried by the U.S. troops stationed in Eastern Europe.',
+  'app.gearslotname194': 'Tactical Armor (D)',
+  'app.gearslotdesc194': 'Body armor you can outfit with a variety of equipment.',
+  'app.gearslotname70': 'Chest Harness (A)',
+  'app.gearslotdesc70':
+    'A harness that comes in handy when you have got lots of equipment to carry. Also used by the mega PMC Pieuvre armement.',
+  'app.gearslotname76': 'Chest Harness (B)',
+  'app.gearslotdesc76':
+    'A relatively simple-looking yet functional harness. Worn by the Middle Eastern rebels.',
+  'app.gearslotname78': 'Chest Harness (C)',
+  'app.gearslotdesc78':
+    'A harness created to allow different types of equipment to be used in combination.',
+  'app.gearslotname80': 'Chest Harness (D)',
+  'app.gearslotdesc80': 'A relatively simple-looking yet functional harness.',
+  'app.gearslotname73': 'H Harness (A)',
+  'app.gearslotdesc73':
+    'A fairly robust H-shaped harness that comes in handy when you have got even more equipment to carry. Worn by the rebel guerillas in South America.',
+  'app.gearslotname74': 'H Harness (B)',
+  'app.gearslotdesc74':
+    'A basic H-shaped harness. For lightweight equipment. Worn by the rebel guerillas in South America.',
+  'app.gearslotname77': 'Load Bearing Vest (A)',
+  'app.gearslotdesc77': 'A multipurpose vest designed to let you carry relatively heavy equipment.',
+  'app.gearslotname79': 'Load Bearing Vest (B)',
+  'app.gearslotdesc79': 'A multipurpose vest designed to let you carry relatively heavy equipment.',
+  'app.gearslotname72': 'Tactical Vest (A)',
+  'app.gearslotdesc72':
+    'A highly expandable heavy-duty combat vest. Worn by the rebel guerillas in South America.',
+  'app.gearslotname195': 'SWAT Vest',
+  'app.gearslotdesc195': 'A highly expandable heavy-duty combat vest.',
+  'app.gearslotname196': 'STABO Harness',
+  'app.gearslotdesc196':
+    'A special harness designed for withdrawing from the battlefield. The equipment has poor expandability.',
+  'app.gearslotname192': 'Grenade Harness',
+  'app.gearslotdesc192':
+    'Gear that shows off QUARTERBACK Skills. The Grenades that come equipped are fake and cannot be used.',
+  'app.gearslotname193': 'Magazine Carrier',
+  'app.gearslotdesc193':
+    'Gear that shows off TRICKSTER Skills. The Magazine that comes equpped is fake and cannot be used.',
+  'app.gearslotname87': 'Leg Holster (A)',
+  'app.gearslotdesc87':
+    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin. Also used by the mega PMC Praying Mantis.',
+  'app.gearslotname89': 'Leg Holster (B)',
+  'app.gearslotdesc89':
+    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin. Also used by the mega PMC Pieuvre armement.',
+  'app.gearslotname91': 'Leg Holster (C)',
+  'app.gearslotdesc91':
+    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin. Carried by the U.S. troops stationed in Eastern Europe.',
+  'app.gearslotname96': 'Leg Holster (D)',
+  'app.gearslotdesc96':
+    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin.',
+  'app.gearslotname88': 'Leg Pouch (A)',
+  'app.gearslotdesc88':
+    'A pouch worn on the thigh that holds ammo magazines and other equipment. Also used by the mega PMC Pieuvre armement.',
+  'app.gearslotname94': 'Leg Pouch (B)',
+  'app.gearslotdesc94': 'A pouch worn on the thigh that holds ammo magazines and other equipment.',
+  'app.gearslotname95': 'Leg Pouch (C)',
+  'app.gearslotdesc95': 'A pouch worn on the thigh that holds ammo magazines and other equipment.',
+  'app.gearslotname97': 'Leg Pouch (D)',
+  'app.gearslotdesc97': 'A pouch worn on the thigh that holds ammo magazines and other equipment.',
+  'app.gearslotname92': 'Dump Pouch (A)',
+  'app.gearslotdesc92': 'A pouch for storing spent magazines.',
+  'app.gearslotname90': 'Leg Armor',
+  'app.gearslotdesc90':
+    'Armor to protect the thighs. Can also hold equipment. Also used by the mega PMC Raven Sword.',
+  'app.gearslotname11': 'Tactical Jacket',
+  'app.gearslotdesc11': 'A combat jacket made of a highly breathable non restrictive material.',
 };

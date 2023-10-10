@@ -32,7 +32,7 @@ type ShopParams = {
 };
 
 const slotData: Record<string, number[]> = {};
-slotData.head = [42];
+slotData.head = [42, 11];
 slotData.upper = [11, 12, 14, 17];
 slotData.lower = [22];
 slotData.chest = [69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 192, 193, 194, 195, 196];
@@ -228,9 +228,17 @@ export default (): React.ReactNode => {
         if (!slotData[menu].includes(slot.gear_slot)) continue;
         itemJsx.push(
           <div key={slot.id} className="col-md-4 mb-3">
-            <ShopSlotCard item={slot} />
+            <ShopSlotCard
+              item={{
+                gear_slot: slot.gear_slot,
+                id: slot.gearId,
+                info: `${intl.formatMessage({ id: `app.gearslotdesc${slot.gear_slot}` })}`,
+                name: `${intl.formatMessage({ id: `app.gearslotname${slot.gear_slot}` })}`,
+              }}
+            />
           </div>,
         );
+        console.log(slot.gear_slot);
       }
 
       if (itemJsx.length == 0) {
@@ -308,7 +316,6 @@ export default (): React.ReactNode => {
       }
 
       let gearImages = <></>;
-
       if (menu !== 'feet' && menu !== 'head') {
         if (params.id === '14' || params.id === '12') {
           gearImages = (

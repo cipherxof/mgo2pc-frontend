@@ -1,9 +1,5 @@
-import { LocalizedModal } from '@/components/LocalizedModal';
-import { purchaseItem } from '@/services/mgo2pc/api';
-import { getUserToken } from '@/system/utility';
-import { ShoppingCartOutlined, UserAddOutlined } from '@ant-design/icons';
-import { Avatar, Button, Card, Divider, Modal, notification, Select, Space, Tag } from 'antd';
-import React, { useState } from 'react';
+import { Card, Select } from 'antd';
+import React from 'react';
 import { NavLink } from 'umi';
 
 const { Meta } = Card;
