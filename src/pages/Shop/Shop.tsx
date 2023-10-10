@@ -238,7 +238,6 @@ export default (): React.ReactNode => {
             />
           </div>,
         );
-        console.log(slot.gear_slot);
       }
 
       if (itemJsx.length == 0) {
