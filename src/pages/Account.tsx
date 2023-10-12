@@ -33,7 +33,7 @@ export default (): React.ReactNode => {
     if (!token) {
       notification.error({
         message: `Error`,
-        description: 'You are not logged in.',
+        description: `${intl.formatMessage({ id: 'app.loggedin' })}`,
         placement: 'topRight',
       });
       return;
@@ -50,7 +50,7 @@ export default (): React.ReactNode => {
       await updateAccount(data);
       notification.success({
         message: `Success`,
-        description: 'Your account has been updated.',
+        description: `${intl.formatMessage({ id: 'app.updated' })}`,
         placement: 'topRight',
       });
       history.push('/');

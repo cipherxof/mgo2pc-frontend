@@ -42,7 +42,7 @@ export default () => {
         backgroundImageUrl={require(`../../../assets/img/background-1.jpg`)}
         logo={require(`../../../assets/img/logo.png`)}
         title=""
-        subTitle="Fill out the form to reset your password"
+        subTitle={intl.formatMessage({ id: 'app.fillform2' })}
         submitter={{
           searchConfig: {
             submitText: intl.formatMessage({ id: 'app.resetpw' }),

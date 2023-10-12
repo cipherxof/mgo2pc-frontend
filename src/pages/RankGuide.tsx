@@ -1,7 +1,7 @@
-import { getRankId, getRankPreview, getRankImage, arrayAnimalRanks } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Descriptions, Typography } from 'antd';
+import { Card, Typography } from 'antd';
 import React from 'react';
+import { useIntl } from 'umi';
 
 const { Meta } = Card;
 const { Text } = Typography;
@@ -12,10 +12,9 @@ type RankInfo = {
   description: JSX.Element;
 };
 
-
-
 export default (): React.ReactNode => {
   document.title = 'Ranking Guide - Metal Gear Online';
+  const intl = useIntl();
 
   const ranks: RankInfo[] = [
     {
@@ -24,24 +23,44 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
-            at least <Text type="success">1.45</Text>
+            {intl.formatMessage({ id: 'app.kdrsrr' })}{' '}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.dm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.tdm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.sne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">1.45</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
-            <Text type="success">52.5%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.cap' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.base' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.bomb' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.res' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.tsne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">52.5%</Text>
           </p>
           <p>
-            Win % in <Text type="warning">RACE</Text> at least <Text type="success">50%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">50%</Text>
           </p>
           <p>
-            Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.60</Text>
+            {intl.formatMessage({ id: 'app.basecapratio' })} <Text type="success">1.60</Text>
           </p>
           <p>
-            Withdrawal % = <Text type="success">≤2%</Text>
+            {intl.formatMessage({ id: 'app.withdrawel' })} <Text type="success">≤2%</Text>
           </p>
           <p>
-            <Text type="success">100</Text> rounds in all previously mentioned modes.
+            <Text type="success">100</Text> {intl.formatMessage({ id: 'app.totalrounds' })}
           </p>
         </>
       ),
@@ -53,24 +72,45 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
-            at least <Text type="success">1.40</Text>
+            {intl.formatMessage({ id: 'app.kdrsrr' })}{' '}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.dm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.tdm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.sne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">1.40</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
-            <Text type="success">47.5%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.cap' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.base' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.bomb' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.res' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.tsne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })}
+            <Text type="success"> 47.5%</Text>
           </p>
           <p>
-            Win % in <Text type="warning">RACE</Text> at least <Text type="success">45%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">45%</Text>
           </p>
           <p>
-            Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.40</Text>
+            {intl.formatMessage({ id: 'app.basecapratio' })} <Text type="success">1.40</Text>
           </p>
           <p>
-            Withdrawal % = <Text type="success">≤2%</Text>
+            {intl.formatMessage({ id: 'app.withdrawel' })} <Text type="success">≤2%</Text>
           </p>
           <p>
-            <Text type="success">50</Text> rounds in all previously mentioned modes.
+            <Text type="success">50</Text> {intl.formatMessage({ id: 'app.totalrounds' })}
           </p>
         </>
       ),
@@ -81,24 +121,47 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
-            at least <Text type="success">1.35</Text>
+            {intl.formatMessage({ id: 'app.kdrsrr' })}{' '}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.dm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.tdm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.sne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })}
+            <Text type="success"> 1.35</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
-            <Text type="success">45%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.cap' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.base' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.bomb' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.res' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.tsne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">45%</Text>
           </p>
           <p>
-            Win % in <Text type="warning">RACE</Text> at least <Text type="success">42.5%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">42.5%</Text>
           </p>
           <p>
-            Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.20</Text>
+            {intl.formatMessage({ id: 'app.basecapratio' })} <Text type="success">1.20</Text>
           </p>
           <p>
-            Withdrawal % = <Text type="success">≤4%</Text>
+            {intl.formatMessage({ id: 'app.withdrawel' })}
+            <Text type="success"> ≤4%</Text>
           </p>
           <p>
-            <Text type="success">25</Text> rounds in all previously mentioned modes.
+            <Text type="success">25 </Text>
+            {intl.formatMessage({ id: 'app.totalrounds' })}
           </p>
         </>
       ),
@@ -109,24 +172,47 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received in <Text type="warning">DM, TDM, and SNE</Text>{' '}
-            at least <Text type="success">1.30</Text>
+            {intl.formatMessage({ id: 'app.kdrsrr' })}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.dm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.tdm' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.sne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })}
+            <Text type="success"> 1.30</Text>
           </p>
           <p>
-            Win % in <Text type="warning">CAP, BASE, BOMB, RES, TSNE</Text> at least{' '}
-            <Text type="success">42.5%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">
+              {intl.formatMessage({ id: 'app.cap' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.base' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.bomb' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.res' })}
+              {', '}
+              {intl.formatMessage({ id: 'app.and' })} {intl.formatMessage({ id: 'app.tsne' })}
+            </Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })} <Text type="success">42.5%</Text>
           </p>
           <p>
-            Win % in <Text type="warning">RACE</Text> at least <Text type="success">40%</Text>
+            {intl.formatMessage({ id: 'app.win%in' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.atleast' })}
+            <Text type="success">40%</Text>
           </p>
           <p>
-            Bases capped ÷ Total Base Rounds = higher than <Text type="success">1.00</Text>
+            {intl.formatMessage({ id: 'app.basecapratio' })} <Text type="success">1.00</Text>
           </p>
           <p>
-            Withdrawal % = <Text type="success">≤4%</Text>
+            {intl.formatMessage({ id: 'app.withdrawel' })} <Text type="success">≤4%</Text>
           </p>
           <p>
-            <Text type="success">5</Text> rounds in all previously mentioned modes.
+            <Text type="success">5 </Text>
+            {intl.formatMessage({ id: 'app.totalrounds' })}
           </p>
         </>
       ),
@@ -137,7 +223,7 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.50</Text>
+            {intl.formatMessage({ id: 'app.kdrsrr' })} {`>=`} <Text type="success">1.50</Text>
           </p>
           <br />
         </>
@@ -149,10 +235,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.30</Text>
+            {intl.formatMessage({ id: 'app.kdrsrr' })} {`>=`} <Text type="success">1.30</Text>
           </p>
           <p>
-            Headshot Kills + Headshot Stuns ÷ Kills + Stuns {`>=`} <Text type="success">0.50</Text>
+            {intl.formatMessage({ id: 'app.headbodyratio' })} {`>=`}{' '}
+            <Text type="success">0.50</Text>
           </p>
         </>
       ),
@@ -163,10 +250,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills + Stuns ÷ Deaths + Stuns Received {`>=`} <Text type="success">1.25</Text>
+            {intl.formatMessage({ id: 'app.kdrsrr' })} {`>=`} <Text type="success">1.25</Text>
           </p>
           <p>
-            Knife kills ÷ Total Kills {`>=`} <Text type="success">0.075</Text>
+            {intl.formatMessage({ id: 'app.knifekillratio' })} {`>=`}{' '}
+            <Text type="success">0.075</Text>
           </p>
           <br />
         </>
@@ -178,8 +266,10 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Deaths ÷ Rounds Played in <Text type="warning">RES</Text> and{' '}
-            <Text type="warning">TSNE</Text> {`<=`} <Text type="success">0.5</Text>
+            {intl.formatMessage({ id: 'app.survivalratio' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.res' })}</Text> and{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.tsne' })}</Text> {`<=`}{' '}
+            <Text type="success">0.50</Text>
           </p>
           <br />
         </>
@@ -191,13 +281,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills ÷ Deaths {`<=`} <Text type="success">0.85</Text>
+            {intl.formatMessage({ id: 'app.kdrrank' })} {`<=`} <Text type="success">0.85</Text>
           </p>
           <p>
-            Headshot Deaths ÷ Deaths {`>=`} <Text type="success">0.60</Text>
+            {intl.formatMessage({ id: 'app.headshotdeathratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Stuns ÷ Stuns Received {`<=`} <Text type="success">0.85</Text>
+            {intl.formatMessage({ id: 'app.stunratio' })} {`<=`} <Text type="success">0.85</Text>
           </p>
           <br />
         </>
@@ -209,7 +300,7 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Rolls ÷ Rounds {`>=`} <Text type="success">15.0</Text>
+            {intl.formatMessage({ id: 'app.rollratio' })} {`>=`} <Text type="success">15</Text>
           </p>
           <br />
         </>
@@ -221,10 +312,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Stuns ÷ Kills {`>=`} <Text type="success">1.20</Text>
+            {intl.formatMessage({ id: 'app.stunkillratio' })} {`>=`}{' '}
+            <Text type="success">1.20</Text>
           </p>
           <p>
-            Stuns ÷ Stuns Received {`>=`} <Text type="success">1.20</Text>
+            {intl.formatMessage({ id: 'app.stunratio' })} {`>=`} <Text type="success">1.20</Text>
           </p>
           <br />
           <br />
@@ -237,7 +329,7 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Time Using ENVG Goggles ÷ Play Time {`>=`} <Text type="success">0.05</Text>
+            {intl.formatMessage({ id: 'app.envg' })} {`>=`} <Text type="success">0.05</Text>
           </p>
           <br />
         </>
@@ -249,7 +341,8 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Last Login {`>=`} <Text type="success">30.0</Text> Days
+            {intl.formatMessage({ id: 'app.lastlogin' })} {`>=`} <Text type="success">30</Text>{' '}
+            {intl.formatMessage({ id: 'app.dayssincelastplay' })}
           </p>
           <br />
         </>
@@ -261,10 +354,11 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Sneaking Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            {intl.formatMessage({ id: 'app.sneratio' })} {`>=`} <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of Sneaking Mission {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.sneweeklyrounds' })} {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -276,10 +370,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">CAP</Text> Rounds ÷ Overall Rounds {`>=`} <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.cap' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">CAP</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.cap' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -291,11 +389,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">RES</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.res' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">RES</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.res' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -307,11 +408,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">TSNE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.tsne' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">TSNE</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.tsne' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -323,16 +427,20 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Kills ÷ Rounds {`<=`} <Text type="success">0.3</Text>
+            {intl.formatMessage({ id: 'app.killsperround' })} {`<=`}{' '}
+            <Text type="success">0.30</Text>
           </p>
           <p>
-            Stuns ÷ Rounds {`<=`} <Text type="success">0.3</Text>
+            {intl.formatMessage({ id: 'app.stunsperround' })} {`<=`}{' '}
+            <Text type="success">0.30</Text>
           </p>
           <p>
-            Stuns Received ÷ Rounds {`<=`} <Text type="success">0.5</Text>
+            {intl.formatMessage({ id: 'app.stunsreceivedperround' })} {`<=`}{' '}
+            <Text type="success">0.50</Text>
           </p>
           <p>
-            Deaths ÷ Rounds {`<=`} <Text type="success">0.5</Text>
+            {intl.formatMessage({ id: 'app.deathsperround' })} {`<=`}{' '}
+            <Text type="success">0.50</Text>
           </p>
           <br />
         </>
@@ -344,7 +452,7 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            CQC Attacks ÷ Rounds {`>=`} <Text type="success">5.0</Text>
+            {intl.formatMessage({ id: 'app.cqcperround' })} {`>=`} <Text type="success">5</Text>
           </p>
           <br />
         </>
@@ -356,7 +464,7 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Box Uses ÷ Overall Rounds {`>=`} <Text type="success">15.0</Text>
+            {intl.formatMessage({ id: 'app.boxperround' })} {`>=`} <Text type="success">15</Text>
           </p>
           <br />
         </>
@@ -368,7 +476,8 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Scans ÷ Rounds {`>=`} <Text type="success">0.3</Text>
+            {intl.formatMessage({ id: 'app.scansperround' })} {`>=`}{' '}
+            <Text type="success">0.30</Text>
           </p>
           <br />
         </>
@@ -380,7 +489,8 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            Stuck In Trap ÷ Rounds {`>=`} <Text type="success">0.3</Text>
+            {intl.formatMessage({ id: 'app.trapcaughtperround' })} {`>=`}{' '}
+            <Text type="success">0.30</Text>
           </p>
           <br />
         </>
@@ -392,11 +502,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">DM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.dm' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">DM</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.dm' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -408,11 +521,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">SDM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.sdm' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">SDM</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.sdm' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -424,11 +540,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">TDM</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.tdm' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">TDM</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.tdm' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -440,11 +559,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">BASE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.base' })} </Text>
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">BASE</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.base' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -456,11 +578,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">BOMB</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.bomb' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">BOMB</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.bomb' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
 
           <br />
@@ -473,11 +598,14 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            <Text type="warning">RACE</Text> Rounds ÷ Overall Rounds {`>=`}{' '}
-            <Text type="success">0.6</Text>
+            <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text>{' '}
+            {intl.formatMessage({ id: 'app.moderoundsplayedratio' })} {`>=`}{' '}
+            <Text type="success">0.60</Text>
           </p>
           <p>
-            Weekly Rounds of <Text type="warning">RACE</Text> {`>=`} <Text type="success">30</Text>
+            {intl.formatMessage({ id: 'app.weeklyrounds' })}{' '}
+            <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text> {`>=`}{' '}
+            <Text type="success">30</Text>
           </p>
           <br />
         </>
@@ -486,16 +614,14 @@ export default (): React.ReactNode => {
   ];
   const cards: JSX.Element[] = [];
 
-  let countArrayAnimalRanks=1;
+  let countArrayAnimalRanks = 1;
 
-  for(const rank of ranks){
-
+  for (const rank of ranks) {
     const pathToImgAndShowRankEmblem = `/static/media/emblem/${rank.id}.png`;
 
     let currentNumber = rank.id;
     cards.push(
       <div className="col-md-3 text-center">
-
         <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
           <img src={`${pathToImgAndShowRankEmblem}`} />
           <Meta title={rank.name} description={rank.description} />
@@ -508,9 +634,5 @@ export default (): React.ReactNode => {
     <PageContainer>
       <div className="row">{cards}</div>
     </PageContainer>
-  )};
-
-
-
-
-
+  );
+};

@@ -1,5 +1,6 @@
 import { getNotifications, readNotification } from '@/services/mgo2pc/api';
 import { getUserToken } from '@/system/utility';
+import { useIntl } from '@umijs/max';
 import { message, Tag } from 'antd';
 import { groupBy } from 'lodash';
 import { useEffect, useState } from 'react';
@@ -71,6 +72,7 @@ const getUnreadData = (noticeData: Record<string, any[]>) => {
 
 const NoticeIconView = () => {
   const [notices, setNotices] = useState<any[]>([]);
+  const intl = useIntl();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -158,7 +160,7 @@ const NoticeIconView = () => {
       }}
       onClear={(title: string, key: string) => clearReadState(title, key)}
       loading={false}
-      clearText="Clear"
+      clearText={intl.formatMessage({ id: 'navBar.clear' })}
       onViewMore={() => message.info('Click on view more')}
       clearClose
     >
@@ -166,15 +168,15 @@ const NoticeIconView = () => {
         tabKey="notification"
         count={unreadMsg.notification}
         list={noticeData.notification}
-        title="Notifications"
-        emptyText="You have no notifications"
+        title={intl.formatMessage({ id: 'navBar.notifications' })}
+        emptyText={intl.formatMessage({ id: 'navBar.nonotifications' })}
         showViewMore
       />
       <NoticeIcon.Tab
         tabKey="message"
         count={unreadMsg.message}
         list={noticeData.message}
-        title="Messages"
+        title={intl.formatMessage({ id: 'navBar.messages' })}
         emptyText="You have no messages."
         showViewMore
       />

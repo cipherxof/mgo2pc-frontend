@@ -1,16 +1,17 @@
-
-import { Card, Input, Statistic } from "antd";
-import React, { useState } from "react";
-import { formatTime } from "../../system/utility";
+import { useIntl } from '@umijs/max';
+import { Card, Input, Statistic } from 'antd';
+import { useState } from 'react';
+import { formatTime } from '../../system/utility';
 
 const { Search } = Input;
 
 type PersonalScoresProps = {
-  stats: Stats
-}
+  stats: Stats;
+};
 
 export default function PersonalScores(props: PersonalScoresProps): JSX.Element {
-  const [data, setData] = useState({ search: "" });
+  const intl = useIntl();
+  const [data, setData] = useState({ search: '' });
 
   const statsTDM = JSON.parse(props.stats.stats_tdm);
   const statsDM = JSON.parse(props.stats.stats_dm);
@@ -25,50 +26,77 @@ export default function PersonalScores(props: PersonalScoresProps): JSX.Element 
   const statsSM = JSON.parse(props.stats.stats_sm);
 
   const dataSource = [
-    { key: 'Consecutive Kills', value: props.stats.consecutive_kills },
-    { key: 'Consecutive Deaths', value: props.stats.consecutive_deaths },
-    { key: 'Consecutive Headshots', value: props.stats.consecutive_headshots },
-    { key: 'Suicides', value: props.stats.suicides },
-    { key: 'Friendly Kills', value: props.stats.team_kills },
-    { key: 'Friendly Stuns', value: props.stats.stuns_friendly },
-    { key: 'Times Stunned', value: props.stats.stuns_received },
-    { key: 'Aborts', value: props.stats.withdrawals },
-    { key: 'Radio Uses', value: props.stats.radio },
-    { key: 'Chat Uses', value: props.stats.chat },
-    { key: 'CQC Attacks Given', value: props.stats.cqc_given },
-    { key: 'CQC Attacks Taken', value: props.stats.cqc_taken },
-    { key: 'Rolls', value: props.stats.rolls },
-    { key: 'Salutes', value: props.stats.salutes },
-    { key: 'Catapult Uses', value: props.stats.catapult },
-    { key: 'Bases Captured', value: props.stats.bases_captured },
-    { key: 'Boosts Given', value: props.stats.boosts },
-    { key: 'Falling Deaths', value: props.stats.falls },
-    { key: 'Times Caught in Trap', value: props.stats.trapped },
-    { key: 'Melee Hits', value: props.stats.melee },
-    { key: 'Scans Performed', value: props.stats.scans },
-    { key: 'Knife Kills', value: props.stats.knife_kills },
-    { key: 'Knife Stuns', value: props.stats.knife_stuns },
-    { key: 'Assist Points', value: props.stats.points_assist },
-    { key: 'Base Points', value: props.stats.points_base },
-    { key: 'TSNE Wakeups', value: props.stats.wakeups },
-    { key: 'SNE Tags Spawned', value: props.stats.snake_tags_spawned },
-    { key: 'SNE Tags Collected', value: props.stats.snake_tags_taken },
-    { key: 'SNE Wins as Snake', value: props.stats.wins_snake },
-    { key: 'Cardboard Box Uses', value: props.stats.box_uses },
-    { key: 'Time in Cardboard Box', value: formatTime(props.stats.box_time) },
-    { key: 'Total Time Using ENVG', value: formatTime(props.stats.evg_time) },
-    { key: 'Total Time: Dedicated Host', value: formatTime(props.stats.time_dedi) },
-    { key: 'Total Time: Deathmatch', value: formatTime(statsDM.time) },
-    { key: 'Total Time: Stealth Deathmatch', value: formatTime(statsSDM.time) },
-    { key: 'Total Time: Solo Capture', value: formatTime(statsSCAP.time) },
-    { key: 'Total Time: Team Deathmatch', value: formatTime(statsTDM.time) },
-    { key: 'Total Time: Capture Mission', value: formatTime(statsCAP.time) },
-    { key: 'Total Time: Base Mission', value: formatTime(statsBase.time) },
-    { key: 'Total Time: Bomb Mission', value: formatTime(statsBomb.time) },
-    { key: 'Total Time: Race Mission', value: formatTime(statsRace.time) },
-    { key: 'Total Time: Rescue Mission', value: formatTime(statsRes.time) },
-    { key: 'Total Time: Team Sneaking', value: formatTime(statsTSNE.time) },
-    { key: 'Total Time: Sneaking Mission', value: formatTime(statsSM.time) },
+    {
+      key: `${intl.formatMessage({ id: 'app.conceckills' })}`,
+      value: props.stats.consecutive_kills,
+    },
+    {
+      key: `${intl.formatMessage({ id: 'app.concecdeaths' })}`,
+      value: props.stats.consecutive_deaths,
+    },
+    {
+      key: `${intl.formatMessage({ id: 'app.concechs' })}`,
+      value: props.stats.consecutive_headshots,
+    },
+    { key: `${intl.formatMessage({ id: 'app.suicides' })}`, value: props.stats.suicides },
+    { key: `${intl.formatMessage({ id: 'app.friendlykills' })}`, value: props.stats.team_kills },
+    {
+      key: `${intl.formatMessage({ id: 'app.friendlystuns' })}`,
+      value: props.stats.stuns_friendly,
+    },
+    { key: `${intl.formatMessage({ id: 'app.timesstunned' })}`, value: props.stats.stuns_received },
+    { key: `${intl.formatMessage({ id: 'app.aborts' })}`, value: props.stats.withdrawals },
+    { key: `${intl.formatMessage({ id: 'app.radiouse' })}`, value: props.stats.radio },
+    { key: `${intl.formatMessage({ id: 'app.chatuse' })}`, value: props.stats.chat },
+    { key: `${intl.formatMessage({ id: 'app.cqcgiven' })}`, value: props.stats.cqc_given },
+    { key: `${intl.formatMessage({ id: 'app.cqctaken' })}`, value: props.stats.cqc_taken },
+    { key: `${intl.formatMessage({ id: 'app.rolls' })}`, value: props.stats.rolls },
+    { key: `${intl.formatMessage({ id: 'app.salutes' })}`, value: props.stats.salutes },
+    { key: `${intl.formatMessage({ id: 'app.catapult' })}`, value: props.stats.catapult },
+    { key: `${intl.formatMessage({ id: 'app.basecap' })}`, value: props.stats.bases_captured },
+    { key: `${intl.formatMessage({ id: 'app.boosts' })}`, value: props.stats.boosts },
+    { key: `${intl.formatMessage({ id: 'app.falldeath' })}`, value: props.stats.falls },
+    { key: `${intl.formatMessage({ id: 'app.caughttrap' })}`, value: props.stats.trapped },
+    { key: `${intl.formatMessage({ id: 'app.melee' })}`, value: props.stats.melee },
+    { key: `${intl.formatMessage({ id: 'app.scansp' })}`, value: props.stats.scans },
+    { key: `${intl.formatMessage({ id: 'app.knifekill' })}`, value: props.stats.knife_kills },
+    { key: `${intl.formatMessage({ id: 'app.knifestuns' })}`, value: props.stats.knife_stuns },
+    { key: `${intl.formatMessage({ id: 'app.assist' })}`, value: props.stats.points_assist },
+    { key: `${intl.formatMessage({ id: 'app.basep' })}`, value: props.stats.points_base },
+    { key: `${intl.formatMessage({ id: 'app.tsnep' })}`, value: props.stats.wakeups },
+    {
+      key: `${intl.formatMessage({ id: 'app.snetagspawn' })}`,
+      value: props.stats.snake_tags_spawned,
+    },
+    {
+      key: `${intl.formatMessage({ id: 'app.snetagcollected' })}`,
+      value: props.stats.snake_tags_taken,
+    },
+    { key: `${intl.formatMessage({ id: 'app.snewin' })}`, value: props.stats.wins_snake },
+    { key: `${intl.formatMessage({ id: 'app.cardboarduse' })}`, value: props.stats.box_uses },
+    {
+      key: `${intl.formatMessage({ id: 'app.cardboardtime' })}`,
+      value: formatTime(props.stats.box_time),
+    },
+    {
+      key: `${intl.formatMessage({ id: 'app.envgtime' })}`,
+      value: formatTime(props.stats.evg_time),
+    },
+    {
+      key: `${intl.formatMessage({ id: 'app.dedicatedhosttime' })}`,
+      value: formatTime(props.stats.time_dedi),
+    },
+    { key: `${intl.formatMessage({ id: 'app.deathmatchtime' })}`, value: formatTime(statsDM.time) },
+    { key: `${intl.formatMessage({ id: 'app.sdmtime' })}`, value: formatTime(statsSDM.time) },
+    { key: `${intl.formatMessage({ id: 'app.scaptime' })}`, value: formatTime(statsSCAP.time) },
+    { key: `${intl.formatMessage({ id: 'app.tdmtime' })}`, value: formatTime(statsTDM.time) },
+    { key: `${intl.formatMessage({ id: 'app.captime' })}`, value: formatTime(statsCAP.time) },
+    { key: `${intl.formatMessage({ id: 'app.basetime' })}`, value: formatTime(statsBase.time) },
+    { key: `${intl.formatMessage({ id: 'app.bombtime' })}`, value: formatTime(statsBomb.time) },
+    { key: `${intl.formatMessage({ id: 'app.racetime' })}`, value: formatTime(statsRace.time) },
+    { key: `${intl.formatMessage({ id: 'app.rescuetime' })}`, value: formatTime(statsRes.time) },
+    { key: `${intl.formatMessage({ id: 'app.tsnetime' })}`, value: formatTime(statsTSNE.time) },
+    { key: `${intl.formatMessage({ id: 'app.snetime' })}`, value: formatTime(statsSM.time) },
   ];
 
   const contents = [<div></div>];
@@ -77,25 +105,44 @@ export default function PersonalScores(props: PersonalScoresProps): JSX.Element 
 
   for (const stat of dataSource) {
     if (col === 4) {
-      contents.push(<div className="row" style={{ marginBottom: "16px" }}>{cols}</div>);
+      contents.push(
+        <div className="row" style={{ marginBottom: '16px' }}>
+          {cols}
+        </div>,
+      );
       cols = [];
       col = 0;
     }
     if (stat.key.toLowerCase().indexOf(data.search.toLowerCase()) !== -1) {
-      cols.push(<div className="col-md-3"><Card><Statistic title={stat.key} value={stat.value} /></Card></div>)
-      col+=1;
+      cols.push(
+        <div className="col-md-3">
+          <Card>
+            <Statistic title={stat.key} value={stat.value} />
+          </Card>
+        </div>,
+      );
+      col += 1;
     }
   }
 
   if (col > 0) {
-    contents.push(<div className="row" style={{ marginBottom: "16px" }}>{cols}</div>);
+    contents.push(
+      <div className="row" style={{ marginBottom: '16px' }}>
+        {cols}
+      </div>,
+    );
   }
 
   return (
     <div>
-      <Search placeholder="input search text" onSearch={(e) => setData({ search: e })} enterButton />
+      <Search
+        placeholder="input search text"
+        onSearch={(e) => setData({ search: e })}
+        enterButton
+      />
 
-      <br /><br />
+      <br />
+      <br />
 
       {contents}
     </div>

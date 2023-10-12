@@ -6,11 +6,12 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { history } from '@umijs/max';
 import { Avatar, Button, Card, notification, Popover, Progress } from 'antd';
 import React from 'react';
-import { NavLink, useRequest } from 'umi';
+import { NavLink, useIntl, useRequest } from 'umi';
 
 const { Meta } = Card;
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   const { data, refresh } = useRequest(getAccount);
 
   if (!isLoggedIn()) {
@@ -28,7 +29,7 @@ export default (): React.ReactNode => {
       await updateAccount({ main: id });
       notification.success({
         message: `Success`,
-        description: 'Your main character has been updated.',
+        description: intl.formatMessage({ id: 'app.maincharupdate' }),
         placement: 'topRight',
       });
       refresh();
@@ -45,9 +46,11 @@ export default (): React.ReactNode => {
         ((xp - getLevelReq(level)) / (getLevelReq(level + 1) - getLevelReq(level))) * 100;
 
       const title = isMain ? `${character.name} *` : character.name;
-      const availRanks = character.available_ranks === '' ? [] : character.available_ranks.split(',');
+      const availRanks =
+        character.available_ranks === '' ? [] : character.available_ranks.split(',');
 
-      if (availRanks[0] === '') { // woops
+      if (availRanks[0] === '') {
+        // woops
         availRanks.shift();
       }
 
@@ -60,13 +63,9 @@ export default (): React.ReactNode => {
                 disabled={data.main === character.id}
                 onClick={() => updateMain(character.id)}
               >
-                Set as main
+                {intl.formatMessage({ id: 'app.setasmain' })}
               </Button>,
-              <RankSelect
-                character={character.id}
-                allowed={availRanks}
-                rank={character.rank}
-              />,
+              <RankSelect character={character.id} allowed={availRanks} rank={character.rank} />,
             ]}
           >
             <NavLink to={`/profile/${encodeURIComponent(character.name)}`}>

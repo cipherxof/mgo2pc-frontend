@@ -1,7 +1,7 @@
 import { history, useParams } from '@umijs/max';
 import { Button, Result } from 'antd';
 import React from 'react';
-import { Link } from 'umi';
+import { Link, useIntl } from 'umi';
 
 import { PageContainer } from '@ant-design/pro-components';
 import styles from './style.less';
@@ -12,7 +12,7 @@ const actions = (
       <Button size="large" type="primary">
         <span>Login</span>
       </Button>
-      </Link>
+    </Link>
     <Link to="/">
       <Button size="large">Home</Button>
     </Link>
@@ -25,13 +25,18 @@ type ResultParams = {
 
 const RegisterResult: React.FC = () => {
   const params = useParams<ResultParams>();
-  
+
   if (!params.email) {
-    history.push("/");
+    history.push('/');
     return <></>;
   }
 
   const email = params.email;
+
+  function accountcreatedtrans() {
+    const intl = useIntl();
+    return intl.formatMessage({ id: 'app.created' });
+  }
 
   return (
     <PageContainer>
@@ -43,7 +48,7 @@ const RegisterResult: React.FC = () => {
             <span>{email}</span>
           </div>
         }
-        subTitle="Your account has successfully been created! Please check your email for the activation code."
+        subTitle={accountcreatedtrans()}
         extra={actions}
       />
     </PageContainer>

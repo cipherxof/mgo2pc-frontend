@@ -79,13 +79,13 @@ export default (): React.ReactNode => {
   return (
     <PageContainer>
       <Spin spinning={loading && !data} size="large">
-      {statistics}
-      <div className="row">
-        <div className="col-md-12 mb-4">
-          <Switch onChange={(checked) => setCompact(checked)} /> Compact
+        {statistics}
+        <div className="row">
+          <div className="col-md-12 mb-4">
+            <Switch onChange={(checked) => setCompact(checked)} /> Compact
+          </div>
+          {cards}
         </div>
-        {cards}
-      </div>
       </Spin>
     </PageContainer>
   );

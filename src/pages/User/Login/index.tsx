@@ -36,7 +36,7 @@ export default () => {
         backgroundImageUrl={require(`../../../assets/img/background-1.jpg`)}
         logo={require(`../../../assets/img/logo.png`)}
         title=""
-        subTitle="Fill out the form to login"
+        subTitle={intl.formatMessage({ id: 'app.fillform' })}
         submitter={{
           searchConfig: {
             submitText: intl.formatMessage({ id: 'navBar.login' }),
@@ -52,7 +52,7 @@ export default () => {
             borderRadius: 8,
             backgroundColor: '#141414',
           },
-          title: 'Need an account?',
+          title: intl.formatMessage({ id: 'app.needanaccount' }),
           subTitle: '',
           action: (
             <NavLink to="/register">
@@ -65,7 +65,7 @@ export default () => {
                   width: 120,
                 }}
               >
-                Register
+                {intl.formatMessage({ id: 'app.register' })}
               </Button>
             </NavLink>
           ),
@@ -112,7 +112,7 @@ export default () => {
               float: 'right',
             }}
           >
-            Forgot your password?
+            {intl.formatMessage({ id: 'app.forgotpw' })}
           </NavLink>
         </Space>
       </LoginFormPage>

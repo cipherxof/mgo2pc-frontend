@@ -1,3 +1,5 @@
+import { useIntl } from '@umijs/max';
+
 type UserAccount = {
   displayName: string;
   username: string;
@@ -69,7 +71,6 @@ export const logoutUser = () => {
 
 export const getRankPreview = (rank: number) => {
   return `https://mgo2pc.com/static/media/emblem/${rank}.png`;
-
 };
 export const getRankImage = (rank: number) => {
   return `/static/media/emblem/${rank}.png`;
@@ -143,7 +144,6 @@ export const getRankId = (name: string) => {
   return 0;
 };
 
-
 export const getMapPreview = (mapId: number) => {
   try {
     return require(`../assets/img/maps/${mapId}.jpg`);
@@ -161,29 +161,30 @@ export const getRegionFlag = (region: string) => {
  * @param date
  */
 export function formatTime(time: number) {
+  const intl = useIntl();
   const seconds = Math.floor(time);
   let interval = Math.floor(seconds / 31536000);
 
   if (interval > 1) {
-    return `${interval} years`;
+    return `${interval} ${intl.formatMessage({ id: 'app.years' })}`;
   }
   interval = Math.floor(seconds / 2592000);
   if (interval > 1) {
-    return `${interval} months`;
+    return `${interval} ${intl.formatMessage({ id: 'app.months' })}`;
   }
   interval = Math.floor(seconds / 86400);
   if (interval > 7) {
-    return `${interval} days`;
+    return `${interval} ${intl.formatMessage({ id: 'app.days' })}`;
   }
   interval = Math.floor(seconds / 3600);
   if (interval > 1) {
-    return `${interval} hours`;
+    return `${interval} ${intl.formatMessage({ id: 'app.hours' })}`;
   }
   interval = Math.floor(seconds / 60);
   if (interval > 1) {
-    return `${interval} minutes`;
+    return `${interval} ${intl.formatMessage({ id: 'app.minutes' })}`;
   }
-  return Math.floor(seconds) + ' seconds';
+  return `${Math.floor(seconds)} ${intl.formatMessage({ id: 'app.seconds' })}`;
 }
 
 /**
@@ -191,30 +192,31 @@ export function formatTime(time: number) {
  * @param date
  */
 export function timeSince(date: Date) {
+  const intl = useIntl();
   const diff = new Date().getTime() - date.getTime();
   const seconds = Math.floor(diff / 1000);
   let interval = Math.floor(seconds / 31536000);
 
   if (interval > 1) {
-    return interval + ' years';
+    return `${interval} ${intl.formatMessage({ id: 'app.years' })}`;
   }
   interval = Math.floor(seconds / 2592000);
   if (interval > 1) {
-    return interval + ' months';
+    return `${interval} ${intl.formatMessage({ id: 'app.months' })}`;
   }
   interval = Math.floor(seconds / 86400);
   if (interval > 1) {
-    return interval + ' days';
+    return `${interval} ${intl.formatMessage({ id: 'app.days' })}`;
   }
   interval = Math.floor(seconds / 3600);
   if (interval > 1) {
-    return interval + ' hours';
+    return `${interval} ${intl.formatMessage({ id: 'app.hours' })}`;
   }
   interval = Math.floor(seconds / 60);
   if (interval > 1) {
-    return interval + ' minutes';
+    return `${interval} ${intl.formatMessage({ id: 'app.minutes' })}`;
   }
-  return Math.floor(seconds) + ' seconds';
+  return `${interval} ${intl.formatMessage({ id: 'app.seconds' })}`;
 }
 
 /*
@@ -297,4 +299,3 @@ export const getExpLevel = (exp: number) => {
   }
   return 20;
 };
- 

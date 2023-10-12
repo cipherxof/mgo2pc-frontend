@@ -1,5 +1,5 @@
-import React from 'react';
 import { Line } from '@ant-design/charts';
+import { useIntl } from 'umi';
 
 type PeakPlayerLineProps = {
   stats: StatsGame[];
@@ -13,13 +13,17 @@ export default function PeakPlayerLine(props: PeakPlayerLineProps): JSX.Element 
   console.log(props);
 
   const data = [];
-
+  const intl = useIntl();
   for (const stats of props.stats) {
-    data.push({ date: stats.date.split('T')[0], value: stats.played_today, category: 'Total' });
+    data.push({
+      date: stats.date.split('T')[0],
+      value: stats.played_today,
+      category: `${intl.formatMessage({ id: 'app.playergraphtotal' })}`,
+    });
     data.push({
       date: stats.date.split('T')[0],
       value: stats.peak_players,
-      category: 'Concurrent',
+      category: `${intl.formatMessage({ id: 'app.playergraphconcurrent' })}`,
     });
   }
 

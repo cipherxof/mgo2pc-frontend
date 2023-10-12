@@ -38,7 +38,7 @@ export default (): React.ReactNode => {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      getting started video
+                      {intl.formatMessage({ id: 'app.gettingstartedvideo' })}
                     </a>
                   ),
                 }}
