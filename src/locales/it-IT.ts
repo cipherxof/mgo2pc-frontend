@@ -60,7 +60,7 @@ export default {
     'Metal Gear Online 2 PC. Tutti i diritti riservati. Il presente sito non è associato a Konami o ai suoi affilati.',
   'app.discordshield':
     'https://img.shields.io/discord/809840002989162516?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF',
-  'app.discordlink': 'https://discord.gg/mgo2pc',
+  'app.discordlink': 'https://discord.gg/MNqmzuW2wH',
 
   //Homepage
   'app.servercount': 'Attualmente ci sono {players} giocatori online',

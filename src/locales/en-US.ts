@@ -60,7 +60,7 @@ export default {
     'SaveMGO. All rights reserved. This website is not associated with Konami or its affiliates.',
   'app.discordshield':
     'https://img.shields.io/discord/809840002989162516?color=%235865F2&label=Discord&logo=Discord&logoColor=%23FFFFFF',
-  'app.discordlink': 'https://discord.gg/mgo2pc',
+  'app.discordlink': 'https://discord.gg/MNqmzuW2wH',
 
   //Homepage
   'app.servercount': 'There are currently {players} players online',
