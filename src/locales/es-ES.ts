@@ -302,6 +302,7 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
     'Los puntos de recompensa son obtenidos a medida que juegas y no hay forma de comprarlos con dinero real.',
   'app.equip': 'Equipar',
   'app.purchase': 'Comprar',
+  'app.cancel': 'Cancel',
   'app.owned': 'Obtenido',
   'app.equipcharselect': 'Por favor, selecciona el personaje al que quieres equipar el item.',
   'app.notice': 'Notice',

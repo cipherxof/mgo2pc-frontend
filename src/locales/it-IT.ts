@@ -305,6 +305,7 @@ export default {
     'Reward points are earned through playing the game and there is no way to otherwise purchase them.',
   'app.equip': 'Equipaggiamento',
   'app.purchase': 'Acquista',
+  'app.cancel': 'Cancel',
   'app.owned': 'Posseduti',
   'app.equipcharselect': 'Seleziona il personaggio che deve indossare questo oggetto.',
   'app.notice': 'Notice',

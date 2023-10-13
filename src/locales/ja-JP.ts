@@ -307,6 +307,7 @@ export default {
     'リワードポイントはゲームをプレーすることで獲得でき、それ以外の方法で購入することはできない。',
   'app.equip': '装備',
   'app.purchase': '購入',
+  'app.cancel': 'Cancel',
   'app.owned': '所有',
   'app.equipcharselect': 'このアイテムを装備させたいキャラクターを選択してください。',
   'app.notice': 'Notice',

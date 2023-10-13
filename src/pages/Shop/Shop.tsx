@@ -19,6 +19,7 @@ import {
 } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink, useIntl, useParams, useRequest } from 'umi';
+import ShopItem from './ShopItem';
 import ShopSlotCard from './ShopSlotCard';
 
 /*
@@ -262,6 +263,7 @@ export default (): React.ReactNode => {
       let gearTitle = '';
       let gearCost = 0;
       let subText = <></>;
+      let gearColor = '';
 
       for (const item of data.items) {
         if (item.cost === 9999999 && !item.owned) continue;
@@ -276,6 +278,7 @@ export default (): React.ReactNode => {
         if (item.color === color) {
           gearTitle = `${slotName}: ${item.name}`;
           gearCost = item.cost;
+          gearColor = item.name;
 
           if (item.owned) {
             subText = <Tag color="green">{intl.formatMessage({ id: 'app.owned' })}</Tag>;
@@ -309,9 +312,9 @@ export default (): React.ReactNode => {
             );
           }
         }
+
         const itemnamenoquote = item.name.replace("'", '');
         const itemnameforlocale = itemnamenoquote.replace(/ /g, '').toLowerCase();
-
         colorIcons.push(
           <a href={`#${item.color}`} onClick={() => onColorClick(item.color)}>
             <Tooltip
@@ -366,10 +369,14 @@ export default (): React.ReactNode => {
           );
         }
       }
-
+      const gearamenoquote = gearColor.replace("'", '');
+      const gearnameforlocale = gearamenoquote.replace(/ /g, '').toLowerCase();
+      const cardTitle = `${intl.formatMessage({
+        id: `app.gearslotname${params.id}`,
+      })}: ${intl.formatMessage({ id: `app.color${gearnameforlocale}` })}`;
       const gearContent = (
         <div className="col-md-12">
-          <Card title={intl.formatMessage({ id: `app.gearslotname${params.id}` })}>
+          <Card title={cardTitle}>
             <div className="row">
               <div className="col-md-3 text-center">
                 {gearImages}
