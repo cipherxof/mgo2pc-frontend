@@ -72,6 +72,7 @@ export default {
   'app.serveroff': 'El server está actualmente desconectado',
 
   //Gamespage
+  'app.compact': 'Compact',
   'app.online': 'Total en línea',
   'app.onlineplayers': 'Jugadores en partida',
   'app.lobbies': 'Partidas',
@@ -220,6 +221,7 @@ export default {
   'app.register': 'Register',
 
   //Accounts Settings Page
+  'app.basicsettings': 'Basic Settings',
   'app.loggedin': 'You are logged in.', //should be a notification which I cannot see on test version sadly
   'app.accupdated': 'Your account has been updated.', //should be a notification which I cannot see on test version sadly
   'app.displayname': 'Nombre a Mostrar',

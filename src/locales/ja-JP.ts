@@ -73,6 +73,7 @@ export default {
   'app.serveroff': 'サーバーは現在オフラインです',
 
   //gamespage
+  'app.compact': 'Compact',
   'app.online': 'オンライン',
   'app.onlineplayers': 'オンラインプレーヤー数',
   'app.lobbies': '客室',
@@ -221,6 +222,7 @@ export default {
   'app.register': 'Register',
 
   //Account settings page
+  'app.basicsettings': 'Basic Settings',
   'app.loggedin': 'You are logged in.', //should be a notification which I cannot see on test version sadly
   'app.accupdated': 'Your account has been updated.', //should be a notification which I cannot see on test version sadly
   'app.displayname': '表示名',

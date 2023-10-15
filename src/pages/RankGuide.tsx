@@ -172,7 +172,7 @@ export default (): React.ReactNode => {
       description: (
         <>
           <p>
-            {intl.formatMessage({ id: 'app.kdrsrr' })}
+            {intl.formatMessage({ id: 'app.kdrsrr' })}{' '}
             <Text type="warning">
               {intl.formatMessage({ id: 'app.dm' })}
               {', '}
@@ -202,7 +202,7 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.win%in' })}{' '}
             <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text>{' '}
             {intl.formatMessage({ id: 'app.atleast' })}
-            <Text type="success">40%</Text>
+            <Text type="success"> 40%</Text>
           </p>
           <p>
             {intl.formatMessage({ id: 'app.basecapratio' })} <Text type="success">1.00</Text>

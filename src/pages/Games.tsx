@@ -82,7 +82,8 @@ export default (): React.ReactNode => {
         {statistics}
         <div className="row">
           <div className="col-md-12 mb-4">
-            <Switch onChange={(checked) => setCompact(checked)} /> Compact
+            <Switch onChange={(checked) => setCompact(checked)} />{' '}
+            {intl.formatMessage({ id: 'app.compact' })}
           </div>
           {cards}
         </div>

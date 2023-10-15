@@ -71,7 +71,7 @@ export default (): React.ReactNode => {
         <div className="row">
           <div className="col-md-3">
             <Menu defaultSelectedKeys={[menu]} mode="inline" onSelect={onMenuClick}>
-              <Menu.Item key="basic">Basic Settings</Menu.Item>
+              <Menu.Item key="basic">{intl.formatMessage({ id: 'app.basicsettings' })}</Menu.Item>
             </Menu>
           </div>
           <div className="col-md-9">
@@ -82,16 +82,19 @@ export default (): React.ReactNode => {
                 initialValues={{ remember: true }}
                 onSubmitCapture={onUpdateAccount}
               >
-                <Form.Item label="Display Name" name="display_name">
+                <Form.Item
+                  label={intl.formatMessage({ id: 'app.displayname' })}
+                  name="display_name"
+                >
                   <Input placeholder={displayName} />
                 </Form.Item>
 
                 <Form.Item label={intl.formatMessage({ id: 'app.currentpw' })} name="password">
-                  <Input.Password placeholder="Your current password" />
+                  <Input.Password placeholder={intl.formatMessage({ id: 'app.currentpw' })} />
                 </Form.Item>
 
                 <Form.Item label={intl.formatMessage({ id: 'app.newpw' })} name="password_new">
-                  <Input.Password placeholder="Your new password" />
+                  <Input.Password placeholder={intl.formatMessage({ id: 'app.newpw' })} />
                 </Form.Item>
 
                 <Form.Item {...tailLayout}>
