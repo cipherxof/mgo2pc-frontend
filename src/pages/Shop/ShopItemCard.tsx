@@ -3,7 +3,7 @@ import { getUserToken } from '@/system/utility';
 import { ShoppingCartOutlined, UserAddOutlined } from '@ant-design/icons';
 import { Avatar, Button, Card, Divider, Modal, notification, Select, Tag } from 'antd';
 import React, { useState } from 'react';
-import { NavLink } from 'umi';
+import { NavLink, useIntl } from 'umi';
 
 const { Meta } = Card;
 
@@ -13,6 +13,7 @@ type ShopItemProps = {
 };
 
 export default (props: ShopItemProps) => {
+  const intl = useIntl();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [owned, setOwned] = useState(props.item.owned);
 
@@ -27,8 +28,8 @@ export default (props: ShopItemProps) => {
 
     if (!token) {
       notification.error({
-        message: `Error`,
-        description: 'You must be logged in to make purchases.',
+        message: `${intl.formatMessage({ id: 'app.error' })}`,
+        description: `${intl.formatMessage({ id: 'app.mustlogin' })}`,
         placement: 'topRight',
       });
       return;
@@ -60,7 +61,7 @@ export default (props: ShopItemProps) => {
       content: (
         <div>
           <Divider />
-          Please select the character that you want to equip this item.
+          {intl.formatMessage({ id: 'app.equipcharselect' })}
           <Divider />
           <Select
             style={{ width: '100%' }}
@@ -73,8 +74,8 @@ export default (props: ShopItemProps) => {
           ></Select>
         </div>
       ),
-      okText: 'Equip',
-      cancelText: 'Cancel',
+      okText: `${intl.formatMessage({ id: 'app.equip' })}`,
+      cancelText: `${intl.formatMessage({ id: 'app.camcel' })}`,
       onOk: () => () => {},
     });
   }
@@ -139,7 +140,8 @@ export default (props: ShopItemProps) => {
         okText={'Purchase'}
         cancelText="Cancel"
       >
-        Are you sure you want to purchase this item for {props.item.cost} reward points?
+        {intl.formatMessage({ id: 'app.areyousure' })} {props.item.cost}{' '}
+        {intl.formatMessage({ id: 'app.rewardpoints?' })}
       </Modal>
     </>
   );

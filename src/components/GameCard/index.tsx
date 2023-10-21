@@ -1,9 +1,8 @@
-import { MgoGameMode, MgoGameModeNames, MgoMode, MgoModeNames } from '@/system/constants';
+import { MgoGameMode, MgoMode, MgoModeNames } from '@/system/constants';
 import { getMapPreview, getRegionFlag } from '@/system/utility';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Button, Card, Divider, Popover, Typography } from 'antd';
-import React from 'react';
-import { NavLink } from 'umi';
+import { NavLink, useIntl } from 'umi';
 
 const { Meta } = Card;
 const { Text } = Typography;
@@ -15,8 +14,24 @@ type GameCardProps = {
 };
 
 export default function GameCard(props: GameCardProps): JSX.Element {
+  const intl = useIntl();
   const playerList: JSX.Element[] = [];
   let roomDescription = <>{props.game.comment}</>;
+
+  const MgoGameModeNames = {
+    [MgoGameMode.Deathmatch]: `${intl.formatMessage({ id: 'app.deathmatch' })}`,
+    [MgoGameMode.TeamDeathmatch]: `${intl.formatMessage({ id: 'app.teamdeathmatch' })}`,
+    [MgoGameMode.RescueMission]: `${intl.formatMessage({ id: 'app.rescuemission' })}`,
+    [MgoGameMode.CaptureMission]: `${intl.formatMessage({ id: 'app.capturemission' })}`,
+    [MgoGameMode.SneakingMission]: `${intl.formatMessage({ id: 'app.sneakingmission' })}`,
+    [MgoGameMode.BaseMission]: `${intl.formatMessage({ id: 'app.basemission' })}`,
+    [MgoGameMode.BombMission]: `${intl.formatMessage({ id: 'app.bombmission' })}`,
+    [MgoGameMode.TeamSneaking]: `${intl.formatMessage({ id: 'app.teamsneaking' })}`,
+    [MgoGameMode.StealthDeathmatch]: `${intl.formatMessage({ id: 'app.stealthdeathmatch' })}`,
+    [MgoGameMode.Interval]: `${intl.formatMessage({ id: 'app.interval' })}`,
+    [MgoGameMode.SoloCapture]: `${intl.formatMessage({ id: 'app.solocapture' })}`,
+    [MgoGameMode.RaceMission]: `${intl.formatMessage({ id: 'app.racemission' })}`,
+  };
 
   if (!props.collapsed) {
     playerList.push(<Divider />);

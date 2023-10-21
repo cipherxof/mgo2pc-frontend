@@ -30,8 +30,8 @@ export default () => {
       );
 
       notification.success({
-        message: `Success`,
-        description: 'Your account has been created!',
+        message: `${intl.formatMessage({ id: 'app.success' })}`,
+        description: `${intl.formatMessage({ id: 'app.accountcreated' })}`,
         placement: 'topRight',
         duration: 30,
       });
@@ -51,7 +51,7 @@ export default () => {
         backgroundImageUrl={require(`../../../assets/img/background-1.jpg`)}
         logo={require(`../../../assets/img/logo.png`)}
         title=""
-        subTitle="Fill out the form to create your account"
+        subTitle={intl.formatMessage({ id: 'app.fillform3' })}
         disabled={data.loading}
         submitter={{
           searchConfig: {
@@ -70,7 +70,7 @@ export default () => {
             borderRadius: 8,
             backgroundColor: '#141414',
           },
-          title: 'Have an account?',
+          title: intl.formatMessage({ id: 'app.haveacc?' }),
           subTitle: '',
           action: (
             <NavLink to="/login">
@@ -83,7 +83,7 @@ export default () => {
                   width: 120,
                 }}
               >
-                Login
+                {intl.formatMessage({ id: 'app.login' })}
               </Button>
             </NavLink>
           ),
@@ -136,7 +136,7 @@ export default () => {
           <Form.Item
             label="Captcha"
             name="captcha"
-            rules={[{ required: false, message: 'Please fill out the bot check' }]}
+            rules={[{ required: false, message: intl.formatMessage({ id: 'app.botcheck' }) }]}
           >
             <ReCAPTCHA
               sitekey="6LfBUQgbAAAAANCZREFyAbp5TSZ_hBe1aa3Zlz0V"
@@ -158,7 +158,7 @@ export default () => {
               float: 'right',
             }}
           >
-            Already have an account?
+            {intl.formatMessage({ id: 'app.alreadyac?' })}
           </NavLink>
         </Space>
       </LoginFormPage>

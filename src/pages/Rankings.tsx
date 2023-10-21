@@ -1,23 +1,33 @@
 import { getRankings } from '@/services/mgo2pc/api';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
+import { history } from '@umijs/max';
 import { Avatar, Pagination, Select, Spin, Switch, Table, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { NavLink, useIntl, useParams } from 'umi';
-import { history } from '@umijs/max';
 
 const { Option } = Select;
 const { Text } = Typography;
 
-const columns = [
+export function useTranslate() {
+  const intl = useIntl();
+
+  function translate(local_word: string) {
+    return `${intl.formatMessage({ id: `app.${local_word}` })}`;
+  }
+
+  return translate;
+}
+
+const columns = (translate) => [
   {
-    title: 'Rank',
+    title: translate('rankings'),
     dataIndex: 'rank',
     key: 'rank',
     width: '5%',
   },
   {
-    title: 'Name',
+    title: translate('name'),
     dataIndex: 'name',
     key: 'name',
     width: '70%',
@@ -41,7 +51,7 @@ const columns = [
     },
   },
   {
-    title: 'Score',
+    title: translate('score'),
     dataIndex: 'score',
     key: 'score',
   },
@@ -57,6 +67,8 @@ export default (): React.ReactNode => {
 
   const intl = useIntl();
   const params = useParams<RankingParams>();
+  const translate = useTranslate();
+  const translatedColumnns = columns(translate);
 
   const [data, setData] = useState({
     weekly: false,
@@ -171,7 +183,7 @@ export default (): React.ReactNode => {
       <div className="row">
         <div className="col-md-12">
           <Spin spinning={data.loading} size="large">
-            <Table columns={columns} dataSource={data.tableData} pagination={false} />
+            <Table columns={translatedColumnns} dataSource={data.tableData} pagination={false} />
             <Pagination
               defaultCurrent={data.page}
               total={data.pages}

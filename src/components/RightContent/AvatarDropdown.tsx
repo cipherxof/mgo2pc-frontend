@@ -1,13 +1,17 @@
 import { getUserAccount } from '@/system/utility';
-import { DashboardOutlined, LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  DashboardOutlined,
+  LogoutOutlined,
+  SettingOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import { setAlpha } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
-import { NavLink, history } from '@umijs/max';
+import { history, NavLink, useIntl } from '@umijs/max';
 import { Avatar, notification } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
 import HeaderDropdown from '../HeaderDropdown';
-import { useIntl } from '@umijs/max';
 
 const AvatarLogo = () => {
   const avatarClassName = useEmotionCss(({ token }) => {
@@ -35,7 +39,7 @@ const AvatarLogo = () => {
 const AvatarDropdown: React.FC = () => {
   const account = getUserAccount();
   const intl = useIntl();
-  
+
   const actionClassName = useEmotionCss(({ token }) => {
     return {
       display: 'flex',
@@ -70,7 +74,7 @@ const AvatarDropdown: React.FC = () => {
     localStorage.removeItem('token');
     notification.success({
       message: `Success`,
-      description: 'You have been logged out.',
+      description: `${intl.formatMessage({ id: 'navBar.logout2' })}`,
       placement: 'topRight',
     });
     history.push('/');
@@ -106,12 +110,12 @@ const AvatarDropdown: React.FC = () => {
     {
       key: '/account/characters',
       icon: <UserOutlined />,
-      label: 'Characters',
+      label: `${intl.formatMessage({ id: 'navBar.characters' })}`,
     },
     {
       key: '/account',
       icon: <SettingOutlined />,
-      label: 'Settings',
+      label: `${intl.formatMessage({ id: 'navBar.settings' })}`,
     },
     {
       type: 'divider' as const,
@@ -119,7 +123,7 @@ const AvatarDropdown: React.FC = () => {
     {
       key: 'logout',
       icon: <LogoutOutlined />,
-      label: 'Logout',
+      label: `${intl.formatMessage({ id: 'navBar.logout' })}`,
     },
   ];
 

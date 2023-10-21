@@ -2,7 +2,7 @@ import { resetPassword } from '@/services/mgo2pc/api';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Result, Spin } from 'antd';
 import React from 'react';
-import { useParams, useRequest } from 'umi';
+import { useIntl, useParams, useRequest } from 'umi';
 
 type ResetParams = {
   user: string;
@@ -10,6 +10,7 @@ type ResetParams = {
 };
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   const params = useParams<ResetParams>();
   const { data, error, loading } = useRequest(() => resetPassword(params.user, params.key));
 
@@ -27,10 +28,10 @@ export default (): React.ReactNode => {
     if (!error) {
       extra.push(
         <p>
-          Your new password is <strong>{data}</strong>
+          {intl.formatMessage({ id: 'app.newpw2' })} <strong>{data}</strong>
         </p>,
       );
-      extra.push(<p>You may change your password after logging in.</p>);
+      extra.push(<p>{intl.formatMessage({ id: 'app.changepw' })}</p>);
     }
 
     return (

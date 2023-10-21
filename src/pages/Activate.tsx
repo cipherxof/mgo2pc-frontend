@@ -2,7 +2,7 @@ import { activateAccount } from '@/services/mgo2pc/api';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Button, Result, Spin } from 'antd';
 import React from 'react';
-import { NavLink, useParams, useRequest } from 'umi';
+import { NavLink, useIntl, useParams, useRequest } from 'umi';
 
 type ActivateParams = {
   user: string;
@@ -10,6 +10,7 @@ type ActivateParams = {
 };
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   const params = useParams<ActivateParams>();
   const { error, loading } = useRequest(() => activateAccount(params.user, params.key));
 
@@ -36,8 +37,16 @@ export default (): React.ReactNode => {
 
     return (
       <Result
-        status={!error ? 'success' : 'error'}
-        title={!error ? 'Account Activated!' : 'Error'}
+        status={
+          !error
+            ? `${intl.formatMessage({ id: 'app.success' })}`
+            : `${intl.formatMessage({ id: 'app.error' })}`
+        }
+        title={
+          !error
+            ? `${intl.formatMessage({ id: 'app.accountactivated' })}`
+            : `${intl.formatMessage({ id: 'app.error' })}`
+        }
         subTitle={''}
         extra={extra}
       />

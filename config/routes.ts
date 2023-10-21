@@ -11,8 +11,8 @@
  * @doc https://umijs.org/docs/guides/routes
  */
 export default [
-  { 
-    path: '/', 
+  {
+    path: '/',
     component: './Home',
     name: 'home',
     icon: 'home',
@@ -38,7 +38,7 @@ export default [
   {
     path: '/shop',
     name: 'rewardshop',
-    icon: "shop",
+    icon: 'shop',
     component: './Shop/Shop',
   },
   { path: '/game/:id', component: './Game' },
@@ -49,7 +49,7 @@ export default [
     name: 'login',
     path: '/login',
     component: './User/Login',
-    layout: false
+    layout: false,
   },
   { path: '/register', component: './User/Register', layout: false },
   { path: '/register-result/:email', component: './User/Register/result.tsx' },
@@ -66,25 +66,25 @@ export default [
     path: '*',
     component: './404',
   },
-    {
-      path: '/faq',
-      name: 'faq',
-      icon: 'question',
-      component: './FAQ',
-    },
-    {
-      path: '/tutorials',
-      name: 'guides',
-      icon: 'camera',
-      component: './VideoGuides',
-    },
-    {
-      path: '/rankguide',
-      name: 'ranks',
-      icon: 'star',
-      component: './RankGuide',
-    },
-    /*{
+  {
+    path: '/faq',
+    name: 'faq',
+    icon: 'question',
+    component: './FAQ',
+  },
+  {
+    path: '/tutorials',
+    name: 'guides',
+    icon: 'camera',
+    component: './VideoGuides',
+  },
+  {
+    path: '/rankguide',
+    name: 'ranks',
+    icon: 'star',
+    component: './RankGuide',
+  },
+  /*{
       path: '/changelog',
       name: 'Changelog',
       icon: 'book',

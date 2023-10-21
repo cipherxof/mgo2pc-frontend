@@ -7,7 +7,7 @@ import { Alert, Descriptions, Divider, message, Table, Upload } from 'antd';
 import type { UploadChangeParam } from 'antd/es/upload';
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface';
 import React, { useState } from 'react';
-import { NavLink, useParams, useRequest } from 'umi';
+import { NavLink, useIntl, useParams, useRequest } from 'umi';
 
 const getBase64 = (img: RcFile, callback: (url: string) => void) => {
   const reader = new FileReader();
@@ -18,11 +18,11 @@ const getBase64 = (img: RcFile, callback: (url: string) => void) => {
 const beforeUpload = (file: RcFile) => {
   const isPng = file.type === 'image/png';
   if (!isPng) {
-    message.error('You can only upload a PNG file!');
+    message.error(`${intl.formatMessage({ id: 'app.uploaderror1' })}`);
   }
   const isLt2M = file.size < 2000000;
   if (!isLt2M) {
-    message.error('Image must smaller than 2MB');
+    message.error(`${intl.formatMessage({ id: 'app.uploaderror2' })}`);
   }
   return isPng && isLt2M;
 };
@@ -32,6 +32,7 @@ type ClanParams = {
 };
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   const params = useParams<ClanParams>();
   const { data, loading } = useRequest(() => getClan(params.id));
   const [uploading, setUploading] = useState(false);
@@ -44,7 +45,7 @@ export default (): React.ReactNode => {
 
   const columns = [
     {
-      title: 'Name',
+      title: `${intl.formatMessage({ id: 'app.playername' })}`,
       dataIndex: 'name',
       key: 'name',
       render: (text: any) => <NavLink to={`/profile/${encodeURIComponent(text)}`}>{text}</NavLink>,
@@ -62,7 +63,7 @@ export default (): React.ReactNode => {
       if (info.file.response && info.file.response.message) {
         message.error(info.file.response.message);
       } else {
-        message.error('There was an error uploading your clan image.');
+        message.error(`${intl.formatMessage({ id: 'app.uploaderror3' })}`);
       }
       return;
     }
@@ -71,7 +72,7 @@ export default (): React.ReactNode => {
       getBase64(info.file.originFileObj as RcFile, (url) => {
         setUploading(false);
         setImageUrl(url);
-        message.success('Your clan emblem has successfully been updated.');
+        message.success(`${intl.formatMessage({ id: 'app.uploadsuccess' })}`);
       });
     }
   };
@@ -79,7 +80,7 @@ export default (): React.ReactNode => {
   const uploadButton = (
     <div>
       {uploading ? <LoadingOutlined /> : <PlusOutlined />}
-      <div style={{ marginTop: 8 }}>Upload Emblem</div>
+      <div style={{ marginTop: 8 }}>{intl.formatMessage({ id: 'app.uploademblem' })}</div>
     </div>
   );
 
@@ -91,7 +92,12 @@ export default (): React.ReactNode => {
     notice = (
       <>
         <Divider />
-        <Alert message="Notice" description={data?.notice} type="info" showIcon />
+        <Alert
+          message={intl.formatMessage({ id: 'app.notice' })}
+          description={data?.notice}
+          type="info"
+          showIcon
+        />
       </>
     );
   }
@@ -106,8 +112,10 @@ export default (): React.ReactNode => {
             subTitle={data?.comment}
           >
             <Descriptions size="small" column={3}>
-              <Descriptions.Item label="Leader">{data?.leader}</Descriptions.Item>
-              <Descriptions.Item label="Members">
+              <Descriptions.Item label={intl.formatMessage({ id: 'app.clanleader' })}>
+                {data?.leader}
+              </Descriptions.Item>
+              <Descriptions.Item label={intl.formatMessage({ id: 'app.members' })}>
                 {data?.members ? data.members.length : 0}
               </Descriptions.Item>
             </Descriptions>
@@ -128,7 +136,11 @@ export default (): React.ReactNode => {
             headers={{ authorization: `${getUserToken()}`, clan: params.id }}
           >
             {imageUrl ? (
-              <img src={imageUrl} alt="emblem" style={{ height: '64px', width: '64px' }} />
+              <img
+                src={imageUrl}
+                alt={intl.formatMessage({ id: 'app.emblem' })}
+                style={{ height: '64px', width: '64px' }}
+              />
             ) : (
               uploadButton
             )}

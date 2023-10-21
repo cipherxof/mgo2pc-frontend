@@ -19,6 +19,7 @@ import {
 } from 'antd';
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink, useIntl, useParams, useRequest } from 'umi';
+import ShopItem from './ShopItem';
 import ShopSlotCard from './ShopSlotCard';
 
 /*
@@ -106,8 +107,8 @@ export default (): React.ReactNode => {
 
     if (!token) {
       notification.error({
-        message: `Error`,
-        description: 'You must be logged in to make purchases.',
+        message: `${intl.formatMessage({ id: 'app.error' })}`,
+        description: intl.formatMessage({ id: 'app.mustlogin' }),
         placement: 'topRight',
       });
       return;
@@ -118,7 +119,7 @@ export default (): React.ReactNode => {
 
       if (response.success) {
         notification.success({
-          message: `Success`,
+          message: `${intl.formatMessage({ id: 'app.Success' })}`,
           description: response.message,
           placement: 'topRight',
         });
@@ -132,8 +133,8 @@ export default (): React.ReactNode => {
 
     if (!token) {
       notification.error({
-        message: `Error`,
-        description: 'You must be logged in to equip items.',
+        message: `${intl.formatMessage({ id: 'app.error' })}`,
+        description: intl.formatMessage({ id: 'app.mustlogin2' }),
         placement: 'topRight',
       });
       return;
@@ -144,7 +145,7 @@ export default (): React.ReactNode => {
 
       if (response.success) {
         notification.success({
-          message: `Success`,
+          message: `${intl.formatMessage({ id: 'app.success' })}`,
           description: response.message,
           placement: 'topRight',
         });
@@ -154,15 +155,20 @@ export default (): React.ReactNode => {
 
   function handlePurchase(item: ShopItem) {
     modal.confirm({
-      title: <>Purchase {item.name}</>,
+      title: (
+        <>
+          {intl.formatMessage({ id: 'app.purchase' })} {item.name}
+        </>
+      ),
       content: (
         <>
           <Divider />
-          Are you sure you want to purchase this item for {item.cost} reward points?
+          {intl.formatMessage({ id: 'app.mustlogin2' })} {item.cost}{' '}
+          {intl.formatMessage({ id: 'app.rewardpoints?' })}
         </>
       ),
-      okText: 'Purchase',
-      cancelText: 'Cancel',
+      okText: `${intl.formatMessage({ id: 'app.purchase' })}`,
+      cancelText: `${intl.formatMessage({ id: 'app.cancel' })}`,
       onOk: async () => await onPurchase(item),
     });
   }
@@ -196,7 +202,7 @@ export default (): React.ReactNode => {
           <Select
             style={{ width: '100%' }}
             showSearch
-            placeholder="Select a character"
+            placeholder={intl.formatMessage({ id: 'app.equipcharselect' })}
             optionFilterProp="children"
             defaultValue={defaultName}
             onChange={(e) => {
@@ -210,8 +216,8 @@ export default (): React.ReactNode => {
           </Select>
         </div>
       ),
-      okText: 'Equip',
-      cancelText: 'Cancel',
+      okText: `${intl.formatMessage({ id: 'app.equip' })}`,
+      cancelText: `${intl.formatMessage({ id: 'app.cancel' })}`,
       onOk: async () => await onEquip(item),
     });
   }
@@ -228,7 +234,14 @@ export default (): React.ReactNode => {
         if (!slotData[menu].includes(slot.gear_slot)) continue;
         itemJsx.push(
           <div key={slot.id} className="col-md-4 mb-3">
-            <ShopSlotCard item={slot} />
+            <ShopSlotCard
+              item={{
+                gear_slot: slot.gear_slot,
+                id: slot.gearId,
+                info: `${intl.formatMessage({ id: `app.gearslotdesc${slot.gear_slot}` })}`,
+                name: `${intl.formatMessage({ id: `app.gearslotname${slot.gear_slot}` })}`,
+              }}
+            />
           </div>,
         );
       }
@@ -237,8 +250,8 @@ export default (): React.ReactNode => {
         itemJsx.push(
           <div className="col-md-12">
             <Alert
-              message="Information"
-              description="There is nothing available to purchase."
+              message={intl.formatMessage({ id: 'app.information' })}
+              description={intl.formatMessage({ id: 'app.nothingtobuy' })}
               type="info"
               showIcon
             />
@@ -250,6 +263,7 @@ export default (): React.ReactNode => {
       let gearTitle = '';
       let gearCost = 0;
       let subText = <></>;
+      let gearColor = '';
 
       for (const item of data.items) {
         if (item.cost === 9999999 && !item.owned) continue;
@@ -264,6 +278,7 @@ export default (): React.ReactNode => {
         if (item.color === color) {
           gearTitle = `${slotName}: ${item.name}`;
           gearCost = item.cost;
+          gearColor = item.name;
 
           if (item.owned) {
             subText = <Tag color="green">{intl.formatMessage({ id: 'app.owned' })}</Tag>;
@@ -298,9 +313,16 @@ export default (): React.ReactNode => {
           }
         }
 
+        const itemnamenoquote = item.name.replace("'", '');
+        const itemnameforlocale = itemnamenoquote.replace(/ /g, '').toLowerCase();
         colorIcons.push(
           <a href={`#${item.color}`} onClick={() => onColorClick(item.color)}>
-            <Tooltip placement="top" title={item.name}>
+            <Tooltip
+              placement="top"
+              title={intl.formatMessage({
+                id: `app.color${itemnameforlocale}`,
+              })}
+            >
               <img src={getItemIcon(item)} style={{ width: '48px' }} className="mr-2 mb-2" />
             </Tooltip>
           </a>,
@@ -308,7 +330,6 @@ export default (): React.ReactNode => {
       }
 
       let gearImages = <></>;
-
       if (menu !== 'feet' && menu !== 'head') {
         if (params.id === '14' || params.id === '12') {
           gearImages = (
@@ -348,10 +369,14 @@ export default (): React.ReactNode => {
           );
         }
       }
-
+      const gearamenoquote = gearColor.replace("'", '');
+      const gearnameforlocale = gearamenoquote.replace(/ /g, '').toLowerCase();
+      const cardTitle = `${intl.formatMessage({
+        id: `app.gearslotname${params.id}`,
+      })}: ${intl.formatMessage({ id: `app.color${gearnameforlocale}` })}`;
       const gearContent = (
         <div className="col-md-12">
-          <Card title={gearTitle}>
+          <Card title={cardTitle}>
             <div className="row">
               <div className="col-md-3 text-center">
                 {gearImages}
@@ -381,7 +406,7 @@ export default (): React.ReactNode => {
       </div>
       <Divider />
       <Alert
-        message="Notice"
+        message={intl.formatMessage({ id: 'app.notice' })}
         description={intl.formatMessage({ id: 'app.rewardshopinfo' })}
         type="info"
         showIcon
@@ -389,13 +414,13 @@ export default (): React.ReactNode => {
       <div className="row mt-4">
         <div className="col-md-2">
           <Menu defaultSelectedKeys={[menu]} mode="inline" onSelect={onMenuClick}>
-            <Menu.Item key="head">Head</Menu.Item>
-            <Menu.Item key="upper">Upper Body</Menu.Item>
-            <Menu.Item key="lower">Lower Body</Menu.Item>
-            <Menu.Item key="chest">Chest</Menu.Item>
-            <Menu.Item key="waist">Waist</Menu.Item>
-            <Menu.Item key="hands">Hands</Menu.Item>
-            <Menu.Item key="feet">Feet</Menu.Item>
+            <Menu.Item key="head">{intl.formatMessage({ id: 'app.head' })}</Menu.Item>
+            <Menu.Item key="upper">{intl.formatMessage({ id: 'app.upper' })}</Menu.Item>
+            <Menu.Item key="lower">{intl.formatMessage({ id: 'app.lower' })}</Menu.Item>
+            <Menu.Item key="chest">{intl.formatMessage({ id: 'app.chest' })}</Menu.Item>
+            <Menu.Item key="waist">{intl.formatMessage({ id: 'app.waist' })}</Menu.Item>
+            <Menu.Item key="hands">{intl.formatMessage({ id: 'app.hands' })}</Menu.Item>
+            <Menu.Item key="feet">{intl.formatMessage({ id: 'app.feet' })}</Menu.Item>
           </Menu>
         </div>
         <div className="col-md-10">

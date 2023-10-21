@@ -4,8 +4,10 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { useRequest } from '@umijs/max';
 import { Card, Col, Divider, Row, Spin, Statistic } from 'antd';
 import React from 'react';
+import { useIntl } from 'umi';
 
 export default (): React.ReactNode => {
+  const intl = useIntl();
   document.title = 'Stats - Metal Gear Online';
 
   const { data, loading, refresh } = useRequest(() => getServerStats());
@@ -20,13 +22,13 @@ export default (): React.ReactNode => {
                 <Col span={4}></Col>
                 <Col span={8}>
                   <Statistic
-                    title="Peak Players (Today)"
+                    title={intl.formatMessage({ id: 'app.todayspeakplayers' })}
                     value={data ? data.static.peak_players_today : 0}
                   />
                 </Col>
                 <Col span={8}>
                   <Statistic
-                    title="Peak Players (All time)"
+                    title={intl.formatMessage({ id: 'app.alltimepeakplayers' })}
                     value={data ? data.static.peak_players : 0}
                   />
                 </Col>
@@ -35,7 +37,9 @@ export default (): React.ReactNode => {
 
               <Divider />
 
-              <div className="text-center">Player Count (Last 60 days)</div>
+              <div className="text-center">
+                {intl.formatMessage({ id: 'app.playercount60days' })}
+              </div>
               <PeakPlayerLine stats={data ? data.stats.reverse() : []} />
             </Card>
           </div>

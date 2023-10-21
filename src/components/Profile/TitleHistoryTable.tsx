@@ -1,8 +1,7 @@
 import { getTitles } from '@/services/mgo2pc/api';
 import { getRankId, timeSince } from '@/system/utility';
 import { Alert, Card, Image, Spin, Statistic, Typography } from 'antd';
-import React from 'react';
-import { useRequest } from 'umi';
+import { useIntl, useRequest } from 'umi';
 
 const { Title } = Typography;
 
@@ -50,6 +49,7 @@ titleData['waterbear'] = { name: 'Waterbear', image: 'Waterbear.png' };
 titleData['whale'] = { name: 'Whale', image: 'Whale.png' };
 
 export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element {
+  const intl = useIntl();
   const { data, loading } = useRequest(() => getTitles(props.character));
 
   if (!data || loading) {
@@ -82,10 +82,7 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
         <div className="col-md-3 text-center">
           <Card>
             <Title level={3}>{titleData[key].name}</Title>
-            <Image
-              width={96}
-              src={`/static/media/emblem/${getRankId(key)}.png`}
-            />
+            <Image width={96} src={`/static/media/emblem/${getRankId(key)}.png`} />
             <Statistic value={`${timeSince(new Date(value * 1000))} ago`} />
           </Card>
         </div>,
@@ -106,7 +103,7 @@ export default function TitleHistoryTable(props: TitleHistoryProps): JSX.Element
       <div key="0" className="col-md-12">
         <Alert
           message="Information"
-          description="This character has not acquired any titles."
+          description={intl.formatMessage({ id: 'app.notitle' })}
           type="info"
           showIcon
         />
