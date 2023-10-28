@@ -1,5 +1,4 @@
 import { getShopItems } from '@/services/mgo2pc/api';
-import { getUserToken } from '@/system/utility';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Image, Spin } from 'antd';
 import React, { useEffect, useState } from 'react';

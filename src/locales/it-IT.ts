@@ -266,7 +266,12 @@ export default {
   'app.tsne': 'TSNE', //same words can be found for numerous ranks
   'app.race': 'RACE', //same words can be found for numerous ranks
   'app.sdm': 'SDM',
-  'app.and': 'and', //same words can be found for numerous ranks
+  'app.andfoxhound': 'and', //This can change depending on gramtical reasons so had to split up and for each rank
+  'app.andfox': 'and',
+  'app.anddoberman': 'and',
+  'app.andhound': 'and',
+  'app.andwaterbear': 'and',
+  'app.gramaticalcomma': ' ', //for instance in American English , before the word and in a list. Not the case for Spanish or British English
   'app.win%in': 'Win % in', //same words can be found for numerous ranks
   'app.basecapratio': 'Bases capped ÷ Total Base Rounds = higher than', //same words can be found for numerous ranks
   'app.withdrawel': 'Withdrawal %', //same words can be found for numerous ranks
