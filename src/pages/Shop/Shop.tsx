@@ -119,7 +119,7 @@ export default (): React.ReactNode => {
 
       if (response.success) {
         notification.success({
-          message: `${intl.formatMessage({ id: 'app.Success' })}`,
+          message: `${intl.formatMessage({ id: 'app.success' })}`,
           description: response.message,
           placement: 'topRight',
         });
