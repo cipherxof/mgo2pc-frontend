@@ -119,7 +119,7 @@ export default (): React.ReactNode => {
 
       if (response.success) {
         notification.success({
-          message: `${intl.formatMessage({ id: 'app.Success' })}`,
+          message: `${intl.formatMessage({ id: 'app.success' })}`,
           description: response.message,
           placement: 'topRight',
         });
@@ -163,7 +163,7 @@ export default (): React.ReactNode => {
       content: (
         <>
           <Divider />
-          {intl.formatMessage({ id: 'app.mustlogin2' })} {item.cost}{' '}
+          {intl.formatMessage({ id: 'app.areyousure' })} {item.cost}{' '}
           {intl.formatMessage({ id: 'app.rewardpoints?' })}
         </>
       ),
@@ -330,7 +330,7 @@ export default (): React.ReactNode => {
       }
 
       let gearImages = <></>;
-      if (menu !== 'feet' && menu !== 'head') {
+      {
         if (params.id === '14' || params.id === '12') {
           gearImages = (
             <>

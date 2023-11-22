@@ -132,7 +132,7 @@ export default function MedalTable(props: MedalTableProps): JSX.Element {
   if (props.stats.kills >= 10000) {
     medalData.push({
       image: '0015e_0067C7CA.png',
-      text: `${intl.formatMessage({ id: 'app.1000totaldeath' })}`,
+      text: `${intl.formatMessage({ id: 'app.10000totaldeath' })}`,
     });
   }
 

@@ -6,54 +6,54 @@ export default {
   'navBar.register': 'Crear cuenta',
   'navBar.characters': 'Personajes',
   'navBar.settings': 'Opciones',
-  'navBar.rewardpoints': 'Reward Points',
-  'navBar.logout2': 'You have been logged out.',
-  'navBar.notifications': 'Notifications',
-  'navBar.nonotifications': 'You have no notifications',
-  'navBar.clear': 'Clear', //the word clear in clear notifications/messages when you click the bell/notification button
-  'navBar.messages': 'Messages',
+  'navBar.rewardpoints': 'Recompensas',
+  'navBar.logout2': 'Has cerrado la sesión.',
+  'navBar.notifications': 'Notificaciones',
+  'navBar.nonotifications': 'No tienes notificaciones',
+  'navBar.clear': 'Limpiar', //the word clear in clear notifications/messages when you click the bell/notification button
+  'navBar.messages': 'Mensajes',
 
   //menu
   'menu.home': 'Inicio',
   'menu.games': 'Partidas',
   'menu.leaderboards': 'Clasificaciones',
   'menu.rewardshop': 'Tienda de Recompensas',
-  'menu.population': 'Population Stats',
+  'menu.population': 'Población del Servidor',
   'menu.guides': 'Tutoriales',
   'menu.faq': 'Preguntas frecuentes',
   'menu.ranks': 'Guía de Títulos',
 
   //404 page
-  'app.404': 'Sorry, the page you visited does not exist.',
-  'app.backhome': 'Back Home',
+  'app.404': 'Lo siento, la página a la que intentas acceder no existe.',
+  'app.backhome': 'Volver al inicio',
 
   //account activation
-  'app.success': 'success', //I believe this is the header of an error message that pops up
-  'app.accountactivated': 'Account Activated!',
+  'app.success': 'Éxito', //I believe this is the header of an error message that pops up
+  'app.accountactivated': '¡Cuenta activada!',
   'app.error': 'Error', //error for account activated and also a headere for the same thing as sucess
 
   //account creation
-  'app.accountcreated': 'Your account has been created!',
-  'app.fillform3': 'Fill out the form to create your account',
-  'app.haveacc?': 'Have an account?',
-  'app.login': 'Login',
-  'app.botcheck': 'Please fill out the bot check',
-  'app.alreadyac?': 'Already have an account?',
+  'app.accountcreated': '¡Tu cuenta ha sido creaada!',
+  'app.fillform3': 'Rellena el formulario para crear tu cuenta',
+  'app.haveacc?': '¿Ya tienes cuenta?',
+  'app.login': 'Iniciar sesión',
+  'app.botcheck': 'Por favor, completa el captcha',
+  'app.alreadyac?': '¿Ya tienes cuenta?',
 
   //account created page
   'app.created':
-    'Your account has successfully been created! Please check your email for the activation code.',
+    '¡Tu cuenta ha sido creada con éxito! Comprueba tu correo para el código de activación.',
 
   //clan
-  'app.uploaderror1': 'You can only upload a PNG file',
-  'app.uploaderror2': 'Image must smaller than 2MB',
-  'app.playername': 'Name', //This is the header of a table filled with player names in a clan
-  'app.uploaderror3': 'There was an error uploading your clan image.',
-  'app.uploadsuccess': 'Your clan emblem has successfully been updated.',
-  'app.clanleader': 'Leader',
-  'app.members': 'Members',
-  'app.emblem': 'emblem', //The current placeholder text when no image
-  'app.uploademblem': 'Upload Emblem', //For when the user has not uploaded an emblem already
+  'app.uploaderror1': 'Solo puedes subir archivos PNG',
+  'app.uploaderror2': 'La imagen debe pesar menos de 2MB',
+  'app.playername': 'Nombre', //This is the header of a table filled with player names in a clan
+  'app.uploaderror3': 'Ha habido un problema al subir el emblema.',
+  'app.uploadsuccess': 'El emblema ha sido actualizado con éxito.',
+  'app.clanleader': 'Líder',
+  'app.members': 'Miembros',
+  'app.emblem': 'Emblema', //The current placeholder text when no image
+  'app.uploademblem': 'Subir emblema', //For when the user has not uploaded an emblem already
 
   //footer
   'app.copyright':
@@ -69,14 +69,14 @@ export default {
   'app.welcome':
     'Ofrecemos un servicio en línea que te permite jugar al modo multijugador de Metal Gear Solid 4: Guns of the Patriots en PC usando el emulador {rpcs3} y crossplay con PS3. \n\n Si buscas unirte, sigue {startvideo} o ven a nuestra sección de preguntas frecuentes.\n\nÚnete a nuestro servidor de {discord} si tienes mas preguntas.',
   'app.gettingstartedvideo': 'este video',
-  'app.serveroff': 'El server está actualmente desconectado',
+  'app.serveroff': 'El servidor está desconectado',
 
   //Gamespage
-  'app.compact': 'Compact',
+  'app.compact': 'Modo Compacto',
   'app.online': 'Total en línea',
   'app.onlineplayers': 'Jugadores en partida',
   'app.lobbies': 'Partidas',
-  'app.interval': 'interval',
+  'app.interval': 'Intermedio',
 
   //Playerstats and leaderboards pages
   'app.weekly': 'Semanal', //playerstats and leaderboard pages
@@ -104,7 +104,7 @@ export default {
   'app.rank': 'Título', //leaderboard page only
   'app.rounds': 'Rondas', //playerstats page only
   'app.wins': 'Victorias', //playerstats page only
-  'app.timeplayed': 'Tiempo jugado', //playerstats page only
+  'app.timeplayed': 'Tiempo Total Jugado', //playerstats page only
   'app.headshot': 'Disparo Cabeza', //playerstats page only
   'app.lockon': 'Fijar Blanco', //playerstats page only
   'app.other': 'Otro', //playerstats page only
@@ -116,93 +116,94 @@ export default {
   'app.personalscores': 'Puntuación Personal', //playerstats page only
   'app.titlehistory': 'Historial de Títulos', //playerstats page only
   'app.medals': 'Premios', //playerstats page only
+  'app.rankings': 'Puesto', //For the table in the rank page where it normally says Rank in English and lits from 1 to whatever
 
   //medal table
-  'app.5conckill': '5 consecutive kills',
-  'app.10conckill': '10 consecutive kills',
-  'app.25conckill': '25 consecutive kills',
-  'app.3conchead': '3 consecutive headshots',
-  'app.10conchead': '10 consecutive headshots',
-  'app.30conchead': '30 consecutive headshots',
-  'app.5concdeath': '5 consecutive deaths',
-  'app.10concdeath': '10 consecutive deaths',
-  'app.25concdeath': '25 consecutive deaths',
-  'app.500totalkill': '500 total kills',
-  'app.2000totalkill': '2,000 total kills',
-  'app.10000totalkill': '10,000 consecutive kills',
-  'app.500totaldeath': '500 total deaths',
-  'app.2000totaldeath': '2,000 total deaths',
-  'app.10000totaldeath': '10,000 consecutive deaths',
-  'app.100tsnefind': '100 finds in TSNE',
-  'app.50snakespot1st': '50 times spotted snake first',
-  'app.100snakespot1st': '100 times spotted snake first',
-  'app.500snakespot1st': '500 times spotted snake first',
+  'app.5conckill': '5 asesinatos consecutivos',
+  'app.10conckill': '10 asesinatos consecutivos',
+  'app.25conckill': '25 asesinatos consecutivos',
+  'app.3conchead': '3 disparos a la cabeza consecutivos',
+  'app.10conchead': '10 disparos a la cabeza consecutivos',
+  'app.30conchead': '30 disparos a la cabeza consecutivos',
+  'app.5concdeath': '5 muertes consecutivas',
+  'app.10concdeath': '10 muertes consecutivas',
+  'app.25concdeath': '25 muertes consecutivas',
+  'app.500totalkill': '500 asesinatos totales',
+  'app.2000totalkill': '2,000 asesinatos totales',
+  'app.10000totalkill': '10,000 asesinatos totales',
+  'app.500totaldeath': '500 muertes totales',
+  'app.2000totaldeath': '2,000 muertes totales',
+  'app.10000totaldeath': '10,000 muertes totales',
+  'app.100tsnefind': '100 hallazgos en INFE',
+  'app.50snakespot1st': 'Descubrir primero a Snake 50 veces',
+  'app.100snakespot1st': 'Descubrir primero a Snake 100 veces',
+  'app.500snakespot1st': 'Descubrir primero a Snake 500 veces',
   'app.50snakeholdups': '50 holds ups performed as Snake',
   'app.100snakeholdups': '100 holds ups performed as Snake',
   'app.500snakeholdups': '500 holds ups performed as Snake',
-  'app.240hoursplayed': '240 hours played',
-  'app.893hoursplayed': '893 hours played',
-  'app.5000hoursplayed': '5000 hours played',
+  'app.240hoursplayed': '240 horas jugadas',
+  'app.893hoursplayed': '893 horas jugadas',
+  'app.5000hoursplayed': '5000 horas jugadas',
 
   //titlepage
-  'app.notitle': 'This character has not acquired any titles.',
+  'app.notitle': 'Este personaje no ha adquirido ningún título.',
 
   //Character page
-  'app.activerank': 'Your active rank has been updated.',
-  'app.maincharupdate': 'Your main character has been updated.',
-  'app.setasmain': 'Set as main',
+  'app.activerank': 'Tu título activo ha sido actualizado.',
+  'app.maincharupdate': 'Tu personaje principal ha sido actualizado.',
+  'app.setasmain': 'Establecer como principal',
 
   //Personal Scores
-  'app.conceckills': 'Consecutive Kills',
-  'app.concecdeaths': 'Consecutive Deaths',
-  'app.concechs': 'Consecutive Headshots',
-  'app.suicides': 'Suicides',
-  'app.friendlykills': 'Friendly Kills',
-  'app.friendlystuns': 'Friendly Stuns',
-  'app.timesstunned': 'Times Stunned',
-  'app.aborts': 'Aborts',
-  'app.radiouse': 'Radio Uses',
-  'app.chatuse': 'Chat Uses',
-  'app.cqcgiven': 'CQC Attacks Given',
-  'app.cqctaken': 'CQC Attacks Taken',
-  'app.rolls': 'Rolls',
-  'app.salutes': 'Salutes',
-  'app.catapult': 'Catapult Uses',
-  'app.basecap': 'Bases Captured',
-  'app.boosts': 'Boosts Given',
-  'app.falldeath': 'Falling Deaths',
-  'app.caughttrap': 'Times Caught in Trap',
-  'app.melee': 'Melee Hits',
-  'app.scansp': 'Scans Performed',
-  'app.knifekill': 'Knife Kills',
-  'app.knifestuns': 'Knife Stuns',
-  'app.assist': 'Assist Points',
-  'app.basep': 'Base Points',
-  'app.tsnep': 'TSNE Wakeups',
-  'app.snetagspawn': 'SNE Tags Spawned',
-  'app.snetagcollected': 'SNE Tags Collected',
-  'app.snewin': 'SNE Wins as Snake',
-  'app.cardboarduse': 'Cardboard Box Uses',
-  'app.cardboardtime': 'Time in Cardboard Box',
-  'app.envgtime': 'Total Time Using ENVG',
-  'app.dedicatedhosttime': 'Total Time: Dedicated Host',
-  'app.deathmatchtime': 'Total Time: Deathmatch',
-  'app.sdmtime': 'Total Time: Stealth Deathmatch',
-  'app.scaptime': 'Total Time: Solo Capture',
-  'app.tdmtime': 'Total Time: Team Deathmatch',
-  'app.captime': 'Total Time: Capture Mission',
-  'app.basetime': 'Total Time: Base Mission',
-  'app.bombtime': 'Total Time: Bomb Mission',
-  'app.racetime': 'Total Time: Race Mission',
-  'app.rescuetime': 'Total Time: Rescue Mission',
-  'app.tsnetime': 'Total Time: Team Sneaking',
-  'app.snetime': 'Total Time: Sneaking Mission',
-  'app.years': 'years', //found in personal score and title history as far as I know
-  'app.months': 'months', //found in personal score and title history as far as I know
-  'app.days': 'days', //found in personal score and title history as far as I know
-  'app.hours': 'hours', //found in personal score and title history as far as I know
-  'app.minutes': 'minutes', //found in personal score and title history as far as I know
-  'app.seconds': 'seconds', //found in personal score and title history as far as I know
+  'app.conceckills': 'Asesinatos Consecutivos',
+  'app.concecdeaths': 'Muertes Consecutivas',
+  'app.concechs': 'Disparos a la Cabeza Consecutivos',
+  'app.suicides': 'Suicidios',
+  'app.friendlykills': 'Asesinatos a amigos',
+  'app.friendlystuns': 'Aturdir a amigos',
+  'app.timesstunned': 'Veces aturdido',
+  'app.aborts': 'Retiradas',
+  'app.radiouse': 'Usos de radio',
+  'app.chatuse': 'Usos de chat',
+  'app.cqcgiven': 'Ataques CQC Realizados',
+  'app.cqctaken': 'Ataques CQC Sufridos',
+  'app.rolls': 'Rodar',
+  'app.salutes': 'Saludos',
+  'app.catapult': 'Usos de Catapulta',
+  'app.basecap': 'Bases conquistadas',
+  'app.boosts': 'Número de impulsos dados',
+  'app.falldeath': 'Muertes por caída',
+  'app.caughttrap': 'Veces atrapado en trampa',
+  'app.melee': 'Golpes provocados',
+  'app.scansp': 'Escanéos realizados',
+  'app.knifekill': 'Asesinatos con cuchillo',
+  'app.knifestuns': 'Aturdir con cuchillo',
+  'app.assist': 'Puntos por asistencia',
+  'app.basep': 'Puntos de BASE',
+  'app.tsnep': 'Compañeros despiertos en INFE',
+  'app.snetagspawn': 'Placas INF creadas',
+  'app.snetagcollected': 'Placas INF recogidas',
+  'app.snewin': 'Victorias INF como Snake',
+  'app.cardboarduse': 'Usos Caja de Cartón',
+  'app.cardboardtime': 'Tiempo en la Caja de Cartón',
+  'app.envgtime': 'Tiempo total usando GVNR',
+  'app.dedicatedhosttime': 'Tiempo como Anfitrión Dedicado',
+  'app.deathmatchtime': 'Tiempo Total de Juego: Deathmatch (DM)',
+  'app.sdmtime': 'Tiempo Total de Juego: Deathmatch Camuflaje (DMC)',
+  'app.scaptime': 'Tiempo Total de Juego: Captura en Solitario (CAPS)',
+  'app.tdmtime': 'Tiempo Total de Juego: Deathmatch de Equipo (DME)',
+  'app.captime': 'Tiempo Total de Juego: Misión de Captura (CAP)',
+  'app.basetime': 'Tiempo Total de Juego: Misión de Base (BASE)',
+  'app.bombtime': 'Tiempo Total de Juego: Misión Bombas (BOMBAS)',
+  'app.racetime': 'Tiempo Total de Juego: Misión Carrera (CARR)',
+  'app.rescuetime': 'Tiempo Total de Juego: Misión de Rescate (RES)',
+  'app.tsnetime': 'Tiempo Total de Juego: Infiltración del Equipo (INFE)',
+  'app.snetime': 'Tiempo Total de Juego: Misión de Infiltración (INF)',
+  'app.years': 'Años', //found in personal score and title history as far as I know
+  'app.months': 'Meses', //found in personal score and title history as far as I know
+  'app.days': 'Días', //found in personal score and title history as far as I know
+  'app.hours': 'Horas', //found in personal score and title history as far as I know
+  'app.minutes': 'Minutos', //found in personal score and title history as far as I know
+  'app.seconds': 'Segundos', //found in personal score and title history as far as I know
 
   //Account login page
   'app.forgotpw': 'Olvidé mi contraseña',
@@ -216,18 +217,23 @@ export default {
   'app.donthaveacc': 'Crear cuenta',
   'app.alreadyhaveacc': '¿Ya tienes una cuenta?',
   'app.resetpw': 'Reestablecer contraseña',
-  'app.fillform': 'Fill out the form to login',
-  'app.needanaccount': 'Need an account?',
-  'app.register': 'Register',
+  'app.fillform': 'Rellena el formulario para iniciar sesión',
+  'app.needanaccount': '¿Necesitas cuenta?',
+  'app.register': 'Registrarse',
 
   //Accounts Settings Page
-  'app.basicsettings': 'Basic Settings',
-  'app.loggedin': 'You are logged in.', //should be a notification which I cannot see on test version sadly
-  'app.accupdated': 'Your account has been updated.', //should be a notification which I cannot see on test version sadly
+  'app.basicsettings': 'Ajustes básicos',
+  'app.loggedin': 'Has iniciado sesión.', //should be a notification which I cannot see on test version sadly
+  'app.accupdated': 'Tu cuenta ha sido actualizada.', //should be a notification which I cannot see on test version sadly
   'app.displayname': 'Nombre a Mostrar',
-  'app.currentpw': 'Contraseña actual',
+  'app.currentpw': 'Contraseña Actual',
   'app.newpw': 'Nueva Contraseña',
   'app.updateinfo': 'Actualizar Cuenta',
+
+  //password reset
+  'app.newpw2': 'Your new password is',
+  'app.changepw': 'You may change your password after logging in.',
+  'app.fillform2': 'Fill out the form to reset your password',
 
   //faq
   'app.minimum': 'Mínimo',
@@ -244,77 +250,84 @@ Los mejores procesadores relación potencia/precio que probablemente encuentres 
 Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador de 8-núcleos/16-hilos 35W+ Serie-H como el Intel Core i7-10870H o el AMD Ryzen 7 5800H.`,
 
   //Stats/Population page
-  'app.todayspeakplayers': 'Peak Players (Today)',
-  'app.alltimepeakplayers': 'Peak Players (All time)',
-  'app.playercount60days': 'Player Count (Last 60 Days)',
+  'app.todayspeakplayers': 'Pico de Jugadores (Hoy)',
+  'app.alltimepeakplayers': 'Pico de Jugadores (Histórico)',
+  'app.playercount60days': 'Cantidad de Jugadores (Últimos 60 días)',
   'app.playergraphtotal': 'Total',
-  'app.playergraphconcurrent': 'Concurrent',
+  'app.playergraphconcurrent': 'Simultáneo',
 
   //Ranks
-  'app.kdrsrr': 'Kills + Stuns ÷ Deaths + Stuns Received in', //same words can be found for numerous ranks
-  'app.atleast': 'at least', //same words can be found for numerous ranks
+  'app.kdrsrr': 'Asesinatos + Aturdir ÷ Muertes + Aturdido', //same words can be found for numerous ranks
+  'app.atleast': 'al menos', //same words can be found for numerous ranks
   'app.dm': 'DM', //same words can be found for numerous ranks
-  'app.tdm': 'TDM', //same words can be found for numerous ranks
-  'app.sne': 'SNE', //same words can be found for numerous ranks
+  'app.tdm': 'DME', //same words can be found for numerous ranks
+  'app.sne': 'INF', //same words can be found for numerous ranks
   'app.cap': 'CAP', //same words can be found for numerous ranks
   'app.base': 'BASE', //same words can be found for numerous ranks
-  'app.bomb': 'BOMB', //same words can be found for numerous ranks
+  'app.bomb': 'BOMBAS', //same words can be found for numerous ranks
   'app.res': 'RES', //same words can be found for numerous ranks
-  'app.tsne': 'TSNE', //same words can be found for numerous ranks
-  'app.race': 'RACE', //same words can be found for numerous ranks
-  'app.sdm': 'SDM',
-  'app.and': 'and', //same words can be found for numerous ranks
-  'app.win%in': 'Win % in', //same words can be found for numerous ranks
-  'app.basecapratio': 'Bases capped ÷ Total Base Rounds = higher than', //same words can be found for numerous ranks
-  'app.withdrawel': 'Withdrawal %', //same words can be found for numerous ranks
-  'app.totalrounds': 'rounds in all previously mentioned modes.', //same words can be found for numerous ranks
-  'app.headbodyratio': 'Headshot Kills + Headshot Stuns ÷ Kills + Stuns', //eagle
-  'app.knifekillratio': 'Knife kills ÷ Total Kills', //jaws
-  'app.survivalratio': 'Deaths ÷ Rounds Played in', //waterbear
-  'app.kdrrank': 'Kills ÷ Deaths', //sloth
-  'app.headshotdeathratio': 'Headshot Deaths ÷ Deaths', //sloth
-  'app.stunratio': 'Stuns ÷ Stuns Received', //pigeon
-  'app.rollratio': 'Rolls ÷ Rounds', //flying squirrel
-  'app.stunkillratio': 'Stuns ÷ Kills', //pigeon
-  'app.envg': 'Time Using ENVG Goggles ÷ Play Time', //owl
-  'app.lastlogin': 'Last Login', //tsuchinoko
-  'app.dayssincelastplay': 'Days', //tsuchinoko
-  'app.sneratio': 'Sneaking Rounds ÷ Overall Rounds', //Snake
-  'app.sneweeklyrounds': 'Weekly Rounds of Sneaking Mission', //Snake
-  'app.moderoundsplayedratio': 'Rounds ÷ Overall Rounds', //same words can be found for numerous ranks
-  'app.weeklyrounds': 'Weekly Rounds of', //same words can be found for numerous ranks
-  'app.killsperround': 'Kills ÷ Rounds', //chicken
-  'app.stunsperround': 'Stuns ÷ Rounds', //chicken
-  'app.stunsreceivedperround': 'Stuns Received ÷ Rounds', //chicken
-  'app.deathsperround': 'Deaths ÷ Rounds', //chicken
-  'app.cqcperround': 'CQC Attacks ÷ Rounds', //bear
-  'app.boxperround': 'Box Uses ÷ Overall Rounds', //Tortoise
-  'app.scansperround': 'Scans ÷ Rounds', //Bee
-  'app.trapcaughtperround': 'Stuck In Trap ÷ Rounds', //RAT
+  'app.tsne': 'INFE', //same words can be found for numerous ranks
+  'app.race': 'CARR', //same words can be found for numerous ranks
+  'app.sdm': 'DMC',
+  'app.andfoxhound': 'y', //This can change depending on gramtical reasons so had to split up and for each rank
+  'app.andfox': 'y',
+  'app.anddoberman': 'y',
+  'app.andhound': 'y',
+  'app.andwaterbear': 'y',
+  'app.gramaticalcomma': ' ', //for instance in American English , before the word and in a list. Not the case for Spanish or British English
+  'app.win%in': '% Victorias en', //same words can be found for numerous ranks
+  'app.basecapratio': 'Bases capturadas ÷ Rondas Totales en BASE = mayor que', //same words can be found for numerous ranks
+  'app.withdrawel': '% de Retiradas', //same words can be found for numerous ranks
+  'app.totalrounds': 'rondas en los modos previamente mencionados.', //same words can be found for numerous ranks
+  'app.headbodyratio': 'Asesinatos Cabeza + Aturdimientos Cabeza ÷ Asesinatos + Aturdir', //eagle
+  'app.knifekillratio': 'Asesinatos Cuchillo ÷ Asesinatos Totales', //jaws
+  'app.survivalratio': 'Muertes ÷ Rondas jugadas en', //waterbear
+  'app.kdrrank': 'Asesinatos ÷ Muertes', //sloth
+  'app.headshotdeathratio': 'Muertes Cabeza ÷ Muertes', //sloth
+  'app.stunratio': 'Aturdir ÷ Aturdido', //pigeon
+  'app.rollratio': 'Rodar ÷ Rondas', //flying squirrel
+  'app.stunkillratio': 'Aturdir ÷ Asesinatos', //pigeon
+  'app.envg': 'Tiempo usando GVNR ÷ Tiempo jugado', //owl
+  'app.lastlogin': 'Último inicio de sesión', //tsuchinoko
+  'app.dayssincelastplay': 'Días', //tsuchinoko
+  'app.sneratio': 'Rondas de Misión de Infiltración ÷ Rondas Totales', //Snake
+  'app.sneweeklyrounds': 'Rondas Semanales de Misión de Infiltración', //Snake
+  'app.moderoundsplayedratio': 'Rondas ÷ Rondas Totales', //same words can be found for numerous ranks
+  'app.weeklyrounds': 'Rondas Semanales de', //same words can be found for numerous ranks
+  'app.killsperround': 'Asesinatos ÷ Rondas', //chicken
+  'app.stunsperround': 'Aturdir ÷ Rondas', //chicken
+  'app.stunsreceivedperround': 'Aturdido ÷ Rondas', //chicken
+  'app.deathsperround': 'Muertes ÷ Rondas', //chicken
+  'app.cqcperround': 'Ataques CQC ÷ Rondas', //bear
+  'app.boxperround': 'Usos Caja de Cartón ÷ Rondas Totales', //Tortoise
+  'app.scansperround': 'Escaneos ÷ Rondas', //Bee
+  'app.trapcaughtperround': 'Veces atrapado en trampa ÷ Rondas', //RAT
+  'app.rounds2': 'Rondas', //ita and spanish only for different sentence structure
+  'app.totalrounds2': '÷ Rondas Totales', //ita and spanish only for different sentence structure
 
   //Reward Shop
-  'app.information': 'Information',
-  'app.nothingtobuy': 'There is nothing available to purchase.',
-  'app.charselect': 'Select a character',
-  'app.rewardpoints?': 'reward points?',
-  'app.mustlogin': 'You must be logged in to make purchases.',
-  'app.mustlogin2': 'You must be logged in to equip items.',
-  'app.areyousure': 'Are you sure you want to purchase this item for',
+  'app.information': 'Información',
+  'app.nothingtobuy': 'No hay nada disponible para comprar.',
+  'app.charselect': 'Selecciona un personaje',
+  'app.rewardpoints?': 'Puntos de Recompensa?',
+  'app.mustlogin': 'Debes iniciar sesión para poder comprar.',
+  'app.mustlogin2': 'Debes iniciar sesión para equipar items.',
+  'app.areyousure': '¿Seguro que quieres comprar este item por',
   'app.rewardshopinfo':
     'Los puntos de recompensa son obtenidos a medida que juegas y no hay forma de comprarlos con dinero real.',
   'app.equip': 'Equipar',
   'app.purchase': 'Comprar',
-  'app.cancel': 'Cancel',
+  'app.cancel': 'Cancelar',
   'app.owned': 'Obtenido',
   'app.equipcharselect': 'Por favor, selecciona el personaje al que quieres equipar el item.',
-  'app.notice': 'Notice',
-  'app.head': 'Head',
-  'app.upper': 'Upper Body',
-  'app.lower': 'Lower Body',
-  'app.chest': 'Chest',
-  'app.waist': 'Waist',
-  'app.hands': 'Hands',
-  'app.feet': 'Feet',
+  'app.notice': 'Anuncio',
+  'app.head': 'Cabeza',
+  'app.upper': 'Parte Superior',
+  'app.lower': 'Parte Inferior',
+  'app.chest': 'Pecho',
+  'app.waist': 'Cintura',
+  'app.hands': 'Manos',
+  'app.feet': 'Pies',
   'app.gearslotname14': 'Camiseta',
   'app.gearslotdesc14':
     'Una camiseta de manga corta. Fabricada con un material que absorbe y evapora el sudor con facilidad.',
@@ -427,7 +440,7 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
   'app.colorred!': 'RED!',
   'app.color2tmcamo': '2TM Camo',
   'app.coloralaska': 'Alaska',
-  'app.coloralert': 'Alert',
+  'app.coloralert': 'Alerta',
   'app.coloranimalcamo': 'Animal Camo',
   'app.colorbigbosswatching': '"TheBoss" Uniform',
   'app.colorblue!': 'BLUE!',

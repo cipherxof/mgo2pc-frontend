@@ -265,17 +265,22 @@ export default {
   'app.base': 'BASE', //same words can be found for numerous ranks
   'app.bomb': 'BOMBE', //same words can be found for numerous ranks
   'app.res': 'SAU', //same words can be found for numerous ranks
-  'app.tsne': 'INFE', //same words can be found for numerous ranks
+  'app.tsne': 'INFE', //same words can be found for numerous ranksいま  ばんごはん お  たべます
   'app.race': 'COURSE', //same words can be found for numerous ranks
   'app.sdm': 'MMCO',
-  'app.and': 'et', //same words can be found for numerous ranks
+  'app.andfoxhound': 'et', //This can change depending on gramtical reasons so had to split up and for each rank
+  'app.andfox': 'et',
+  'app.anddoberman': 'et',
+  'app.andhound': 'et',
+  'app.andwaterbear': 'et',
+  'app.gramaticalcomma': ' ', //for instance in American English , before the word and in a list. Not the case for Spanish or British English
   'app.win%in': 'Le % de Victoire sur', //same words can be found for numerous ranks
   'app.basecapratio': 'Bases capturées ÷ Total des rounds Base = supérieur à', //same words can be found for numerous ranks
   'app.withdrawel': 'Abandon %', //same words can be found for numerous ranks
   'app.totalrounds': 'Rounds dans tous les modes mentionnés précédemment.', //same words can be found for numerous ranks
   'app.headbodyratio': 'Kills tirs à la tête + K.O. (Stuns) tirs à la tête ÷ Kills + K.O. (Stuns)', //eagle
   'app.knifekillratio': 'Kills au couteau ÷ Total Kills', //jaws
-  'app.survivalratio': 'Morts ÷ Rounds joués in', //waterbear
+  'app.survivalratio': 'Morts ÷ Rounds joués sur', //waterbear
   'app.kdrrank': 'Kills ÷ Morts', //sloth
   'app.headshotdeathratio': 'Headshot Morts ÷ Morts', //sloth
   'app.stunratio': 'K.O. (Stuns) ÷ K.O. (Stuns) reçus', //pigeon
