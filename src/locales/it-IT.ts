@@ -485,4 +485,6 @@ export default {
   'app.colorvolgin': 'Volgin',
   'app.colorwhitecamo': 'White Camo',
   'app.colorwolf': 'Wolf',
+  'app.equipped': "The item has been equipped",
+  "app.purchased": "The item has been purchased"
 };

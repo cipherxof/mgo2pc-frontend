@@ -63,6 +63,7 @@ function getSlotFromGearId(slots: ShopSlot[] | undefined, gearId: string | undef
 
 export default (): React.ReactNode => {
   const intl = useIntl();
+  const currentLocale = intl.locale;
   const params = useParams<ShopParams>();
   const isSlotParam = params.id && slotData[params.id] !== undefined;
   const { data, loading, refresh } = useRequest(getShopItems);
@@ -139,7 +140,7 @@ export default (): React.ReactNode => {
       });
       return;
     }
-
+    if (currentLocale === "en-US") {
     try {
       const response = await equipItem(item.id, charaId);
 
@@ -151,6 +152,19 @@ export default (): React.ReactNode => {
         });
       }
     } catch (e) {}
+  } else {
+    try {
+      const response = await equipItem(item.id, charaId);
+
+      if (response.success) {
+        notification.success({
+          message: `${intl.formatMessage({ id: 'app.success' })}`,
+          description:  `${intl.formatMessage({ id: 'app.equipped' })}`,
+          placement: 'topRight',
+        });
+      }
+    } catch (e) {}
+  }
   };
 
   function handlePurchase(item: ShopItem) {
