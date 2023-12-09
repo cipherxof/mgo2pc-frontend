@@ -495,6 +495,6 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
   'app.colorvolgin': 'Volgin',
   'app.colorwhitecamo': 'Camuflaje Blanco',
   'app.colorwolf': 'Wolf',
-  'app.equipped': "The item has been equipped",
-  "app.purchased": "The item has been purchased"
+  'app.equipped': "El item ha sido equipado",
+  "app.purchased": "El item ha sido comprado"
 };
