@@ -37,7 +37,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.sne' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -56,7 +55,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.cap' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -75,7 +73,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.res' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -94,7 +91,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.tsne' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -119,7 +115,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.deathsperround' })} {`<=`}{' '}
             <Text type="success">0.50</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -131,7 +126,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.cqcperround' })} {`>=`} <Text type="success">5</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -143,7 +137,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.boxperround' })} {`>=`} <Text type="success">15</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -156,7 +149,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.scansperround' })} {`>=`}{' '}
             <Text type="success">0.30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -169,7 +161,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.trapcaughtperround' })} {`>=`}{' '}
             <Text type="success">0.30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -188,7 +179,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.dm' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -207,7 +197,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.sdm' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -226,7 +215,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.tdm' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -245,7 +233,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.base' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -284,7 +271,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -308,7 +294,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.sne' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -328,7 +313,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.cap' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -348,7 +332,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.res' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -368,7 +351,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.tsne' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -393,7 +375,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.deathsperround' })} {`<=`}{' '}
             <Text type="success">0.50</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -405,7 +386,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.cqcperround' })} {`>=`} <Text type="success">5</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -417,7 +397,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.boxperround' })} {`>=`} <Text type="success">15</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -430,7 +409,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.scansperround' })} {`>=`}{' '}
             <Text type="success">0.30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -443,7 +421,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.trapcaughtperround' })} {`>=`}{' '}
             <Text type="success">0.30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -463,7 +440,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.dm' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -483,7 +459,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.sdm' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -503,7 +478,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.tdm' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -523,7 +497,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.base' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -563,7 +536,6 @@ export default (): React.ReactNode => {
             <Text type="warning">{intl.formatMessage({ id: 'app.race' })}</Text> {`>=`}{' '}
             <Text type="success">30</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -786,7 +758,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.kdrsrr' })} {`>=`} <Text type="success">1.50</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -817,7 +788,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.knifekillratio' })} {`>=`}{' '}
             <Text type="success">0.075</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -835,7 +805,6 @@ export default (): React.ReactNode => {
             </Text>{' '}
             {`<=`} <Text type="success">0.50</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -854,7 +823,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.stunratio' })} {`<=`} <Text type="success">0.85</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -866,7 +834,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.rollratio' })} {`>=`} <Text type="success">15</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -883,7 +850,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.stunratio' })} {`>=`} <Text type="success">1.20</Text>
           </p>
           <br />
-          <br />
         </>
       ),
     },
@@ -895,7 +861,6 @@ export default (): React.ReactNode => {
           <p>
             {intl.formatMessage({ id: 'app.envg' })} {`>=`} <Text type="success">0.05</Text>
           </p>
-          <br />
         </>
       ),
     },
@@ -908,7 +873,6 @@ export default (): React.ReactNode => {
             {intl.formatMessage({ id: 'app.lastlogin' })} {`>=`} <Text type="success">30</Text>{' '}
             {intl.formatMessage({ id: 'app.dayssincelastplay' })}
           </p>
-          <br />
         </>
       ),
     },
@@ -916,17 +880,14 @@ export default (): React.ReactNode => {
   ];
   const cards: JSX.Element[] = [];
 
-  let countArrayAnimalRanks = 1;
-
   for (const rank of ranks) {
     const pathToImgAndShowRankEmblem = `/static/media/emblem/${rank.id}.png`;
 
-    let currentNumber = rank.id;
     cards.push(
       <div className="col-md-3 text-center">
         <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
           <img src={`${pathToImgAndShowRankEmblem}`} />
-          <Meta title={rank.name} description={rank.description} />
+          <Meta title={rank.name} description={rank.description} style={{ marginBottom: '4px' }} />
         </Card>
       </div>,
     );
