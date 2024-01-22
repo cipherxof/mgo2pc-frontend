@@ -11,17 +11,6 @@ export default (): React.ReactNode => {
   return (
     <PageContainer>
       <Collapse defaultActiveKey={['1']}>
-        <Panel header="Registration Process" key="1">
-          <div>
-            <p>To register, please visit <a href="https://mgo2pc.com/register">our registration page</a>. We advise using a Gmail account for registration as Hotmail/Outlook emails have been experiencing issues lately. Your username should be at least 8 characters long, containing only letters and numbers, without spaces or special characters. This username will also serve as your Game ID, and the chosen password will be your game password. Once your account is created, it is not necessary to change your password, even if redirected to a password change page.</p>
-          </div>
-        </Panel>
-        <Panel header="Email Confirmation Issues" key="2">
-          <div>
-          <p>If you do not receive an email confirmation, it is possible that a Hotmail/Outlook email address was used, which might cause delays. However, account activation is not required. Please ensure you remember your username and password. If forgotten, assistance can be sought by opening a ticket in our <a href="https://discord.com/invite/MNqmzuW2wH">Discord channel</a>.</p>
-          </div>
-        </Panel>
-
         <Panel header="Password Reset Instructions" key="3">
           <div>
             <p>If you have forgotten your password, submit your email address <a href="https://mgo2pc.com/recovery">here</a>. You will receive an email with a link to reset your password. Simply follow the instructions provided in the email.</p>
