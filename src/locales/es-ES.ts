@@ -138,9 +138,9 @@ export default {
   'app.50snakespot1st': 'Descubrir primero a Snake 50 veces',
   'app.100snakespot1st': 'Descubrir primero a Snake 100 veces',
   'app.500snakespot1st': 'Descubrir primero a Snake 500 veces',
-  'app.50snakeholdups': '50 holds ups performed as Snake',
-  'app.100snakeholdups': '100 holds ups performed as Snake',
-  'app.500snakeholdups': '500 holds ups performed as Snake',
+  'app.50snakeholdups': '50 levantamientos de manos como Snake',
+  'app.100snakeholdups': '100 levantamientos de manos como Snake',
+  'app.500snakeholdups': '500 levantamientos de manos como Snake',
   'app.240hoursplayed': '240 horas jugadas',
   'app.893hoursplayed': '893 horas jugadas',
   'app.5000hoursplayed': '5000 horas jugadas',
@@ -169,12 +169,12 @@ export default {
   'app.rolls': 'Rodar',
   'app.salutes': 'Saludos',
   'app.catapult': 'Usos de Catapulta',
-  'app.basecap': 'Bases conquistadas',
+  'app.basecap': 'Bases Conquistadas',
   'app.boosts': 'Número de impulsos dados',
   'app.falldeath': 'Muertes por caída',
   'app.caughttrap': 'Veces atrapado en trampa',
   'app.melee': 'Golpes provocados',
-  'app.scansp': 'Escanéos realizados',
+  'app.scansp': 'Escaneos realizados',
   'app.knifekill': 'Asesinatos con cuchillo',
   'app.knifestuns': 'Aturdir con cuchillo',
   'app.assist': 'Puntos por asistencia',
@@ -226,14 +226,14 @@ export default {
   'app.loggedin': 'Has iniciado sesión.', //should be a notification which I cannot see on test version sadly
   'app.accupdated': 'Tu cuenta ha sido actualizada.', //should be a notification which I cannot see on test version sadly
   'app.displayname': 'Nombre a Mostrar',
-  'app.currentpw': 'Contraseña Actual',
-  'app.newpw': 'Nueva Contraseña',
-  'app.updateinfo': 'Actualizar Cuenta',
+  'app.currentpw': 'Contraseña actual',
+  'app.newpw': 'Nueva contraseña',
+  'app.updateinfo': 'Actualizar cuenta',
 
   //password reset
-  'app.newpw2': 'Your new password is',
-  'app.changepw': 'You may change your password after logging in.',
-  'app.fillform2': 'Fill out the form to reset your password',
+  'app.newpw2': 'Tu nueva contraseña es',
+  'app.changepw': 'Puedes cambiar tu contraseña después de iniciar sesión.',
+  'app.fillform2': 'Rellena el formulario para reestablecer la contraseña.',
 
   //faq
   'app.minimum': 'Mínimo',
@@ -269,15 +269,15 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
   'app.tsne': 'INFE', //same words can be found for numerous ranks
   'app.race': 'CARR', //same words can be found for numerous ranks
   'app.sdm': 'DMC',
-  'app.andfoxhound': 'y', //This can change depending on gramtical reasons so had to split up and for each rank
-  'app.andfox': 'y',
-  'app.anddoberman': 'y',
-  'app.andhound': 'y',
-  'app.andwaterbear': 'y',
+  'app.andfoxhound': 'e', //This can change depending on gramtical reasons so had to split up and for each rank
+  'app.andfox': 'e',
+  'app.anddoberman': 'e',
+  'app.andhound': 'e',
+  'app.andwaterbear': 'e',
   'app.gramaticalcomma': ' ', //for instance in American English , before the word and in a list. Not the case for Spanish or British English
-  'app.win%in': '% Victorias en', //same words can be found for numerous ranks
+  'app.win%in': '% de Victorias en', //same words can be found for numerous ranks
   'app.basecapratio': 'Bases capturadas ÷ Rondas Totales en BASE = mayor que', //same words can be found for numerous ranks
-  'app.withdrawel': '% de Retiradas', //same words can be found for numerous ranks
+  'app.withdrawel': '% de Retiradas =', //same words can be found for numerous ranks
   'app.totalrounds': 'rondas en los modos previamente mencionados.', //same words can be found for numerous ranks
   'app.headbodyratio': 'Asesinatos Cabeza + Aturdimientos Cabeza ÷ Asesinatos + Aturdir', //eagle
   'app.knifekillratio': 'Asesinatos Cuchillo ÷ Asesinatos Totales', //jaws
@@ -290,8 +290,8 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
   'app.envg': 'Tiempo usando GVNR ÷ Tiempo jugado', //owl
   'app.lastlogin': 'Último inicio de sesión', //tsuchinoko
   'app.dayssincelastplay': 'Días', //tsuchinoko
-  'app.sneratio': 'Rondas de Misión de Infiltración ÷ Rondas Totales', //Snake
-  'app.sneweeklyrounds': 'Rondas Semanales de Misión de Infiltración', //Snake
+  'app.sneratio': 'Rondas de Misión de Infiltración ÷ Rondas Semanales', //unused in Spanish
+  'app.sneweeklyrounds': 'Rondas Semanales de Misión de Infiltración', //unused in Spanish
   'app.moderoundsplayedratio': 'Rondas ÷ Rondas Totales', //same words can be found for numerous ranks
   'app.weeklyrounds': 'Rondas Semanales de', //same words can be found for numerous ranks
   'app.killsperround': 'Asesinatos ÷ Rondas', //chicken
@@ -299,11 +299,11 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
   'app.stunsreceivedperround': 'Aturdido ÷ Rondas', //chicken
   'app.deathsperround': 'Muertes ÷ Rondas', //chicken
   'app.cqcperround': 'Ataques CQC ÷ Rondas', //bear
-  'app.boxperround': 'Usos Caja de Cartón ÷ Rondas Totales', //Tortoise
+  'app.boxperround': 'Usos Caja de Cartón ÷ Rondas', //Tortoise
   'app.scansperround': 'Escaneos ÷ Rondas', //Bee
   'app.trapcaughtperround': 'Veces atrapado en trampa ÷ Rondas', //RAT
-  'app.rounds2': 'Rondas', //ita and spanish only for different sentence structure
-  'app.totalrounds2': '÷ Rondas Totales', //ita and spanish only for different sentence structure
+  'app.rounds2': 'Rondas de', //ita and spanish only for different sentence structure
+  'app.totalrounds2': '÷ Rondas Totales (Semana)', //ita and spanish only for different sentence structure
 
   //Reward Shop
   'app.information': 'Información',
@@ -438,61 +438,63 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
 
   //Gear Colors or colours if you are British
   'app.colorred!': 'RED!',
-  'app.color2tmcamo': '2TM Camo',
+  'app.color2tmcamo': 'Camuflaje 2TM',
   'app.coloralaska': 'Alaska',
   'app.coloralert': 'Alerta',
-  'app.coloranimalcamo': 'Animal Camo',
-  'app.colorbigbosswatching': '"TheBoss" Uniform',
+  'app.coloranimalcamo': 'Camuflaje Animal',
+  'app.colorbigbosswatching': 'Big Boss Is Watching',
   'app.colorblue!': 'BLUE!',
-  'app.colorbluecamo': 'Blue Camo',
-  'app.colorblueurbancamo': 'Blue Urban Camo',
-  'app.colorbrickcamo': 'Brick Camo',
+  'app.colorbluecamo': 'Camuflaje Azul',
+  'app.colorblueurbancamo': 'Camuflaje Azul Urbano',
+  'app.colorbrickcamo': 'Camuflaje Ladrillo',
   'app.colorchameleon': 'Chameleon',
-  'app.colordpmbluecamo': 'DPM Blue Camo',
-  'app.colorerdlredcamo': 'ERDL Red Camo',
-  'app.colorfishcamo': 'Fish Camo',
-  'app.colorflowercamo': 'Flower Camo',
-  'app.colorga-kocamo': 'GA-KO Camo',
+  'app.colordpmbluecamo': 'Camuflaje DPM Azul',
+  'app.colorerdlredcamo': 'Camuflaje ERDL Rojo',
+  'app.colorfishcamo': 'Camuflaje Pez',
+  'app.colorflowercamo': 'Camuflaje Flor',
+  'app.colorga-kocamo': 'Camuflaje GA-KO',
   'app.colorgameover': 'Game Over',
-  'app.colorgoldberet': 'Gold Beret',
+  'app.colorgoldberet': 'Boina Dorada',
   'app.colorgrayfox': 'Gray Fox',
-  'app.colorgtcamo': 'GT Camo',
-  'app.colorheartcamo': 'Heart Camo',
-  'app.colorhornetstripecamo': 'Hornet Stripe Camo',
-  'app.colorigatactical': 'IGA Tactical',
-  'app.colorinfiltrator': 'Infiltrator',
-  'app.colorjpcamo': 'JP Camo',
-  'app.colorjtournamentwinner': 'J Tournament Winner',
+  'app.colorgtcamo': 'Camuflaje GT',
+  'app.colorheartcamo': 'Camuflaje Corazón',
+  'app.colorhornetstripecamo': 'Camuflaje Avispas',
+  'app.colorigatactical': 'Táctico IGA',
+  'app.colorinfiltrator': 'Infiltrado',
+  'app.colorjpcamo': 'Camuflaje JP',
+  'app.colorjtournamentwinner': 'Campeón del Torneo: J',
   'app.colorlalilulelo': 'La Li Lu Le Lo',
-  'app.colormerrychristmas': 'Merry Christmas',
-  'app.colormummycamo': 'Mummy Camo',
-  'app.colororangecamo': 'Orange Camo',
+  'app.colormerrychristmas': 'Feliz Navidad',
+  'app.colormummycamo': 'Camuflaje Momia',
+  'app.colororangecamo': 'Camuflaje Naranja',
   'app.colorouterhaven': 'Outer Haven',
-  'app.colorpeacecamo': 'Peace Camo',
-  'app.colorpinkcamo': 'Pink Camo',
+  'app.colorpeacecamo': 'Camuflaje Paz',
+  'app.colorpinkcamo': 'Camuflaje Rosado',
   'app.colorportableops:null': 'Portable Ops: Null',
   'app.colorprayingmantis': 'Praying Mantis',
   'app.colorratpatrol': 'Rat Patrol',
   'app.colorravensword': 'Raven Sword',
-  'app.colorrescamo': 'RES Camo',
+  'app.colorrescamo': 'Camuflaje RES',
   'app.colorsansfrontiers': 'Sans Frontiers',
-  'app.colorsdmcamo': 'SDM Camo',
-  'app.colorsdmcontestant': 'SDM Contestant',
+  'app.colorsdmcamo': 'Camuflaje SDM',
+  'app.colorsdmcontestant': 'Participante SDM',
   'app.colorsnake(fox)': 'Snake (Fox)',
-  'app.colorsnakecamo': 'Snake Camo',
-  'app.colorsneakingsuit(2)': 'Sneaking Suit (2)',
-  'app.colorsneakingsuit(3)': 'Sneaking Suit (3)',
-  'app.colorsneakingsuit': 'Sneaking Suit',
-  'app.colorspidercamo': 'Spider Camo',
-  'app.colorspiritcamo': 'Spirit Camo',
-  'app.colorsplittercamo': 'Splitter Camo',
-  'app.colorthebossuniform': 'The "Boss" Uniform',
+  'app.colorsnakecamo': 'Camuflaje Serpiente',
+  'app.colorsneakingsuit(2)': 'Traje de Infiltración (2)',
+  'app.colorsneakingsuit(3)': 'Traje de Infiltración (3)',
+  'app.colorsneakingsuit': 'Traje de Infiltración',
+  'app.colorspidercamo': 'Camuflaje Araña',
+  'app.colorspiritcamo': 'Camuflaje Espíritu',
+  'app.colorsplittercamo': 'Camuflaje Resplandor',
+  'app.colorthebossuniform': 'Uniforme The Boss',
   'app.colorthesaltisreal': 'The Salt Is Real',
-  'app.colortltwb': 'TLTWB',
+  'app.colortltwb': 'To Let The World Be',
   'app.colortotalstealth': 'Total Stealth',
-  'app.colortrcamo': 'TR Camo',
-  'app.colorurbandigitalcamo': 'Urban Digital Camo',
+  'app.colortrcamo': 'Camuflaje TR',
+  'app.colorurbandigitalcamo': 'Camuflaje Digital Urbano',
   'app.colorvolgin': 'Volgin',
-  'app.colorwhitecamo': 'White Camo',
+  'app.colorwhitecamo': 'Camuflaje Blanco',
   'app.colorwolf': 'Wolf',
+  'app.equipped': "El item ha sido equipado",
+  "app.purchased": "El item ha sido comprado"
 };

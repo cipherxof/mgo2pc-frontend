@@ -495,4 +495,6 @@ export default {
   'app.colorvolgin': 'Volgin',
   'app.colorwhitecamo': 'Camouflage blanc',
   'app.colorwolf': 'Wolf',
+  'app.equipped': "L'objet a été équipé",
+  "app.purchased": "L'objet a été acheté "
 };

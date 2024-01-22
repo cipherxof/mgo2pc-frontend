@@ -482,4 +482,6 @@ export default {
   'app.colorvolgin': 'Volgin',
   'app.colorwhitecamo': 'White Camo',
   'app.colorwolf': 'Wolf',
+  'app.equipped': "アイテムは装備されました",
+  "app.purchased": "商品は購入されました"
 };
