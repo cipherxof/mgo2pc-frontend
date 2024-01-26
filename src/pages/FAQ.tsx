@@ -10,7 +10,21 @@ export default (): React.ReactNode => {
   document.title = 'FAQ - Metal Gear Online 2 Fan Revival';
   return (
     <PageContainer>
-      <Collapse defaultActiveKey={['1']}>
+      <Collapse defaultActiveKey={['8']}>
+      <Panel header="System Requirements for PC Users" key="8">
+          <div>
+              <h3>Minimum Requirements</h3>
+              <p><em>These specs are aimed at a framerate target of 30fps at 1080p</em></p>
+              <strong>CPU:</strong> Intel i5-10400, AMD Ryzen 5 3600, or better.<br/>
+              <strong>GPU:</strong> GTX 1050 ti or equivalent AMD GPU
+              <Divider/>
+              <h3>Recommended Requirements</h3>
+              <p><em>These specs are aimed at a framerate target of 60fps at 4k</em></p>
+              <strong>CPU:</strong> Intel i7-12700k, AMD Ryzen 7 7700X, or better.<br/>
+              <strong>GPU:</strong> GTX 3070 or equivalent AMD GPU
+          </div>
+        </Panel>
+
         <Panel header="Password Reset Instructions" key="3">
           <div>
             <p>If you have forgotten your password, submit your email address <a href="https://mgo2pc.com/recovery">here</a>. You will receive an email with a link to reset your password. Simply follow the instructions provided in the email.</p>
@@ -32,12 +46,6 @@ export default (): React.ReactNode => {
         <Panel header="Moderation Support and Opening Tickets" key="7">
           <div>
             <p>For moderation support, please contact our staff through the dedicated channel in our <a href="https://discord.com/invite/MNqmzuW2wH">Discord</a>.</p>
-          </div>
-        </Panel>
-
-        <Panel header="System Requirements for PC Users" key="8">
-          <div>
-            <p>For optimal performance, PCs older than 5 years (as of 2023) may not be suitable due to the intensive nature of PS3 emulation. Recommended minimum CPU specs include Intel i5-10400 (or exceptions like 8700k, 9900k) and AMD Ryzen 5 3600 (or older CPUs starting from 2700X). GPUs should support Vulkan, except for Maxwell/900 series due to Vulkan driver issues.</p>
           </div>
         </Panel>
 
