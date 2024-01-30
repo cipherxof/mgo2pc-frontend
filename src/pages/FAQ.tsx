@@ -21,7 +21,7 @@ export default (): React.ReactNode => {
               <h3>Recommended Requirements</h3>
               <p><em>These specs are aimed at a framerate target of 60fps at 4k</em></p>
               <strong>CPU:</strong> Intel i7-12700k, AMD Ryzen 7 7700X, or better.<br/>
-              <strong>GPU:</strong> GTX 3070 or equivalent AMD GPU
+              <strong>GPU:</strong> RTX 3070 or equivalent AMD GPU
           </div>
         </Panel>
 

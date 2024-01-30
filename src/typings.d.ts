@@ -103,6 +103,7 @@ type MgoCharacter = {
   rank: number;
   available_ranks: string;
   comment: string;
+  lobby?: number;
 };
 
 type UserNotification = {

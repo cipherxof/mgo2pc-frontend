@@ -15,7 +15,7 @@ export default () => {
     data = { status: 0, players: 0 };
   }
 
-  if (!gamesData.loading) {
+  if (!gamesData.loading && gamesData.data) {
     data.players = gamesData.data.players;
   }
 
