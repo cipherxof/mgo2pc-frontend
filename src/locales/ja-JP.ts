@@ -73,10 +73,10 @@ export default {
   'app.serveroff': 'サーバーは現在オフラインです。',
 
   //gamespage
-  'app.compact': '表示サイズを変更する。',
+  'app.compact': '表示サイズの変更',
   'app.online': 'オンライン',
   'app.onlineplayers': 'オンラインプレーヤー',
-  'app.lobbies': '部屋',
+  'app.lobbies': 'ルーム',
   'app.interval': 'インターバル',
 
   //Playerstats and leaderboards
@@ -219,7 +219,7 @@ export default {
   'app.resetpw': 'パスワードを再設定する。',
   'app.fillform': '以下の項目を入力してログイン',
   'app.needanaccount': 'アカウントの作成はお済ですか？',
-  'app.register': 'アカウントを作成する。',
+  'app.register': '作成',
 
   //Account settings page
   'app.basicsettings': '基本設定',
@@ -234,19 +234,6 @@ export default {
   'app.newpw2': '新しいパスワード',
   'app.changepw': 'ログイン後にパスワードを変更できます。',
   'app.fillform2': '項目を入力してパスワードをリセットして下さい。',
-
-  //faq
-  'app.minimum': '最低動作システム環境',
-  'app.recommended': '推奨システム環境',
-  'app.faq.nosound': 'BGMなどの音が出ない場合',
-  'app.faq.host': '部屋の建て方、ホストの仕方',
-  'app.faq.login': 'ログインに失敗する場合',
-  'app.faq.donate': 'なぜSaveMGOは寄付を認めないのか？',
-  'app.faq.donatetab':
-    'これまでも、そしてこれからも、寄付を求めたり受け取ったりすることはありません。これは情熱的なプロジェクトであり、利益を得るつもりはありません。さらに、いかなる寄付も受け入れることは、プロジェクトが閉鎖される危険性をはらんでいます。',
-  'app.faq.sysreqtitle': '動作環境は何ですか？',
-  'app.faq.sysreq':
-    'Playstation 3 のエミュレーションは非常に CPU に負荷がかかるため、8 コア 16 スレッドのデスクトップで最適に動作します。とはいえ、より低スペックのCPUでもプレイ可能なFPSを得ることができます。Intel i3 12100 ($97：１万３千円くらい) または Intel i5 12400f ($150) が最もコストパフォーマンスに優れていると思われます。しかし、ノートパソコンを使用する場合は、Intel Core i7-10870H や AMD Ryzen 7 5800H などの 8 コア/16 スレッド 35W+ H シリーズ CPU を搭載したものをお勧めします。',
 
   //Stats/Population page
   'app.todayspeakplayers': '今日の最高ログインプレイヤー数',
@@ -421,7 +408,7 @@ export default {
   'app.gearslotdesc90':
     '太腿を守るレッグアーマーで、装備も収納可能です。PMC、レイブン・ソードでも使用されています。',
   'app.gearslotname11': 'タクティカルジャケット',
-  'app.gearslotdesc11': '様々な素材を使用し、通気性に優れた戦闘用ジャケット。',
+  'app.gearslotdesc11': '様々な素材を使用し、通気性に優れた戦闘用ジャケットです。',
 
   //Gear Colors or colours if you are British
   'app.colorred!': 'RED!',
@@ -483,5 +470,83 @@ export default {
   'app.colorwhitecamo': 'White Camo',
   'app.colorwolf': 'Wolf',
   'app.equipped': "アイテムは装備されました",
-  "app.purchased": "商品は購入されました"
+  "app.purchased": "商品は購入されました",
+
+  //faq
+  "app.requirements": "PCでプレイする際の性能について",
+  "app.minrequirements": "最低",
+  "app.minrequirementsdesc1": "以下のスペックは1080P 30FPSでの動作を目標にしています。",
+  "app.cpu": "CPU",
+  "app.minrequirementsdesc2": "Intel Core i5-10400、AMD Ryzen 5 3600、またはそれ以上のCPUが必要。",
+  "app.gpu": "GPU",
+  "app.minrequirementsdesc3": "GTX 1050 Tiまたは同等の性能を持つAMDのGPUが必要。",
+  "app.recommendedrequirements": "推奨",
+  "app.recommendedrequirementsdesc1": "以下のスペックは4K 60FPSでの動作を目標にしています。",
+  "app.recommendedrequirementsdesc2": "Intel Core i7-12700K、AMD Ryzen 7 7700X、またはそれ以上のCPUが必要。",
+  "app.recommendedrequirementsdesc3": "RTX 3070または同等の性能を持つAMDのGPUが必要。",
+
+  "app.pwreset": "パスワードのリセットについて",
+  "app.pwresetdesc1": "パスワードをお忘れの場合はこちら",
+  "app.here": "here",
+  "app.pwresetdesc2": "からメールアドレスを送信して下さい。パスワードを再設定するためのリンクが記載されたメールが届きますので、メールに記載されている指示に従いパスワードを再設定して下さい。",
+  
+  "app.gamelanguage": "ゲームの言語設定について",
+  "app.ps3": "PS3:",
+  "app.gamelanguagedesc1": "PS3の場合は「設定」＞「本体設定」＞「表示言語」＞「日本語」を選択します。PCの場合は「設定」＞「時刻と言語」＞「言語または言語と地域」から表示言語の設定をします。設定した言語がサポートされていない場合、ゲーム内の言語はデフォルトで日本語になりますのでご注意下さい。",
+  "app.pc": "PC: ",
+  "app.gamelanguagedesc2": "PCの場合は「RPCS3」＞「Configuration」＞「System」＞「Console Language」＞「Japanese」＞「Apply」＞「Save」をクリックします。言語がサポートされていない場合、ゲームはデフォルトで日本語になりますのでご注意下さい。",
+  "app.gamelanguagedesc3": "設定した言語がサポートされていない場合、ゲーム内の言語はデフォルトで日本語になりますのでご注意下さい。",
+
+
+  "app.purchcosmetics": "リワードショップでの購入と装着について",
+  "app.purchcosmeticsdesc1": "装備を購入するには",
+  "app.mgo2pcwebsite": "mgo2pc.com",
+  "app.purchcosmeticsdesc2": "へログインし",
+  "app.rwdshop": "reward shop",
+  "app.purchcosmeticsdesc3": "のリンクを開いて下さい。ゲーム内で獲得したリワードポイントのみを使用し装備を購入することが可能です。（実際の現金は使用しません。）", 
+  "app.purchcosmeticsdesc4": "装備を装着するには、ゲーム内でログアウトをした後にリワードショップで購入したい装備を選択し「購入」を選択します。（購入後は装着の表記へ表示が変わります。）",
+  "app.purchcosmeticsdesc5": "「装着」を選択するとポップアップウィンドウが表示されます。ポップアップウィンドウ内のプルダウンから装着したいキャラクターを選択します。",
+
+  "app.moderation": "お困りの際のお問い合わせ先について",
+  "app.moderationdesc": "お困りの際は隣のリンクから私たちのDiscordへ参加して頂きスタッフへお問い合わせ下さい。",
+  "app.discord": "Discord",
+
+  "app.linux": "Linux、Mac、Steam Deck、ASUS ROG Allyとの互換性について",
+  "app.linuxdesc1": "現在Linux用に設定されたものはなく、正式にはサポートされていません。Macでのパフォーマンスはプレイ可能な水準を満たすには不十分なため実現していません。",
+  "app.linuxdesc2": "Steam Deckはこのゲームに必要な水準を満たしていません。ASUS ROG Allyは標準のWindows PCのチュートリアルに従って「Advanced Spurs Threads」の設定を「3」に調整することでゲームを適切に実行できます。",
+  
+
+  "app.mnk": "マウスとキーボードでの動作について",
+  "app.mnkdesc": "マウスとキーボードの使用もできますが、これらの入力デバイスは元からサポートはされていないため推奨されません。プレイにはコントローラーの使用をお勧めします。",
+  
+  "app.donation": "寄付について",
+  "app.donationdesc": "これまでも、そしてこれからも寄付を求めたり受け取ることはありません。これは情熱的なプロジェクトであり利益を得るつもりはありません。更にどのような寄付であっても受け入れることは、このプロジェクトが閉鎖される危険性を孕んでいます。",
+
+  "app.sound": "サウンドの問題と解決について",
+  "app.sounddesc1": "サウンドが正常に再生されない場合はCPUの性能が不十分であるか、その他の技術的な問題の可能性があります。",
+  "app.sounddesc2": "この問題を解決するにはエミュレータの設定を調整する必要があります。「RPCS3」＞「Configuration」＞「Audio」のタブを選択し「Audio Out、Bufferring、Enabel Time Stretching」及び「Advanced」のタブを選択し「Maximum Number of SPURS Threads」を変更します。",
+
+  "app.fullscreen": "フルスクリーンについて",
+  "app.fullscreendesc1": "フルスクリーンを有効にするにはゲームのウインドウ内をダブルクリックするか、ゲームのウインドウ内をクリックした後に「Alt＋Enter」を押します。動画での説明はこちらをご覧下さい。",
+  "app.fullscreendesc2": "video tutorial",
+
+  "app.resolution": "ゲームの解像度の変更について",
+  "app.resolutiondesc": "ゲームの解像度を変更するには「RPCS3」＞「Configuration」＞「GPU」のタブを選択し必要に応じて解像度を変更します。",
+
+  "app.host": "ゲームの作成のやり方とヒントについて",
+  "app.hostdesc": "ゲームの作成を行うにはネットワークの設定に応じていくつかの方法があります。問題が発生した場合はインターネットサービスプロバイダへの問い合わせが必要になる場合があります。他のプレイヤーがゲームを作成した部屋に参加するにはパブリック（グローバル）IPアドレスが必要であることに注意して下さい。",
+  "app.upnp": "UPNP",
+  "app.upnpdesc": "「RPCS3」＞「Configuration」＞「Metal Gear Online」のタブを選択し「Enabel UPNP」を有効にします。ご利用中のルーターでUPNPが有効になっているかを確認して下さい。UPNPのタブについてはこちらをご確認下さい。",
+  "app.guide": "guide",
+  "app.portforward": "手動でのポート転送",
+  "app.portforwarddesc": "ポート開放についてはインターネットサービスプロバイダのガイドラインを参照して下さい。MGO2PCではUDPプロトコルのポートは5730を使用します。こちらから設定を行う際の例をご覧いただけます。",
+  "app.portmapper": "ポートマッパー",
+  "app.portmapperdesc1": "ご利用中のルーターでアクセスが制限されている場合は、こちらの動画",
+  "app.portmapperdesc2": "this method",
+  "app.portmapperdesc3": "を参考にし必要に応じてUPNPライブラリを調整して下さい。",
+
+  "app.shadows": "ゲーム内での影の切り替えについて",
+  "app.shadowsdesc1": "影を消すことによりFPSの向上を見込めます。影の切り替え方法は「L3とR3と十字キー上を約3秒間押し続けます。動画での説明はこちらをご覧下さい。",
+  "app.shadowsdesc2": "this video.",
+
 };

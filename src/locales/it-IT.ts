@@ -6,54 +6,54 @@ export default {
   'navBar.register': 'Crea un Account',
   'navBar.characters': 'Personaggi',
   'navBar.settings': 'Impostazioni',
-  'navBar.rewardpoints': 'Reward Points',
-  'navBar.logout2': 'You have been logged out.',
-  'navBar.notifications': 'Notifications',
-  'navBar.nonotifications': 'You have no notifications',
-  'navBar.clear': 'Clear', //the word clear in clear notifications/messages when you click the bell/notification button
-  'navBar.messages': 'Messages',
+  'navBar.rewardpoints': 'Punti Ricompense',
+  'navBar.logout2': 'Hai eseguito il log out.',
+  'navBar.notifications': 'Notifiche',
+  'navBar.nonotifications': 'Non hai nessuna nuova notifica',
+  'navBar.clear': 'Cancella le notifiche', //the word clear in clear notifications/messages when you click the bell/notification button
+  'navBar.messages': 'Messaggi',
 
   //menu
   'menu.home': 'Pagina Iniziale',
   'menu.games': 'Partite',
   'menu.leaderboards': 'Classifiche',
   'menu.rewardshop': 'Negozio Ricompense',
-  'menu.population': 'Population Stats',
+  'menu.population': 'Statistiche sulla Popolazione',
   'menu.faq': 'FAQ',
-  'menu.guides': 'Guides',
-  'menu.ranks': 'Ranks',
+  'menu.guides': 'Guide',
+  'menu.ranks': 'Titoli',
 
   //404 page
-  'app.404': 'Sorry, the page you visited does not exist.',
-  'app.backhome': 'Back Home',
+  'app.404': 'Errore, la pagina che stai cercando di visitare non esiste.',
+  'app.backhome': 'Torna alla home',
 
   //account activation
-  'app.success': 'success', //I believe this is the header of an error message that pops up
-  'app.accountactivated': 'Account Activated!',
-  'app.error': 'Error', //error for account activated and also a headere for the same thing as sucess
+  'app.success': 'Successo', //I believe this is the header of an error message that pops up
+  'app.accountactivated': 'Account Attivato!',
+  'app.error': 'Errore', //error for account activated and also a headere for the same thing as sucess
 
   //account creation
-  'app.accountcreated': 'Your account has been created!',
-  'app.fillform3': 'Fill out the form to create your account',
-  'app.haveacc?': 'Have an account?',
+  'app.accountcreated': 'Il tuo Account è stato creato!',
+  'app.fillform3': 'Compila il modulo',
+  'app.haveacc?': 'Hai un account?',
   'app.login': 'Login',
-  'app.botcheck': 'Please fill out the bot check',
-  'app.alreadyac?': 'Already have an account?',
+  'app.botcheck': 'Perfavore, compila il controllo per i bot',
+  'app.alreadyac?': 'Hai già un account?',
 
   //account created page
   'app.created':
-    'Your account has successfully been created! Please check your email for the activation code.',
+    "Il tuo account è stato creato con successo! Controlla la mail per ottenere il codice d'attivazione.",
 
   //clan
-  'app.uploaderror1': 'You can only upload a PNG file',
-  'app.uploaderror2': 'Image must smaller than 2MB',
-  'app.playername': 'Name', //This is the header of a table filled with player names in a clan
-  'app.uploaderror3': 'There was an error uploading your clan image.',
-  'app.uploadsuccess': 'Your clan emblem has successfully been updated.',
+  'app.uploaderror1': 'Puoi solo caricare immaagini con estensione file PNG',
+  'app.uploaderror2': "La dimensione dell'immagine deve essere inferiore a 2MB",
+  'app.playername': 'Nome', //This is the header of a table filled with player names in a clan
+  'app.uploaderror3': "Errore durante il caricamento dell'emblema del Clan.",
+  'app.uploadsuccess': "L'emblema del Clan è stato aggiornato con successo.",
   'app.clanleader': 'Leader',
-  'app.members': 'Members',
-  'app.emblem': 'emblem', //The current placeholder text when no image
-  'app.uploademblem': 'Upload Emblem', //For when the user has not uploaded an emblem already
+  'app.members': 'Membri',
+  'app.emblem': 'emblemi', //The current placeholder text when no image
+  'app.uploademblem': 'Carica un emblema', //For when the user has not uploaded an emblem already
 
   //footer
   'app.copyright':
@@ -67,16 +67,16 @@ export default {
   'app.setupvideopc': 'https://www.youtube.com/embed/--eKDWqpEgE',
   'app.setupvideops3': 'https://www.youtube.com/embed/7cuOGinyPJ8',
   'app.welcome':
-    "Forniamo un servizio che permette di giocare ancora una volta alla componente online di Metal Gear Solid 4: Guns of the Patriots, usando l'emulatore RPCS3 per PC, con tanto di crossplay con gli utenti PS3.\n\nSe sei nuovo e stai appena iniziando a giocare, consigliamo di guardare il nostro {startvideo}, oppure di controllare la sezione dedicata alle domande più frequenti.\n\nInoltre, se hai altre domande, unisciti al nostro server di discord {discord}",
-  'app.gettingstartedvideo': 'getting started video',
-  'app.serveroff': 'Il server è offline al momento',
+    "Forniamo un servizio che permette di giocare ancora una volta alla componente online di Metal Gear Solid 4: Guns of the Patriots, usando l'emulatore RPCS3 per PC, con tanto di crossplay con gli utenti PS3.\n\nSe sei nuovo e stai appena iniziando a giocare, consigliamo di guardare il nostro {startvideo}, oppure di controllare la sezione dedicata alle domande più frequenti.\n\nInoltre, se hai altre domande, unisciti al nostro server {discord}",
+  'app.gettingstartedvideo': 'Video su come inziare',
+  'app.serveroff': 'Il server è al momento offline',
 
   //Gamespage
-  'app.compact': 'Compact',
+  'app.compact': 'Visione compatta',
   'app.online': 'Online',
   'app.onlineplayers': 'Giocatori Online',
   'app.lobbies': 'Lobbies',
-  'app.interval': 'interval',
+  'app.interval': 'Intervallo',
 
   //Playerstats and leaderboards
   'app.weekly': 'Settimanali', //playerstats and leaderboard pages
@@ -102,7 +102,7 @@ export default {
   'app.score': 'Punteggio', //playerstats page only
   'app.name': 'Nome', //leaderboard page only
   'app.rank': 'Grado', //leaderboard page only
-  'app.rounds': 'Rounds', //playerstats page only
+  'app.rounds': 'Round', //playerstats page only
   'app.wins': 'Vittorie', //playerstats page only
   'app.timeplayed': 'Tempo Giocato', //playerstats page only
   'app.headshot': 'Colpi alla Testa', //playerstats page only
@@ -118,91 +118,91 @@ export default {
   'app.medals': 'Cronologia Premi', //playerstats page only
 
   //medal table
-  'app.5conckill': '5 consecutive kills',
-  'app.10conckill': '10 consecutive kills',
-  'app.25conckill': '25 consecutive kills',
-  'app.3conchead': '3 consecutive headshots',
-  'app.10conchead': '10 consecutive headshots',
-  'app.30conchead': '30 consecutive headshots',
-  'app.5concdeath': '5 consecutive deaths',
-  'app.10concdeath': '10 consecutive deaths',
-  'app.25concdeath': '25 consecutive deaths',
-  'app.500totalkill': '500 total kills',
-  'app.2000totalkill': '2,000 total kills',
-  'app.10000totalkill': '10,000 consecutive kills',
-  'app.500totaldeath': '500 total deaths',
-  'app.2000totaldeath': '2,000 total deaths',
-  'app.10000totaldeath': '10,000 consecutive deaths',
-  'app.100tsnefind': '100 finds in TSNE',
-  'app.50snakespot1st': '50 times spotted snake first',
-  'app.100snakespot1st': '100 times spotted snake first',
-  'app.500snakespot1st': '500 times spotted snake first',
-  'app.50snakeholdups': '50 holds ups performed as Snake',
-  'app.100snakeholdups': '100 holds ups performed as Snake',
-  'app.500snakeholdups': '500 holds ups performed as Snake',
-  'app.240hoursplayed': '240 hours played',
-  'app.893hoursplayed': '893 hours played',
-  'app.5000hoursplayed': '5000 hours played',
+  'app.5conckill': '5 uccisioni consecutive',
+  'app.10conckill': '10 uccisioni consecutive',
+  'app.25conckill': '25 uccisioni consecutive',
+  'app.3conchead': '3 colpi alla testa consecutivi',
+  'app.10conchead': '10 colpi alla testa consecutivi',
+  'app.30conchead': '30 colpi alla testa consecutivi',
+  'app.5concdeath': '5 morti consecutive',
+  'app.10concdeath': '10 morti consecutive',
+  'app.25concdeath': '25 morti consecutive',
+  'app.500totalkill': '500 uccisioni totali',
+  'app.2000totalkill': '2,000 uccisioni totali',
+  'app.10000totalkill': '10,000 uccisioni totali',
+  'app.500totaldeath': '500 morti totali',
+  'app.2000totaldeath': '2,000 morti totali',
+  'app.10000totaldeath': '10,000 Morti totali',
+  'app.100tsnefind': '100 scoperte in INFS',
+  'app.50snakespot1st': 'Volte scoperto per primo Snake: 50',
+  'app.100snakespot1st': 'Volte scoperto per primo Snake: 100',
+  'app.500snakespot1st': 'Volte scoperto per primo Snake: 500',
+  'app.50snakeholdups': '50 Alzate di Mano eseguite come Snake',
+  'app.100snakeholdups': '100 Alzate di Mano eseguite come Snake',
+  'app.500snakeholdups': '500 Alzate di Mano eseguite come Snake',
+  'app.240hoursplayed': '240 ore giocate',
+  'app.893hoursplayed': '893 ore giocate',
+  'app.5000hoursplayed': '5000 ore giocate',
 
   //titlepage
-  'app.notitle': 'This character has not acquired any titles.',
+  'app.notitle': 'Questo personaggio non ha acquisito nessun titolo.',
 
   //Character page
-  'app.activerank': 'Your active rank has been updated.',
-  'app.maincharupdate': 'Your main character has been updated.',
-  'app.setasmain': 'Set as main',
+  'app.activerank': 'Il titolo attivo è stato aggiornato.',
+  'app.maincharupdate': 'Il tuo personaggio principale è stato aggiornato.',
+  'app.setasmain': 'Imposta come personaggio principale',
 
   //Personal Scores
-  'app.conceckills': 'Consecutive Kills',
-  'app.concecdeaths': 'Consecutive Deaths',
-  'app.concechs': 'Consecutive Headshots',
-  'app.suicides': 'Suicides',
-  'app.friendlykills': 'Friendly Kills',
-  'app.friendlystuns': 'Friendly Stuns',
-  'app.timesstunned': 'Times Stunned',
-  'app.aborts': 'Aborts',
-  'app.radiouse': 'Radio Uses',
-  'app.chatuse': 'Chat Uses',
-  'app.cqcgiven': 'CQC Attacks Given',
-  'app.cqctaken': 'CQC Attacks Taken',
-  'app.rolls': 'Rolls',
-  'app.salutes': 'Salutes',
-  'app.catapult': 'Catapult Uses',
-  'app.basecap': 'Bases Captured',
-  'app.boosts': 'Boosts Given',
-  'app.falldeath': 'Falling Deaths',
-  'app.caughttrap': 'Times Caught in Trap',
-  'app.melee': 'Melee Hits',
-  'app.scansp': 'Scans Performed',
-  'app.knifekill': 'Knife Kills',
-  'app.knifestuns': 'Knife Stuns',
-  'app.assist': 'Assist Points',
-  'app.basep': 'Base Points',
-  'app.tsnep': 'TSNE Wakeups',
-  'app.snetagspawn': 'SNE Tags Spawned',
-  'app.snetagcollected': 'SNE Tags Collected',
-  'app.snewin': 'SNE Wins as Snake',
-  'app.cardboarduse': 'Cardboard Box Uses',
-  'app.cardboardtime': 'Time in Cardboard Box',
-  'app.envgtime': 'Total Time Using ENVG',
-  'app.dedicatedhosttime': 'Total Time: Dedicated Host',
-  'app.deathmatchtime': 'Total Time: Deathmatch',
-  'app.sdmtime': 'Total Time: Stealth Deathmatch',
-  'app.scaptime': 'Total Time: Solo Capture',
-  'app.tdmtime': 'Total Time: Team Deathmatch',
-  'app.captime': 'Total Time: Capture Mission',
-  'app.basetime': 'Total Time: Base Mission',
-  'app.bombtime': 'Total Time: Bomb Mission',
-  'app.racetime': 'Total Time: Race Mission',
-  'app.rescuetime': 'Total Time: Rescue Mission',
-  'app.tsnetime': 'Total Time: Team Sneaking',
-  'app.snetime': 'Total Time: Sneaking Mission',
-  'app.years': 'years', //found in personal score and title history as far as I know
-  'app.months': 'months', //found in personal score and title history as far as I know
-  'app.days': 'days', //found in personal score and title history as far as I know
-  'app.hours': 'hours', //found in personal score and title history as far as I know
-  'app.minutes': 'minutes', //found in personal score and title history as far as I know
-  'app.seconds': 'seconds', //found in personal score and title history as far as I know
+  'app.conceckills': 'Uccisioni Consecutive',
+  'app.concecdeaths': 'Morti Consecutive',
+  'app.concechs': 'Colpi alla testa Consecutivi',
+  'app.suicides': 'Suicidi',
+  'app.friendlykills': 'Uccisioni amici',
+  'app.friendlystuns': 'Stordimenti Amici',
+  'app.timesstunned': 'Volte stordito',
+  'app.aborts': 'Ritirate',
+  'app.radiouse': 'Usi messaggi Radio preimpostati',
+  'app.chatuse': 'Usi Chat Testuale',
+  'app.cqcgiven': 'Attacchi CQC Sferrati',
+  'app.cqctaken': 'Attacchi CQC Subiti',
+  'app.rolls': 'Rotolamenti',
+  'app.salutes': 'Saluti',
+  'app.catapult': 'Utilizzi della Catapulta',
+  'app.basecap': 'Basi Catturate',
+  'app.boosts': 'Numero di Sollevamento',
+  'app.falldeath': 'Morti per caduta',
+  'app.caughttrap': 'Volte preso in trappola',
+  'app.melee': 'Colpi Corpo a Corpo',
+  'app.scansp': 'Scansioni Eseguite',
+  'app.knifekill': 'Uccisioni con Coltello',
+  'app.knifestuns': 'Stordimenti con Coltello',
+  'app.assist': 'Punti Assistenza',
+  'app.basep': 'Punti Basi',
+  'app.tsnep': 'Risvegli in INFS',
+  'app.snetagspawn': 'Piastrine create da Snake',
+  'app.snetagcollected': 'Piastrine Raccolte da Snake',
+  'app.snewin': 'Vittore in INF come Snake',
+  'app.cardboarduse': 'Usi Scatola di Cartone',
+  'app.cardboardtime': 'Tempo nella Scatola di Cartone',
+  'app.envgtime': 'Uso ENVG',
+  'app.dedicatedhosttime': 'Tempo come Host',
+  'app.deathmatchtime': 'Tempo di gioco DM',
+  'app.sdmtime': 'Tempo di gioco DMO',
+  'app.scaptime': 'Tempo di gioco CATS',
+  'app.tdmtime': 'Tempo di gioco DMS',
+  'app.captime': 'Tempo di gioco CAT',
+  'app.basetime': 'Tempo di gioco BASI',
+  'app.bombtime': 'Tempo di gioco BOMBA',
+  'app.racetime': 'Tempo di gioco GARA',
+  'app.rescuetime': 'Tempo di gioco SAL',
+  'app.tsnetime': 'Tempo di gioco INFS',
+  'app.snetime': 'Tempo di gioco INF',
+  'app.years': 'anni', //found in personal score and title history as far as I know
+  'app.months': 'mesi', //found in personal score and title history as far as I know
+  'app.days': 'giorni', //found in personal score and title history as far as I know
+  'app.hours': 'ore', //found in personal score and title history as far as I know
+  'app.minutes': 'minuti', //found in personal score and title history as far as I know
+  'app.seconds': 'secondi', //found in personal score and title history as far as I know
 
   //Account Login Page
   'app.forgotpw': 'Hai dimenticato la Password?',
@@ -216,275 +216,342 @@ export default {
   'app.donthaveacc': 'Crea un nuovo account',
   'app.alreadyhaveacc': 'Hai già un account?',
   'app.resetpw': 'Resetta la Password',
-  'app.fillform': 'Fill out the form to login',
-  'app.needanaccount': 'Need an account?',
-  'app.register': 'Register',
+  'app.fillform': 'Compila il modulo per effettuare il log in',
+  'app.needanaccount': 'Hai bisogno di un account?',
+  'app.register': 'Registrati',
 
   //Account Settings Page
-  'app.basicsettings': 'Basic Settings',
-  'app.loggedin': 'You are logged in.', //should be a notification which I cannot see on test version sadly
-  'app.accupdated': 'Your account has been updated.', //should be a notification which I cannot see on test version sadly
+  'app.basicsettings': 'Impostazioni di Base',
+  'app.loggedin': 'Hai effettuato il log in.', //should be a notification which I cannot see on test version sadly
+  'app.accupdated': 'Il tuo account è stato aggiornato.', //should be a notification which I cannot see on test version sadly
   'app.displayname': 'Mostra Nome',
   'app.currentpw': 'Password Attuale',
   'app.newpw': 'Nuova Password',
   'app.updateinfo': "Aggiorna l'Account",
 
   //password reset
-  'app.newpw2': 'Your new password is',
-  'app.changepw': 'You may change your password after logging in.',
-  'app.fillform2': 'Fill out the form to reset your password',
-
-  //faq
-  'app.minimum': 'Minimo',
-  'app.recommended': 'Raccomandati',
-  'app.faq.nosound': "Perchè non funziona l'audio?",
-  'app.faq.host': 'Come faccio a crere una partita?',
-  'app.faq.login': 'Perchè non riesco ad effettuare il log-in?',
-  'app.faq.donate': "Why doesn't SaveMGO allow donations?",
-  'app.faq.donatetab':
-    'SaveMGO never has and never will ask for or accept donations of any kind. This is a passion project and we have no intention of profiting off of it. Furthermore, accepting donations of any kind puts the project at risk of being shut down.',
-  'app.faq.sysreqtitle': 'Quali sono i requisiti di sistema?',
-  'app.faq.sysreq': `L'emulatore della Playstation 3 è molto pesante sul processore (CPU) e, per funzionare al meglio, richiede un PC Desktop con processore da almeno 8 cores e 16 threads. Ciò detto, è ugualmente possibile avere framerate che lo rendono giocabile su CPU meno performanti. Al momento, i Processori con il miglior rapporto prezzo prestazioni sono Intel i3 12100 (circa 100€) oppure Intel i5 12400f (circa 200€). Se usi un computer portatile, consigliamo che abbia sempre una CPU con 8 cores 16 threads ed un consumo energetico di 35W o più, che si trova generalmente sulle CPU di classe "H" come Intel i7-10870H o AMD Ryzen 7 5800H. `,
+  'app.newpw2': 'La tua nuova password è',
+  'app.changepw': 'Puoi cambiare la password dopo aver effettuato il log in.',
+  'app.fillform2': 'Completa il modulo per cambiare la tua password',
 
   //Stats/Population page
-  'app.todayspeakplayers': 'Peak Players (Today)',
-  'app.alltimepeakplayers': 'Peak Players (All time)',
-  'app.playercount60days': 'Player Count (Last 60 Days)',
-  'app.playergraphtotal': 'Total',
-  'app.playergraphconcurrent': 'Concurrent',
+  'app.todayspeakplayers': 'Picco di Giocatori (Oggi)',
+  'app.alltimepeakplayers': 'Picco di Giocatori (Di tutti i tempi)',
+  'app.playercount60days': 'Numero di Giocatori (Ultimi 60 giorni)',
+  'app.playergraphtotal': 'Totale',
+  'app.playergraphconcurrent': 'Contemporanei',
 
   //Ranks
-  'app.kdrsrr': 'Kills + Stuns ÷ Deaths + Stuns Received in', //same words can be found for numerous ranks
-  'app.atleast': 'at least', //same words can be found for numerous ranks
+  'app.kdrsrr': 'Uccisioni + Stordimenti ÷ Morti + Stordimenti ricevuti', //same words can be found for numerous ranks
+  'app.atleast': 'almeno', //same words can be found for numerous ranks
   'app.dm': 'DM', //same words can be found for numerous ranks
-  'app.tdm': 'TDM', //same words can be found for numerous ranks
-  'app.sne': 'SNE', //same words can be found for numerous ranks
-  'app.cap': 'CAP', //same words can be found for numerous ranks
-  'app.base': 'BASE', //same words can be found for numerous ranks
-  'app.bomb': 'BOMB', //same words can be found for numerous ranks
-  'app.res': 'RES', //same words can be found for numerous ranks
-  'app.tsne': 'TSNE', //same words can be found for numerous ranks
-  'app.race': 'RACE', //same words can be found for numerous ranks
-  'app.sdm': 'SDM',
-  'app.andfoxhound': 'and', //This can change depending on gramtical reasons so had to split up and for each rank
-  'app.andfox': 'and',
-  'app.anddoberman': 'and',
-  'app.andhound': 'and',
-  'app.andwaterbear': 'and',
+  'app.tdm': 'DMS', //same words can be found for numerous ranks
+  'app.sne': 'INF', //same words can be found for numerous ranks
+  'app.cap': 'CAT', //same words can be found for numerous ranks
+  'app.base': 'BASI', //same words can be found for numerous ranks
+  'app.bomb': 'BOMBA', //same words can be found for numerous ranks
+  'app.res': 'SAL', //same words can be found for numerous ranks
+  'app.tsne': 'INFS', //same words can be found for numerous ranks
+  'app.race': 'GARA', //same words can be found for numerous ranks
+  'app.sdm': 'DMO',
+  'app.andfoxhound': 'e', //This can change depending on gramtical reasons so had to split up and for each rank
+  'app.andfox': 'e',
+  'app.anddoberman': 'e',
+  'app.andhound': 'e',
+  'app.andwaterbear': 'e',
   'app.gramaticalcomma': ' ', //for instance in American English , before the word and in a list. Not the case for Spanish or British English
-  'app.win%in': 'Win % in', //same words can be found for numerous ranks
-  'app.basecapratio': 'Bases capped ÷ Total Base Rounds = higher than', //same words can be found for numerous ranks
-  'app.withdrawel': 'Withdrawal %', //same words can be found for numerous ranks
-  'app.totalrounds': 'rounds in all previously mentioned modes.', //same words can be found for numerous ranks
-  'app.headbodyratio': 'Headshot Kills + Headshot Stuns ÷ Kills + Stuns', //eagle
-  'app.knifekillratio': 'Knife kills ÷ Total Kills', //jaws
-  'app.survivalratio': 'Deaths ÷ Rounds Played in', //waterbear
-  'app.kdrrank': 'Kills ÷ Deaths', //sloth
-  'app.headshotdeathratio': 'Headshot Deaths ÷ Deaths', //sloth
-  'app.stunratio': 'Stuns ÷ Stuns Received', //pigeon
-  'app.rollratio': 'Rolls ÷ Rounds', //flying squirrel
-  'app.stunkillratio': 'Stuns ÷ Kills', //pigeon
-  'app.envg': 'Time Using ENVG Goggles ÷ Play Time', //owl
-  'app.lastlogin': 'Last Login', //tsuchinoko
-  'app.dayssincelastplay': 'Days', //tsuchinoko
-  'app.sneratio': 'Sneaking Rounds ÷ Overall Rounds', //Snake
-  'app.sneweeklyrounds': 'Weekly Rounds of Sneaking Mission', //Snake
-  'app.moderoundsplayedratio': 'Rounds ÷ Overall Rounds', //same words can be found for numerous ranks
-  'app.weeklyrounds': 'Weekly Rounds of', //same words can be found for numerous ranks
-  'app.killsperround': 'Kills ÷ Rounds', //chicken
-  'app.stunsperround': 'Stuns ÷ Rounds', //chicken
-  'app.stunsreceivedperround': 'Stuns Received ÷ Rounds', //chicken
-  'app.deathsperround': 'Deaths ÷ Rounds', //chicken
-  'app.cqcperround': 'CQC Attacks ÷ Rounds', //bear
-  'app.boxperround': 'Box Uses ÷ Overall Rounds', //Tortoise
-  'app.scansperround': 'Scans ÷ Rounds', //Bee
-  'app.trapcaughtperround': 'Stuck In Trap ÷ Rounds', //RAT
+  'app.win%in': 'Percentuale di Vittorie', //same words can be found for numerous ranks
+  'app.basecapratio': 'Basi catturate ÷ Round totali di Basi = più alto di', //same words can be found for numerous ranks
+  'app.withdrawel': '% Ritirate', //same words can be found for numerous ranks
+  'app.totalrounds': 'Round in tutte le modalità precedentemente menzionate.', //same words can be found for numerous ranks
+  'app.headbodyratio': 'Uccisioni con colpo alla testa + Stordimenti con colpo alla testa ÷ Uccisioni + Stordimenti', //eagle
+  'app.knifekillratio': 'Uccisioni con Coltello ÷ Uccisioni Totali', //jaws
+  'app.survivalratio': 'Morti ÷ Round Giocati', //waterbear
+  'app.kdrrank': 'Uccisioni ÷ Morti', //sloth
+  'app.headshotdeathratio': 'Morti da Colpo alla Testa ÷ Morti', //sloth
+  'app.stunratio': 'Stuns ÷ Stordimenti Subiti', //pigeon
+  'app.rollratio': 'Rotolamenti ÷ Round', //flying squirrel
+  'app.stunkillratio': 'Stordimenti ÷ Uccisioni', //pigeon
+  'app.envg': 'Uso ENVG ÷ Tempo Giocato', //owl
+  'app.lastlogin': 'Ultimo Login', //tsuchinoko
+  'app.dayssincelastplay': 'Giorni', //tsuchinoko
+  'app.sneratio': "Round Missione d'Infiltrazione ÷ Round Totali", //Snake
+  'app.sneweeklyrounds': "Round Settimanali di Missione d'Infiltrazione", //Snake
+  'app.moderoundsplayedratio': 'Round ÷ Round Totali', //same words can be found for numerous ranks
+  'app.weeklyrounds': 'Round Settimanali di', //same words can be found for numerous ranks
+  'app.killsperround': 'Uccisioni ÷ Round', //chicken
+  'app.stunsperround': 'Stordimenti ÷ Round', //chicken
+  'app.stunsreceivedperround': 'Stordimenti Subiti ÷ Round', //chicken
+  'app.deathsperround': 'Morti ÷ Round', //chicken
+  'app.cqcperround': 'Attacchi CQC ÷ Round', //bear
+  'app.boxperround': 'Usi Scatola di Cartone ÷ Round Totali', //Tortoise
+  'app.scansperround': 'Scansioni ÷ Round', //Bee
+  'app.trapcaughtperround': 'Volte preso in Trappola ÷ Round', //RAT
+  'app.rounds2': 'Round di',
+  'app.totalrounds2': '÷ Round Totali (Settimanali)',
+
 
   //Reward Shop related locales
-  'app.information': 'Information',
-  'app.nothingtobuy': 'There is nothing available to purchase.',
-  'app.charselect': 'Select a character',
-  'app.rewardpoints?': 'reward points?',
-  'app.mustlogin': 'You must be logged in to make purchases.',
-  'app.mustlogin2': 'You must be logged in to equip items.',
-  'app.areyousure': 'Are you sure you want to purchase this item for',
+  'app.information': 'Informazioni',
+  'app.nothingtobuy': "Non c'è nulla da acquistare.",
+  'app.charselect': 'Seleziona un Personaggio',
+  'app.rewardpoints?': 'Punti Ricompensa?',
+  'app.mustlogin': 'Devi effettuare il log in per effettuare acquisti.',
+  'app.mustlogin2': 'Devi effettuare il log in per equipaggiare gli oggetti.',
+  'app.areyousure': "Sei sicuro di voler acquistare quest'oggetto per",
   'app.rewardshopinfo':
-    'Reward points are earned through playing the game and there is no way to otherwise purchase them.',
+    'Puoi guadagnare punti ricompensa semplicemente giocando, non esiste altro modo per ottenerli.',
   'app.equip': 'Equipaggiamento',
   'app.purchase': 'Acquista',
-  'app.cancel': 'Cancel',
+  'app.cancel': 'Annulla',
   'app.owned': 'Posseduti',
   'app.equipcharselect': 'Seleziona il personaggio che deve indossare questo oggetto.',
-  'app.notice': 'Notice',
-  'app.head': 'Head',
-  'app.upper': 'Upper Body',
-  'app.lower': 'Lower Body',
-  'app.chest': 'Chest',
-  'app.waist': 'Waist',
-  'app.hands': 'Hands',
-  'app.feet': 'Feet',
-  'app.gearslotname14': 'T-Shirt',
+  'app.notice': 'Nota',
+  'app.head': 'Testa',
+  'app.upper': 'Parte Superiore del Corpo',
+  'app.lower': 'Parte Inferiore del Corpo',
+  'app.chest': 'Petto',
+  'app.waist': 'Vita',
+  'app.hands': 'Mani',
+  'app.feet': 'Piedi',
+  'app.gearslotname14': 'Maglietta',
   'app.gearslotdesc14':
-    'A short-sleeved T-shirt. Made of a material that readily absorbs and evaporates sweat.',
-  'app.gearslotname12': 'Long Sleeve',
+    'Una maglietta a maniche corte. Fatta con materiali che assorbo e fanno evaporare il sudore.',
+  'app.gearslotname12': 'Maglietta a maniche lunghe',
   'app.gearslotdesc12':
-    'A long-sleeved T-shirt. Protects the arms in regions where the sun is strong',
-  'app.gearslotname17': 'BDU',
-  'app.gearslotdesc17': 'The most basic camouflage uniform for the battlefield.',
-  'app.gearslotname22': 'Pants',
-  'app.gearslotdesc22': 'Combat pants with a plethora of pockets for your convenience.',
-  'app.gearslotname57': 'Boots & Knee Guards (A)',
+    'Una maglietta a maniche lunghe. Protegge le braccia in luoghi in cui il Sole è forte',
+  'app.gearslotname17': 'UVB',
+  'app.gearslotdesc17': "L'uniforme dal cammuffamento più basilare per il campo di battaglia.",
+  'app.gearslotname22': 'Pantaloni',
+  'app.gearslotdesc22': 'Pantaloni da Combattimento con molte ed utili tasche.',
+  'app.gearslotname57': 'Stivali & Ginocchiere (A)',
   'app.gearslotdesc57':
-    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. Also used by the mega PMC Praying Mantis.',
-  'app.gearslotname58': 'Boots & Knee Guards (B)',
+    'Un set che include stivali da combattimento con suole anti-scivolo, fatte con materiale molto leggero con copri ginocchia che li salvaguardano quando ci si piega. Utilizzante anche dalle PMC Praying Mantis.',
+  'app.gearslotname58': 'Stivali & Ginocchiere (B)',
   'app.gearslotdesc58':
-    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. Also used by the mega PMC Pieuvre armement.',
-  'app.gearslotname60': 'Boots & Knee Guards (C)',
+    'Un set che include stivali da combattimento con suole anti-scivolo, fatte con materiale molto leggero con copri ginocchia che li salvaguardano quando ci si piega. Utilizzante anche dalle PMC Pieuvre armement.',
+  'app.gearslotname60': 'Stivali & Ginocchiere (C)',
   'app.gearslotdesc60':
-    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. The boots are the same type worn by the rebel army in South America.',
-  'app.gearslotname61': 'Boots & Knee Guards (D)',
+    'Un set che include stivali da combattimento con suole anti-scivolo, fatte con materiale molto leggero con copri ginocchia che li salvaguardano quando ci si piega. Gli stivali sono dello stesso tipo di quelli utilizzati dai Ribelli in Sud America.',
+  'app.gearslotname61': 'Stivali & Ginocchiere (D)',
   'app.gearslotdesc61':
-    'A set including combat boots with slip-proof soles and made of lightweight material along with knee protectors that guard the knees when kneeling. Worn by the U.S. troops stationed in Eastern Europe.',
-  'app.gearslotname59': 'Tactical Boots & Leg Armor',
+    "Un set che include stivali da combattimento con suole anti-scivolo, fatte con materiale molto leggero con copri ginocchia che li salvaguardano quando ci si piega. Indossati dalle Truppe USA stanziate in Europa dell'Est.",
+  'app.gearslotname59': 'Stivali tattici e armature per le gambe',
   'app.gearslotdesc59':
-    'A set including combat boots with slip-proof soles and made of lightweight material along with heavy but effective leg armor that protects the legs below the knees. The boots are the same type employed by the mega-PMC Raven Sword.',
+    'Un set che include stivali da combattimento con suole anti-scivolo, fatte con materiale molto leggero con una pesante ma efficace armatura per le gambe che ne protegge la parte sotto le ginocchia. Questi stivali sono gli stessi utilizzati dalle PMC Raven Sword.',
   'app.gearslotname42': 'Bandana',
   'app.gearslotdesc42':
-    'The mens version is tied behind the head. The ladies version is hair band-type bandana with no knot.',
-  'app.gearslotname69': 'Tactical Armor (A)',
+    'La versione maschine ha un nodo dietro la testa. La versione femminile è una fascia per i capelli senza nodo.',
+  'app.gearslotname69': 'Armatura Tattica (A)',
   'app.gearslotdesc69':
-    'Body armor you can outfit with a variety of equipment. Also used by the mega PMC Praying Mantis.',
-  'app.gearslotname71': 'Tactical Armor (B)',
+    'Giubotto Antiproiettile che puoi indossare con una varietà di equipaggiamenti. Utilizzati anche dalle PMC Praying Mantis.',
+  'app.gearslotname71': 'Armatura Tattica (B)',
   'app.gearslotdesc71':
-    'Body armor you can outfit with a variety of equipment. Features enhanced protection. Also used by the mega PMC Raven Sword.',
-  'app.gearslotname75': 'Tactical Armor (C)',
+    'Giubotto Antiproiettile che puoi indossare con una varietà di equipaggiamenti. Presenta una protezione avanzata. Utilizata anche dalle PMC Raven Sword.',
+  'app.gearslotname75': 'Armatura Tattica (C)',
   'app.gearslotdesc75':
-    'Body armor you can outfit with a variety of equipment. Offers heavy protection.Carried by the U.S. troops stationed in Eastern Europe.',
-  'app.gearslotname194': 'Tactical Armor (D)',
-  'app.gearslotdesc194': 'Body armor you can outfit with a variety of equipment.',
-  'app.gearslotname70': 'Chest Harness (A)',
+    "Giubotto Antiproiettile che puoi indossare con una varietà di equipaggiamenti. Offre protezione pesante. Indossata dai soldati USA stanziati in Europa dell'Est.",
+  'app.gearslotname194': 'Armatura Tattica (D)',
+  'app.gearslotdesc194': 'Giubotto Antiproiettile che puoi indossare con una varietà di equipaggiamenti.',
+  'app.gearslotname70': 'Imbracatura per il Torso (A)',
   'app.gearslotdesc70':
-    'A harness that comes in handy when you have got lots of equipment to carry. Also used by the mega PMC Pieuvre armement.',
-  'app.gearslotname76': 'Chest Harness (B)',
+    "Un'imbracatura che torna utile quando hai molta attrezzatura da trasportare. Utilizzata anche dalle PMC Pieuvre armement.",
+  'app.gearslotname76': 'Imbracatura per il Torso (B)',
   'app.gearslotdesc76':
-    'A relatively simple-looking yet functional harness. Worn by the Middle Eastern rebels.',
-  'app.gearslotname78': 'Chest Harness (C)',
+    "Un'imbracatura dall'aspetto relativamente semplice ma funzionale. Indossata dai Ribelli in Medioriente.",
+  'app.gearslotname78': 'Imbracatura per il Torso (C)',
   'app.gearslotdesc78':
-    'A harness created to allow different types of equipment to be used in combination.',
-  'app.gearslotname80': 'Chest Harness (D)',
-  'app.gearslotdesc80': 'A relatively simple-looking yet functional harness.',
-  'app.gearslotname73': 'H Harness (A)',
+    "Un'imbracatura concepita per consentire l'utilizzo combinato di diverse tipologie di attrezzatura.",
+  'app.gearslotname80': 'Imbracatura per il Torso (D)',
+  'app.gearslotdesc80': "Un'imbracatura dall'aspetto relativamente semplice ma funzionale.",
+  'app.gearslotname73': 'Imbracatura ad H (A)',
   'app.gearslotdesc73':
-    'A fairly robust H-shaped harness that comes in handy when you have got even more equipment to carry. Worn by the rebel guerillas in South America.',
-  'app.gearslotname74': 'H Harness (B)',
+    "Un'imbracatura a forma di H abbastanza robusta che torna utile quando hai molta attrezzatura da trasportare. Indossato dai guerriglieri ribelli in Sud America.",
+  'app.gearslotname74': 'Imbracatura ad H (B)',
   'app.gearslotdesc74':
-    'A basic H-shaped harness. For lightweight equipment. Worn by the rebel guerillas in South America.',
-  'app.gearslotname77': 'Load Bearing Vest (A)',
-  'app.gearslotdesc77': 'A multipurpose vest designed to let you carry relatively heavy equipment.',
-  'app.gearslotname79': 'Load Bearing Vest (B)',
-  'app.gearslotdesc79': 'A multipurpose vest designed to let you carry relatively heavy equipment.',
-  'app.gearslotname72': 'Tactical Vest (A)',
+    "Un'imbracatura di base a forma di H. Per attrezzature leggere. Indossato dai guerriglieri ribelli in Sud America.",
+  'app.gearslotname77': 'Gilet Portante (A)',
+  'app.gearslotdesc77': 'Un gilet multiuso progettato per consentirti di trasportare attrezzature relativamente pesanti.',
+  'app.gearslotname79': 'Gilet Portante  (B)',
+  'app.gearslotdesc79': 'Un gilet multiuso progettato per consentirti di trasportare attrezzature relativamente pesanti.',
+  'app.gearslotname72': 'Gilet Tattico (A)',
   'app.gearslotdesc72':
-    'A highly expandable heavy-duty combat vest. Worn by the rebel guerillas in South America.',
-  'app.gearslotname195': 'SWAT Vest',
-  'app.gearslotdesc195': 'A highly expandable heavy-duty combat vest.',
-  'app.gearslotname196': 'STABO Harness',
+    'Un giubbotto da combattimento per carichi pesanti altamente espandibile. Indossato dai guerriglieri ribelli in Sud America.',
+  'app.gearslotname195': 'Gilet da SWAT',
+  'app.gearslotdesc195': 'Un giubbotto da combattimento per carichi pesanti altamente espandibile.',
+  'app.gearslotname196': 'Gilet STABO',
   'app.gearslotdesc196':
-    'A special harness designed for withdrawing from the battlefield. The equipment has poor expandability.',
-  'app.gearslotname192': 'Grenade Harness',
+    "Un'imbracatura speciale progettata per ritirarsi dal campo di battaglia. L'equipaggiamento ha scarsa espandibilità.",
+  'app.gearslotname192': 'Imbracatura per granate',
   'app.gearslotdesc192':
-    'Gear that shows off QUARTERBACK Skills. The Grenades that come equipped are fake and cannot be used.',
-  'app.gearslotname193': 'Magazine Carrier',
+    'Equipaggiamento che mette in mostra le abilità lancio. Le granate equipaggiate sono false e non possono essere utilizzate.',
+  'app.gearslotname193': 'Porta Riviste',
   'app.gearslotdesc193':
-    'Gear that shows off TRICKSTER Skills. The Magazine that comes equpped is fake and cannot be used.',
-  'app.gearslotname87': 'Leg Holster (A)',
+    'Equipaggiamento che mette in mostra le abilità trappole. Il caricatore in dotazione è falso e non può essere utilizzato.',
+  'app.gearslotname87': 'Fondina per Gambe (A)',
   'app.gearslotdesc87':
-    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin. Also used by the mega PMC Praying Mantis.',
-  'app.gearslotname89': 'Leg Holster (B)',
+    "Una fondina progettata per essere indossata bassa in modo da non interferire con l'equipaggiamento della cintura. Realizzato in resina sintetica. Utilizzato anche dalle PMC Praying Mantis.",
+  'app.gearslotname89': 'Fondina per Gambe (B)',
   'app.gearslotdesc89':
-    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin. Also used by the mega PMC Pieuvre armement.',
-  'app.gearslotname91': 'Leg Holster (C)',
+    "Una fondina progettata per essere indossata bassa in modo da non interferire con l'equipaggiamento della cintura. Realizzato in resina sintetica. Utilizzato anche dalle PMC Pieuvre armement.",
+  'app.gearslotname91': 'Fondina per Gambe (C)',
   'app.gearslotdesc91':
-    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin. Carried by the U.S. troops stationed in Eastern Europe.',
-  'app.gearslotname96': 'Leg Holster (D)',
+    "Una fondina progettata per essere indossata bassa in modo da non interferire con l'equipaggiamento della cintura. Realizzato in resina sintetica. Equipaggiamento dai soldati USA stazionati in Europa dell'Est.",
+  'app.gearslotname96': 'Fondina per Gambe (D)',
   'app.gearslotdesc96':
-    'A holster designed to be worn low so as not to interfere with your belt equipment. Made of synthetic resin.',
-  'app.gearslotname88': 'Leg Pouch (A)',
+    "Una fondina progettata per essere indossata bassa in modo da non interferire con l'equipaggiamento della cintura. Realizzato in resina sintetica.",
+  'app.gearslotname88': 'Custodia per le gambe (A)',
   'app.gearslotdesc88':
-    'A pouch worn on the thigh that holds ammo magazines and other equipment. Also used by the mega PMC Pieuvre armement.',
-  'app.gearslotname94': 'Leg Pouch (B)',
-  'app.gearslotdesc94': 'A pouch worn on the thigh that holds ammo magazines and other equipment.',
-  'app.gearslotname95': 'Leg Pouch (C)',
-  'app.gearslotdesc95': 'A pouch worn on the thigh that holds ammo magazines and other equipment.',
-  'app.gearslotname97': 'Leg Pouch (D)',
-  'app.gearslotdesc97': 'A pouch worn on the thigh that holds ammo magazines and other equipment.',
-  'app.gearslotname92': 'Dump Pouch (A)',
-  'app.gearslotdesc92': 'A pouch for storing spent magazines.',
-  'app.gearslotname90': 'Leg Armor',
+    'Una custodia indossata sulla coscia che contiene caricatori di munizioni e altro equipaggiamento. Utilizzato anche dalle PMC Pieuvre Armement.',
+  'app.gearslotname94': 'Custodia per le gambe (B)',
+  'app.gearslotdesc94': 'Una custodia indossata sulla coscia che contiene caricatori di munizioni e altro equipaggiamento.',
+  'app.gearslotname95': 'Custodia per le gambe (C)',
+  'app.gearslotdesc95': 'Una custodia indossata sulla coscia che contiene caricatori di munizioni e altro equipaggiamento.',
+  'app.gearslotname97': 'Custodia per le gambe (D)',
+  'app.gearslotdesc97': 'Una custodia indossata sulla coscia che contiene caricatori di munizioni e altro equipaggiamento.',
+  'app.gearslotname92': 'Custodia per Scarti (A)',
+  'app.gearslotdesc92': 'Una custodia per riporre le riviste usate.',
+  'app.gearslotname90': 'Armatura per le gambe',
   'app.gearslotdesc90':
-    'Armor to protect the thighs. Can also hold equipment. Also used by the mega PMC Raven Sword.',
-  'app.gearslotname11': 'Tactical Jacket',
-  'app.gearslotdesc11': 'A combat jacket made of a highly breathable non restrictive material.',
+    'Armatura per proteggere le cosce. Può contenere anche attrezzature. Utilizzato anche dalle PMC Raven Sword.',
+  'app.gearslotname11': 'Giacca Tattica',
+  'app.gearslotdesc11': 'Una giacca da combattimento realizzata in materiale altamente traspirante e non restrittivo.',
 
   //Gear Colors or colours if you are British
   'app.colorred!': 'RED!',
-  'app.color2tmcamo': '2TM Camo',
+  'app.color2tmcamo': 'Cammuffamento 2TM',
   'app.coloralaska': 'Alaska',
-  'app.coloralert': 'Alert',
-  'app.coloranimalcamo': 'Animal Camo',
-  'app.colorbigbosswatching': '"TheBoss" Uniform',
+  'app.coloralert': 'Allerta',
+  'app.coloranimalcamo': 'Cammuffamento Animale',
+  'app.colorbigbosswatching': 'Uniforme di "TheBoss"',
   'app.colorblue!': 'BLUE!',
-  'app.colorbluecamo': 'Blue Camo',
-  'app.colorblueurbancamo': 'Blue Urban Camo',
-  'app.colorbrickcamo': 'Brick Camo',
+  'app.colorbluecamo': 'Cammuffamento Blu',
+  'app.colorblueurbancamo': 'Cammuffamento Blu Urbano',
+  'app.colorbrickcamo': 'Cammuffamento Mattone',
   'app.colorchameleon': 'Chameleon',
-  'app.colordpmbluecamo': 'DPM Blue Camo',
-  'app.colorerdlredcamo': 'ERDL Red Camo',
-  'app.colorfishcamo': 'Fish Camo',
-  'app.colorflowercamo': 'Flower Camo',
-  'app.colorga-kocamo': 'GA-KO Camo',
+  'app.colordpmbluecamo': 'Cammuffamento DPM Blu',
+  'app.colorerdlredcamo': 'Cammuffamento ERDL Rosso',
+  'app.colorfishcamo': 'Cammuffamento Pesce',
+  'app.colorflowercamo': 'Cammuffamento Fiore',
+  'app.colorga-kocamo': 'Cammuffamento GA-KO',
   'app.colorgameover': 'Game Over',
-  'app.colorgoldberet': 'Gold Beret',
+  'app.colorgoldberet': 'Beretto Dorato',
   'app.colorgrayfox': 'Gray Fox',
-  'app.colorgtcamo': 'GT Camo',
-  'app.colorheartcamo': 'Heart Camo',
-  'app.colorhornetstripecamo': 'Hornet Stripe Camo',
-  'app.colorigatactical': 'IGA Tactical',
-  'app.colorinfiltrator': 'Infiltrator',
-  'app.colorjpcamo': 'JP Camo',
-  'app.colorjtournamentwinner': 'J Tournament Winner',
+  'app.colorgtcamo': 'Cammuffamento GT',
+  'app.colorheartcamo': 'Cammuffamento Cuore',
+  'app.colorhornetstripecamo': 'Cammuffamento Striscia di Calabrone',
+  'app.colorigatactical': 'Tattico IGA',
+  'app.colorinfiltrator': 'Infiltratore',
+  'app.colorjpcamo': 'Cammuffamento JP',
+  'app.colorjtournamentwinner': 'J Vincitore del Torneo',
   'app.colorlalilulelo': 'La Li Lu Le Lo',
-  'app.colormerrychristmas': 'Merry Christmas',
-  'app.colormummycamo': 'Mummy Camo',
-  'app.colororangecamo': 'Orange Camo',
+  'app.colormerrychristmas': 'Buon Natale',
+  'app.colormummycamo': 'Cammuffamento Mummia',
+  'app.colororangecamo': 'Cammuffamento Arancione',
   'app.colorouterhaven': 'Outer Haven',
-  'app.colorpeacecamo': 'Peace Camo',
-  'app.colorpinkcamo': 'Pink Camo',
+  'app.colorpeacecamo': 'Cammuffamento Pace',
+  'app.colorpinkcamo': 'Cammuffamento Rosa',
   'app.colorportableops:null': 'Portable Ops: Null',
   'app.colorprayingmantis': 'Praying Mantis',
   'app.colorratpatrol': 'Rat Patrol',
   'app.colorravensword': 'Raven Sword',
-  'app.colorrescamo': 'RES Camo',
+  'app.colorrescamo': 'Cammuffamento SAL',
   'app.colorsansfrontiers': 'Sans Frontiers',
-  'app.colorsdmcamo': 'SDM Camo',
-  'app.colorsdmcontestant': 'SDM Contestant',
+  'app.colorsdmcamo': 'Cammuffamento DMO',
+  'app.colorsdmcontestant': 'Cammuffamento Partecipante DMO',
   'app.colorsnake(fox)': 'Snake (Fox)',
-  'app.colorsnakecamo': 'Snake Camo',
-  'app.colorsneakingsuit(2)': 'Sneaking Suit (2)',
-  'app.colorsneakingsuit(3)': 'Sneaking Suit (3)',
-  'app.colorsneakingsuit': 'Sneaking Suit',
-  'app.colorspidercamo': 'Spider Camo',
-  'app.colorspiritcamo': 'Spirit Camo',
-  'app.colorsplittercamo': 'Splitter Camo',
-  'app.colorthebossuniform': 'The "Boss" Uniform',
+  'app.colorsnakecamo': 'Cammuffamento Snake',
+  'app.colorsneakingsuit(2)': 'Tuta da Infiltrazione (2)',
+  'app.colorsneakingsuit(3)': 'Tuta da Infiltrazione (3)',
+  'app.colorsneakingsuit': 'Tuta da Infiltrazione',
+  'app.colorspidercamo': 'Cammuffamento Ragno',
+  'app.colorspiritcamo': 'Cammuffamento Spirito',
+  'app.colorsplittercamo': 'Cammuffamento Splitter',
+  'app.colorthebossuniform': 'Uniforme The "Boss"',
   'app.colorthesaltisreal': 'The Salt Is Real',
   'app.colortltwb': 'TLTWB',
   'app.colortotalstealth': 'Total Stealth',
-  'app.colortrcamo': 'TR Camo',
-  'app.colorurbandigitalcamo': 'Urban Digital Camo',
+  'app.colortrcamo': 'Cammuffamento TR',
+  'app.colorurbandigitalcamo': 'Cammuffamento Urbano Digitale',
   'app.colorvolgin': 'Volgin',
-  'app.colorwhitecamo': 'White Camo',
-  'app.colorwolf': 'Wolf',
-  'app.equipped': "The item has been equipped",
-  "app.purchased": "The item has been purchased"
+  'app.colorwhitecamo': 'Cammuffamento Bianco',
+  'app.colorwolf': 'Lupo',
+  'app.equipped': "L'oggetto è stato equipaggiato",
+  "app.purchased": "L'oggetto è stato acquistato",
+
+  //faq
+  "app.requirements": "Requisiti di Sistema per Utenti PC",
+  "app.minrequirements": "Requisiti Minimi",
+  "app.minrequirementsdesc1": "Le seguenti specifiche mirano a far girare il gioco a 30fps e 1080p",
+  "app.cpu": "CPU",
+  "app.minrequirementsdesc2": "Intel i5-10400, AMD Ryzen 5 3600, o meglio.",
+  "app.gpu": "GPU",
+  "app.minrequirementsdesc3": "GTX 1050 ti o GPU AMD equivalente.",
+  "app.recommendedrequirements": "Requisiti Raccomandati",
+  "app.recommendedrequirementsdesc1": "Le seguenti specifiche mirano a far giare il gioco a 60fps e 4k",
+  "app.recommendedrequirementsdesc2": "Intel i7-12700k, AMD Ryzen 7 7700X, o meglio.",
+  "app.recommendedrequirementsdesc3": "GTX 3070 o GPU AMD Equivalente.",
+
+  "app.pwreset": "Istruzioni per resettare la password",
+  "app.pwresetdesc1": "Se hai dimenticato la password, inserisci il tuo indirizzo email",
+  "app.here": "qui",
+  "app.pwresetdesc2": "Riceverai una mail con il link per resettare la password. Segui semplicemente le istruzioni contenute nella mail.",
+  
+  "app.gamelanguage": "Come cambiare la lingua di gioco",    
+  "app.ps3": "PS3:",
+  "app.gamelanguagedesc1": "Dirigiti nelle Impostazioni>Impostazioni di Sistema>Lingua di Sistema>Italiano.",
+  "app.pc": "PC: ",
+  "app.gamelanguagedesc2": 'Clicka sul bottone "config" >System>Console Language>Italiano>Apply>Save.',
+  "app.gamelanguagedesc3": "Qualora il tuo linguaggio non fosse supportato, il gioco sarà in Giapponese.",
+
+  "app.purchcosmetics": "Acquistare ed Equipaggiare oggetti cosmetici",
+  "app.purchcosmeticsdesc1": "Per acquistare oggetti cosmetici, esegui il log in su",
+  "app.mgo2pcwebsite": "mgo2pc.com",
+  "app.purchcosmeticsdesc2": "poi visita il",
+  "app.rwdshop": "negozio ricompense",
+  "app.purchcosmeticsdesc3": "Puoi comprare oggetti con le ricompense ottenute in gioco, senza spendere, ovviamente, alcun soldo reale.", 
+  "app.purchcosmeticsdesc4": "Per equipaggiare un oggetto cosmetico, sii sicuro di aver effettuato il log out dal personaggio su cui vuoi equipaggiarlo, poi seleziona l'oggetto dal negozio e clicka 'Equipaggia'.",
+  "app.purchcosmeticsdesc5": "Scegli il personaggio nel menu che apparirà, e quando tornerai in gioco, l'oggetto sarà regolarmente equipaggiato sul personaggio selezionato.",
+
+  "app.moderation": "Supporto relativo alla moderazione e Come aprire un ticket",
+  "app.moderationdesc": "Per supporto relativo alla moderazione, per favore contatta il nostro staff attraverso il canale dedicato nel nostro server",
+  "app.discord": "Discord",
+
+  "app.linux": "Compatibilità con Linux, Mac, Steam Deck, ASUS ROG Ally",
+  "app.linuxdesc1": "Al momento non esiste alcuna versione dell'emulatore per MGO per Linux, e non è ufficialmente supportato. Le prestazioni offerte dai Mac sono insufficienti per un'esperienza di gioco decente.",
+  "app.linuxdesc2": "La Steam Deck non ha la potenza necessaria per far girare questo gioco. La ASUS ROG Ally lo fa invece girare adeguatamente, segui la guida per Windows PC con un potenziale cambiamento nella Config -> Advanced -> imposta 'Spurs Threads' su 3.",
+
+  "app.mnk": "Giocare con Mouse e Tastiera",
+  "app.mnkdesc": "E' possibile giocare con Mouse e Tastiera, ma è fortemente sconsigliato per l'assenza di supporto nativo. Il controller è il mezzo preferibile per giocare.",
+  
+  "app.donation": "Informazioni sulle Donazioni",
+  "app.donationdesc": "SaveMGO non ha mai chiesto nè mai chiederà donazioni di qualsiasi tipo. Trattasi, pur sempre, di un progetto mosso da pura passione, con nessun intento di farne profitto. Inoltre, accettare denearo a qualsiasi titolo metterebbe a rischio l'intero progetto.",
+
+  "app.sound": "Come risolvere i problemi legati all'audio",
+  "app.sounddesc1": "Se non hai nessun audio, potrebbe significare che la tua CPU non ha prestazioni adeguate o altri problemi tecnici.",
+  "app.sounddesc2": "Per provare a risolvere, cambia i seguenti settaggi sull'emulatore: Scheda CPU -> Preferred SPU Threads, Scheda Audio -> Buffering, Time Stretching, Output Mode, e Scheda Advanced -> Maximum SPURS Threads.",
+
+  "app.fullscreen": "Come abilitare la modalità a schermo intero",
+  "app.fullscreendesc1": "Per abilitare la modalità a schermo intero, fai doppio click al centro dello schermo o premi assieme 'Alt + Invio'. E' disponibile una guida in questo",
+  "app.fullscreendesc2": "video tutorial",
+
+  "app.resolution": "Modificare la risoluzione del gioco",
+  "app.resolutiondesc": 'Per modificare la risoluzione del gioco, vai su Configuration > scheda GPU e modifica la "resolution scale" come desideri ed in base alle capacità della tua GPU.',
+
+  "app.host": "Hostare una partita: Linee guida e consigli",
+  "app.hostdesc": "Esistono diversi metodi per hostare una partita, a seconda delle tue impostazioni di rete. Se dovessi avere difficoltà, faresti meglio a contattare il tuo Operatore telefonico. Tieni a mente che è necessario un IP Pubblico affinchè gli altri giocatori possano unirsi alle tue partite.",
+  "app.upnp": "UPNP",
+  "app.upnpdesc": "Abilitare UPNP nelle impostazioni dell'emulatore e controlla se è abilitato anche nel tuo router. Per informazioni più dettagliate, segui questa",
+  "app.guide": "guida",
+  "app.portforward": "Port Forward Manuale",
+  "app.portforwarddesc": "Consulta prima le linee guida del tuo operatore per effettuare il port forwarding. Usa la porta 5730 (anche le porte diverse dovrebberò però essere compatibili) con protocollo UDP per SaveMGO. Un esempio può esssere trovato",
+  "app.portmapper": "Portmapper",
+  "app.portmapperdesc1": "Se non hai accesso al tuo router o hai accesso ristretto, prova l'app Portmapper seguendo",
+  "app.portmapperdesc2": "questo metodo",
+  "app.portmapperdesc3": "Modifica le librerie UPNP come necessario.",
+
+  "app.shadows": "Disabilita le ombre per miglirare le prestazioni",
+  "app.shadowsdesc1": "Per disabilitare le ombre, cosa che migliora sensibilmente gli FPS, tieni premuto L3, R3, e Sopra sul D-PAD per circa 3 secondi. Per una dimostrazione, guarda",
+  "app.shadowsdesc2": "questo video.",
+  
 };
