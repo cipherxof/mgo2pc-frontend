@@ -151,7 +151,7 @@ export default {
   //Character page
   'app.activerank': 'Votre classement actif a été mis à jour.',
   'app.maincharupdate': 'Votre personnage principal a été mis à jour.',
-  'app.setasmain': 'Personage principal',
+  'app.setasmain': 'Perso. principal',
 
   //Personal Scores
   'app.conceckills': 'Kills consécutifs',
@@ -234,19 +234,6 @@ export default {
   'app.newpw2': 'Votre nouveau mot de passe est',
   'app.changepw': 'Vous pouvez modifier votre mot-de-passe après vous être connecté.',
   'app.fillform2': 'Remplissez le formulaire pour réinitialiser votre mot de passe',
-
-  //faq
-  'app.minimum': 'Minimum',
-  'app.recommended': 'Recommandé',
-  'app.faq.nosound': "Pourquoi est-ce que je n'ai pas de son ?",
-  'app.faq.host': 'Comment héberger ?',
-  'app.faq.login': 'Pourquoi ne puis-je pas me connecter ?',
-  'app.faq.donate': "Pourquoi SaveMGO n'autorise-t-il pas les dons ?",
-  'app.faq.donatetab':
-    "SaveMGO n'a jamais demandé et n'acceptera jamais de dons d'aucune sorte. C'est un projet passionnant et nous n'avons aucune intention d'en tirer profit. De plus, accepter des dons de quelque nature que ce soit expose le projet à un risque d'arrêt.",
-  'app.faq.sysreqtitle': 'Quelle est la configuration requise ?',
-  'app.faq.sysreq':
-    "L'émulation Playstation 3 est très gourmande en CPU et fonctionne mieux sur les ordinateurs de bureau avec 8 cœurs et 16 threads. Celà étant dit, vous pouvez obtenir des fréquences d'images jouables sur des processeurs plus faibles. La meilleure valeur pour les performances que vous obtiendrez probablement est avec l'Intel i3 12100 (97€) ou l'Intel i5 12400f (150 €). Cependant, si vous utilisez un ordinateur portable, nous vous recommandons d'en utiliser un équipé d'un processeur de série H à 8 cœurs/16 threads 35W+, tel qu'un Intel Core i7-10870H ou un AMD Ryzen 7 5800H.",
 
   //Stats/Population page
   'app.todayspeakplayers': "Pic de joueurs (Aujourd'hui)",
@@ -496,5 +483,85 @@ export default {
   'app.colorwhitecamo': 'Camouflage blanc',
   'app.colorwolf': 'Wolf',
   'app.equipped': "L'objet a été équipé",
-  "app.purchased": "L'objet a été acheté "
+  "app.purchased": "L'objet a été acheté ",
+
+    //faq
+    "app.requirements": "Configuration système requise pour les utilisateurs PC",
+    "app.minrequirements": "Configuration minimales requise",
+    "app.minrequirementsdesc1": "Ces exemples de setup visent un taux de rafraîchissement d'image de 30 ips (fps) pour une résolution d'image en 1080p.",
+    "app.cpu": "CPU",
+    "app.minrequirementsdesc2": "Intel i5-10400, AMD Ryzen 5 3600, ou mieux.",
+    "app.gpu": "GPU",
+    "app.minrequirementsdesc3": "GTX 1050 Ti ou l'équivalent GPU AMD.",
+    "app.recommendedrequirements": "Configuration recommandée",
+    "app.recommendedrequirementsdesc1": "Ces exemples de setup visent un taux de rafraîchissement d'image de 60 ips (fps) pour une résolution en 4k (1440p).",
+    "app.recommendedrequirementsdesc2": "Intel i7-12700K, AMD Ryzen 7 7700X, ou mieux.",
+    "app.recommendedrequirementsdesc3": "GTX 3070 ou GPU AMD équivalent.",
+  
+    "app.pwreset": "Instructions de réinitialisation du mot de passe",
+    "app.pwresetdesc1": "Si vous avez oublié votre mot de passe, veuillez soumettre votre adresse e-mail ",
+    "app.here": "ici",
+    "app.pwresetdesc2": "Vous recevrez un e-mail contenant un lien pour réinitialiser votre mot de passe. Il vous suffira de suivre les instructions fournies dans cet e-mail.",
+    
+
+    "app.gamelanguage": "Changer la langue du jeu",
+    "app.ps3": "PS3:",
+    "app.gamelanguagedesc1": "Pour changer la langue du jeu sur PS3 : Accédez à Paramètres>Paramètres système>Langue du système>Anglais (États-Unis).",
+    "app.pc": "PC: ",
+    "app.gamelanguagedesc2": "Cliquez sur le bouton de Configuration>System>Console Language>English (US)>Apply>Save. ",
+    "app.gamelanguagedesc3": "Veuillez noter que si votre langue n'est pas prise en charge, le jeu sera par défaut en japonais.",
+  
+    "app.purchcosmetics": "Achats et application de cosmétiques",
+    "app.purchcosmeticsdesc1": "Pour acheter des cosmétiques, connectez-vous sur ",
+    "app.mgo2pcwebsite": "mgo2pc.com",
+    "app.purchcosmeticsdesc2": "puis visitez la",
+    "app.rwdshop": "Boutique de récompenses",
+    "app.purchcosmeticsdesc3": "Vous pouvez acheter des équipements en utilisant les récompenses gagnées en jeu, sans dépenser d'argent réel.",
+    "app.purchcosmeticsdesc4": "Pour appliquer un cosmétique, assurez-vous d'être déconnecté du personnage, puis sélectionnez l'objet dans la boutique et cliquez sur 'Équiper'.",
+    "app.purchcosmeticsdesc5": "Choisissez le personnage dans la fenêtre contextuelle, et une fois de retour dans le jeu, l'objet sera appliqué à votre personnage.",
+
+
+    "app.moderation": "Support de modération et ouverture de tickets",
+    "app.moderationdesc": "Pour obtenir un support en matière de modération, veuillez contacter notre personnel via le canal dédié sur notre",
+    "app.discord": "Discord",
+  
+    "app.linux": "Compatibility with Linux, Mac, Steam Deck, ASUS ROG Ally",
+    "app.linuxdesc1": "Actuellement, il n'existe pas de version personnalisée de MGO pour Linux, et elle n'est pas officiellement prise en charge. Les performances sur Mac sont insuffisantes pour une expérience de jeu jouable.",
+    "app.linuxdesc2": "Le Steam Deck manque de puissance nécessaire pour ce jeu. Le ASUS ROG Ally peut exécuter le jeu de manière adéquate, en suivant le tutoriel standard pour PC Windows avec éventuellement un ajustement dans le paramètre 'Advanced Spurs Threads' à mettre sur '3'.",
+    
+
+    "app.mnk": "Jeu avec clavier et souris",
+    "app.mnkdesc": "Le clavier et la souris peuvent être employés, mais ne sont pas recommandés en raison du manque de prise en charge native de ces périphériques d'entrée. Une manette est la méthode préférée pour jouer.",
+    
+    "app.donation": "Informations sur les dons",
+    "app.donationdesc": "SaveMGO n'a jamais demandé et ne demandera jamais ni n'acceptera de dons d'aucune sorte. Il s'agit d'un projet passionné et nous n'avons aucune intention d'en tirer profit. De plus, accepter des dons de quelque nature que ce soit mettrait le projet en danger de fermeture.",
+  
+    "app.sound": "Résolution des problèmes liés au son",
+    "app.sounddesc1": "Si vous n'avez aucun son, cela peut indiquer une performance de CPU insuffisante ou d'autres problèmes techniques.",
+    "app.sounddesc2": "Pour résoudre cela, ajustez les paramètres de l'émulateur : CPU (Preferred SPU Threads), Audio (Buffering, Time Stretching, Output Mode), et Advanced (Maximum SPURS Threads).",
+
+
+    "app.fullscreen": "Activation du mode plein écran",
+    "app.fullscreendesc1": "Pour activer le mode plein écran, double-cliquez au centre de l'écran ou appuyez sur 'Alt + Entrée'. Un guide visuel est disponible dans ce",
+    "app.fullscreendesc2": "tutoriel vidéo",
+  
+    "app.resolution": "Ajustement de la résolution du jeu",
+    "app.resolutiondesc": "Pour changer la résolution du jeu allez, via l'émulateur, sur l'onglet 'Configuration>GPU' et modifiez l'échelle de résolution selon vos préférences.",
+  
+    "app.host": "Créer une partie : directives et conseils",
+    "app.hostdesc": "Il existe plusieurs méthodes pour créer une partie, selon votre configuration réseau. Si vous rencontrez des difficultés, vous devrez peut-être contacter votre fournisseur d'accès à Internet (FAI). Notez qu'une adresse IP publique est nécessaire pour que d'autres joueurs puissent rejoindre vos parties.",
+    "app.upnp": "UPnP",
+    "app.upnpdesc": "Activez l'UPnP dans les paramètres de l'émulateur et vérifiez s'il est activé dans votre routeur. Pour des instructions détaillées, consultez ce",
+    "app.guide": "guide",
+    "app.portforward": "Manuel d'ouverture des ports requis(Port Forward)",
+    "app.portforwarddesc": "Consultez les directives de votre FAI pour le transfert de port. Utilisez le port 5730 avec le protocole UDP pour MGO2PC. Un exemple peut être trouvé",
+    "app.portmapper": "Portmapper",
+    "app.portmapperdesc1": "Si l'accès au routeur est restreint, essayez Portmapper en suivant",
+    "app.portmapperdesc2": "cette méthode",
+    "app.portmapperdesc3": "en ajustant la bibliothèque UPnP au besoin.",
+  
+    "app.shadows": "Désactiver les ombres pour améliorer les performances",
+    "app.shadowsdesc1": "Pour désactiver les ombres, ce qui améliore considérablement les FPS, maintenez enfoncés L3, R3 et Haut pendant environ 3 secondes. Pour une démonstration, regardez",
+    "app.shadowsdesc2": "cette vidéo.",
+  
 };

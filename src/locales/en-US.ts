@@ -235,18 +235,6 @@ export default {
   'app.changepw': 'You may change your password after logging in.',
   'app.fillform2': 'Fill out the form to reset your password',
 
-  //faq
-  'app.minimum': 'Minimum',
-  'app.recommended': 'Recommended',
-  'app.faq.nosound': 'Why do I have no sound?',
-  'app.faq.host': 'How do I host?',
-  'app.faq.login': "Why can't I login?",
-  'app.faq.donate': "Why doesn't SaveMGO allow donations?",
-  'app.faq.donatetab':
-    'SaveMGO never has and never will ask for or accept donations of any kind. This is a passion project and we have no intention of profiting off of it. Furthermore, accepting donations of any kind puts the project at risk of being shut down.',
-  'app.faq.sysreqtitle': 'What are the system requirements?',
-  'app.faq.sysreq': `Playstation 3 emulation is very CPU intensive and works best on desktops with 8 cores and 16 threads. That being said you can get playable framerates on weaker CPUs. The best value for performance you will likely get is with the Intel i5 12400f ($150). However, if you are using a laptop we recommend one equipped with an 8-core/16-thread 35W+ H-series CPU such as an Intel Core i7-10870H or an AMD Ryzen 7 5800H.`,
-
   //Stats/Population page
   'app.todayspeakplayers': 'Peak Players (Today)',
   'app.alltimepeakplayers': 'Peak Players (All time)',
@@ -487,5 +475,83 @@ export default {
   'app.colorwhitecamo': 'White Camo',
   'app.colorwolf': 'Wolf',
   'app.equipped': "The item has been equipped",
-  "app.purchased": "The item has been purchased"
+  "app.purchased": "The item has been purchased",
+
+  //faq
+  "app.requirements": "System Requirements for PC Users",
+  "app.minrequirements": "Minimum Requirements",
+  "app.minrequirementsdesc1": "These specs are aimed at a framerate target of 30fps at 1080p",
+  "app.cpu": "CPU",
+  "app.minrequirementsdesc2": "Intel i5-10400, AMD Ryzen 5 3600, or better.",
+  "app.gpu": "GPU",
+  "app.minrequirementsdesc3": "GTX 1050 ti or equivalent AMD GPU.",
+  "app.recommendedrequirements": "Recommended Requirements",
+  "app.recommendedrequirementsdesc1": "These specs are aimed at a framerate target of 60fps at 4k",
+  "app.recommendedrequirementsdesc2": "Intel i7-12700k, AMD Ryzen 7 7700X, or better.",
+  "app.recommendedrequirementsdesc3": "GTX 3070 or equivalent AMD GPU.",
+
+  "app.pwreset": "Password Reset Instructions",
+  "app.pwresetdesc1": "If you have forgotten your password, submit your email address",
+  "app.here": "here",
+  "app.pwresetdesc2": "You will receive an email with a link to reset your password. Simply follow the instructions provided in the email.",
+  
+  "app.gamelanguage": "Changing the Game Language",
+  "app.ps3": "PS3:",
+  "app.gamelanguagedesc1": "Navigate to Settings>System Settings>System Language>English (United States). On PC: Click the config button>System>Console Language>English (US)>Apply>Save. Please note that if your language is unsupported, the game will default to Japanese.",
+  "app.pc": "PC: ",
+  "app.gamelanguagedesc2": "Click the config button>System>Console Language>English (US)>Apply>Save. Please note that if your language is unsupported, the game will default to Japanese.",
+  "app.gamelanguagedesc3": "Please note that if your language is unsupported, the game will default to Japanese.",
+
+
+  "app.purchcosmetics": "Purchasing and Applying Cosmetics",
+  "app.purchcosmeticsdesc1": "To purchase cosmetics, log into",
+  "app.mgo2pcwebsite": "mgo2pc.com",
+  "app.purchcosmeticsdesc2": "then visit the",
+  "app.rwdshop": "reward shop",
+  "app.purchcosmeticsdesc3": "You can buy gear using rewards earned in-game, without any real money.", 
+  "app.purchcosmeticsdesc4": "To apply a cosmetic, ensure you are logged out of the character, then select the item in the shop and click 'Equip'.",
+  "app.purchcosmeticsdesc5": "Choose the character in the popup window, and upon returning to the game, the item will be applied to your character.",
+
+  "app.moderation": "Moderation Support and Opening Tickets",
+  "app.moderationdesc": "For moderation support, please contact our staff through the dedicated channel in our",
+  "app.discord": "Discord",
+
+  "app.linux": "Compatibility with Linux, Mac, Steam Deck, ASUS ROG Ally",
+  "app.linuxdesc1": "Currently, there is no custom MGO build for Linux, and it is not officially supported. Mac performance is insufficient for a playable experience.",
+  "app.linuxdesc2": "The Steam Deck lacks the necessary power for this game. The ASUS ROG Ally can run the game adequately, following the standard Windows PC tutorial with a potential adjustment in the 'Advanced Spurs Threads' setting to 3.",
+  
+
+  "app.mnk": "Mouse and Keyboard Gameplay",
+  "app.mnkdesc": "Mouse and keyboard can be used, but are not recommended due to the lack of native support for these input devices. A controller is the preferred method for playing.",
+  
+  "app.donation": "Donation Information",
+  "app.donationdesc": "SaveMGO never has and never will ask for or accept donations of any kind. This is a passion project and we have no intention of profiting off of it. Furthermore, accepting donations of any kind puts the project at risk of being shut down.",
+
+  "app.sound": "Resolving Sound Issues",
+  "app.sounddesc1": "If you experience no sound, it may indicate inadequate CPU performance or other technical issues.",
+  "app.sounddesc2": "To resolve this, adjust the emulator settings: Audio (Buffering, Time Stretching, Output Mode), and Advanced (Maximum SPURS Threads).",
+
+  "app.fullscreen": "Enabling Fullscreen Mode",
+  "app.fullscreendesc1": "To enable fullscreen mode, double-click the center of the screen or press 'Alt + Enter'. A visual guide is available in this",
+  "app.fullscreendesc2": "video tutorial",
+
+  "app.resolution": "Adjusting Game Resolution",
+  "app.resolutiondesc": "To change the game resolution, go to Configuration>GPU tab and modify the resolution scale as desired.",
+
+  "app.host": "Hosting a Match: Guidelines and Tips",
+  "app.hostdesc": "There are several methods to host a match, depending on your network setup. If you encounter difficulties, you may need to contact your ISP. Note that a public IP is required for other players to join your matches.",
+  "app.upnp": "UPNP",
+  "app.upnpdesc": "Enable UPNP in the emulator's settings and check if it's enabled in your router. For detailed instructions, refer to this",
+  "app.guide": "guide",
+  "app.portforward": "Manual Port Forward",
+  "app.portforwarddesc": "Consult your ISP's guidelines for port forwarding. Use port 5730 with UDP protocol for MGO2PC. An example can be found",
+  "app.portmapper": "Portmapper",
+  "app.portmapperdesc1": "If router access is restricted, try Portmapper following",
+  "app.portmapperdesc2": "this method",
+  "app.portmapperdesc3": "adjusting the UPNP library as necessary.",
+
+  "app.shadows": "Disabling Shadows for Improved Performance",
+  "app.shadowsdesc1": "To disable shadows, which significantly boosts FPS, hold L3, R3, and Up for about 3 seconds. For a demonstration, watch",
+  "app.shadowsdesc2": "this video.",
+
 };

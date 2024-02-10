@@ -33,7 +33,7 @@ export default {
   'app.error': 'Error', //error for account activated and also a headere for the same thing as sucess
 
   //account creation
-  'app.accountcreated': '¡Tu cuenta ha sido creaada!',
+  'app.accountcreated': '¡Tu cuenta ha sido creada!',
   'app.fillform3': 'Rellena el formulario para crear tu cuenta',
   'app.haveacc?': '¿Ya tienes cuenta?',
   'app.login': 'Iniciar sesión',
@@ -234,20 +234,6 @@ export default {
   'app.newpw2': 'Tu nueva contraseña es',
   'app.changepw': 'Puedes cambiar tu contraseña después de iniciar sesión.',
   'app.fillform2': 'Rellena el formulario para reestablecer la contraseña.',
-
-  //faq
-  'app.minimum': 'Mínimo',
-  'app.recommended': 'Recomendado',
-  'app.faq.nosound': '¿Por qué no tengo sonido?',
-  'app.faq.host': '¿Como hosteo/creo partida?',
-  'app.faq.login': '¿Por qué no me puedo conectar?',
-  'app.faq.sysreqtitle': '¿Cuáles son los requisitos de sistema?',
-  'app.faq.donate': '¿Por qué SaveMGO no acepta donaciones?',
-  'app.faq.donatetab':
-    'SaveMGO nunca ha aceptado ni aceptará ningún tipo de donación. Es un proyecto para la comunidad y no tenemos intención de sacar beneficio alguno por ello. Además, aceptar cualquier tipo de donación pondría el projecto en riesgo de ser cerrado.',
-  'app.faq.sysreq': `La emulación de Playstation 3 depende mucho del procesador (CPU) y funciona mejor en procesadores de 8 núcleos y 16 hilos. Dicho esto, puedes tener una tasa de fotogramas por segundo (FPS) aceptable en CPUs de menor potencia. 
-Los mejores procesadores relación potencia/precio que probablemente encuentres son el Intel i3 12100 (~100€) o el Intel i5 12400f (~150€). 
-Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador de 8-núcleos/16-hilos 35W+ Serie-H como el Intel Core i7-10870H o el AMD Ryzen 7 5800H.`,
 
   //Stats/Population page
   'app.todayspeakplayers': 'Pico de Jugadores (Hoy)',
@@ -496,5 +482,80 @@ Sin embargo, si buscas una laptop recomendamos que esta cuente con un procesador
   'app.colorwhitecamo': 'Camuflaje Blanco',
   'app.colorwolf': 'Wolf',
   'app.equipped': "El item ha sido equipado",
-  "app.purchased": "El item ha sido comprado"
+  "app.purchased": "El item ha sido comprado",
+
+    //faq
+    "app.requirements": "Requisitos del Sistema para usuarios de PC",
+    "app.minrequirements": "Requisitos Mínimos",
+    "app.minrequirementsdesc1": "Las siguientes especificaciones apuntan a una experiencia de juego en 1080p a 30fps como mínimo",
+    "app.cpu": "CPU",
+    "app.minrequirementsdesc2": "Intel i5-10400, AMD Ryzen 5 3600, o mejor.",
+    "app.gpu": "GPU",
+    "app.minrequirementsdesc3": "GTX 1050 ti o GPU equivalente de AMD.",
+    "app.recommendedrequirements": "Requisitos Recomendados",
+    "app.recommendedrequirementsdesc1": "Las siguientes especificaciones apuntan a una experiencia de juego en 4K a 60 fps",
+    "app.recommendedrequirementsdesc2": "Intel i7-12700k, AMD Ryzen 7 7700X, or mejor.",
+    "app.recommendedrequirementsdesc3": "GTX 3070 or GPU equivalente de AMD.",
+  
+    "app.pwreset": "Instrucciones para reestablecer contraseña ",
+    "app.pwresetdesc1": "Si has olvidado tu contraseña, escribe tu email",
+    "app.here": "aquí",
+    "app.pwresetdesc2": "Recibirás un email con un enlace para reestablecer tu contraseña. Sigue las indicaciones proporcionadas en el email.",
+    
+    "app.gamelanguage": "Cambiar el idioma del juego",
+    "app.ps3": "En PS3:",
+    "app.gamelanguagedesc1": "Navega hasta Ajustes > Ajusted del Sistema > Idioma del Sistema > English (United States) [o el idioma que prefieras*].",
+    "app.pc": "En PC:",
+    "app.gamelanguagedesc2": "Haz click en el botón Config y luego ve a System > Console Language > English (US)* > Apply > Save.",
+    "app.gamelanguagedesc3": "Por favor, ten en cuenta que si el idioma que has elegido no es soportado, el juego estará por defecto en Japonés.",
+
+    "app.purchcosmetics": "Comprando y Aplicando Cosméticos",
+    "app.purchcosmeticsdesc1": "Para comprar cosméticos, inicia sesión en",
+    "app.mgo2pcwebsite": "mgo2pc.com",
+    "app.purchcosmeticsdesc2": "y visita la",
+    "app.rwdshop": "Tienda de Recompensas",
+    "app.purchcosmeticsdesc3": "Puedes comprar equipamiento con las Recompensas que has ganado en el juego, sin usar nada de dinero real.",
+    "app.purchcosmeticsdesc4": "Para aplicar cosméticos: asegúrate de estar desconectado del personaje y fuera de Selección de Personaje. Luego selecciona el item en la tienda y haz click en 'Equip'.",
+    "app.purchcosmeticsdesc5": "Elige el personaje en la ventana emergente, y una vez vuelvas a entrar en la pantalla de selección de personaje el item estará equipado.",
+    "app.moderation": "Ayuda de Moderación y Tickets",
+    "app.moderationdesc": "Para obtener ayuda con temas de moderación, por favor, contacta con nuestros staff a través del canal dedicado (#contact-staff) en nuestro",
+    "app.discord": "Discord",
+  
+    "app.linux": "Compatibilidad con Linux, Mac, Steam Deck y ASUS ROG Ally",
+    "app.linuxdesc1": "Actualmente no hay build personalizada de MGO para Linux, por lo que hay soporte oficial. El rendimiento de Mac es insuficiente para una experiencia jugable.",
+    "app.linuxdesc2": "Steam Deck carece de la potencia necesaria para este juego. ASUS ROG Ally puede ejecutar el juego de forma aceptable, sigue el tutorial de PC y potencialmente ajusta la opción de 'Maximum Numbers of SPURS Threads' a 3 en la pestaña Advanced.",
+
+    "app.mnk": "Jugar con teclado y ratón",
+    "app.mnkdesc": "Se puede usar teclado y ratón, pero no es recomendable debido a la falta de soporte nativo para ratón. La forma recomendada para jugar es con mando.",
+    
+    "app.donation": "Información sobre Donaciones",
+    "app.donationdesc": "SaveMGO nunca ha aceptado ni aceptará ningún tipo de donación. Es un proyecto para la comunidad y no tenemos intención de sacar beneficio alguno por ello. Además, aceptar cualquier tipo de donación pondría el projecto en riesgo de ser cerrado.",
+  
+    "app.sound": "Resolviendo problemas de audio",
+    "app.sounddesc1": "Si no tienes audio, puede deberse a un rendimiento inadecuado de tu CPU u otros problemas técnicos.",
+    "app.sounddesc2": "Para solucionarlo, ajusta las siguientes opciones en el emulador: (Buffering, Time Stretching, Output Mode) en la pestaña Audio y (Maximum SPURS Threads) en Advanced.",
+
+    "app.fullscreen": "Habilitando la Pantalla Completa",
+    "app.fullscreendesc1": "Para entrar en modo de Pantalla Completa, haz doble click en el centro de la ventana del juego o o presiona 'Alt + Enter'. Un ejemplo gráfico de como hacerlo",
+    "app.fullscreendesc2": "en este vídeo.",
+  
+    "app.resolution": "Ajustando resolución del juego",
+    "app.resolutiondesc": "Para cambiar la resolución del juego, ve a Configuration > GPU tab y modifica Resolution Scale a la resolución que quieras (recomendable como máximo hasta 4K)",
+  
+    "app.host": "Creando partida: Pasos y recomendaciones",
+    "app.hostdesc": "Hay varios métodos para habilitar la opción de crear partida, dependiendo de la configuración de tu red. Si encuentras dificultades, puede que tengas que contactar con tu proveedor de Internet. Ten en cuenta que se require de una IP pública para que otros jugadores puedan unirse a tu sala.",
+    "app.upnp": "UPNP",
+    "app.upnpdesc": "Habilita UPNP en la configuración del emulador y comprueba que esté hailitado en tu router. Para instrucciones mas detalladas, ve a esta",
+    "app.guide": "guía",
+    "app.portforward": "Abrir puertos",
+    "app.portforwarddesc": "Consulta el manual del router. Abre el puerto 5730 con protocolo UDP para MGO2PC. Puedes encontrar un ejemplo",
+    "app.portmapper": "Portmapper",
+    "app.portmapperdesc1": "Si tienes acceso restringido a tu router, prueba Portmapper siguiendo",
+    "app.portmapperdesc2": "este método",
+    "app.portmapperdesc3": "ajustando el UPNP tal como sea necesario.",
+  
+    "app.shadows": "Desactivando sombras para mejorar el rendimiento",
+    "app.shadowsdesc1": "Para desactivar las sombras (lo cual aumenta significativamente los FPS), mantén pulsado L3, R3, y arriba alrededor de 3 segundos. Como demostración, mira",
+    "app.shadowsdesc2": "este vídeo.",
+  
 };
