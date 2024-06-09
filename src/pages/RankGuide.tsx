@@ -2,10 +2,10 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { Card, Typography } from 'antd';
 import React from 'react';
 import { useIntl } from 'umi';
-
-const { Meta } = Card;
-const { Text } = Typography;
-
+import '../assets/css/rankGuide.css'; 
+const { Meta } = Card; 
+const { Text } = Typography; 
+ 
 type RankInfo = {
   id: number;
   name: string;
@@ -881,15 +881,22 @@ export default (): React.ReactNode => {
   const cards: JSX.Element[] = [];
 
   for (const rank of ranks) {
-    const pathToImgAndShowRankEmblem = `/static/media/emblem/${rank.id}.png`;
-
+    const pathToImgAndShowRankEmblem = `/static/media/emblem/1.png`;
     cards.push(
-      <div className="col-md-3 text-center">
-        <Card hoverable style={{  margin: '15px 0', height: '90%' }}>
-          <img src={`${pathToImgAndShowRankEmblem}`} alt={rank.name} 
-           style={{  height: '128px', objectFit: 'cover' }
-          }/>
-          <Card.Meta title={rank.name} description={rank.description} style={{ marginBottom: '4px' }} />
+      <div className="col-md-3 text-center" key={rank.name}>
+        <Card
+          hoverable
+          className="zoom-card"
+          style={{ margin: '15px 0', height: '90%' }}
+        >
+          <img
+            style={{ height: '128px', objectFit: 'cover' }}
+            src={`${pathToImgAndShowRankEmblem}`} alt={rank.name}
+          />
+          <Card.Meta
+            style={{ marginBottom: '4px' }}
+            description={rank.description}  title={rank.name}
+          />
         </Card>
       </div>
     );
