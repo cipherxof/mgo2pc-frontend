@@ -881,15 +881,17 @@ export default (): React.ReactNode => {
   const cards: JSX.Element[] = [];
 
   for (const rank of ranks) {
-    const pathToImgAndShowRankEmblem = `/static/media/emblem/${rank.id}.png`;
+  const pathToImgAndShowRankEmblem = `/static/media/emblem/${rank.id}.png`;
 
     cards.push(
       <div className="col-md-3 text-center">
-        <Card hoverable style={{ marginBottom: '16px', minHeight: '375px' }}>
-          <img src={`${pathToImgAndShowRankEmblem}`} />
-          <Meta title={rank.name} description={rank.description} style={{ marginBottom: '4px' }} />
+        <Card hoverable style={{  margin: '15px 0', height: '90%' }}>
+          <img src={`${pathToImgAndShowRankEmblem}`} alt={rank.name} 
+           style={{  height: '128px', objectFit: 'cover' }
+          }/>
+          <Card.Meta title={rank.name} description={rank.description} style={{ marginBottom: '4px' }} />
         </Card>
-      </div>,
+      </div>
     );
   }
 
@@ -899,3 +901,6 @@ export default (): React.ReactNode => {
     </PageContainer>
   );
 };
+
+
+
