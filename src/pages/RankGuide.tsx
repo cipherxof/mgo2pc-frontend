@@ -3,6 +3,7 @@ import { Card, Typography } from 'antd';
 import React from 'react';
 import { useIntl } from 'umi';
 import '../assets/css/rankGuide.css'; 
+
 const { Meta } = Card; 
 const { Text } = Typography; 
  
