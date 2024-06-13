@@ -1,0 +1,45 @@
+/* RankGuide */
+/* Saving memory by getting the value from the same memory space, thus preventing placing same value in multiple memory adresses. */
+  :root{
+    --transitionTransformEasInOutDot3: transform .3s ease-in-out;
+    --zIndex11: 11;
+    --scale1Dot2: scale(1.2); 
+  }
+
+/* Keyframes */
+@keyframes rotate360 {
+  0% {
+    transform: rotateY(-220deg);
+    opacity: 0;
+  }
+  50%{
+    opacity: .4;
+  }
+  100% {
+    transform: rotateY(-360deg);
+    opacity: 1;
+  }
+}
+
+  @media (min-width: 992px) {
+  /* Elements in RankGuide.tsx */
+  .zoom-card {
+      transition: var(--transitionTransformEasInOutDot3);
+      animation: rotate360 1s linear;
+      z-index: 10;  
+    }
+    
+    .zoom-card:hover {
+      transform: var(--scale1Dot2);
+      background-color: #000;
+      border: 1px solid #E3E3E3;
+      z-index: var(--zIndex11);
+    }
+    
+    .zoom-card img { transition: var(--transitionTransformEasInOutDot3); }
+    
+    .zoom-card:hover img {
+      transform: var(--scale1Dot2);
+      z-index: var(--zIndex11);
+    }
+  }
