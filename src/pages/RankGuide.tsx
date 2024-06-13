@@ -882,7 +882,7 @@ export default (): React.ReactNode => {
   const cards: JSX.Element[] = [];
 
   for (const rank of ranks) {
-    const pathToImgAndShowRankEmblem = `/static/media/emblem/1.png`;
+    const pathToImgAndShowRankEmblem = `/static/media/emblem/${rank.id}.png`;
     cards.push(
       <div className="col-md-3 text-center" key={rank.name}>
         <Card
